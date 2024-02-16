@@ -4,8 +4,8 @@
 
 `Projeto - EIXO 3`
 
+O projeto TravelFunds consiste em uma aplicação que busca auxiliar os usuários a planejar financeiramente suas viagens, incluindo estimativas de gastos, economia prévia e controle de despesas durante a viagem. Dessa forma, o aplicativo poderá garantir uma experiência de viagem financeiramente responsável e tranquila.
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
 
 ## Integrantes
 
