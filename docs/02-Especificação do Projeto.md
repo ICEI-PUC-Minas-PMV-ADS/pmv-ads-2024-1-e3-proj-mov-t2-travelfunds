@@ -10,31 +10,30 @@
 |<img src="img/ricardo.jpg" width="160" height="160">  | **Ricardo** <br> 50 anos|
 |:---------------------------------------:|:-------------------------------:|
 |**Profissão** | Arquiteto |
-|**Motivação** | -- |
-|**Comportamento** | -- |
-|**Desafio** | -- |
+|**Motivação** | Pretende sair de férias com sua esposa e seus quatro filhos por 2 semanas. |
+|**Comportamento** | Desde que começaram a planejar a viagem, passou a guardar uma parte de seu salário com o objetivo de pagar as passagens e hospedagem e também possuir uma reserva de dinheiro para os gastos durante a viagem. |
+|**Desafio** | Ricardo tem uma família grande que gosta de comer em bons restaurantes e passear bastante. Por mais que tenha um bom salário e a possibilidade de levar uma boa quantia de dinheiro para a viagem, ele se preocupa com os excessos que podem acontecer. Seu desafio será manter os gastos de viagem dentro do orçamento previsto e não precisar recorrer ao cartão de crédito. |
 
 **Fonte:** Elaborado pelos autores. 
 
 **Quadro 2 – Entrevista com a segunda persona** 
 
-|<img src="img/eduardo.jpg" width="160" height="160">  | **Eduardo** <br> 26 anos|
+|<img src="img/eduardo.jpg" width="160" height="160">  | **Eduardo** <br> 29 anos|
 |:---------------------------------------:|:-------------------------------:|
 |**Profissão** | Garçom |
-|**Motivação** | -- |
-|**Comportamento** | --|
-|**Desafio** | -- |
+|**Motivação** | Quer planejar sua lua de mel. |
+|**Comportamento** | Costuma guardar parte do salário de forma irregular. Diz não conseguir contribuir com a poupança todo mês, tanto porque seu salário não é alto e imprevistos acontecem, quanto porque, às vezes, ele esquece de guardar.  |
+|**Desafio** | Eduardo não é muito organizado financeiramente e acaba se enrolando em alguns meses por gastos excessivos no mês anterior, o que compromete o planejamento de sua viagem. Seu desafio será ter disciplina para guardar dinheiro todo mês, independente da quantia disponível. Importante ter um lembrete mensal para lembrá-lo disso.  |
 
 **Fonte:** Elaborado pelos autores. 
 
 **Quadro 3 – Entrevista com a terceira persona** 
 
-|<img src="img/amanda.jpg" width="160" height="160">  | **Amanda** <br> 23 anos|
+|<img src="img/amanda.jpg" width="160" height="160">  | **Amanda** <br> 25 anos|
 |:---------------------------------------:|:-------------------------------:|
 |**Profissão** |  Empreendedora |
-|**Background** | --|
-|**Motivação** | -- |
-|**Comportamento** | --|
+|**Motivação** | Vai viajar com duas amigas para fora do país. |
+|**Comportamento** | |
 |**Desafio** | -- |
 
 **Fonte:** Elaborado pelos autores. 
@@ -44,7 +43,6 @@
 |<img src="img/adriana.jpg" width="160" height="160">  | **Adriana** <br> 45 anos|
 |:---------------------------------------:|:-------------------------------:|
 |**Profissão** | Professora |
-|**Background** | -- |
 |**Motivação** | -- |
 |**Comportamento** | -- |
 |**Desafio** | --|
