@@ -8,7 +8,7 @@ Texto descritivo com a visão geral do projeto abordado. Inclui o contexto, o pr
 
 ## Objetivos
 
-<div align="justify"> O objetivo geral deste trabalho é desenvolver um aplicativo de planejamento financeiro de viagens, que permita ao usuário uma gestão eficaz e personalizada de suas finanças durante todo o ciclo de viagem, promovendo uma experiência financeiramente consciente e gratificante.<br> </div>
+<div align="justify"> O objetivo geral deste trabalho é desenvolver um aplicativo de planejamento financeiro de viagens, que permita ao usuário uma gestão eficaz e personalizada de suas finanças durante todo o ciclo de viagem, promovendo uma experiência financeiramente consciente e gratificante.<br><br></div>
 
 Os principais objetivos especificos são:
 - Criar orçamentos personalizados para atender às necessidades individuais de cada usuário;
@@ -17,13 +17,9 @@ Os principais objetivos especificos são:
 
 ## Justificativa
 
-Descreva a importância ou a motivação para trabalhar com esta aplicação que você escolheu. Indique as razões pelas quais você escolheu seus objetivos específicos ou as razões para aprofundar em certos aspectos do software.
+<div align="justify"> Com base nos resultados recentes da pesquisa "Planejamento Financeiro para as Férias de Verão" (SERASA, 2023), 92% dos entrevistados consideraram muito importante realizar uma programação financeira para tirar as férias, ficando evidente que existe uma demanda significativa por soluções que auxiliem os viajantes na gestão financeira. Além disso, o estudo ressaltou que 3 em cada 10 brasileiros afirmaram que já se endividaram devido a uma viagem de férias. </div>
 
-O grupo de trabalho pode fazer uso de questionários, entrevistas e dados estatísticos, que podem ser apresentados, com o objetivo de esclarecer detalhes do problema que será abordado pelo grupo.
-
-> **Links Úteis**:
->
-> - [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
+<div align="justify"> Esses dados apontam para a necessidade de ferramentas que ofereçam suporte efetivo no planejamento financeiro de viagens. Diante desse cenário, o aplicativo proposto busca preencher essa lacuna, proporcionando uma solução abrangente e centrada no usuário, ajudando-o a tomar decisões financeiras informadas, reduzir o estresse relacionado às finanças durante as viagens e promover uma experiência de viagem mais satisfatória e financeiramente responsável.</div>
 
 ## Público-Alvo
 
