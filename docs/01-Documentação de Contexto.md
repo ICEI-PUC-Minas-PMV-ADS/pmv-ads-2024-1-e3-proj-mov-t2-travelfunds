@@ -8,8 +8,8 @@ Texto descritivo com a visão geral do projeto abordado. Inclui o contexto, o pr
 
 ## Objetivos
 
-<div align="justify"> O objetivo geral deste trabalho é desenvolver um aplicativo de planejamento financeiro de viagens, que permita ao usuário uma gestão eficaz e personalizada de suas finanças durante todo o ciclo de viagem, promovendo uma experiência financeiramente consciente e apropriada. </div>
-
+<div align="justify"> O objetivo geral deste trabalho é desenvolver um aplicativo de planejamento financeiro de viagens, que permita ao usuário uma gestão eficaz e personalizada de suas finanças durante todo o ciclo de viagem, promovendo uma experiência financeiramente consciente e gratificante </div>
+<br>
 Os principais objetivos especificos são:
 - Criar orçamentos personalizados para atender às necessidades individuais de cada usuário;
 - Permitir o gerenciamento de despesas de forma clara, categorizando-as de acordo com elementos relacionados à viagem;
@@ -26,6 +26,11 @@ O grupo de trabalho pode fazer uso de questionários, entrevistas e dados estat�
 > - [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
 
 ## Público-Alvo
+
+Embora qualquer pessoa possa usufruir desta solução, foi determinado como público-alvo:
+- Indivíduos que viajam sozinhos e desejam uma ferramenta personalizada para gerenciar suas finanças de forma eficaz durante a viagem;
+- Grupos de pessoas que viajam juntos e desejam coordenar orçamentos compartilhados, divisão de despesas e colaboração financeira.
+
 
 Descreva quem serão as pessoas que usarão a sua aplicação indicando os diferentes perfis. O objetivo aqui não é definir quem serão os clientes ou quais serão os papéis dos usuários na aplicação. A ideia é, dentro do possível, conhecer um pouco mais sobre o perfil dos usuários: conhecimentos prévios, relação com a tecnologia, relações
 hierárquicas, etc.
