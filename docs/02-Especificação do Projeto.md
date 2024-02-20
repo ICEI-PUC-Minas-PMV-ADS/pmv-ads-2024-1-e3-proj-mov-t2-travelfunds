@@ -32,9 +32,9 @@
 |<img src="img/amanda.jpg" width="160" height="160">  | **Amanda** <br> 25 anos|
 |:---------------------------------------:|:-------------------------------:|
 |**Profissão** |  Empreendedora |
-|**Motivação** | Vai viajar com duas amigas para fora do país. |
-|**Comportamento** | |
-|**Desafio** | -- |
+|**Motivação** | Viajou com duas amigas para fora do país. |
+|**Comportamento** | Amanda e suas amigas decidiram fazer um orçamento compartilhado para a viagem. Por ser mais organizada financeiramente, ela arcou com a maior parte dos gastos e utilizou o aplicativo para manter anotado cada coisa que ela pagou. |
+|**Desejo** | Amanda deseja que o aplicativo gere um relatório dos gastos da viagem que foram anotados, para que ela e as amigas fiquem cientes do total e para que possam fazer a divisão das despesas entre si. |
 
 **Fonte:** Elaborado pelos autores. 
 
