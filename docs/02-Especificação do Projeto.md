@@ -18,7 +18,7 @@
 
 **Quadro 2 – Entrevista com a segunda persona** 
 
-|<img src="img/eduardo.jpg" width="160" height="160">  | **Eduardo** <br> 21 anos|
+|<img src="img/eduardo.jpg" width="160" height="160">  | **Eduardo** <br> 26 anos|
 |:---------------------------------------:|:-------------------------------:|
 |**Profissão** | Garçom |
 |**Motivação** | -- |
@@ -29,9 +29,9 @@
 
 **Quadro 3 – Entrevista com a terceira persona** 
 
-|<img src="img/amanda.jpg" width="160" height="160">  | **Amanda** <br> 30 anos|
+|<img src="img/amanda.jpg" width="160" height="160">  | **Amanda** <br> 23 anos|
 |:---------------------------------------:|:-------------------------------:|
-|**Profissão** | Estudante |
+|**Profissão** |  Empreendedora |
 |**Background** | --|
 |**Motivação** | -- |
 |**Comportamento** | --|
@@ -43,7 +43,7 @@
 
 |<img src="img/adriana.jpg" width="160" height="160">  | **Adriana** <br> 45 anos|
 |:---------------------------------------:|:-------------------------------:|
-|**Profissão** | Empreendedora |
+|**Profissão** | Professora |
 |**Background** | -- |
 |**Motivação** | -- |
 |**Comportamento** | -- |
