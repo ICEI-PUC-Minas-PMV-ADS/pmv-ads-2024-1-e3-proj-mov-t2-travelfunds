@@ -1,7 +1,3 @@
 # Referências
 
-Inclua todas as referências (livros, artigos, sites, etc) utilizados no desenvolvimento do trabalho.
-
-> **Links Úteis**:
-> - [Formato ABNT](https://www.normastecnicas.com/abnt/trabalhos-academicos/referencias/)
-> - [Referências Bibliográficas da ABNT](https://comunidade.rockcontent.com/referencia-bibliografica-abnt/)
+<div align="justify"> 9 em cada 10 brasileiros afirmam que é muito importante se planejar financeiramente para tirar férias. Disponível em https://www.serasa.com.br/imprensa/planejar-financeiramente-para-tirar-ferias/. Acesso em 19 fevereiro 2024 </div>
