@@ -8,8 +8,8 @@ Texto descritivo com a visão geral do projeto abordado. Inclui o contexto, o pr
 
 ## Objetivos
 
-<div align="justify"> O objetivo geral deste trabalho é desenvolver um aplicativo de planejamento financeiro de viagens, que permita ao usuário uma gestão eficaz e personalizada de suas finanças durante todo o ciclo de viagem, promovendo uma experiência financeiramente consciente e gratificante </div>
-<br>
+<div align="justify"> O objetivo geral deste trabalho é desenvolver um aplicativo de planejamento financeiro de viagens, que permita ao usuário uma gestão eficaz e personalizada de suas finanças durante todo o ciclo de viagem, promovendo uma experiência financeiramente consciente e gratificante.<br> </div>
+
 Os principais objetivos especificos são:
 - Criar orçamentos personalizados para atender às necessidades individuais de cada usuário;
 - Permitir o gerenciamento de despesas de forma clara, categorizando-as de acordo com elementos relacionados à viagem;
