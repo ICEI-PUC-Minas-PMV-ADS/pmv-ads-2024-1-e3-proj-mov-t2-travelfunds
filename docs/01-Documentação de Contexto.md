@@ -27,7 +27,7 @@ Os principais objetivos especificos são:
 ## Justificativa
 
 <div align="justify"> Com base nos resultados recentes da pesquisa "Planejamento Financeiro para as Férias de Verão" (SERASA, 2023), 92% dos entrevistados consideraram muito importante realizar uma programação financeira para tirar as férias, ficando evidente que existe uma demanda significativa por soluções que auxiliem os viajantes na gestão financeira. Além disso, o estudo ressaltou que 3 em cada 10 brasileiros afirmaram que já se endividaram devido a uma viagem de férias. </div>
-
+<br>
 <div align="justify"> Esses dados apontam para a necessidade de ferramentas que ofereçam suporte efetivo no planejamento financeiro de viagens. Diante desse cenário, o aplicativo proposto busca preencher essa lacuna, proporcionando uma solução abrangente e centrada no usuário, ajudando-o a tomar decisões financeiras informadas, reduzir o estresse relacionado às finanças durante as viagens e promover uma experiência de viagem mais satisfatória e financeiramente responsável.</div>
 
 ## Público-Alvo
