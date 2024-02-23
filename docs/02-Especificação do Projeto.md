@@ -42,10 +42,10 @@
 
 |<img src="img/adriana.jpg" width="160" height="160">  | **Adriana** <br> 45 anos|
 |:---------------------------------------:|:-------------------------------:|
-|**Profissão** | Professora |
-|**Motivação** | -- |
-|**Comportamento** | -- |
-|**Desafio** | --|
+|**Profissão** | Coordenadora de equipe de vendas |
+|**Motivação** | Quer planejar uma viagem de trabalho da sua equipe composta por 10 pessoas. |
+|**Comportamento** | Adriana está responsável pela primeira vez pela viagem de trabalho da sua equipe. Ela precisa comprar passagens, garantir hospedagem e alimentação para 10 pessoas e apresentar o orçamento para seu chefe e para o departamento financeiro da empresa para ser aprovado. |
+|**Desafio** | Adriana precisa montar o menor orçamento possível sem que prejudique os direitos dos funcionários. |
 
 
 ## Histórias de Usuários
