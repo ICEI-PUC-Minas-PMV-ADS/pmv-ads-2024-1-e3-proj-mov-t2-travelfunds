@@ -72,8 +72,19 @@ Com base na análise das personas forma identificadas as seguintes histórias de
 
 |EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
 |--------------------|------------------------------------|----------------------------------------|
-|Usuário do sistema  | Registrar minhas tarefas           | Não esquecer de fazê-las               |
-|Administrador       | Alterar permissões                 | Permitir que possam administrar contas |
+|Ricardo  | Ferramenta para manter gastos de viagem dentro do orçamento previsto           | Evitar gastos excessivos               |
+|Ricardo       |Receber alertas sempre que estiver se aproximando ou ultrapassando o orçamento planejado              | Equilibrar gastos |
+|Eduardo  | Manter a disciplina financeira           | Contribuir regularmente com a poupança de viagem               |
+|Eduardo  | Receber lembretes mensais            | Estimular e lembrar da contribuição mensal da viagem              |
+|Amanda  | Gerar relatório de gastos de viagem            | Compartilhar com suas parceiras de viagem              |
+|Amanda  | Ferramenta para divisão de despesas           | Divisão equitativa dos custos de viagem             |
+|Adriana  | Gerar relatório em formato PFD           | Apresentar o documento detalhado para o chefe do departamento financeiro        |
+|Adriana  | Adicionar colaboradores ao planejamento da viagem           | Outras pessoas possam vizualizar ou contribuir com o planejamento financeiro        |
+|Carmem  | Aplicação de fácil uso para pessoas com pouco conhecimento tecnológico           | Experiência de uso fácil e acessível     |
+|Carmem  | Definir meu limite fixo de gastos subtraindo automaticamente o valor gasto do total disponível           | Tomar decisões conscientes e a evitar excessos
+|Inês  | Espaço dedicado para catalogar e planejar os pontos culturais do destino, considerando custos           | Organização eficiente das minhas viagens culturais.
+|Inês  | Oportunidade de avaliar e dar notas ao destino ao final da viagem, especialmente em relação ao custo           | Compartilhar minha experiência de gastos, bem como auxiliar na decisão dos próximos destinos.
+
 
 Apresente aqui as histórias de usuário que são relevantes para o projeto de sua solução. As Histórias de Usuário consistem em uma ferramenta poderosa para a compreensão e elicitação dos requisitos funcionais e não funcionais da sua aplicação. Se possível, agrupe as histórias de usuário por contexto, para facilitar consultas recorrentes à essa parte do documento.
 
