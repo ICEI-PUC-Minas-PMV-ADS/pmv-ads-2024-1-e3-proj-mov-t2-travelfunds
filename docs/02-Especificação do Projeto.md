@@ -65,7 +65,6 @@
 |**Comportamento** | Inês é uma planejadora meticulosa, mas adora praticidade. Quando planeja suas viagens, gosta de pesquisar a fundo sobre os detalhes históricos e culturais dos seus destinos e prioriza as experiências ao invés das compras.|
 |**Desafio** | Uma aplicação que ofereça a possibilidade de organizar gastos com suas atividades culturais, mas que também ofereça um espaço para listagem de pontos culturais do local de destino e custo.|
 
-
 ## Histórias de Usuários
 
 Com base na análise das personas forma identificadas as seguintes histórias de usuários:
@@ -84,16 +83,6 @@ Com base na análise das personas forma identificadas as seguintes histórias de
 |Carmem  | Definir meu limite fixo de gastos subtraindo automaticamente o valor gasto do total disponível           | Tomar decisões conscientes e a evitar excessos
 |Inês  | Espaço dedicado para catalogar e planejar os pontos culturais do destino, considerando custos           | Organização eficiente das minhas viagens culturais.
 |Inês  | Oportunidade de avaliar e dar notas ao destino ao final da viagem, especialmente em relação ao custo           | Compartilhar minha experiência de gastos, bem como auxiliar na decisão dos próximos destinos.
-
-
-Apresente aqui as histórias de usuário que são relevantes para o projeto de sua solução. As Histórias de Usuário consistem em uma ferramenta poderosa para a compreensão e elicitação dos requisitos funcionais e não funcionais da sua aplicação. Se possível, agrupe as histórias de usuário por contexto, para facilitar consultas recorrentes à essa parte do documento.
-
-> **Links Úteis**:
-> - [Histórias de usuários com exemplos e template](https://www.atlassian.com/br/agile/project-management/user-stories)
-> - [Como escrever boas histórias de usuário (User Stories)](https://medium.com/vertice/como-escrever-boas-users-stories-hist%C3%B3rias-de-usu%C3%A1rios-b29c75043fac)
-> - [User Stories: requisitos que humanos entendem](https://www.luiztools.com.br/post/user-stories-descricao-de-requisitos-que-humanos-entendem/)
-> - [Histórias de Usuários: mais exemplos](https://www.reqview.com/doc/user-stories-example.html)
-> - [9 Common User Story Mistakes](https://airfocus.com/blog/user-story-mistakes/)
 
 ## Modelagem do Processo de Negócio 
 
