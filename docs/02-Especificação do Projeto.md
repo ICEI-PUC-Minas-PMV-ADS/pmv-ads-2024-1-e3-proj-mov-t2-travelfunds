@@ -123,15 +123,21 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 |ID    | Descrição do Requisito  | Prioridade |
 |------|-----------------------------------------|----|
-|RF-001| Permitir que o usuário cadastre tarefas | ALTA | 
-|RF-002| Emitir um relatório de tarefas no mês   | MÉDIA |
+|RF-001| A aplicação deve disponibilizar na pagina inicial um resumo do dinheiro restante e dos gastos da viagem | ALTA |
+|RF-002| A aplicação deve permitir que o usuário grave seu gasto no aplicativo com valor, categoria e descrição | ALTA |
+|RF-003| A aplicação deve permitir que o usuário grave o valor que tem guardado para usar na viagem | ALTA |
+|RF-004| A aplicação deve disponibilizar ao usuário uma relação de gastos com o valor guardado | ALTA |
+|RF-005| A aplicação deve incluir uma funcionalidade que permite ao usuário converter automaticamente os valores gastos em diferentes moedas | ALTA |
+|RF-006| A aplicação deve informar por meio de notificações de alerta os usuários quando estão prestes a exceder seus orçamentos definidos para a viagem | BAIXA |
+|RF-007| A aplicação deve permitir o usuário salvar pontos turisticos que deseja visitar | BAIXA |
 
 ### Requisitos não Funcionais
 
 |ID     | Descrição do Requisito  |Prioridade |
 |-------|-------------------------|----|
-|RNF-001| O sistema deve ser responsivo para rodar em um dispositivos móvel | MÉDIA | 
-|RNF-002| Deve processar requisições do usuário em no máximo 3s |  BAIXA | 
+|RNF-001| A aplicação deverá ser desenvolvida usando React Native | ALTA |
+|RNF-002| A aplicação deverá ser disponivel para o sistema Android | ALTA |
+|RNF-003| A aplicação deverá ser disponivel para o sistema IOS | MEDIA |
 
 Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
 
