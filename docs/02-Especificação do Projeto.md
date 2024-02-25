@@ -47,6 +47,24 @@
 |**Comportamento** | Adriana está responsável pela primeira vez pela viagem de trabalho da sua equipe. Ela precisa comprar passagens, garantir hospedagem e alimentação para 10 pessoas e apresentar o orçamento para seu chefe e para o departamento financeiro da empresa para ser aprovado. |
 |**Desafio** | Adriana precisa montar o menor orçamento possível sem que prejudique os direitos dos funcionários. |
 
+**Quadro 5 – Entrevista com a quarta persona** 
+
+|<img>  | **Carmem** <br> 70 anos|
+|:---------------------------------------:|:-------------------------------:|
+|**Profissão** | Assistente Social aposentada |
+|**Motivação** | Usufruir da aposentadoria, explorando novos lugares com suas amigas e criando memórias especiais. |
+|**Comportamento** | Carmem é uma pessoa organizada financeiramente e muito prudente com suas finanças. Ela tem um rendimento fixo advindo da aposentadoria e valoriza cada gasto, pois representa uma oportunidade de desfrutar de forma mais completa da sua fase de descanso. Carmem precisa economizar durante suas viagens. Ela também não tem intimidade com a tecnologia e utiliza o seu dispositivo móvel apenas para atividades básicas. |
+|**Desafio** | Uma aplicação intuitiva e de fácil uso mesmo para quem não tem muitos conhecimentos tecnológicos. Ademais, que a aplicação simplifique o rastreamento das despesas da sua viagem.|
+
+**Quadro 6 – Entrevista com a sexta persona** 
+
+|<img>  | **Inês** <br> 35 anos|
+|:---------------------------------------:|:-------------------------------:|
+|**Profissão** | Cientista Social |
+|**Motivação** | Inês adora atividades culturais, é apaixonada por arte e deseja conhecer novos lugares para imergir em experiências culturais autênticas e descobrir a história de cada destino.|
+|**Comportamento** | Inês é uma planejadora meticulosa, mas adora praticidade. Quando planeja suas viagens, gosta de pesquisar a fundo sobre os detalhes históricos e culturais dos seus destinos e prioriza as experiências ao invés das compras.|
+|**Desafio** | Uma aplicação que ofereça a possibilidade de organizar gastos com suas atividades culturais, mas que também ofereça um espaço para listagem de pontos culturais do local de destino e custo.|
+
 
 ## Histórias de Usuários
 
