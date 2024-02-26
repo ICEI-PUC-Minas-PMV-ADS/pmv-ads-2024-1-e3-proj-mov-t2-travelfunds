@@ -138,7 +138,10 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RNF-001| A aplicação deverá ser desenvolvida usando React Native | ALTA |
 |RNF-002| A aplicação deverá ser disponivel para o sistema Android | ALTA |
 |RNF-003| A aplicação deverá ser disponivel para o sistema IOS | MÉDIA |
-|RNF-004| A aplicação deverá ser responsiva, permitindo a visualização em aparelhos mobile de forma adequada. | MÉDIA |
+|RNF-004| A aplicação deverá ser responsiva, permitindo a visualização em aparelhos mobile de forma adequada | MÉDIA |
+|RNF-005| A aplicação deve possuir uma interface simples, apresentando as informações de forma visual e acessível | MÉDIA |
+|RNF-006| A aplicação deve estar disponível para acesso a qualquer horário do dia | MÉDIA |
+|RNF-007| A aplicação deve processar requisições do usuário em no máximo 5s | BAIXA |
 
 
 ## Restrições
