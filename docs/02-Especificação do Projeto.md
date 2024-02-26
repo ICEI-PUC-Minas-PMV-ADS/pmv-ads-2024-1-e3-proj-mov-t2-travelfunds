@@ -49,7 +49,7 @@
 
 **Quadro 5 – Entrevista com a quarta persona** 
 
-|<img>  | **Carmem** <br> 70 anos|
+|<img src="img/carmem.jpg" width="160" height="160">  | **Carmem** <br> 65 anos|
 |:---------------------------------------:|:-------------------------------:|
 |**Profissão** | Assistente Social aposentada |
 |**Motivação** | Usufruir da aposentadoria, explorando novos lugares com suas amigas e criando memórias especiais. |
@@ -58,7 +58,7 @@
 
 **Quadro 6 – Entrevista com a sexta persona** 
 
-|<img>  | **Inês** <br> 35 anos|
+|<img src="img/ines.jpg" width="160" height="160">  | **Inês** <br> 38 anos|
 |:---------------------------------------:|:-------------------------------:|
 |**Profissão** | Cientista Social |
 |**Motivação** | Inês adora atividades culturais, é apaixonada por arte e deseja conhecer novos lugares para imergir em experiências culturais autênticas e descobrir a história de cada destino.|
