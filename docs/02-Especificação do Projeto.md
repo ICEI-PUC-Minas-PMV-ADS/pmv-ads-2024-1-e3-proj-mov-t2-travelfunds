@@ -137,22 +137,9 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |-------|-------------------------|----|
 |RNF-001| A aplicação deverá ser desenvolvida usando React Native | ALTA |
 |RNF-002| A aplicação deverá ser disponivel para o sistema Android | ALTA |
-|RNF-003| A aplicação deverá ser disponivel para o sistema IOS | MEDIA |
+|RNF-003| A aplicação deverá ser disponivel para o sistema IOS | MÉDIA |
+|RNF-004| A aplicação deverá ser responsiva, permitindo a visualização em aparelhos mobile de forma adequada. | MÉDIA |
 
-Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
-
-- [Requisitos Funcionais
- (RF)](https://pt.wikipedia.org/wiki/Requisito_funcional):
- correspondem a uma funcionalidade que deve estar presente na
-  plataforma (ex: cadastro de usuário).
-- [Requisitos Não Funcionais
-  (RNF)](https://pt.wikipedia.org/wiki/Requisito_n%C3%A3o_funcional):
-  correspondem a uma característica técnica, seja de usabilidade,
-  desempenho, confiabilidade, segurança ou outro (ex: suporte a
-  dispositivos iOS e Android).
-Lembre-se que cada requisito deve corresponder à uma e somente uma
-característica alvo da sua solução. Além disso, certifique-se de que
-todos os aspectos capturados nas Histórias de Usuário foram cobertos.
 
 ## Restrições
 
