@@ -82,6 +82,7 @@ Com base na análise das personas forma identificadas as seguintes histórias de
 |Adriana  | Gerar relatório em formato PFD           | Apresentar o documento detalhado para o chefe do departamento financeiro        |
 |Adriana  | Adicionar colaboradores ao planejamento da viagem           | Outras pessoas possam vizualizar ou contribuir com o planejamento financeiro        |
 |Carmem  | Aplicação de fácil uso para pessoas com baixo conhecimento tecnológico           | Experiência de uso fácil e acessível     |
+|Carmem  | Calculadora para conversão de moeda           | Facilitar pagamentos e visão geral de gastos durante a viagem     |
 |Carmem  | Definir meu limite fixo de gastos subtraindo automaticamente o valor gasto do total disponível           | Tomar decisões conscientes e a evitar excessos
 |Inês  | Espaço dedicado para catalogar e planejar os pontos culturais do destino, considerando custos           | Organização eficiente das minhas viagens culturais.
 |Inês  | Oportunidade de avaliar e dar notas ao destino ao final da viagem, especialmente em relação ao custo           | Compartilhar minha experiência de gastos, bem como auxiliar na decisão dos próximos destinos.
@@ -131,7 +132,15 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RF-004| A aplicação deve disponibilizar ao usuário uma relação de gastos com o valor guardado | ALTA |
 |RF-005| A aplicação deve incluir uma funcionalidade que permite ao usuário converter automaticamente os valores gastos em diferentes moedas | ALTA |
 |RF-006| A aplicação deve informar por meio de notificações de alerta os usuários quando estão prestes a exceder seus orçamentos definidos para a viagem | BAIXA |
-|RF-007| A aplicação deve permitir o usuário salvar pontos turisticos que deseja visitar | BAIXA |
+|RF-007| A aplicação deve permitir que o usuário gerencie pontos turisticos que deseja visitar | BAIXA |
+|RNF-008| A aplicação deve oferecer uma funcionalidade para gerenciar contribuições mensais para a viagem. | ALTA |
+|RNF-009| A aplicação deve ter um sistema de lembretes para estimular contribuições regulares | ALTA |
+|RNF-010| A aplicação deve possiblitar ajuste de metas de economia | MÉDIA |
+|RNF-011| A aplicação deve oferecer ao usuário a possibilidade de gerar relatório de gastos para impressão  | MÉDIA |
+|RNF-012| A aplicação deve permitir a inclusão de colaboradores ao planejamento financeiro da viagem | BAIXA |
+|RNF-013| A aplicação deve permitir a avalição de destino | BAIXA |
+
+
 
 ### Requisitos não Funcionais
 
@@ -144,6 +153,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RNF-005| A aplicação deve possuir uma interface simples, apresentando as informações de forma visual e acessível | MÉDIA |
 |RNF-006| A aplicação deve estar disponível para acesso a qualquer horário do dia | MÉDIA |
 |RNF-007| A aplicação deve processar requisições do usuário em no máximo 5s | BAIXA |
+
 
 
 ## Restrições
