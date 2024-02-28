@@ -126,19 +126,19 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 |ID    | Descrição do Requisito  | Prioridade |
 |------|-----------------------------------------|----|
-|RF-001| A aplicação deve disponibilizar na pagina inicial um resumo do dinheiro restante e dos gastos da viagem | ALTA |
-|RF-002| A aplicação deve permitir que o usuário grave seu gasto no aplicativo com valor, categoria e descrição | ALTA |
-|RF-003| A aplicação deve permitir que o usuário grave o valor que tem guardado para usar na viagem | ALTA |
-|RF-004| A aplicação deve disponibilizar ao usuário uma relação de gastos com o valor guardado | ALTA |
-|RF-005| A aplicação deve incluir uma funcionalidade que permite ao usuário converter automaticamente os valores gastos em diferentes moedas | ALTA |
-|RF-006| A aplicação deve informar por meio de notificações de alerta os usuários quando estão prestes a exceder seus orçamentos definidos para a viagem | BAIXA |
-|RF-007| A aplicação deve permitir que o usuário gerencie pontos turisticos que deseja visitar | BAIXA |
-|RNF-008| A aplicação deve oferecer uma funcionalidade para gerenciar contribuições mensais para a viagem. | ALTA |
-|RNF-009| A aplicação deve ter um sistema de lembretes para estimular contribuições regulares | ALTA |
-|RNF-010| A aplicação deve possiblitar ajuste de metas de economia | MÉDIA |
-|RNF-011| A aplicação deve oferecer ao usuário a possibilidade de gerar relatório de gastos para impressão  | MÉDIA |
-|RNF-012| A aplicação deve permitir a inclusão de colaboradores ao planejamento financeiro da viagem | BAIXA |
-|RNF-013| A aplicação deve permitir a avalição de destino | BAIXA |
+|RF-001| A aplicação deve apresentar uma interface intuitiva e de fácil navegação oferecendo uma experiência amigável para usuários com diferentes níveis de conhecimento tecnológico | ALTA |
+|RF-002| A aplicação deve disponibilizar na pagina inicial um resumo do dinheiro restante e dos gastos da viagem | ALTA |
+|RF-003| A aplicação deve permitir que o usuário grave seu gasto no aplicativo com valor, categoria e descrição | ALTA |
+|RF-004| A aplicação deve permitir que o usuário grave o valor que tem guardado para usar na viagem | ALTA |
+|RF-005| A aplicação deve disponibilizar ao usuário uma relação de gastos com o valor guardado | ALTA |
+|RF-006| A aplicação deve incluir uma funcionalidade que permite ao usuário converter automaticamente os valores gastos em diferentes moedas | ALTA |
+|RF-007| A aplicação deve informar os usuários por meio de notificações de alerta quando estão prestes a exceder seus orçamentos definidos para a viagem | BAIXA |
+|RF-008| A aplicação deve permitir que o usuário gerencie pontos turisticos que deseja visitar | BAIXA |
+|RNF-009| A aplicação deve oferecer uma funcionalidade para gerenciar contribuições mensais para a viagem. | ALTA |
+|RNF-010| A aplicação deve ter um sistema de lembretes, através de notificação push, para estimular contribuições regulares | ALTA |
+|RNF-012| A aplicação deve oferecer ao usuário a possibilidade de gerar relatório de gastos por categorias para impressão  | MÉDIA |
+|RNF-013| A aplicação deve permitir a inclusão de colaboradores como administradores ao planejamento financeiro da viagem | BAIXA |
+|RNF-014| A aplicação deve permitir que o usuário compartilhe suas experiências financeiras ao final da viagem, indicando se consideram gastos como elevado, adequados ou baixo | BAIXA |
 
 
 
