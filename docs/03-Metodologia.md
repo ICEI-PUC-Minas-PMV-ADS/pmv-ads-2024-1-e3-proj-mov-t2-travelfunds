@@ -1,14 +1,24 @@
 
 # Metodologia
 
-<span style="color:red">Pré-requisitos: <a href="2-Especificação do Projeto.md"> Documentação de Especificação</a></span>
-
-Descreva aqui a metodologia de trabalho do grupo para atacar o problema. Definições sobre os ambiente de trabalho utilizados pela  equipe para desenvolver o projeto. Abrange a relação de ambientes utilizados, a estrutura para gestão do código fonte, além da definição do processo e ferramenta através dos quais a equipe se organiza (Gestão de Times).
+<div align="justify"> A metodologia contempla todas as ferramentas definidas pelos componentes para a manutenção dos códigos e demais artefatos, e para a organização da equipe na execução das tarefas do projeto.
+</div>
 
 ## Relação de Ambientes de Trabalho
 
-Os artefatos do projeto são desenvolvidos a partir de diversas plataformas e a relação dos ambientes com seu respectivo propósito deverá ser apresentada em uma tabela que especifica que detalha Ambiente, Plataforma e Link de Acesso. 
-Nota: Vide documento modelo do estudo de caso "Portal de Notícias" e defina também os ambientes e frameworks que serão utilizados no desenvolvimento de aplicações móveis.
+<p align="justify">
+Foram utilizadas diferentes plataformas na construção dos artefatos do projeto e a relação dos ambientes com seu respectivo propósito é apresentada na tabela a seguir.
+</p>
+
+**Quadro 9 – Ambientes de Trabalho** 
+| Ambiente                          | Plataforma / Link de Acesso                                                                                                                        |
+| --------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Repositório de código fonte       | [GitHub](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t5-seleta/tree/main/src)                                                         |
+| Documentos do projeto             | [GitHub](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t5-seleta/tree/main/docs) |
+| Projeto de Interface e Wireframes | [Figma]() [LucidChart]() |
+| Gerenciamento do Projeto          | [GitHub Projects](https://trello.com/b/DvSwh9XC/seleta) |
+
+**Fonte**: Elaborado pelos autores. 
 
 ## Controle de Versão
 
@@ -31,15 +41,15 @@ etiquetas:
 - `enhancement`: uma funcionalidade precisa ser melhorada
 - `feature`: uma nova funcionalidade precisa ser introduzida
 
-Discuta como a configuração do projeto foi feita na ferramenta de versionamento escolhida. Exponha como a gerência de tags, merges, commits e branchs é realizada. Discuta como a gerência de issues foi realizada.
-
-> **Links Úteis**:
-> - [Microfundamento: Gerência de Configuração](https://pucminas.instructure.com/courses/87878/)
-> - [Tutorial GitHub](https://guides.github.com/activities/hello-world/)
-> - [Git e Github](https://www.youtube.com/playlist?list=PLHz_AreHm4dm7ZULPAmadvNhH6vk9oNZA)
->  - [Comparando fluxos de trabalho](https://www.atlassian.com/br/git/tutorials/comparing-workflows)
-> - [Understanding the GitHub flow](https://guides.github.com/introduction/flow/)
-> - [The gitflow workflow - in less than 5 mins](https://www.youtube.com/watch?v=1SXpE08hvGs)
+<div align="justify"> 
+<p>
+A branch principal é a main, em que estará a versão estável da aplicação. Já na branch dev, serão armazenadas as modificações feitas pela equipe de desenvolvimento. Na branch testing, todas as alterações serão enviadas, sem erros, para serem testadas nessa branch.
+</p>
+<p>
+Para a criação de novas funcionalidades da aplicação, será usada a convenção de <b>feature</b> seguida por uma breve descrição da tarefa pra uma melhor forma de identificar a branch. Já para a correção de bugs, a 
+convenção usada será <b>bugfix</b> que carregará o nome da issue que está sendo resolvida.
+</p>
+</div>
 
 ## Gerenciamento de Projeto
 
