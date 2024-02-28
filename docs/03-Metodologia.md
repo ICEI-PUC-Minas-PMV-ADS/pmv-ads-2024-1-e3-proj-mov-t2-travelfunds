@@ -65,7 +65,7 @@ A equipe foi organizada da seguinte maneira:
 
    <div align="center">
 <img src="img/kanban1.png" width="80%"><br>
-<b>Figura  </b>- Tela do kanban utilizada pelo grupo
+<b>Figura</b>- Tela do kanban utilizada pelo grupo
   </div><br>
 
   <div align="center">
