@@ -79,13 +79,13 @@ Com base na análise das personas forma identificadas as seguintes histórias de
 |Amanda  | Gerar relatório de gastos de viagem            | Compartilhar com suas parceiras de viagem              |
 |Amanda  | Ferramenta para divisão de despesas           | Divisão equitativa dos custos de viagem             |
 |Amanda  | Histórico de contribuições passadas           | Revisão de progresso             |
-|Adriana  | Gerar relatório em formato PFD           | Apresentar o documento detalhado para o chefe do departamento financeiro        |
+|Adriana  | Gerar relatório de gastos em formato PFD após a viagem          | Apresentar o documento detalhado para o chefe do departamento financeiro        |
 |Adriana  | Adicionar colaboradores ao planejamento da viagem           | Outras pessoas possam vizualizar ou contribuir com o planejamento financeiro        |
 |Carmem  | Aplicação de fácil uso para pessoas com baixo conhecimento tecnológico           | Experiência de uso fácil e acessível     |
 |Carmem  | Calculadora para conversão de moeda           | Facilitar pagamentos e visão geral de gastos durante a viagem     |
 |Carmem  | Definir meu limite fixo de gastos subtraindo automaticamente o valor gasto do total disponível           | Tomar decisões conscientes e a evitar excessos
 |Inês  | Espaço dedicado para catalogar e planejar os pontos culturais do destino, considerando custos           | Organização eficiente das minhas viagens culturais.
-|Inês  | Oportunidade de avaliar e dar notas ao destino ao final da viagem, especialmente em relação ao custo           | Compartilhar minha experiência de gastos, bem como auxiliar na decisão dos próximos destinos.
+|Inês  | Oportunidade de avaliar destino ao final da viagem, especialmente em relação ao custo           | Compartilhar minha experiência de gastos, bem como auxiliar na decisão dos próximos destinos.
 
 ## Modelagem do Processo de Negócio 
 
@@ -133,12 +133,14 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RF-005| A aplicação deve disponibilizar ao usuário uma relação de gastos com o valor guardado | ALTA |
 |RF-006| A aplicação deve incluir uma funcionalidade que permite ao usuário converter automaticamente os valores gastos em diferentes moedas | ALTA |
 |RF-007| A aplicação deve informar os usuários por meio de notificações push quando estão prestes a exceder seus orçamentos definidos para a viagem | BAIXA |
-|RF-008| A aplicação deve oferecer uma funcionalidade para gerenciar contribuições mensais para a viagem. | ALTA |
+|RF-008| A aplicação deve permitir ao usuário ajustar as contribuições passadas e futuras de maneira flexível, com opções para inserção de novos valores, exclusão ou edição de registros existentes. | ALTA |
 |RF-009| A aplicação deve ter um sistema de lembretes, através de notificação push, para estimular contribuições regulares | ALTA |
 |RF-010| A aplicação deve oferecer ao usuário a possibilidade de gerar relatório de gastos por categorias para impressão  | MÉDIA |
 |RF-011| A aplicação deve permitir a inclusão de colaboradores como administradores ao planejamento financeiro da viagem | BAIXA |
 |RF-012| A aplicação deve permitir que o usuário compartilhe suas experiências financeiras ao final da viagem, indicando se consideram gastos como elevado, adequados ou abaixo da expectiva | BAIXA |
 |RF-013| A aplicação deve permitir que o usuário gerencie pontos turisticos que deseja visitar e os valores associados | BAIXA |
+|RF-014| A aplicação deve disponibilizar ao usuário a funcionalidade de Comparação entre Gasto Previsto e Gasto Real | MÉDIA |
+
 
 
 
