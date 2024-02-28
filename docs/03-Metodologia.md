@@ -64,12 +64,12 @@ A equipe foi organizada da seguinte maneira:
 - Done: tarefas que foram concluídas, aprovadas e estão prontas para serem entregues ao usuário.
 
    <div align="center">
-<img src="img/kanban1.jpg" width="80%"><br>
+<img src="img/kanban1.png" width="80%"><br>
 <b>Figura  </b>- Tela do kanban utilizada pelo grupo
   </div><br>
 
   <div align="center">
-<img src="img/kanban2.jpg" width="80%"><br>
+<img src="img/kanban2.png" width="80%"><br>
 <b>Figura  </b>- Tela do kanban utilizada pelo grupo
   </div>
 
