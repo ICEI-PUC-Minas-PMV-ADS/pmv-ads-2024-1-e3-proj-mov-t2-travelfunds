@@ -137,7 +137,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RF-009| A aplicação deve ter um sistema de lembretes, através de notificação push, para estimular contribuições regulares | ALTA |
 |RF-010| A aplicação deve oferecer ao usuário a possibilidade de gerar relatório de gastos por categorias para impressão  | MÉDIA |
 |RF-011| A aplicação deve permitir a inclusão de colaboradores como administradores ao planejamento financeiro da viagem | BAIXA |
-|RF-012| A aplicação deve permitir que o usuário compartilhe suas experiências financeiras ao final da viagem, indicando se consideram gastos como elevado, adequados ou baixo | BAIXA |
+|RF-012| A aplicação deve permitir que o usuário compartilhe suas experiências financeiras ao final da viagem, indicando se consideram gastos como elevado, adequados ou abaixo da expectiva | BAIXA |
 |RF-013| A aplicação deve permitir que o usuário gerencie pontos turisticos que deseja visitar e os valores associados | BAIXA |
 
 
