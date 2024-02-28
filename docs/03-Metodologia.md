@@ -45,30 +45,33 @@ Discuta como a configuração do projeto foi feita na ferramenta de versionament
 
 ### Divisão de Papéis
 
-Apresente a divisão de papéis entre os membros do grupo.
+Para realizar o gerenciamento do projeto, os alunos optaram em utilizar o Scrum como metodologia ágil.  
 
-Exemplificação: A equipe utiliza metodologias ágeis, tendo escolhido o Scrum como base para definição do processo de desenvolvimento. A equipe está organizada da seguinte maneira:
-- Scrum Master: Felipe Domingos;
-- Product Owner: Rommel Carneiro;
-- Equipe de Desenvolvimento: Pedro Penna, Pedro Ivo, Rodrigo Richard;
-- Equipe de Design: Simone Nogueira.
+A equipe foi organizada da seguinte maneira: 
 
-> **Links Úteis**:
-> - [11 Passos Essenciais para Implantar Scrum no seu Projeto](https://mindmaster.com.br/scrum-11-passos/)
-> - [Scrum em 9 minutos](https://www.youtube.com/watch?v=XfvQWnRgxG0)
-> - [Os papéis do Scrum e a verdade sobre cargos nessa técnica](https://www.atlassian.com/br/agile/scrum/roles)
+- Scrum Master: Ana Carolina Nazareth.
+- Product Owner: Victor Bastos.
+- Equipe de Desenvolvimento: Gabriela Penaforte, Naianna Duarte, Felipe de Araújo e Nikita Ceccon.
 
 ### Processo
 
-Coloque  informações sobre detalhes da implementação do Scrum seguido pelo grupo. O grupo deverá fazer uso do recurso de gerenciamento de projeto oferecido pelo GitHub, que permite acompanhar o andamento do projeto, a execução das tarefas e o status de desenvolvimento da solução.
- 
-> **Links Úteis**:
-> - [Planejamento e Gestáo Ágil de Projetos](https://pucminas.instructure.com/courses/87878/pages/unidade-2-tema-2-utilizacao-de-ferramentas-para-controle-de-versoes-de-software)
-> - [Sobre quadros de projeto](https://docs.github.com/pt/issues/organizing-your-work-with-project-boards/managing-project-boards/about-project-boards)
-> - [Project management, made simple](https://github.com/features/project-management/)
-> - [Sobre quadros de projeto](https://docs.github.com/pt/github/managing-your-work-on-github/about-project-boards)
-> - [Como criar Backlogs no Github](https://www.youtube.com/watch?v=RXEy6CFu9Hk)
-> - [Tutorial Slack](https://slack.com/intl/en-br/)
+<p align="justify">Para uma melhor organização, distribuição e acompanhamento das tarefas do projeto, foi utilizado o Trello. A ferramenta foi estruturada com as seguintes listas:</p>
+
+- Product Backlog: lista de requisitos e demais tarefas identificadas no decorrer do projeto.  
+- Sprint Backlog: consta as tarefas que devem ser trabalhadas no momento.  
+- In Progress: relação de tarefas que estão sendo trabalhadas.  
+- Review: tarefas que estão sendo revisadas, passando por testes e controle de qualidade.  
+- Done: tarefas que foram concluídas, aprovadas e estão prontas para serem entregues ao usuário.
+
+   <div align="center">
+<img src="img/kanban1.jpg" width="80%"><br>
+<b>Figura  </b>- Tela do kanban utilizada pelo grupo
+  </div><br>
+
+  <div align="center">
+<img src="img/kanban2.jpg" width="80%"><br>
+<b>Figura  </b>- Tela do kanban utilizada pelo grupo
+  </div>
 
 ### Ferramentas
 
