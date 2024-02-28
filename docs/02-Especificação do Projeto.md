@@ -138,8 +138,10 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RF-010| A aplicação deve oferecer ao usuário a possibilidade de gerar relatório de gastos por categorias para impressão  | MÉDIA |
 |RF-011| A aplicação deve permitir a inclusão de colaboradores como administradores ao planejamento financeiro da viagem | BAIXA |
 |RF-012| A aplicação deve permitir que o usuário compartilhe suas experiências financeiras ao final da viagem, indicando se consideram gastos como elevado, adequados ou abaixo da expectiva | BAIXA |
-|RF-013| A aplicação deve permitir que o usuário gerencie pontos turisticos que deseja visitar e os valores associados | BAIXA |
+|RF-013| A aplicação deve permitir que o usuário liste pontos turisticos que deseja visitar e os valores associados | BAIXA |
 |RF-014| A aplicação deve disponibilizar ao usuário a funcionalidade de Comparação entre Gasto Previsto e Gasto Real | MÉDIA |
+|RF-015| A aplicação deve permitir que o usuário defina uma meta global, indicando o valor total que deseja acumular para a viagem | MÉDIA |
+|RF-016| A aplicação deve permitir que o usuário estabeleça metas específicas para as contribuições mensais, indicando a quantia desejada a ser economizada a cada mês para a viagem| MÉDIA |
 
 
 
