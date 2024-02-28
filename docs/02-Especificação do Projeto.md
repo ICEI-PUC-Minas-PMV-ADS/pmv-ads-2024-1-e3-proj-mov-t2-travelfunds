@@ -132,13 +132,14 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RF-004| A aplicação deve permitir que o usuário grave o valor que tem guardado para usar na viagem | ALTA |
 |RF-005| A aplicação deve disponibilizar ao usuário uma relação de gastos com o valor guardado | ALTA |
 |RF-006| A aplicação deve incluir uma funcionalidade que permite ao usuário converter automaticamente os valores gastos em diferentes moedas | ALTA |
-|RF-007| A aplicação deve informar os usuários por meio de notificações de alerta quando estão prestes a exceder seus orçamentos definidos para a viagem | BAIXA |
-|RF-008| A aplicação deve permitir que o usuário gerencie pontos turisticos que deseja visitar | BAIXA |
-|RNF-009| A aplicação deve oferecer uma funcionalidade para gerenciar contribuições mensais para a viagem. | ALTA |
-|RNF-010| A aplicação deve ter um sistema de lembretes, através de notificação push, para estimular contribuições regulares | ALTA |
-|RNF-012| A aplicação deve oferecer ao usuário a possibilidade de gerar relatório de gastos por categorias para impressão  | MÉDIA |
-|RNF-013| A aplicação deve permitir a inclusão de colaboradores como administradores ao planejamento financeiro da viagem | BAIXA |
-|RNF-014| A aplicação deve permitir que o usuário compartilhe suas experiências financeiras ao final da viagem, indicando se consideram gastos como elevado, adequados ou baixo | BAIXA |
+|RF-007| A aplicação deve informar os usuários por meio de notificações push quando estão prestes a exceder seus orçamentos definidos para a viagem | BAIXA |
+|RF-008| A aplicação deve oferecer uma funcionalidade para gerenciar contribuições mensais para a viagem. | ALTA |
+|RF-009| A aplicação deve ter um sistema de lembretes, através de notificação push, para estimular contribuições regulares | ALTA |
+|RF-010| A aplicação deve oferecer ao usuário a possibilidade de gerar relatório de gastos por categorias para impressão  | MÉDIA |
+|RF-011| A aplicação deve permitir a inclusão de colaboradores como administradores ao planejamento financeiro da viagem | BAIXA |
+|RF-012| A aplicação deve permitir que o usuário compartilhe suas experiências financeiras ao final da viagem, indicando se consideram gastos como elevado, adequados ou baixo | BAIXA |
+|RF-013| A aplicação deve permitir que o usuário gerencie pontos turisticos que deseja visitar e os valores associados | BAIXA |
+
 
 
 
