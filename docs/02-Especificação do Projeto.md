@@ -56,14 +56,6 @@
 |**Comportamento** | Carmem é uma pessoa organizada financeiramente e muito prudente com suas finanças. Ela tem um rendimento fixo advindo da aposentadoria e valoriza cada gasto, pois representa uma oportunidade de desfrutar de forma mais completa da sua fase de descanso. Carmem precisa economizar durante suas viagens. Ela também não tem intimidade com a tecnologia e utiliza o seu dispositivo móvel apenas para atividades básicas. |
 |**Desafio** | Uma aplicação intuitiva e de fácil uso mesmo para quem não tem muitos conhecimentos tecnológicos. Ademais, que a aplicação simplifique o rastreamento das despesas da sua viagem.|
 
-**Quadro 6 – Entrevista com a sexta persona** 
-
-|<img src="img/ines.jpg" width="160" height="160">  | **Inês** <br> 38 anos|
-|:---------------------------------------:|:-------------------------------:|
-|**Profissão** | Cientista Social |
-|**Motivação** | Inês adora atividades culturais, é apaixonada por arte e deseja conhecer novos lugares para imergir em experiências culturais autênticas e descobrir a história de cada destino.|
-|**Comportamento** | Inês é uma planejadora meticulosa, mas adora praticidade. Quando planeja suas viagens, gosta de pesquisar a fundo sobre os detalhes históricos e culturais dos seus destinos e prioriza as experiências ao invés das compras.|
-|**Desafio** | Uma aplicação que ofereça a possibilidade de organizar gastos com suas atividades culturais, mas que também ofereça um espaço para listagem de pontos culturais do local de destino e custo.|
 
 ## Histórias de Usuários
 
@@ -71,21 +63,14 @@ Com base na análise das personas forma identificadas as seguintes histórias de
 
 |EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
 |--------------------|------------------------------------|----------------------------------------|
-|Ricardo  | Ferramenta para manter gastos de viagem dentro do orçamento previsto           | Evitar gastos excessivos               |
-|Ricardo       |Receber alertas sempre que estiver se aproximando ou ultrapassando o orçamento planejado              | Equilibrar gastos |
-|Eduardo  | Configurar contribuições mensais           | Contribuir regularmente com a poupança de viagem               |
-|Eduardo  | Receber lembretes mensais de contribuição           | Estimular e lembrar da contribuição mensal da viagem              |
-|Eduardo  | Flexibilidade no ajuste de metas           | Caso haja mudanças em suas circunstâncias financeiras              |
+|Ricardo | Manter gastos de viagem dentro do orçamento previsto           | Evitar gastos excessivos               |
+|Eduardo | Configurar contribuições mensais           | Contribuir regularmente com a poupança de viagem               |
+|Eduardo | Ajustar metas de economia          | Caso haja mudanças em suas circunstâncias financeiras              |
 |Amanda  | Gerar relatório de gastos de viagem            | Compartilhar com suas parceiras de viagem              |
-|Amanda  | Ferramenta para divisão de despesas           | Divisão equitativa dos custos de viagem             |
-|Amanda  | Histórico de contribuições passadas           | Revisão de progresso             |
-|Adriana  | Gerar relatório de gastos em formato PFD após a viagem          | Apresentar o documento detalhado para o chefe do departamento financeiro        |
-|Adriana  | Adicionar colaboradores ao planejamento da viagem           | Outras pessoas possam vizualizar ou contribuir com o planejamento financeiro        |
+|Amanda  | Acessar histórico de contribuições passadas           | Revisão de progresso             |
+|Adriana | Gerar relatório de gastos em formato PFD após a viagem          | Apresentar o documento detalhado para o chefe do departamento financeiro        |
 |Carmem  | Aplicação de fácil uso para pessoas com baixo conhecimento tecnológico           | Experiência de uso fácil e acessível     |
-|Carmem  | Calculadora para conversão de moeda           | Facilitar pagamentos e visão geral de gastos durante a viagem     |
 |Carmem  | Definir meu limite fixo de gastos subtraindo automaticamente o valor gasto do total disponível           | Tomar decisões conscientes e a evitar excessos
-|Inês  | Espaço dedicado para catalogar e planejar os pontos culturais do destino, considerando custos           | Organização eficiente das minhas viagens culturais.
-|Inês  | Oportunidade de avaliar destino ao final da viagem, especialmente em relação ao custo           | Compartilhar minha experiência de gastos, bem como auxiliar na decisão dos próximos destinos.
 
 ## Modelagem do Processo de Negócio 
 
@@ -126,20 +111,17 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 |ID    | Descrição do Requisito  | Prioridade |
 |------|-----------------------------------------|----|
-|RF-001| A aplicação deve disponibilizar na pagina inicial um resumo do dinheiro restante e dos gastos da viagem | ALTA |
-|RF-002| A aplicação deve permitir que o usuário grave seu gasto no aplicativo com valor, categoria e descrição | ALTA |
-|RF-003| A aplicação deve permitir que o usuário grave o valor que tem guardado para usar na viagem | ALTA |
-|RF-004| A aplicação deve incluir uma funcionalidade que permite ao usuário converter automaticamente os valores gastos em diferentes moedas | ALTA |
-|RF-005| A aplicação deve permitir ao usuário ajustar as contribuições passadas e futuras de maneira flexível, com opções para inserção de novos valores, exclusão ou edição de registros existentes. | ALTA |
-|RF-006| A aplicação deve ter um sistema de lembretes, através de notificação push, para estimular contribuições regulares | ALTA |
-|RF-007| A aplicação deve oferecer ao usuário a possibilidade de gerar relatório de gastos por categorias para impressão  | MÉDIA |
-|RF-008| A aplicação deve disponibilizar ao usuário uma relação entre Gasto Previsto e Gasto Real | MÉDIA |
-|RF-009| A aplicação deve permitir que o usuário defina uma meta global, indicando o valor total que deseja acumular para a viagem | MÉDIA |
-|RF-010| A aplicação deve permitir que o usuário estabeleça metas específicas para as contribuições mensais, indicando a quantia desejada a ser economizada a cada mês para a viagem| MÉDIA |
-|RF-011| A aplicação deve informar os usuários por meio de notificações push quando estão prestes a exceder seus orçamentos definidos para a viagem | BAIXA |
-|RF-012| A aplicação deve permitir a inclusão de colaboradores como administradores ao planejamento financeiro da viagem | BAIXA |
-
-
+|RF-001| A aplicação deve permitir que o usuário crie uma conta | ALTA |
+|RF-002| A aplicação deve permitir que o usuário realize login em sua conta utilizando email e senha | ALTA |
+|RF-003| A aplicação deve permitir que o usuário gerencie seu perfil | ALTA |
+|RF-004| A aplicação deve possbilitar ao usuário criar e gerenciar viagens | ALTA |
+|RF-005| A aplicação deve exibir um painel principal que destaca o valor total guardado e o orçamento da viagem | ALTA |
+|RF-006| A aplicação deve permitir que os usuários insiram gastos durante a viagem, especificando valor e categoria | ALTA |
+|RF-007| A aplicação deve atualizar automaticamente o saldo quando um gasto for inserido durante a viagem | ALTA |
+|RF-008| A aplicação deve oferecer ao usuário a possibilidade de gerar relatório que exibe gastos por categoria | BAIXA |
+|RF-009| A aplicação deve permitir que os usuários registrem o valor que estão guardando mensalmente para a viagem  | MÉDIA |
+|RF-010| A aplicação deve permitir que o usuário configure um orçamento total necessário para a realização da viagem | MÉDIA |
+|RF-011| A aplicação deve exibir o progresso em direção a meta de economia final | MÉDIA |
 
 
 
