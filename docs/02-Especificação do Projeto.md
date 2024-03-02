@@ -122,6 +122,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RF-009| A aplicação deve permitir que os usuários registrem o valor que estão guardando mensalmente para a viagem  | MÉDIA |
 |RF-010| A aplicação deve permitir que o usuário configure um orçamento total necessário para a realização da viagem | MÉDIA |
 |RF-011| A aplicação deve exibir o progresso em direção a meta de economia final | MÉDIA |
+|RF-012| A aplicação deve permirtir que o usuário compartilhe uma viagem com outros usuários | MÉDIA |
 
 
 
@@ -168,19 +169,20 @@ As referências abaixo irão auxiliá-lo na geração do artefato “Diagrama de
 A matriz de rastreabilidade é uma ferramenta usada para facilitar a visualização dos relacionamento entre requisitos e outros artefatos ou objetos, permitindo a rastreabilidade entre os requisitos e os objetivos de negócio. 
 
 
-| ID | RF01 | RF02 | RF03 | RF04 | RF05 | RF06 | RF07 | RF08 | RF09 | RF10 | RF11 |
-|----|------|------|------|------|------|------|------|------|------|------|------|
-|RF01|      |      |      |      |      |      |      |      |      |      |      |
-|RF02|  x   |      |      |      |      |      |      |      |      |      |      |
-|RF03|      |   x  |      |      |      |      |      |      |      |      |      |      
-|RF04|      |   x  |      |      |      |      |      |      |      |      |      |
-|RF05|      |   x  |      |  x   |      |      |      |      |   x  |   x  |      |
-|RF06|      |   x  |      |  x   |      |      |      |      |      |      |      |
-|RF07|      |   x  |      |  x   |      |   x  |      |      |      |      |      |
-|RF08|      |   x  |      |  x   |      |   x  |      |      |      |      |      |
-|RF09|      |   x  |      |  x   |      |      |      |      |      |      |      |
-|RF10|      |   x  |      |  x   |      |      |      |      |      |      |      |
-|RF11|      |   x  |      |  x   |      |      |      |      |   x  |   x  |      |
+| ID | RF01 | RF02 | RF03 | RF04 | RF05 | RF06 | RF07 | RF08 | RF09 | RF10 | RF11 | RF12
+|----|------|------|------|------|------|------|------|------|------|------|------|------|
+|RF01|      |      |      |      |      |      |      |      |      |      |      |      |
+|RF02|  x   |      |      |      |      |      |      |      |      |      |      |      |
+|RF03|      |   x  |      |      |      |      |      |      |      |      |      |      |      
+|RF04|      |   x  |      |      |      |      |      |      |      |      |      |      |
+|RF05|      |   x  |      |  x   |      |      |      |      |   x  |   x  |      |      |
+|RF06|      |   x  |      |  x   |      |      |      |      |      |      |      |      |
+|RF07|      |   x  |      |  x   |      |   x  |      |      |      |      |      |      |
+|RF08|      |   x  |      |  x   |      |   x  |      |      |      |      |      |      |
+|RF09|      |   x  |      |  x   |      |      |      |      |      |      |      |      |
+|RF10|      |   x  |      |  x   |      |      |      |      |      |      |      |      |
+|RF11|      |   x  |      |  x   |      |      |      |      |   x  |   x  |      |      |
+|RF12|      |   x  |      |  x   |      |      |      |      |      |      |      |      |
 
 
 # Gerenciamento de Projeto
