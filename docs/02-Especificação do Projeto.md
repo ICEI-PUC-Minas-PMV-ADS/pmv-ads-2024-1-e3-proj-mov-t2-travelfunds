@@ -169,20 +169,27 @@ As referências abaixo irão auxiliá-lo na geração do artefato “Diagrama de
 A matriz de rastreabilidade é uma ferramenta usada para facilitar a visualização dos relacionamento entre requisitos e outros artefatos ou objetos, permitindo a rastreabilidade entre os requisitos e os objetivos de negócio. 
 
 
-| ID | RF01 | RF02 | RF03 | RF04 | RF05 | RF06 | RF07 | RF08 | RF09 | RF10 | RF11 | RF12
-|----|------|------|------|------|------|------|------|------|------|------|------|------|
-|RF01|      |      |      |      |      |      |      |      |      |      |      |      |
-|RF02|  x   |      |      |      |      |      |      |      |      |      |      |      |
-|RF03|      |   x  |      |      |      |      |      |      |      |      |      |      |      
-|RF04|      |   x  |      |      |      |      |      |      |      |      |      |      |
-|RF05|      |   x  |      |  x   |      |      |      |      |   x  |   x  |      |      |
-|RF06|      |   x  |      |  x   |      |      |      |      |      |      |      |      |
-|RF07|      |   x  |      |  x   |      |   x  |      |      |      |      |      |      |
-|RF08|      |   x  |      |  x   |      |   x  |      |      |      |      |      |      |
-|RF09|      |   x  |      |  x   |      |      |      |      |      |      |      |      |
-|RF10|      |   x  |      |  x   |      |      |      |      |      |      |      |      |
-|RF11|      |   x  |      |  x   |      |      |      |      |   x  |   x  |      |      |
-|RF12|      |   x  |      |  x   |      |      |      |      |      |      |      |      |
+| ID |RF01|RF02|RF03|RF04|RF05|RF06|RF07|RF08|RF09|RF10|RF11|RF12|RNF01|RNF02|RNF03|RNF04|RNF05|RNF06|RNF07|
+|----|----|----|----|----|----|----|----|----|----|----|----|----|-----|-----|-----|-----|-----|-----|-----|
+|RF01|    | x  |    |    |    |    |    |    |    |    |    |    |     |     |     |     |     |     |     |
+|RF02|    |    |  x |  x |  x |  x |  x |  x |  x |  x |  x | x  |     |     |     |     |     |     |     |
+|RF03|    |    |    |    |    |    |    |    |    |    |    |    |     |     |     |     |     |     |     |   
+|RF04|    |    |    |    |  x |  x |  x |  x |  x |  x |  x | x  |     |     |     |     |     |     |     |   
+|RF05|    |    |    |    |    |    |    |    |    |    |    |    |     |     |     |     |     |     |     |   
+|RF06|    |    |    |    |    |    |  x |  x |    |    |    |    |     |     |     |     |     |     |     |   
+|RF07|    |    |    |    |    |    |    |    |    |    |    |    |     |     |     |     |     |     |     |   
+|RF08|    |    |    |    |    |    |    |    |    |    |    |    |     |     |     |     |     |     |     |   
+|RF09|    |    |    |    |  x |    |    |    |    |    |  x |    |     |     |     |     |     |     |     |   
+|RF10|    |    |    |    |  x |    |    |    |    |    |  x |    |     |     |     |     |     |     |     |   
+|RF11|    |    |    |    |    |    |    |    |    |    |    |    |     |     |     |     |     |     |     |   
+|RF12|    |    |    |    |    |    |    |    |    |    |    |    |     |     |     |     |     |     |     |   
+|RNF01|   |    |    |    |    |    |    |    |    |    |    |    |     |  x  |  x  |     |     |     |     |   
+|RNF02|   |    |    |    |    |    |    |    |    |    |    |  x |     |     |     |     |     |     |     |   
+|RNF03|   |    |    |    |    |    |    |    |    |    |    |  x |     |     |     |     |     |     |     |   
+|RNF04|   |    |    |    |    |    |    |    |    |    |    |    |     |     |     |     |  x  |     |     |   
+|RNF05|   |    |    |    |    |    |    |    |    |    |    |    |     |     |     |  x  |     |     |     |   
+|RNF06|   |    |    |    |    |  x |  x |    |    |    |    |    |     |     |     |     |     |     |     |   
+|RNF07|   |    |    |    |    |    |    |    |    |    |    |    |     |     |     |     |     |     |     |   
 
 
 # Gerenciamento de Projeto
