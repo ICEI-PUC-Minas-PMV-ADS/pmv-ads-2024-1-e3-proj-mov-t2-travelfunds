@@ -15,7 +15,7 @@ Foram utilizadas diferentes plataformas na construção dos artefatos do projeto
 | --------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Repositório de código fonte       | [GitHub](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t5-seleta/tree/main/src)                                                         |
 | Documentos do projeto             | [GitHub](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t5-seleta/tree/main/docs) |
-| Projeto de Interface e Wireframes | [Figma]() [LucidChart]() |
+| Projeto de Interface e Wireframes | [Figma]() [LucidChart](https://lucid.app/lucidchart/92ee7d95-991c-4ed2-abe7-008521b1935e/edit?viewport_loc=-866%2C-5266%2C1474%2C863%2Cag3fl1WapyEI&invitationId=inv_6ec0e362-a9e8-4b42-a736-bdb0c28254dd) |
 | Gerenciamento do Projeto          | [GitHub Projects](https://trello.com/b/DvSwh9XC/seleta) |
 
 **Fonte**: Elaborado pelos autores. 
