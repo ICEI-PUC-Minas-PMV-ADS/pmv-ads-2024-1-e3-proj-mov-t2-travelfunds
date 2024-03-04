@@ -5,7 +5,7 @@ Conforme a lei da oferta e demanda de Adam Smith (PINHEIRO, 2021) a medida que a
 Diante desse contexto, percebe-se que realizar uma viagem nos dias de hoje exige um planejamento financeiro mais cuidadoso para a maioria da população, abrangendo desde a classe baixa até a média. Com o aumento considerável nos valores e a escassez de alternativas acessíveis, torna-se imperativo adotar um planejamento financeiro responsável ao empreender uma viagem. Embarcar em uma nova aventura em um local diferente requer preparação antecipada e controle de gastos durante o passeio, visando evitar surpresas desagradáveis após o retorno.</div>
 <br>
 <div align="justify"> Este projeto surge dessa necessidade crescente de proporcionar aos viajantes uma ferramenta abrangente que não apenas facilite a organização prévia da viagem, mas também ofereça controle efetivo dos gastos durante o período de passeio.</div>
-
+<br>
 <div align="justify"> Viajar é uma experiência enriquecedora, mas muitas vezes, a gestão financeira pode se tornar desafiadora e impactar negativamente a qualidade da jornada. Nosso aplicativo foi concebido para resolver esse problema, fornecendo aos usuários uma plataforma intuitiva e eficaz para planejar cada etapa da viagem, desde a fase de preparação até o retorno para casa.</div>
 <br>
 <div align="justify"> Ao combinar tecnologia avançada, princípios de planejamento financeiro sólidos e uma interface amigável, nosso aplicativo visa simplificar o processo de orçamentação, proporcionando uma experiência de viagem tranquila e financeiramente equilibrada.</div>
