@@ -12,7 +12,7 @@
 |**Profissão** | Arquiteto |
 |**Motivação** | Pretende sair de férias com sua esposa e seus quatro filhos por 2 semanas. |
 |**Comportamento** | Desde que começaram a planejar a viagem, passou a guardar uma parte de seu salário com o objetivo de pagar as passagens e hospedagem e também possuir uma reserva de dinheiro para os gastos durante a viagem. |
-|**Desafio** | Ricardo tem uma família grande que gosta de comer em bons restaurantes e passear bastante. Por mais que tenha um bom salário e a possibilidade de levar uma boa quantia de dinheiro para a viagem, ele se preocupa com os excessos que podem acontecer. Seu desafio será manter os gastos de viagem dentro do orçamento previsto e não precisar recorrer ao cartão de crédito. |
+|**Desafio** | Ricardo tem uma família grande que gosta de comer em bons restaurantes e passear bastante. Por mais que tenha um bom salário e a possibilidade de levar uma boa quantia de dinheiro para a viagem, ele se preocupa com os excessos que podem acontecer. Seu desafio será manter os gastos de viagem dentro do orçamento previsto e não precisar recorrer ao cartão de crédito, para evitar taxas extras como o IOF, por exemplo. |
 
 **Fonte:** Elaborado pelos autores. 
 
