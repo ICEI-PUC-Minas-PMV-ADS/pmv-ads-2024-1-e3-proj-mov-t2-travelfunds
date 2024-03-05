@@ -1,4 +1,4 @@
-# TravelFunds
+# <img align="center" height="60px" width="60px" src="./docs/img/travelfunds.png"> TravelFunds
 
 `Análise e Desenvolvimento de Sistemas`
 
