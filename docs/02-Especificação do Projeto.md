@@ -61,6 +61,8 @@
 
 Com base na análise das personas forma identificadas as seguintes histórias de usuários:
 
+**Quadro 6 – Histórias de Usuários** 
+
 |EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
 |--------------------|------------------------------------|----------------------------------------|
 |Ricardo | Manter gastos de viagem dentro do orçamento previsto           | Evitar gastos excessivos               |
@@ -105,9 +107,12 @@ Obs.: todas as informações para gerar os indicadores devem estar no diagrama d
 
 ## Requisitos
 
-As tabelas que se seguem apresentam os requisitos funcionais e não funcionais que detalham o escopo do projeto. Para determinar a prioridade de requisitos, aplicar uma técnica de priorização de requisitos e detalhar como a técnica foi aplicada.
+O escopo do projeto é definido por meio de requisitos funcionais e não funcionais, a fim de descrever todas as funcionalidades que o usuário poderá encontrar, como também os aspectos gerais que precisam ser apresentados pela ferramenta.
 
 ### Requisitos Funcionais
+Na tabela a seguir estão listados os requisitos funcionais do projeto, bem como a prioridade de entrega de cada item.
+
+**Quadro 7 – Requisitos Funcionais** 
 
 |ID    | Descrição do Requisito  | Prioridade |
 |------|-----------------------------------------|----|
@@ -127,6 +132,9 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 
 ### Requisitos não Funcionais
+A tabela a seguir especifica os requisitos não funcionais que devem ser atendidos pelo projeto.
+
+**Quadro 8 – Requisitos Não Funcionais** 
 
 |ID     | Descrição do Requisito  |Prioridade |
 |-------|-------------------------|----|
@@ -143,6 +151,8 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 ## Restrições
 
 As questões que restringem a execução desse projeto e que refletem as obrigações para o desenvolvimento do trabalho, são apresentadas na tabela a seguir.
+
+**Quadro 9 – Restrições** 
 
 |ID| Restrição                                             |
 |--|-------------------------------------------------------|
@@ -168,6 +178,7 @@ As referências abaixo irão auxiliá-lo na geração do artefato “Diagrama de
 
 A matriz de rastreabilidade é uma ferramenta usada para facilitar a visualização dos relacionamento entre requisitos e outros artefatos ou objetos, permitindo a rastreabilidade entre os requisitos e os objetivos de negócio. 
 
+**Quadro 10 – Matriz de Rastreabilidade** 
 
 | ID |RF01|RF02|RF03|RF04|RF05|RF06|RF07|RF08|RF09|RF10|RF11|RF12|RNF01|RNF02|RNF03|RNF04|RNF05|RNF06|RNF07|
 |----|----|----|----|----|----|----|----|----|----|----|----|----|-----|-----|-----|-----|-----|-----|-----|
@@ -215,6 +226,8 @@ A equipe utiliza a metodologia Scrum para auxiliar na gestão de projetos, fazen
 ## Gestão de Orçamento
 
 O processo de determinar o orçamento do projeto é uma tarefa que depende, além dos produtos (saídas) dos processos anteriores do gerenciamento de custos, também de produtos oferecidos por outros processos de gerenciamento, como o escopo e o tempo. Os cálculos foram realizados considerando custos correspondentes à uma equipe de 06 (seis) integrantes.
+
+**Quadro 11 – Gestão de Custos** 
 
 |Recursos Necessários | Custo estimado (R$)                |
 |--|-------------------------------------------------------|
