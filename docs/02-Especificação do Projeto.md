@@ -208,9 +208,9 @@ O gráfico de Gantt ou diagrama de Gantt também é uma ferramenta visual utiliz
 
 ## Gerenciamento de Equipe
 
-O gerenciamento adequado de tarefas contribuirá para que o projeto alcance altos níveis de produtividade. Por isso, é fundamental que ocorra a gestão de tarefas e de pessoas, de modo que os times envolvidos no projeto possam ser facilmente gerenciados. 
+A equipe utiliza a metodologia Scrum para auxiliar na gestão de projetos, fazendo uso do Kanban disponível na aba projects no repositório do GitHub.
 
-![Simple Project Timeline](img/02-project-timeline.png)
+![Kanban GitHub](img/kanban.png)
 
 ## Gestão de Orçamento
 
@@ -218,10 +218,9 @@ O processo de determinar o orçamento do projeto é uma tarefa que depende, alé
 
 |Recursos Necessários | Custo estimado (R$)                |
 |--|-------------------------------------------------------|
-| Hardware |  R$ |
-| Publicidade e Marketing |  R$ |
-| Recursos Humanos | R$ |
-| Rede |  R$ |
-| Software |  R$ |
-| Serviços |  R$ |
-| **TOTAL** |  R$ |
+| Hardware |  R$ 20.000 |
+| Recursos Humanos | R$ 350.000 |
+| Rede |  R$ 5.000 |
+| Software |  R$ 15.000 |
+| Serviços |  R$ 30.000 |
+| **TOTAL** |  R$ 420.000 |
