@@ -73,14 +73,14 @@ A equipe foi organizada da seguinte maneira:
 - Review: tarefas que estão sendo revisadas, passando por testes e controle de qualidade.  
 - Done: tarefas que foram concluídas, aprovadas e estão prontas para serem entregues ao usuário.
 
-   <div align="center">
+   <div>
 <img src="img/kanban1.png" width="80%"><br>
-<b>Figura 7</b>- Tela do kanban utilizada pelo grupo
+ <b>Figura 7</b> - Tela do kanban utilizada pelo grupo 
   </div><br>
 
-  <div align="center">
+  <div>
 <img src="img/kanban2.png" width="80%"><br>
-<b>Figura 8</b>- Tela do kanban utilizada pelo grupo
+<b>Figura 8</b> - Tela do kanban utilizada pelo grupo
   </div>
 
 ### Ferramentas
