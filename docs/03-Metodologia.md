@@ -61,7 +61,8 @@ A equipe foi organizada da seguinte maneira:
 
 - Scrum Master: Ana Carolina Nazareth.
 - Product Owner: Victor Bastos.
-- Equipe de Desenvolvimento: Gabriela Penaforte, Naianna Duarte, Felipe de Araújo e Nikita Ceccon.
+- Equipe de Design: Felipe de Araújo.
+- Equipe de Desenvolvimento: Gabriela Penaforte, Naianna Duarte e Nikita Ceccon.
 
 ### Processo
 
