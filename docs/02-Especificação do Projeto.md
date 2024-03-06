@@ -216,7 +216,7 @@ O gerenciamento adequado de tarefas contribuirá para que o projeto alcance alto
 
 
 <img src="img/GerenciamentoEquipe.jpg">
-<br><div align="center"><b>Figura 6</b> - Tabela de Gerenciamento da Equipe </div> <br>
+<div align="center"><b>Figura 6</b> - Tabela de Gerenciamento da Equipe </div> <br>
 
 ## Gestão de Orçamento
 
