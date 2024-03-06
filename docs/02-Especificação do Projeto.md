@@ -212,10 +212,11 @@ A matriz de rastreabilidade é uma ferramenta usada para facilitar a visualizaç
 
 ## Gerenciamento de Equipe
 
-A equipe utiliza a metodologia Scrum para auxiliar na gestão de projetos, fazendo uso do Kanban disponível na aba projects no repositório do GitHub.
+O gerenciamento adequado de tarefas contribuirá para que o projeto alcance altos níveis de produtividade. Por isso, é fundamental que ocorra a gestão de tarefas e de pessoas, de modo que os times envolvidos no projeto possam ser facilmente gerenciados.
 
-![Kanban GitHub](img/kanban.png)
-<br><div align="center"><b>Figura 6</b> - Kanban </div> <br>
+
+<img src="img/GerenciamentoEquipe.jpg">
+<br><div align="center"><b>Figura 6</b> - Tabela de Gerenciamento da Equipe </div> <br>
 
 ## Gestão de Orçamento
 
