@@ -205,19 +205,21 @@ A matriz de rastreabilidade é uma ferramenta usada para facilitar a visualizaç
 
 ## Gerenciamento de Tempo
 
-<div align="justify"> Para controlar e gerenciar o cronograma das atividades do projeto foi utilizado o gráfico de Gantt. Nele é possível visualizar todas as atividades que precisam ser realizadas para a entrega do final, constando a data de início e término, bem como a duração em horas de cada atividade. </div>
+<div align="justify"> Para controlar e gerenciar o cronograma das atividades do projeto foi utilizado o gráfico de Gantt. Nele é possível visualizar todas as atividades que precisam ser realizadas para a entrega do final, constando a data de início e término, bem como a duração em horas de cada atividade. </div> <br>
 
 ![Gráfico de Gantt](img/GestaoTempo.png)
+<div align="center"><b>Figura 5</b> - Gráfico de Gantt </div> <br>
 
 ## Gerenciamento de Equipe
 
 A equipe utiliza a metodologia Scrum para auxiliar na gestão de projetos, fazendo uso do Kanban disponível na aba projects no repositório do GitHub.
 
 ![Kanban GitHub](img/kanban.png)
+<br><div align="center"><b>Figura 6</b> - Kanban </div> <br>
 
 ## Gestão de Orçamento
 
-O processo de determinar o orçamento do projeto é uma tarefa que depende, além dos produtos (saídas) dos processos anteriores do gerenciamento de custos, também de produtos oferecidos por outros processos de gerenciamento, como o escopo e o tempo. Os cálculos foram realizados considerando custos correspondentes à uma equipe de 06 (seis) integrantes.
+<div align="justify"> O processo de determinar o orçamento do projeto é uma tarefa que depende, além dos produtos (saídas) dos processos anteriores do gerenciamento de custos, também de produtos oferecidos por outros processos de gerenciamento, como o escopo e o tempo. Os cálculos foram realizados considerando custos correspondentes à uma equipe de 06 (seis) integrantes.</div><br>
 
 **Quadro 11 – Gestão de Custos** 
 
