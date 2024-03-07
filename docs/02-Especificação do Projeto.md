@@ -167,7 +167,7 @@ As questões que restringem a execução desse projeto e que refletem as obriga�
 A imagem a seguir mostra diagrama de casos de uso do projeto, que contempla a fronteira do sistema e o detalhamento dos requisitos funcionais com a indicação dos atores, casos de uso e seus relacionamentos. 
 
 <div align="center">
-<img src="img/diagrama uml.png"><br>
+<img src="img/diagrama-uml-2.jpeg"><br>
 <b>Figura 4</b> - Diagrama de casos de uso
   </div><br>
 
