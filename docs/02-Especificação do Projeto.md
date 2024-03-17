@@ -78,7 +78,7 @@ Com base na análise das personas forma identificadas as seguintes histórias de
 
 ### Análise da Situação Atual
 
-Apresente aqui os problemas existentes que viabilizam sua proposta. Apresente o modelo do sistema como ele funciona hoje. Caso sua proposta seja inovadora e não existam processos claramente definidos, apresente como as tarefas que o seu sistema pretende implementar são executadas atualmente, mesmo que não se utilize tecnologia computacional. 
+<div align="justify"> Com o retorno das atividades de viagem após pandemia, observou-se um aumento significativo nos custos associados, refletindo uma realidade onde os preços aumentaram de forma expressiva e a disponibilidade de alternativas acessíveis diminuiu. Nesse contexto, torna-se essencial adotar uma abordagem financeiramente responsável ao planejar uma viagem. O aplicativo proposto irá atender a essa necessidade crescente, oferecendo uma plataforma abrangente que facilita a organização prévia da viagem e proporciona um controle efetivo dos gastos durante o período de passeio. Baseando-nos em dados recentes que indicam a importância do planejamento financeiro para as férias, bem como os riscos associados ao endividamento devido a viagens, o aplicativo visa preencher essa lacuna, ajudando os usuários a tomar decisões financeiras informadas, reduzir o estresse relacionado às finanças durante as viagens e promover uma experiência de viagem mais satisfatória. </div>
 
 ### Descrição Geral da Proposta
 
@@ -98,8 +98,20 @@ Apresente aqui o nome e as oportunidades de melhorias para o processo 2. Em segu
 
 ## Indicadores de Desempenho
 
-Apresente aqui os principais indicadores de desempenho e algumas metas para o processo. Atenção: as informações necessárias para gerar os indicadores devem estar contempladas no diagrama de classe. Colocar no mínimo 5 indicadores. 
+Os principais indicadores de desempenho e metas para o processo estão listadas na tabela a seguir. 
+<br>
 
+|Indicador    | Objetivos  | Descrição | Cálculo | Fonte de dados  | Perspectiva |
+|------|-----------------------------------------|----------------------------------------- | ----|  ----|  ----|
+| Número de viagens criadas| Monitorar quantos usuários criaram viagens personalizados | Um alto número pode indicar a utilidade percebida do recurso de personalização do aplicativo.|  Número de viagens cadastradas / Número de usuários   | Tabela de viagens |  Cliente| 
+| Taxa de conformidade do orçamento| Comparar o orçamento planejado com os gastos reais | Uma alta taxa de conformidade indica que os usuários estão conseguindo manter seus gastos dentro do planejado.|  (Total de gastos reais / Orçamento planejado)*100%    | Tabela de valores |  Cliente| 
+| Porcentagem de despesas categorizadas | Identificar quantas despesas são categorizadas pelos usuários em relação ao total de despesas registradas | Uma alta porcentagem indica que os usuários estão utilizando os recursos de categorização do aplicativo, o que pode facilitar a análise financeira. | (Número de despesas categorizadas / Número de despesas cadastradas)*100%  | Tabela de valores |  Cliente| 
+| Taxa de aceitação de convites para compartilhar viagens | Comparar a quantidade de convites enviados para compartilhar viagem com os aceitos | Uma taxa alta de aceitação indica que os usuários valorizam a capacidade de compartilhar suas viagens com outras pessoas | (Número de convites acetos / Número de convites enviados)*100%   |    | Cliente| 
+| Número de relatórios emitidos| Monitorar quantos relatórios são gerados pelos usuários | Um alto número pode indicar o nível de interesse na análise financeira oferecida pelo aplicativo.| Número de relatórios emitidos / Número de viagens cadastradas   | Tabela de viagens |  Cliente| 
+
+
+
+Atenção: as informações necessárias para gerar os indicadores devem estar contempladas no diagrama de classe. Colocar no mínimo 5 indicadores. 
 Usar o seguinte modelo: 
 
 ![Indicadores de Desempenho](img/02-indic-desemp.png)
