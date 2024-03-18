@@ -5,7 +5,7 @@
 
 ## Diagrama de Fluxo
 
-<div align="justify"> O fluxo de interação do usuário pelas telas do sistema é mostrado no fluxograma visto na Figura 4. Cada uma das telas deste fluxo é detalhada na seção de Wireframes a seguir. </div>
+<div align="justify"> O fluxo de interação do usuário pelas telas do sistema é mostrado no fluxograma visto na Figura 8. Cada uma das telas deste fluxo é detalhada na seção de Wireframes a seguir. </div>
 <br>
 <div align="center">
 <img src="img/DiagramaFluxo.png"> <br>
