@@ -82,7 +82,7 @@ Com base na análise das personas forma identificadas as seguintes histórias de
 
 ### Descrição Geral da Proposta
 
-<div align="justify"> O TravelFunds irá proporcionar ao usuário maior facilidade para se organizar antes de fazer uma viagem. Ele permitirá que o usuário separe o seu planejamento de viagem em grandes categorias para que possa se organizar financeiramente com maior comodidade. Ademais, para se manter dentro do orçamento previsto, o aplicativo permitirá que o usuário adicione seus custos em tempo real para monitoramento e ainda permitirá compartilhar despesas com amigos e familiares quando se tratar de viagens em grupos.</div>
+<div align="justify"> O TravelFunds visa oferecer aos usuários uma experiência mais conveniente na organização prévia de suas viagens. Com este aplicativo, os usuários podem dividir seu planejamento de viagem em categorias abrangentes, proporcionando uma gestão financeira mais eficaz e tranquila. Além disso, para garantir o cumprimento do orçamento planejado, o aplicativo permite que os usuários registrem seus gastos em tempo real para monitoramento. Ele também facilita o compartilhamento de despesas entre amigos e familiares durante viagens em grupo, promovendo uma experiência mais colaborativa e harmoniosa.</div>
 
 
 ### Processo 1 – NOME DO PROCESSO
