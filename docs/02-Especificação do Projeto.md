@@ -82,7 +82,8 @@ Com base na análise das personas forma identificadas as seguintes histórias de
 
 ### Descrição Geral da Proposta
 
-Apresente aqui uma descrição da sua proposta abordando seus limites e suas ligações com as estratégias e objetivos do negócio. Apresente aqui as oportunidades de melhorias.
+<div align="justify"> O TravelFunds irá proporcionar ao usuário maior facilidade para se organizar antes de fazer uma viagem. Ele permitirá que o usuário separe o seu planejamento de viagem em grandes categorias para que possa se organizar financeiramente com maior comodidade. Ademais, para se manter dentro do orçamento previsto, o aplicativo permitirá que o usuário adicione seus custos em tempo real para monitoramento e ainda permitirá compartilhar despesas com amigos e familiares quando se tratar de viagens em grupos.</div>
+
 
 ### Processo 1 – NOME DO PROCESSO
 
