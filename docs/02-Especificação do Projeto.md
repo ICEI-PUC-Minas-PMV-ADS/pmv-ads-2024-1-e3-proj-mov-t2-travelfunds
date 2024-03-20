@@ -89,13 +89,13 @@ Com base na análise das personas forma identificadas as seguintes histórias de
 
 <div align="justify"> Vimos que o planejamento de viagem é uma etapa fundamental para quem deseja manter um padrão de gastos dentro do esperado e assim não comprometer a sua renda. No entanto, o método tradicional para se fazê-lo não é mais demorado e não oferece a integração e praticidade que o mundo atual exige.</div>
 
-![Processo 1](img/02-bpmn-proc1.png)
+![Processo 1](img/02-bpmn-proc1.jpg)
 
 ### Processo 2 – PLANEJAMENTO COM TRAVELFUNDS
 
 <div align="justify"> Sendo assim, com o TravelFunds, é possível compartilhar de forma descomplicada desde o planejamento financeiro da sua viagem com alguém até dividir os gastos realizados durante a viagem, em tempo real com seu amigo ou familiar. É possível outrossim, controlar as despesas no momento em que foram realizadas para que não se esqueça de lançá-las depois, e assim, manter o seu controle na palma da sua mão.</div>
 
-![Processo 2](img/02-bpmn-proc2.png)
+![Processo 2](img/02-bpmn-proc2.jpg)
 
 ## Indicadores de Desempenho
 
