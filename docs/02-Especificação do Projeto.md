@@ -85,15 +85,15 @@ Com base na análise das personas forma identificadas as seguintes histórias de
 <div align="justify"> O TravelFunds visa oferecer aos usuários uma experiência mais conveniente na organização prévia de suas viagens. Com este aplicativo, os usuários podem dividir seu planejamento de viagem em categorias abrangentes, proporcionando uma gestão financeira mais eficaz e tranquila. Além disso, para garantir o cumprimento do orçamento planejado, o aplicativo permite que os usuários registrem seus gastos em tempo real para monitoramento. Ele também facilita o compartilhamento de despesas entre amigos e familiares durante viagens em grupo, promovendo uma experiência mais colaborativa e harmoniosa.</div>
 
 
-### Processo 1 – NOME DO PROCESSO
+### Processo 1 – PLANEJAMENTO COM PLANILHAS
 
-Apresente aqui o nome e as oportunidades de melhorias para o processo 1. Em seguida, apresente o modelo do processo 1, descrito no padrão BPMN. 
+<div align="justify"> Vimos que o planejamento de viagem é uma etapa fundamental para quem deseja manter um padrão de gastos dentro do esperado e assim não comprometer a sua renda. No entanto, o método tradicional para se fazê-lo não é mais demorado e não oferece a integração e praticidade que o mundo atual exige.</div>
 
 ![Processo 1](img/02-bpmn-proc1.png)
 
-### Processo 2 – NOME DO PROCESSO
+### Processo 2 – PLANEJAMENTO COM TRAVELFUNDS
 
-Apresente aqui o nome e as oportunidades de melhorias para o processo 2. Em seguida, apresente o modelo do processo 2, descrito no padrão BPMN.
+<div align="justify"> Sendo assim, com o TravelFunds, é possível compartilhar de forma descomplicada desde o planejamento financeiro da sua viagem com alguém até dividir os gastos realizados durante a viagem, em tempo real com seu amigo ou familiar. É possível outrossim, controlar as despesas no momento em que foram realizadas para que não se esqueça de lançá-las depois, e assim, manter o seu controle na palma da sua mão.</div>
 
 ![Processo 2](img/02-bpmn-proc2.png)
 
