@@ -108,6 +108,8 @@ Com base na análise das personas forma identificadas as seguintes histórias de
 Os principais indicadores de desempenho e metas para o processo estão listadas na tabela a seguir. 
 <br>
 
+**Quadro 7 – Indicadores de Desempenho** 
+
 |Indicador    | Objetivos  | Descrição | Cálculo | Fonte de dados  | Perspectiva |
 |------|-----------------------------------------|----------------------------------------- | ----|  ----|  ----|
 | Número de viagens criadas| Monitorar quantos usuários criaram viagens personalizados | Um alto número pode indicar a utilidade percebida do recurso de personalização do aplicativo.|  Número de viagens cadastradas / Número de usuários   | Tabela de viagens |  Cliente| 
@@ -124,7 +126,7 @@ O escopo do projeto é definido por meio de requisitos funcionais e não funcion
 ### Requisitos Funcionais
 Na tabela a seguir estão listados os requisitos funcionais do projeto, bem como a prioridade de entrega de cada item.
 
-**Quadro 7 – Requisitos Funcionais** 
+**Quadro 8 – Requisitos Funcionais** 
 
 |ID    | Descrição do Requisito  | Prioridade |
 |------|-----------------------------------------|----|
@@ -147,7 +149,7 @@ Na tabela a seguir estão listados os requisitos funcionais do projeto, bem como
 ### Requisitos não Funcionais
 A tabela a seguir especifica os requisitos não funcionais que devem ser atendidos pelo projeto.
 
-**Quadro 8 – Requisitos Não Funcionais** 
+**Quadro 9 – Requisitos Não Funcionais** 
 
 |ID     | Descrição do Requisito  |Prioridade |
 |-------|-------------------------|----|
@@ -165,7 +167,7 @@ A tabela a seguir especifica os requisitos não funcionais que devem ser atendid
 
 As questões que restringem a execução desse projeto e que refletem as obrigações para o desenvolvimento do trabalho, são apresentadas na tabela a seguir.
 
-**Quadro 9 – Restrições** 
+**Quadro 10 – Restrições** 
 
 |ID| Restrição                                             |
 |--|-------------------------------------------------------|
@@ -187,7 +189,7 @@ A imagem a seguir mostra diagrama de casos de uso do projeto, que contempla a fr
 
 A matriz de rastreabilidade é uma ferramenta usada para facilitar a visualização dos relacionamento entre requisitos e outros artefatos ou objetos, permitindo a rastreabilidade entre os requisitos e os objetivos de negócio. 
 
-**Quadro 10 – Matriz de Rastreabilidade** 
+**Quadro 11 – Matriz de Rastreabilidade** 
 
 | ID |RF01|RF02|RF03|RF04|RF05|RF06|RF07|RF08|RF09|RF10|RF11|RF12|RNF01|RNF02|RNF03|RNF04|RNF05|RNF06|RNF07|
 |----|----|----|----|----|----|----|----|----|----|----|----|----|-----|-----|-----|-----|-----|-----|-----|
@@ -235,7 +237,7 @@ O gerenciamento adequado de tarefas contribuirá para que o projeto alcance alto
 
 <div align="justify"> O processo de determinar o orçamento do projeto é uma tarefa que depende, além dos produtos (saídas) dos processos anteriores do gerenciamento de custos, também de produtos oferecidos por outros processos de gerenciamento, como o escopo e o tempo. Os cálculos foram realizados considerando custos correspondentes à uma equipe de 06 (seis) integrantes.</div><br>
 
-**Quadro 11 – Gestão de Custos** 
+**Quadro 12 – Gestão de Custos** 
 
 |Recursos Necessários | Custo estimado (R$)                |
 |--|-------------------------------------------------------|
