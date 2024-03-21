@@ -115,13 +115,6 @@ Os principais indicadores de desempenho e metas para o processo estão listadas 
 | Número de relatórios emitidos| Monitorar quantos relatórios são gerados pelos usuários | Um alto número pode indicar o nível de interesse na análise financeira oferecida pelo aplicativo.| Número de relatórios emitidos / Número de viagens cadastradas   | Tabela de viagens |  Cliente| 
 
 
-
-Atenção: as informações necessárias para gerar os indicadores devem estar contempladas no diagrama de classe. Colocar no mínimo 5 indicadores. 
-Usar o seguinte modelo: 
-
-![Indicadores de Desempenho](img/02-indic-desemp.png)
-Obs.: todas as informações para gerar os indicadores devem estar no diagrama de classe a ser apresentado a posteriori. 
-
 ## Requisitos
 
 O escopo do projeto é definido por meio de requisitos funcionais e não funcionais, a fim de descrever todas as funcionalidades que o usuário poderá encontrar, como também os aspectos gerais que precisam ser apresentados pela ferramenta.
