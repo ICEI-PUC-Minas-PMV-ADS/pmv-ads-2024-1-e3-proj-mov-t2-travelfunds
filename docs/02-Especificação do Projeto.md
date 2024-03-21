@@ -92,6 +92,7 @@ Com base na análise das personas forma identificadas as seguintes histórias de
 <br>
 
 ![Processo 1](img/02-bpmn-proc1.jpg)
+<div align="center"><b>Figura 1</b> - Processo 1</div> <br>
 
 ### Processo 2 – PLANEJAMENTO COM TRAVELFUNDS
 
@@ -100,6 +101,7 @@ Com base na análise das personas forma identificadas as seguintes histórias de
 <br>
 
 ![Processo 2](img/02-bpmn-proc2.jpg)
+<div align="center"><b>Figura 2</b> - Processo 2 </div> <br>
 
 ## Indicadores de Desempenho
 
@@ -178,7 +180,7 @@ A imagem a seguir mostra diagrama de casos de uso do projeto, que contempla a fr
 
 <div align="center">
 <img src="img/diagrama-uml-2.jpeg"><br>
-<b>Figura 4</b> - Diagrama de casos de uso
+<b>Figura 3</b> - Diagrama de casos de uso
   </div><br>
 
 # Matriz de Rastreabilidade
@@ -219,7 +221,7 @@ A matriz de rastreabilidade é uma ferramenta usada para facilitar a visualizaç
 <div align="justify"> Para controlar e gerenciar o cronograma das atividades do projeto foi utilizado o gráfico de Gantt. Nele é possível visualizar todas as atividades que precisam ser realizadas para a entrega do final, constando a data de início e término, bem como a duração em horas de cada atividade. </div> <br>
 
 ![Gráfico de Gantt](img/GestaoTempo.png)
-<div align="center"><b>Figura 5</b> - Gráfico de Gantt </div> <br>
+<div align="center"><b>Figura 4</b> - Gráfico de Gantt </div> <br>
 
 ## Gerenciamento de Equipe
 
@@ -227,7 +229,7 @@ O gerenciamento adequado de tarefas contribuirá para que o projeto alcance alto
 
 
 <img src="img/GerenciamentoEquipe.jpg">
-<div align="center"><b>Figura 6</b> - Tabela de Gerenciamento da Equipe </div> <br>
+<div align="center"><b>Figura 5</b> - Tabela de Gerenciamento da Equipe </div> <br>
 
 ## Gestão de Orçamento
 
