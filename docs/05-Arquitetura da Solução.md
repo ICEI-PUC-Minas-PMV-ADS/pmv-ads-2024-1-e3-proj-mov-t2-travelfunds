@@ -52,9 +52,7 @@ Explique como a hospedagem e o lançamento da plataforma foi feita.
 
 ## Qualidade de Software
 
-#### Funcionalidade:
-
-Adequação funcional: Garantir que o aplicativo seja adequado para as tarefas de planejamento financeiro de viagens.
+#### Adequação funcional:
 
 Integridade funcional: O software deve ser capaz de manter a funcionalidade de todas as tarefas que realiza.
 
