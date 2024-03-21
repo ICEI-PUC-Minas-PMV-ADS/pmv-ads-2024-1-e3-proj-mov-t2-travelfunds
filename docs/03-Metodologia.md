@@ -10,7 +10,7 @@
 Foram utilizadas diferentes plataformas na construção dos artefatos do projeto e a relação dos ambientes com seu respectivo propósito é apresentada na tabela a seguir.
 </p>
 
-**Quadro 12 – Ambientes de Trabalho** 
+**Quadro 13 – Ambientes de Trabalho** 
 | Ambiente                          | Plataforma / Link de Acesso                                                                                                                        |
 | --------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Repositório de código fonte       | [GitHub](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t5-seleta/tree/main/src)                                                         |
@@ -77,7 +77,7 @@ A equipe foi organizada da seguinte maneira:
 
   <div align="center">
 <img src="img/kanban.png" width="80%"><br>
-<b>Figura 7</b> - Tela do kanban utilizada pelo grupo
+<b>Figura 6</b> - Tela do kanban utilizada pelo grupo
   </div>
 
 ### Ferramentas
