@@ -52,15 +52,46 @@ Explique como a hospedagem e o lançamento da plataforma foi feita.
 
 ## Qualidade de Software
 
-Conceituar qualidade de fato é uma tarefa complexa, mas ela pode ser vista como um método gerencial que através de procedimentos disseminados por toda a organização, busca garantir um produto final que satisfaça às expectativas dos stakeholders.
+#### Funcionalidade:
 
-No contexto de desenvolvimento de software, qualidade pode ser entendida como um conjunto de características a serem satisfeitas, de modo que o produto de software atenda às necessidades de seus usuários. Entretanto, tal nível de satisfação nem sempre é alcançado de forma espontânea, devendo ser continuamente construído. Assim, a qualidade do produto depende fortemente do seu respectivo processo de desenvolvimento.
+Adequação funcional: Garantir que o aplicativo seja adequado para as tarefas de planejamento financeiro de viagens.
 
-A norma internacional ISO/IEC 25010, que é uma atualização da ISO/IEC 9126, define oito características e 30 subcaracterísticas de qualidade para produtos de software.
-Com base nessas características e nas respectivas sub-características, identifique as sub-características que sua equipe utilizará como base para nortear o desenvolvimento do projeto de software considerando-se alguns aspectos simples de qualidade. Justifique as subcaracterísticas escolhidas pelo time e elenque as métricas que permitirão a equipe avaliar os objetos de interesse.
+Integridade funcional: O software deve ser capaz de manter a funcionalidade de todas as tarefas que realiza.
 
-> **Links Úteis**:
->
-> - [ISO/IEC 25010:2011 - Systems and software engineering — Systems and software Quality Requirements and Evaluation (SQuaRE) — System and software quality models](https://www.iso.org/standard/35733.html/)
-> - [Análise sobre a ISO 9126 – NBR 13596](https://www.tiespecialistas.com.br/analise-sobre-iso-9126-nbr-13596/)
-> - [Qualidade de Software - Engenharia de Software 29](https://www.devmedia.com.br/qualidade-de-software-engenharia-de-software-29/18209/)
+#### Confiabilidade:
+
+Disponibilidade: O software e seus componentes devem estar acessíveis e operantes sempre que necessário, para que o usuário tenha controle das suas metas e gastos.
+
+Maturidade: Certificar-se de que o aplicativo seja confiável e livre de falhas significativas.
+
+Tolerância a falhas: Minimizar interrupções causadas por falhas no sistema e garantir que o aplicativo continue funcionando de forma adequada mesmo em situações de falha.
+
+### Usabilidade:
+
+Compreensibilidade: Certificar-se de que a interface do usuário seja fácil de entender.
+
+Eficiência de uso: Garantir que o aplicativo seja eficiente e não exija muito tempo ou esforço do usuário.
+
+#### Eficiência de Desempenho:
+
+Desempenho: Garantir que o aplicativo responda rapidamente às interações dos usuários.
+
+Utilização de recursos: Garantir que o aplicativo utilize os recursos do dispositivo de forma eficiente, com o objetivo de evitar lentidão.
+
+### Segurança:
+
+Confidencialidade: Proteger informações confidenciais dos usuários e dados da viagem compartilhados com a plataforma.
+
+Integridade: Garantir que os dados não sejam corrompidos ou alterados por terceiros não autorizados.
+
+
+#### Manutenibilidade:
+
+Modificabilidade: Facilitar a manutenção e atualizações do aplicativo para adicionar novos recursos ou corrigir problemas.
+
+Estabilidade: Garantir que as modificações não causem novos problemas.
+
+#### Compatibilidade:
+
+Compatibilidade: Garantir que o aplicativo funcione em diferentes dispositivos móveis e sistemas operacionais.
+
