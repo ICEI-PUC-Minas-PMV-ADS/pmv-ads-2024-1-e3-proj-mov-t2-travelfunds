@@ -9,7 +9,7 @@
 <br>
 <div align="center">
 <img src="img/DiagramaFluxo.png"> <br>
-<b>Figura 8 </b>- Diagrama de fluxo
+<b>Figura 7 </b>- Diagrama de fluxo
 </div>
 
 ## Wireframes
