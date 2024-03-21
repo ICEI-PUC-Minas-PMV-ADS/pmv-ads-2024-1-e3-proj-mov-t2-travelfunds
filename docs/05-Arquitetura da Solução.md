@@ -66,13 +66,13 @@ Tolerância a falhas: Minimizar interrupções causadas por falhas no sistema e 
 
 ### Usabilidade:
 
-Compreensibilidade: Certificar-se de que a interface do usuário seja fácil de entender.
+Apreensibilidade: Certificar-se de que a interface do usuário seja fácil de entender.
 
-Eficiência de uso: Garantir que o aplicativo seja eficiente e não exija muito tempo ou esforço do usuário.
+Operacionalidade: Garantir que o aplicativo seja fácil de utilizar e controlar as operações.
 
 #### Eficiência de Desempenho:
 
-Desempenho: Garantir que o aplicativo responda rapidamente às interações dos usuários.
+Comportamento temporal: Garantir que o aplicativo responda rapidamente às interações dos usuários.
 
 Utilização de recursos: Garantir que o aplicativo utilize os recursos do dispositivo de forma eficiente, com o objetivo de evitar lentidão.
 
@@ -87,9 +87,9 @@ Integridade: Garantir que os dados não sejam corrompidos ou alterados por terce
 
 Modificabilidade: Facilitar a manutenção e atualizações do aplicativo para adicionar novos recursos ou corrigir problemas.
 
-Estabilidade: Garantir que as modificações não causem novos problemas.
+Testabilidade: Garantir que as modificações não causem novos problemas.
 
-#### Compatibilidade:
+#### Portabilidade:
 
-Compatibilidade: Garantir que o aplicativo funcione em diferentes dispositivos móveis e sistemas operacionais.
+Adaptabilidade: Garantir que o aplicativo funcione em diferentes dispositivos e sistemas operacionais.
 
