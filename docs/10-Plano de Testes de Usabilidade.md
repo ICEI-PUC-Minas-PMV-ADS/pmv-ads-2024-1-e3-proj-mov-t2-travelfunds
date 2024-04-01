@@ -1,5 +1,12 @@
 # Plano de Testes de Usabilidade
 
+<div align="justify">
+O êxito de uma aplicação está intrinsecamente ligado à experiência do usuário. Nesse contexto, a realização de testes de usabilidade emerge como uma ferramenta crucial para avaliar a capacidade do usuário em operar a aplicação sem contratempos.</div><br>
+<div align="justify">
+Os testes de usabilidade são indicativos diretos da qualidade de uma aplicação, fornecendo insights valiosos para aprimoramentos contínuos. A etapa de planejamento do sistema desempenha um papel orientador nesses testes, garantindo que os requisitos do projeto sejam atendidos.</div><br>
+<div align="justify">
+A interação com usuários reais permite a obtenção de informações importantes sobre a usabilidade da plataforma, a facilidade de navegação e a eficácia na consecução dos objetivos da aplicação. Esses dados são essenciais para identificar e melhorar pontos de dificuldade, visando proporcionar a melhor experiência possível ao usuário.</div><br>
+
 O plano de teste de usabilidade tem como objetivos:
 - identificar problemas de usabilidade em um estágio inicial do desenvolvimento;
 - ajudar a validar as decisões de design tomadas durante o processo de desenvolvimento para que estejam alinhadas com as necessidades e expectativas dos usuários finais;
