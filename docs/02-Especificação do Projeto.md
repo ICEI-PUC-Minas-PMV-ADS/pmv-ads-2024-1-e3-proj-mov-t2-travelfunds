@@ -133,8 +133,8 @@ Na tabela a seguir estão listados os requisitos funcionais do projeto, bem como
 |RF-001| A aplicação deve permitir que o usuário crie uma conta | ALTA |
 |RF-002| A aplicação deve permitir que o usuário realize login em sua conta utilizando email e senha | ALTA |
 |RF-003| A aplicação deve permitir que o usuário gerencie seu perfil | ALTA |
-|RF-004| A aplicação deve possbilitar ao usuário criar e gerenciar viagens | ALTA |
-|RF-005| A aplicação deve exibir um painel principal que destaca o valor total guardado e o orçamento da viagem | ALTA |
+|RF-004| A aplicação deve possibilitar ao usuário criar e gerenciar viagens | ALTA |
+|RF-005| A aplicação deve exibir um painel de controle que destaca o valor total guardado para a viagem, saldo atualizado e lista de gastos registrados divididos por categoria | ALTA |
 |RF-006| A aplicação deve permitir que os usuários insiram gastos durante a viagem, especificando valor e categoria | ALTA |
 |RF-007| A aplicação deve atualizar automaticamente o saldo quando um gasto for inserido durante a viagem | ALTA |
 |RF-008| A aplicação deve permitir que os usuários registrem o valor que estão guardando mensalmente para a viagem  | MÉDIA |
