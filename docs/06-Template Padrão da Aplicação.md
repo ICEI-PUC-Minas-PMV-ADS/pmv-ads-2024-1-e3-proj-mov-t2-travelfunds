@@ -46,7 +46,7 @@ O template criado é composto pelos seguintes layouts:
 <div align="center">
 <img src="img/Tela01landing.png" width="25%">
 <img src="img/Tela03Cadastro.png" width="25%">
-<img src="img/Tela02Login.png" width="25%"><br>
+<img src="img/Tela02Login.png" width="24.8%"><br>
 <br>RF-001 - A aplicação deve permitir que o usuário crie uma conta
 <br>RF-002	A aplicação deve permitir que o usuário realize login em sua conta utilizando email e senha
 </div><br>
