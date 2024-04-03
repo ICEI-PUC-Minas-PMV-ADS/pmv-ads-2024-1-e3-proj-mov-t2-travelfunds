@@ -26,6 +26,7 @@ O template criado é composto pelos seguintes layouts:
 <br>- Login
 <br>- Perfil
 <br>- Criar Viagem
+<br>- Compartilhar Viagem
 <br>- Viagem Main
 <br>- Dashboard Meta
 <br>- Dashboard Gastos
@@ -102,13 +103,13 @@ O template criado é composto pelos seguintes layouts:
 <br>RF-010	A aplicação deve exibir o progresso em direção a meta de economia final
 </div><br>
 
-### Tela - ?
+### Tela - Compartilhar Viagem
 
 <div align="center">
 <br>RF-011	A aplicação deve permirtir que o usuário compartilhe uma viagem com outros usuários
 </div><br>
 
-### Tela - Configurar Alertas e Alerta
+### Tela - Configurar Alertas e Alertas
 
 <div align="center">
 <img src="img/Tela10ConfigurarAlertas.png" width="25%">
