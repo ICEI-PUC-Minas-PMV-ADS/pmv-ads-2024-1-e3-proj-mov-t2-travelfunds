@@ -41,23 +41,13 @@ O template criado é composto pelos seguintes layouts:
 
 </div><br>
 
-### Tela - Landing 
-<div align="justify"></div><br>
+### Tela - Landing, Cadastro e Login
+
 <div align="center">
 <img src="img/Tela01landing.png" width="25%"><br>
-</div><br>
-
-### Tela - Cadastro
-
-<div align="center">
 <img src="img/Tela03Cadastro.png" width="25%"><br>
-<br>RF-001 - A aplicação deve permitir que o usuário crie uma conta
-</div><br>
-
-### Tela - Login
-
-<div align="center">
 <img src="img/Tela02Login.png" width="25%"><br>
+<br>RF-001 - A aplicação deve permitir que o usuário crie uma conta
 <br>RF-002	A aplicação deve permitir que o usuário realize login em sua conta utilizando email e senha
 </div><br>
 
