@@ -81,6 +81,7 @@ O template criado é composto pelos seguintes layouts:
 <div align="center">
 <img src="img/Tela06ViagemMain.png" width="25%">
 <br>RF-005	A aplicação deve exibir um painel de controle que destaca o valor total guardado para a viagem, saldo atualizado e lista de gastos registrados divididos por categoria
+<br>RF-012	A aplicação deve oferecer ao usuário a possibilidade de gerar relatório que exibe gastos por categoria
 </div><br>
 
 ### Tela - Dashboard Gastos, Adicionar Gastos e Editar Gastos
@@ -92,4 +93,37 @@ O template criado é composto pelos seguintes layouts:
 <br>RF-006	A aplicação deve permitir que os usuários insiram gastos durante a viagem, especificando valor e categoria
 <br>RF-007	A aplicação deve atualizar automaticamente o saldo quando um gasto for inserido durante a viagem
 </div><br>
+
+### Tela - Dashboard Contribuições
+
+<div align="center">
+<img src="img/Tela09DashboardContribuicoes.png" width="25%">
+<br>RF-008	A aplicação deve permitir que os usuários registrem o valor que estão guardando para a viagem
+</div><br>
+
+### Tela - Dashboard Meta e Editar Meta
+
+<div align="center">
+<img src="img/Tela07DashboardMeta.png" width="25%">
+<img src="img/Tela15EditarMeta.png" width="25%">
+<br>RF-009	A aplicação deve permitir que o usuário configure um orçamento total necessário para a realização da viagem
+<br>RF-010	A aplicação deve exibir o progresso em direção a meta de economia final
+</div><br>
+
+### Tela - ?
+
+<div align="center">
+<br>RF-011	A aplicação deve permirtir que o usuário compartilhe uma viagem com outros usuários
+</div><br>
+
+### Tela - Configurar Alertas e Alerta
+
+<div align="center">
+<img src="img/Tela10ConfigurarAlertas.png" width="25%">
+<img src="img/Tela11Alertas.png" width="25%">
+<br>RF-013	A aplicação deve permitir que os usuários programem alertas para poupança e recebam notificações durante a viagem, alertando sobre a proximidade ou ultrapassagem do limite de gastos estabelecido
+</div><br>
+
+
+
 
