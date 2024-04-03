@@ -5,7 +5,7 @@ O layout padrão a ser utilizado pela aplicação tem correspondência ao projet
 ## Paleta de Cores
  <div align="center">
 <img src="img/paleta de cores.png" width="50%"><br>
-<b>Figura </b> - Paleta de Cores
+<b>Figura 12</b> - Paleta de Cores
 </div><br>
 
 ## Tipografia
@@ -14,7 +14,7 @@ O layout padrão a ser utilizado pela aplicação tem correspondência ao projet
 ## Logotipo
  <div align="center">
 <img src="img/Logo Travel Alpha3.png" width="50%"><br>
-<b>Figura</b> - Logotipo do site
+<b>Figura 13</b> - Logotipo do site
 </div><br>
 
 ## Telas
