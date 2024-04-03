@@ -141,7 +141,7 @@ Na tabela a seguir estão listados os requisitos funcionais do projeto, bem como
 |RF-009| A aplicação deve permitir que o usuário configure um orçamento total necessário para a realização da viagem | MÉDIA |
 |RF-010| A aplicação deve exibir o progresso em direção a meta de economia final | MÉDIA |
 |RF-011| A aplicação deve permirtir que o usuário compartilhe uma viagem com outros usuários | MÉDIA |
-|RF-012| A aplicação deve oferecer ao usuário a possibilidade de gerar relatório que exibe gastos por categoria | BAIXA |
+|RF-012| A aplicação deve oferecer ao usuário a possibilidade de gerar relatório | BAIXA |
 |RF-013| A aplicação deve permitir que os usuários programem alertas para poupança e recebam notificações durante a viagem, alertando sobre a proximidade ou ultrapassagem do limite de gastos estabelecido | BAIXA |
 
 
