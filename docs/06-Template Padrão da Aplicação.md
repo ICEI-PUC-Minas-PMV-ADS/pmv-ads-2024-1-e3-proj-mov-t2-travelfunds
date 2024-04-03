@@ -81,7 +81,7 @@ O template criado é composto pelos seguintes layouts:
 <div align="center">
 <img src="img/Tela06ViagemMain.png" width="25%">
 <br>RF-005	A aplicação deve exibir um painel de controle que destaca o valor total guardado para a viagem, saldo atualizado e lista de gastos registrados divididos por categoria
-<br>RF-012	A aplicação deve oferecer ao usuário a possibilidade de gerar relatório que exibe gastos por categoria
+<br>RF-012	A aplicação deve oferecer ao usuário a possibilidade de gerar relatório
 </div><br>
 
 ### Tela - Dashboard Gastos, Adicionar Gastos e Editar Gastos
