@@ -17,7 +17,7 @@ O plano de teste de usabilidade tem como objetivos:
 | **Caso de Teste** 	| **CTU-01 – Cadastro de novo usuário** 	|
 |:---:	|:---:	|
 | Objetivo do Teste 	| Avaliar a tela de cadastro de novo usuário |
-| Ações Necessárias 	| 1. Acessar o aplicativo; <br> 2. Clicar na opção “Cadastre-se”; <br> 3. Preencher as informações solicitadas; <br> 4. Concordar com os termos e condições; <br> 5. Clicar em “Cadastrar". |
+| Ações Necessárias 	| 1. Acessar o aplicativo; <br> 2. Clicar na opção “Cadastre-se”; <br> 3. Preencher as informações solicitadas; <br> 4. Clicar em “Cadastrar". |
 
 | **Caso de Teste** 	| **CTU-02 – Login de usuário** 	|
 |:---:	|:---:	|
@@ -27,14 +27,25 @@ O plano de teste de usabilidade tem como objetivos:
 | **Caso de Teste** 	| **CTU-03 – Criar uma viagem** 	|
 |:---:	|:---:	|
 | Objetivo do Teste 	| Avaliar a usabilidade da criação de viagens |
-| Ações Necessárias 	| 1. Acessar a tela inicial do aplicativo; <br> 2. Clicar na opção “Adicionar” no canto inferior esquerdo; <br> 3. Preemcher as informações solicitadas; <br> 4. Clicar em "Salvar". |
+| Ações Necessárias 	| 1. Acessar a tela inicial do aplicativo; <br> 2. Clicar na opção “Adicionar” no canto inferior esquerdo; <br> 3. Preencher as informações solicitadas; <br> 4. Clicar em "Salvar". |
 
-| **Caso de Teste** 	| **CTU-04 – Inserir um gasto** 	|
+| **Caso de Teste** 	| **CTU-04 – Gerenciar gastos** 	|
 |:---:	|:---:	|
-| Objetivo do Teste 	| Avaliar a tela de cadastro de gastos |
-| Ações Necessárias 	| 1. Acessar a tela inicial do aplicativo; <br> 2. Clicar na viagem cadastrada que deseja inserir o gasto; <br> 3. Clicar na opção "Inserir gasto" ; <br> 4. Preencher as informações solicitadas; <br> 5. Clicar em "Salvar". |
+| Objetivo do Teste 	| Avaliar a usabilidade de gerenciamento de gastos, criar, editar e excluir |
+| Ações Necessárias 	| 1. Acessar a tela inicial do aplicativo; <br> 2. Clicar na viagem cadastrada que deseja inserir o gasto; <br> 3. Clicar em Gastos <br> 4. Clicar na opção "Adicionar gasto" ; <br> 5. Preencher as informações solicitadas; <br> 6. Clicar em "Adicionar". <br> 7. Clicar no ícone de edição. <br> 8. Inserir o novo valor. <br> 9. Clicar em Alterar ou em Excluir gasto. |
 
-| **Caso de Teste** 	| **CTU-05 – Compartilhar uma viagem** 	|
+| **Caso de Teste** 	| **CTU-05 – Gerenciar contribuições** 	|
+|:---:	|:---:	|
+| Objetivo do Teste 	| Avaliar a usabilidade de gerenciamento de contribuições, criar, editar e excluir |
+| Ações Necessárias 	| 1. Acessar a tela inicial do aplicativo; <br> 2. Clicar na viagem cadastrada que deseja inserir a contribuição; <br> 3. Clicar em Contribuição <br> 4. Clicar na opção "Adicionar contribuição" ; <br> 5. Preencher as informações solicitadas; <br> 6. Clicar em "Adicionar". <br> 7. Clicar no ícone de edição. <br> 8. Inserir o novo valor. <br> 9. Clicar em Alterar ou em Excluir contribuição. |
+
+| **Caso de Teste** 	| **CTU-06 – Gerenciar alertas** 	|
+|:---:	|:---:	|
+| Objetivo do Teste 	| Avaliar a usabilidade de gerenciamento de alertas, criar, editar e excluir |
+| Ações Necessárias 	| 1. Acessar a tela inicial do aplicativo; <br> 2. Clicar na viagem cadastrada que deseja inserir o alerta. <br> 3. |
+
+
+| **Caso de Teste** 	| **CTU-06 – Compartilhar uma viagem** 	|
 |:---:	|:---:	|
 | Objetivo do Teste 	| Avaliar a usabilidade do compartilhamento de viagem |
 | Ações Necessárias 	| 1. Acessar a tela inicial do aplicativo; <br> 2. Clicar na viagem cadastrada que deseja compartilhar; <br> 3. Clicar na opção "Compartilhar" ; <br> 4. Preencher o email da pessoa com quem quer compartilhar a viagem; <br> 5. Clicar em "Compartilhar". |
