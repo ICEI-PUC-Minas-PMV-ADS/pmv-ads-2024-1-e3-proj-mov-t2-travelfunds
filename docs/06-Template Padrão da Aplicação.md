@@ -41,21 +41,55 @@ O template criado é composto pelos seguintes layouts:
 
 </div><br>
 
-### Tela - Landing
+### Tela - Landing 
 <div align="justify"></div><br>
-
 <div align="center">
 <img src="img/Tela01landing.png" width="25%"><br>
-<b>Landing</b>
+</div><br>
+
+### Tela - Cadastro
+
+<div align="center">
+<img src="img/Tela03Cadastro.png" width="25%"><br>
+<br>RF-001 - A aplicação deve permitir que o usuário crie uma conta
 </div><br>
 
 ### Tela - Login
 
 <div align="center">
-<img src="img/Tela03Cadastro.png" width="25%"><br>
-<b>Login</b>
+<img src="img/Tela02Login.png" width="25%"><br>
+<br>RF-002	A aplicação deve permitir que o usuário realize login em sua conta utilizando email e senha
 </div><br>
-<div align="justify">
-<br>RF-001 - A aplicação deve permitir que o usuário crie uma conta
+
+### Tela - Perfil e Configurar Perfil
+
+<div align="center">
+<img src="img/Tela04Perfil.png" width="25%">
+<img src="img/Tela14ConfigurarPerfil.png" width="25.2%"><br>
+<br>RF-003	A aplicação deve permitir que o usuário gerencie seu perfil
+</div><br>
+
+### Tela - Criar Viagem
+
+<div align="center">
+<img src="img/Tela05CriarViagem.png" width="25%">
+<br>RF-004	A aplicação deve possibilitar ao usuário criar e gerenciar viagens
+</div><br>
+
+### Tela - Viagem Main
+
+<div align="center">
+<img src="img/Tela06ViagemMain.png" width="25%">
+<br>RF-005	A aplicação deve exibir um painel de controle que destaca o valor total guardado para a viagem, saldo atualizado e lista de gastos registrados divididos por categoria
+</div><br>
+
+### Tela - Dashboard Gastos, Adicionar Gastos e Editar Gastos
+
+<div align="center">
+<img src="img/Tela08DashboardGastos.png" width="24.9%">
+<img src="img/Tela12AdicionarGastos.png" width="25%">
+<img src="img/Tela16EditarGasto.png" width="25%">
+<br>RF-006	A aplicação deve permitir que os usuários insiram gastos durante a viagem, especificando valor e categoria
+<br>RF-007	A aplicação deve atualizar automaticamente o saldo quando um gasto for inserido durante a viagem
 </div><br>
 
