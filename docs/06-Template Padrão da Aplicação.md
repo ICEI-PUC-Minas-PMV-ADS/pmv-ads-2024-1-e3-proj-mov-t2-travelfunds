@@ -94,10 +94,12 @@ O template criado é composto pelos seguintes layouts:
 <br>RF-007	A aplicação deve atualizar automaticamente o saldo quando um gasto for inserido durante a viagem
 </div><br>
 
-### Tela - Dashboard Contribuições
+### Tela - Dashboard Contribuições, Adicionar Contribuição e Editar Contribuição
 
 <div align="center">
 <img src="img/Tela09DashboardContribuicoes.png" width="25%">
+<img src="img/Tela13AdicionarContribuicao.png" width="25%">
+<img src="img/Tela17EditarContribuicao.png" width="25%">
 <br>RF-008	A aplicação deve permitir que os usuários registrem o valor que estão guardando para a viagem
 </div><br>
 
