@@ -14,15 +14,116 @@
 
 ## Wireframes
 
-![Exemplo de Wireframe](img/wireframe-example.png)
+<table >
+    <tr >
+       <th>Landing</th>
+       <th>Cadastro</th>
+       <th>Login</th>
+    </tr>
+    <tr>
+    <td width="300" >
+       <img width="200" style="margin-right: 20px"  src="./img/Tela01landing.png">
+    </td>
+      <td width="300" >
+        <img width="200" style="margin-right: 20px"  src="./img/">
+    </td>
+       <td width="300" >
+       <img width="200" height="450" style="margin-right: 20px" src="./img/">
+    </td>
+    </tr>
+</table>
 
-São protótipos usados em design de interface para sugerir a estrutura de um site web e seu relacionamentos entre suas páginas. Um wireframe web é uma ilustração semelhante do layout de elementos fundamentais na interface.
- 
-> **Links Úteis**:
-> - [Protótipos vs Wireframes](https://www.nngroup.com/videos/prototypes-vs-wireframes-ux-projects/)
-> - [Ferramentas de Wireframes](https://rockcontent.com/blog/wireframes/)
-> - [MarvelApp](https://marvelapp.com/developers/documentation/tutorials/)
-> - [Figma](https://www.figma.com/)
-> - [Adobe XD](https://www.adobe.com/br/products/xd.html#scroll)
-> - [Axure](https://www.axure.com/edu) (Licença Educacional)
-> - [InvisionApp](https://www.invisionapp.com/) (Licença Educacional)
+<table >
+    <tr >
+       <th>Perfil</th>
+       <th>Configurar Perfil</th>
+       <th>Criar Viagem</th>
+    </tr>
+    <tr>
+    <td width="300" >
+         <img width="200"  src="./img/">
+    </td>
+    <td width="300" >
+         <img width="200"  src="./img/">
+    </td>
+    <td width="300" >
+        <img width="200"  src="./img/">
+    </td>
+    </tr>
+</table>
+
+<table>
+    <tr>
+       <th>Viagem Main</th>
+       <th>Dashboard Meta</th>
+       <th>Editar Meta</th>
+    </tr>
+    <tr>
+    <td width="300" >
+         <img width="200"  src="./img/">
+    </td>
+    <td width="300" >
+         <img width="200"  src="./img/">
+    </td>
+    <td width="300" >
+       <img width="200"  src="./img/">
+    </td>
+    </tr>
+</table>
+
+<table>
+    <tr>
+       <th>Dashboard Gastos</th>
+       <th>Adicionar Gastos</th>
+       <th>Editar Gastos</th>
+    </tr>
+    <tr>
+    <td width="300" >
+         <img width="200"  src="./img/">
+    </td>
+    <td width="300" >
+         <img width="200"  src="./img/">
+    </td>
+    <td width="300" >
+        <img width="200"  src="./img/">
+    </td>
+    </tr>
+</table>
+
+<table>
+    <tr>
+       <th>Dashboard Contribuições</th>
+       <th>Adicionar Contribuição</th>
+       <th>Editar Contribuição</th>
+    </tr>
+    <tr>
+    <td width="300" >
+        <img width="200"  src="./img/">
+    </td>
+    <td width="300" >
+         <img width="200"  src="./img/">
+    </td>
+    <td width="300" >
+        <img width="200"  src="./img/">
+    </td>
+    </tr>
+</table>
+
+<table>
+    <tr>
+       <th>Compartilhar viagem</th>
+       <th>Configurar Alertas</th>
+       <th>Alertas</th>
+    </tr>
+    <tr>
+    <td width="300" >
+       <img width="200"  src="./img/Prototipo/DocumentosEnviados.png">
+    </td>
+    <td width="300" >
+        <img width="200"  src="./img/Prototipo/Documento.png">
+    </td>
+    <td width="300" >
+       <img width="200"  src="./img/Prototipo/RecuperarSenha.png">
+    </td>
+    </tr>
+</table>
