@@ -52,14 +52,7 @@ Arquivo banco.sql contendo os scripts de criação das tabelas do banco de dados
 
 ## Hospedagem
 
-Explique como a hospedagem e o lançamento da plataforma foi feita.
-
-> **Links Úteis**:
->
-> - [Website com GitHub Pages](https://pages.github.com/)
-> - [Programação colaborativa com Repl.it](https://repl.it/)
-> - [Getting Started with Heroku](https://devcenter.heroku.com/start)
-> - [Publicando Seu Site No Heroku](http://pythonclub.com.br/publicando-seu-hello-world-no-heroku.html)
+A API do sistema, assim como o banco de dados será hospedada nos servidores da plataforma de computação em nuvem Microsoft Azure.
 
 ## Qualidade de Software
 
