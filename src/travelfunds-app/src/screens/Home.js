@@ -5,17 +5,17 @@ import InputButton from "../components/InputButton";
 const Home = ({ navigation }) => {
   return (
     <View style={style.container}>
-      <View style={style.logo}>
-        <Image source={require("../../assets/travelfunds-modified 2.png")} />
-      </View>
-      <View style={style.buttons}>
+      <View>
+        <View style={style.logo}>
+          <Image source={require("../../assets/travelfunds-modified 2.png")} />
+        </View>
         <InputButton
           text="Log In"
           mode="contained"
           onPress={() => navigation.navigate("Login")}
         />
-        <InputButton text="Cadastre-se" mode="text" />
       </View>
+      <InputButton text="Cadastre-se" mode="text" />
     </View>
   );
 };
@@ -24,15 +24,13 @@ const style = StyleSheet.create({
   container: {
     flex: 1,
     padding: 12,
-    justifyContent: "center",
+    justifyContent: 'space-between',
+    marginTop: 150
   },
   logo: {
     alignItems: "center",
-    margin: 12,
-  },
-  buttons: {
-    margin: 16,
-  },
+    marginBottom: 25,
+  }
 });
 
 export default Home;
