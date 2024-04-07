@@ -117,7 +117,7 @@
     </tr>
     <tr>
     <td width="300" >
-       <img width="200"  src="./img/">
+       <img width="200"  src="./img/TelaCompartilharViagem.png">
     </td>
     <td width="300" >
         <img width="200"  src="./img/Tela10ConfigurarAlertas.png">
