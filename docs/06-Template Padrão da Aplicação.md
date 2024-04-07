@@ -113,7 +113,7 @@ O template criado é composto pelos seguintes layouts:
 ### Tela - Compartilhar Viagem
 
 <div align="center">
- <img src="img/" width="25%"><br>
+ <img src="img/TelaCompartilharViagem.png" width="25%"><br>
  <b>Figura 29</b><br>
 <br>RF-011	A aplicação deve permirtir que o usuário compartilhe uma viagem com outros usuários
 </div><br>
