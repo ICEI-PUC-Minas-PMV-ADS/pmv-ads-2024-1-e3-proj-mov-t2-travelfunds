@@ -1,18 +1,18 @@
-import { View, Text, Image, StyleSheet } from "react-native";
-import React from "react";
-import InputButton from "../components/InputButton";
+import { View, Text, Image, StyleSheet } from 'react-native';
+import React from 'react';
+import InputButton from '../components/InputButton';
 
 const Home = ({ navigation }) => {
   return (
     <View style={style.container}>
       <View>
         <View style={style.logo}>
-          <Image source={require("../../assets/travelfunds-modified 2.png")} />
+          <Image source={require('../../assets/travelfunds-modified 2.png')} />
         </View>
         <InputButton
           text="Log In"
           mode="contained"
-          onPress={() => navigation.navigate("Login")}
+          onPress={() => navigation.navigate('Login')}
         />
       </View>
       <InputButton text="Cadastre-se" mode="text" />
@@ -25,12 +25,12 @@ const style = StyleSheet.create({
     flex: 1,
     padding: 12,
     justifyContent: 'space-between',
-    marginTop: 150
+    marginTop: 150,
   },
   logo: {
-    alignItems: "center",
+    alignItems: 'center',
     marginBottom: 25,
-  }
+  },
 });
 
 export default Home;
