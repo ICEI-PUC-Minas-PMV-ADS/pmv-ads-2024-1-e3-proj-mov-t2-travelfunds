@@ -1,6 +1,8 @@
 import { View, Text, StyleSheet } from 'react-native';
+import '../components/NovaPaginaComponente.js';
+import InputButton from '../components/NovaPaginaComponente.js';
 
-const ScreenTemplate = () => {
+const NovaPagina = () => {
   return (
     <View style={styles.container}>
       <View style={styles.topSection}>
@@ -8,7 +10,13 @@ const ScreenTemplate = () => {
           <Text style={styles.overlayText}>foto</Text>
         </View>
       </View>
-      <View style={styles.bottomSection}></View>
+      <View style={styles.bottomSection}>
+        <InputButton
+          text="Press Me"
+          mode="contained"
+          onPress={() => console.log('Button pressed')}
+        />
+      </View>
     </View>
   );
 };
@@ -55,4 +63,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ScreenTemplate;
+export default NovaPagina;
