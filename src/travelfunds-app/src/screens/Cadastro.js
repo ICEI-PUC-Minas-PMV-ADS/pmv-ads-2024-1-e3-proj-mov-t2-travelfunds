@@ -1,25 +1,26 @@
-import { StyleSheet, View } from "react-native";
+import { View, StyleSheet } from "react-native";
 import React from "react";
 import Input from "../components/Input";
 import InputSenha from "../components/InputSenha";
 import InputButton from "../components/InputButton";
 
-const Login = ({ navigation }) => {
+const Cadastro = ({ navigation }) => {
   return (
-    <View style={styles.container}>
+    <View style={style.container}>
       <Input label="Email" />
+      <Input label="Nome" />
       <InputSenha />
-      <InputButton text="Log In" mode="contained" />
+      <InputButton text="Cadastrar" mode="contained" />
       <InputButton
-        text="Cadastre-se"
+        text="Login"
         mode="text"
-        onPress={() => navigation.navigate("Cadastro")}
+        onPress={() => navigation.navigate("Login")}
       />
     </View>
   );
 };
 
-const styles = StyleSheet.create({
+const style = StyleSheet.create({
     container : {
         flex: 1,
         justifyContent: 'center',
@@ -27,4 +28,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default Login;
+export default Cadastro;

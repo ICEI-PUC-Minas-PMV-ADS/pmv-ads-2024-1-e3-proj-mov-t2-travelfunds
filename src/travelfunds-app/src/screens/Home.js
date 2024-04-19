@@ -1,4 +1,4 @@
-import { View, Text, Image, StyleSheet } from "react-native";
+import { View, Image, StyleSheet } from "react-native";
 import React from "react";
 import InputButton from "../components/InputButton";
 
@@ -15,7 +15,11 @@ const Home = ({ navigation }) => {
           onPress={() => navigation.navigate("Login")}
         />
       </View>
-      <InputButton text="Cadastre-se" mode="text" />
+      <InputButton
+        text="Cadastre-se"
+        mode="text"
+        onPress={() => navigation.navigate("Cadastro")}
+      />
     </View>
   );
 };
@@ -24,13 +28,13 @@ const style = StyleSheet.create({
   container: {
     flex: 1,
     padding: 12,
-    justifyContent: 'space-between',
-    marginTop: 150
+    justifyContent: "space-between",
+    marginTop: 150,
   },
   logo: {
     alignItems: "center",
     marginBottom: 25,
-  }
+  },
 });
 
 export default Home;
