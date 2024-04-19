@@ -15,7 +15,7 @@ const Login = ({}) => {
       <InputButton
         text="Log In"
         mode="contained"
-        onPress={() => navigation.navigate('NovaPagina')} // Update this line
+        onPress={() => navigation.navigate('ViagemMain')} // Update this line
       />
     </View>
   );
