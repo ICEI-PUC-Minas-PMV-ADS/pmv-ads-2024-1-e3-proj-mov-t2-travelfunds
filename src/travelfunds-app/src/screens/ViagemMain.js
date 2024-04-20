@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
   },
   overlayText: {
     fontSize: 20,
-    position: 'absolute',
+    // position: 'absolute',
     color: '#012B53',
   },
   bottomSection: {
