@@ -20,7 +20,20 @@ const Home = ({ navigation }) => {
         mode="text"
         onPress={() => navigation.navigate("Cadastro")}
       />
+
+       <InputButton
+        text="Gerenciar Perfil"
+        mode="text"
+        onPress={() => navigation.navigate("EditarPerfil")}
+      />
+      <InputButton
+        text="Viagem Main"
+        mode="text"
+        onPress={() => navigation.navigate("ViagemMain")}
+      />
     </View>
+    
+    
   );
 };
 
