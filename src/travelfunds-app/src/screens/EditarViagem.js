@@ -6,17 +6,13 @@ import BotaoMenor from "../components/BotaoMenor";
 import TextTop from "../components/TextTop";
 import { Icon } from "react-native-paper";
 
-
-
-
-const EditarPerfil = () => {
-
+const EditarViagem = () => {
     return (
 
         <View style={styles.container}>
 
             <View style={styles.topSection}>
-                <TextTop text="Perfil" />
+                <TextTop text="Viagem" />
                 <View style={styles.roundComponent}>
                     <Text
                         style={styles.overlayText}>
@@ -26,12 +22,10 @@ const EditarPerfil = () => {
             </View>
 
             <View style={styles.bottomSection}>
-                <InputSetPerfil label="foto do perfil" />
-                <InputSetPerfil label="nome do perfil" />
-                <InputSetPerfil label="email" />
-                <InputSetPerfil label="senha" />
-
-                <BotaoMenor text="Confirmar" />
+                <InputSetPerfil label="Qual seu destino?" /> 
+                <InputSetPerfil label="Data de Ida" /> 
+                <InputSetPerfil label="Data de Volta?" />
+                <BotaoMenor text="Alterar" />
             </View>
 
         </View>
@@ -78,4 +72,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default EditarPerfil; 
+export default EditarViagem; 

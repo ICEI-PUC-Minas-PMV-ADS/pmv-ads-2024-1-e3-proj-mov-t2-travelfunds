@@ -20,6 +20,7 @@ const BotaoMenor = ( {text} ) => (
     button: {
         backgroundColor: "#8196AA",
         marginTop: 12,
+        
 
     }
     

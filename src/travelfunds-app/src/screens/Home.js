@@ -20,7 +20,6 @@ const Home = ({ navigation }) => {
         mode="text"
         onPress={() => navigation.navigate("Cadastro")}
       />
-
        <InputButton
         text="Gerenciar Perfil"
         mode="text"
@@ -30,6 +29,11 @@ const Home = ({ navigation }) => {
         text="Viagem Main"
         mode="text"
         onPress={() => navigation.navigate("ViagemMain")}
+      />
+      <InputButton
+        text="Editar Viagem"
+        mode="text"
+        onPress={() => navigation.navigate("EditarViagem")}
       />
     </View>
     
