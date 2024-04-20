@@ -29,7 +29,7 @@ const style = StyleSheet.create({
     flex: 1,
     padding: 12,
     justifyContent: "space-between",
-    marginTop: 150,
+    marginTop: 250,
   },
   logo: {
     alignItems: 'center',
