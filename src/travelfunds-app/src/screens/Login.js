@@ -9,7 +9,11 @@ const Login = ({ navigation }) => {
     <View style={styles.container}>
       <Input label="Email" />
       <InputSenha />
-      <InputButton text="Log In" mode="contained" />
+      <InputButton
+        text="Log In"
+        mode="contained"
+        onPress={() => navigation.navigate('ViagemMain')} // navigation only for testing
+      />
       <InputButton
         text="Cadastre-se"
         mode="text"

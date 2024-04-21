@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
   },
   labelText: {
     color: '#42627F',
-    fontSize: 24,
+    fontSize: 20,
   },
   labelTextFocused: {
     color: '#f0ffff',
