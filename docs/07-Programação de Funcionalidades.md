@@ -99,7 +99,7 @@ Implementação do sistema descritas por meio dos requisitos funcionais e/ou nã
     </tr>
 </table>
 
-## Telas Dashboard da Meta e Editar Meta
+## Telas Dashboard da Meta 
 <table>
         <tr>
         <th>Dashboard da Meta</th>
