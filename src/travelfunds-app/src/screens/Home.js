@@ -21,6 +21,8 @@ const Home = ({ navigation }) => {
         onPress={() => navigation.navigate("Cadastro")}
       />
     </View>
+    
+    
   );
 };
 
