@@ -2,12 +2,23 @@ import React, { useState } from 'react';
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 import CustomTextInput from './CustomTextInput';
 import InputButton from './InputButton';
+import MetaDashboard from './DashboardContribuicao';
 
 const EditarContribuicao = ({ label }) => {
   const [text, setText] = useState('');
 
+  const [hideEditarContribuicao, setHideEditarContribuicao] = useState(false);
+
+  const toggleHideEditarContribuicao = () => {
+    setHideEditarContribuicao(!hideEditarContribuicao);
+  };
+
   return (
     <View style={styles.container}>
+      {hideEditarContribuicao ? (
+        <MetaDashboard />
+      ) : (
+      <>
       <CustomTextInput
         label="Nome da Contribuição"
         value={text}
@@ -26,14 +37,19 @@ const EditarContribuicao = ({ label }) => {
         onChangeText={(text) => setText(text)}
         style={styles.input}
       />
-      <View style={styles.inputButtonContainer}>
-        <InputButton text={'Excluir Contribuição'} />
-      </View>
-
+      <TouchableOpacity
+            onPress={toggleHideEditarContribuicao}
+            style={styles.editButton}
+          >
+            <Text style={styles.editButtonText}>Voltar</Text>
+          </TouchableOpacity>
       <View style={styles.inputButtonContainer}>
         <InputButton text={'Adicionar'} />
       </View>
-    </View>
+      </>
+  )
+}
+    </View >
   );
 };
 
@@ -52,6 +68,17 @@ const styles = StyleSheet.create({
     margin: 20,
     alignItems: 'center',
     justifyContent: 'flex-end',
+  },
+  editButton: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    padding: 10,
+    backgroundColor: '#8196AA',
+    borderRadius: 20,
+  },
+  editButtonText: {
+    color: '#fff',
   },
 });
 

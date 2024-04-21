@@ -4,6 +4,8 @@ import BottonSectionButtonMenu from '../components/BottonSectionButtonMenu.js';
 import DashboardMeta from '../components/DashboardMeta.js';
 import DashboardContribuicao from '../components/DashboardContribuicao.js';
 import DashboardGasto from '../components/DashboardGasto.js';
+import { Icon } from "react-native-paper";
+
 
 const ViagemMain = () => {
   const [dashboardState, setDashboardState] = useState({
@@ -24,7 +26,9 @@ const ViagemMain = () => {
     <View style={styles.container}>
       <View style={styles.topSection}>
         <View style={styles.roundComponent}>
-          <Text style={styles.overlayText}>foto</Text>
+          <Text style={styles.overlayText}>
+            <Icon source="camera" size={40} />
+            </Text>
         </View>
       </View>
       <View style={styles.bottomSection}>
@@ -64,23 +68,23 @@ const styles = StyleSheet.create({
     backgroundColor: '#C0CBD4',
     alignItems: 'center',
     justifyContent: 'flex-start',
-  },
-  topSection: {
-    flex: 1,
-    width: '100%',
-    backgroundColor: '#012B53',
-    alignItems: 'center',
-    justifyContent: 'flex-end',
-  },
-  roundComponent: {
-    width: 150,
-    height: 150,
-    backgroundColor: '#fff',
-    borderRadius: 100,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom: 20,
-  },
+},
+topSection: {
+  flex: 1,
+  width: '100%',
+  backgroundColor: '#012B53',
+  alignItems: 'center',
+  justifyContent: 'flex-end',
+},
+roundComponent: {
+  width: 150,
+  height: 150,
+  backgroundColor: '#fff',
+  borderRadius: 100,
+  justifyContent: 'center',
+  alignItems: 'center',
+  marginBottom: -40,
+},
   overlayText: {
     fontSize: 20,
     position: 'absolute',
@@ -91,14 +95,14 @@ const styles = StyleSheet.create({
     width: '90%',
     backgroundColor: '#012B53',
     padding: 10,
-    marginTop: '5%',
-    marginBottom: '5%',
+    marginTop: '15%',
+    marginBottom: '10%',
     marginLeft: '5%',
     marginRight: '5%',
     borderRadius: 10,
     alignItems: 'center',
     justifyContent: 'flex-start',
-  },
+},
   bottomSectionButtons: {
     flexDirection: 'row',
     justifyContent: 'space-between',

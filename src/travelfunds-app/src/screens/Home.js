@@ -13,7 +13,7 @@ const Home = ({ navigation }) => {
           text="Log In"
           mode="contained"
           onPress={() => navigation.navigate('Login')}
-          // onPress={() => navigation.navigate('ViagemMain')} // ONLY FOR TESTING FEATURES , REVERTER PARA LOGIN
+          
         />
       </View>
       <InputButton
