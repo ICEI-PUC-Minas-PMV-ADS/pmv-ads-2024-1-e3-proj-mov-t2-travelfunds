@@ -66,3 +66,35 @@ Implementação do sistema descritas por meio dos requisitos funcionais e/ou nã
         </td>
     </tr>
 </table>
+
+## Tela Criar Viagem
+<table>
+        <tr>
+        <th>Criar Viagem</th>
+        <th>Código Fonte</th>       
+    </tr>
+    <tr>
+    <td width="300" >
+        <img width="200"  src="./img/Criar viagem.png">
+    </td>
+        <td width="300" >
+            <a href="../src/travelfunds-app/src/screens/EditarViagem.js">Link do Código Fonte</a>
+        </td>
+    </tr>
+</table>
+
+## Tela Painel de Viagem
+<table>
+        <tr>
+        <th>Painel de Viagem</th>
+        <th>Código Fonte</th>       
+    </tr>
+    <tr>
+    <td width="300" >
+        <img width="200"  src="./img/Viagem Main.png">
+    </td>
+        <td width="300" >
+            <a href="../src/travelfunds-app/src/screens/ViagemMain.js">Link do Código Fonte</a>
+        </td>
+    </tr>
+</table>
