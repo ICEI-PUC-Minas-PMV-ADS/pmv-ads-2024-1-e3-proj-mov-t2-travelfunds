@@ -99,7 +99,7 @@ Implementação do sistema descritas por meio dos requisitos funcionais e/ou nã
     </tr>
 </table>
 
-## Telas Dashboard da Meta 
+## Tela Dashboard da Meta 
 <table>
         <tr>
         <th>Dashboard da Meta</th>
@@ -115,7 +115,7 @@ Implementação do sistema descritas por meio dos requisitos funcionais e/ou nã
     </tr>
 </table>
 
-## Telas Editar Meta
+## Tela Editar Meta
 <table>
         <tr>
         <th>Editar Meta</th>
@@ -131,7 +131,7 @@ Implementação do sistema descritas por meio dos requisitos funcionais e/ou nã
     </tr>
 </table>
 
-## Telas Dashboard dos Gastos
+## Tela Dashboard dos Gastos
 <table>
         <tr>
         <th>Dashboard dos Gastos</th>
@@ -147,7 +147,7 @@ Implementação do sistema descritas por meio dos requisitos funcionais e/ou nã
     </tr>
 </table>
 
-## Telas Editar Gastos
+## Tela Editar Gastos
 <table>
         <tr>
         <th>Editar Gastos</th>
@@ -163,7 +163,7 @@ Implementação do sistema descritas por meio dos requisitos funcionais e/ou nã
     </tr>
 </table>
 
-## Telas Dashboard de Contribuições
+## Tela Dashboard de Contribuições
 <table>
         <tr>
         <th>Dashboard de Contribuições</th>
@@ -179,7 +179,7 @@ Implementação do sistema descritas por meio dos requisitos funcionais e/ou nã
     </tr>
 </table>
 
-## Telas Editar Contribuições
+## Tela Editar Contribuições
 <table>
         <tr>
         <th>Editar Contribuições</th>
