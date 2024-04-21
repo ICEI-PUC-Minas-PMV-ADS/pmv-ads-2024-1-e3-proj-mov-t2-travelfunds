@@ -12,20 +12,9 @@ const Home = ({ navigation }) => {
         <InputButton
           text="Log In"
           mode="contained"
-          // onPress={() => navigation.navigate('Login')}
-          onPress={() => navigation.navigate('ViagemMain')} // ONLY FOR TESTING FEATURES , REVERTER PARA LOGIN
+          onPress={() => navigation.navigate('Login')}
           
         />
-        <InputButton
-        text="Editar perfil"
-        mode="text"
-        onPress={() => navigation.navigate('EditarPerfil')}
-      />
-       <InputButton
-        text="Editar viagem"
-        mode="text"
-        onPress={() => navigation.navigate('EditarViagem')}
-      />
       </View>
       <InputButton
         text="Cadastre-se"
