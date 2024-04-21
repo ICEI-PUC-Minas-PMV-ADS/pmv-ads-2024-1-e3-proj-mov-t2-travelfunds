@@ -98,3 +98,63 @@ Implementação do sistema descritas por meio dos requisitos funcionais e/ou nã
         </td>
     </tr>
 </table>
+
+## Telas Dashboard da Meta e Editar Meta
+<table>
+        <tr>
+        <th>Dashboard da Meta</th>
+        <th>Editar Meta</th>
+        <th>Código Fonte</th>       
+    </tr>
+    <tr>
+    <td width="300" >
+        <img width="200"  src="./img/Meta Dashboard.png">
+    </td>
+        <td width="300" >
+        <img width="200"  src="./img/Editar Meta.png">
+    </td>
+        <td width="300" >
+            <a href="../src/travelfunds-app/src/screens/ViagemMain.js">Link do Código Fonte</a>
+        </td>
+    </tr>
+</table>
+
+## Telas Dashboard dos Gastos e Editar Gastos
+<table>
+        <tr>
+        <th>Dashboard dos Gastos</th>
+        <th>Editar Gastos</th>
+        <th>Código Fonte</th>       
+    </tr>
+    <tr>
+    <td width="300" >
+        <img width="200"  src="./img/Gastos Dashboard.png">
+    </td>
+        <td width="300" >
+        <img width="200"  src="./img/Adicionar gasto.png">
+    </td>
+        <td width="300" >
+            <a href="../src/travelfunds-app/src/screens/ViagemMain.js">Link do Código Fonte</a>
+        </td>
+    </tr>
+</table>
+
+## Telas Dashboard de Contribuições e Editar Contribuições
+<table>
+        <tr>
+        <th>Dashboard de Contribuições</th>
+        <th>Editar Contribuições</th>
+        <th>Código Fonte</th>       
+    </tr>
+    <tr>
+    <td width="300" >
+        <img width="200"  src="./img/Contribuições Dashboard.png">
+    </td>
+        <td width="300" >
+        <img width="200"  src="./img/Adicionar contribuição.png">
+    </td>
+        <td width="300" >
+            <a href="../src/travelfunds-app/src/screens/ViagemMain.js">Link do Código Fonte</a>
+        </td>
+    </tr>
+</table>
