@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 import EditarGasto from './EditarGasto';
+import { ProgressBar } from 'react-native-paper';
 
 function DashboardGasto() {
   const [showEditarGasto, setShowEditarGasto] = useState(false);
@@ -17,13 +18,17 @@ function DashboardGasto() {
       ) : (
         <View style={styles.content}>
           <View style={styles.content}>
-            <Text style={styles.circleMeta}>Futuros Gastos</Text>
+            <Text style={styles.contriBars}>Futuros Gastos</Text>
           </View>
+          <ProgressBar
+            theme={{ colors: { primary: '#EF4444' } }}
+            progress={0.9}
+          />
           <TouchableOpacity
             onPress={toggleEditarGasto}
             style={styles.editButton}
           >
-            <Text style={styles.editButtonText}>+</Text>
+            <Text style={styles.editButtonText}>Adicionar</Text>
           </TouchableOpacity>
         </View>
       )}
@@ -37,17 +42,17 @@ const styles = StyleSheet.create({
     width: '100%',
     color: '#fff',
     padding: 20,
-    borderWidth: 1,
-    borderColor: '#EF4444',
+    // borderWidth: 1,
+    // borderColor: '#EF4444',
   },
   content: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'flex-start',
   },
-  circleMeta: {
-    borderWidth: 2,
-    borderColor: '#EF4444',
+  contriBars: {
+    // borderWidth: 2,
+    // borderColor: '#EF4444',
+    marginTop: 30,
     color: '#fff',
   },
   editButton: {

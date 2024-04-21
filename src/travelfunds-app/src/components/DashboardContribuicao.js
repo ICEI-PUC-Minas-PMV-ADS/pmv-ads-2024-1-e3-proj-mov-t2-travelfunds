@@ -2,6 +2,7 @@ import { useState } from 'react';
 import React from 'react';
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 import EditarContribuicao from './EditarContribuicao';
+import { ProgressBar } from 'react-native-paper';
 
 const MetaDashboard = () => {
   const [showEditarContribuicao, setShowEditarContribuicao] = useState(false);
@@ -17,14 +18,20 @@ const MetaDashboard = () => {
       ) : (
         <View style={styles.content}>
           <View style={styles.content}>
-            <Text style={styles.circleMeta}>Futuras Contribuicoes</Text>
+            <Text style={styles.contribBars}>Futuras Contribuicoes</Text>
           </View>
-          <TouchableOpacity
-            onPress={toggleEditarContribuicao}
-            style={styles.editButton}
-          >
-            <Text style={styles.editButtonText}>+</Text>
-          </TouchableOpacity>
+          <ProgressBar
+            theme={{ colors: { primary: '#FBBF24' } }}
+            progress={0.9}
+          />
+          <View>
+            <TouchableOpacity
+              onPress={toggleEditarContribuicao}
+              style={styles.editButton}
+            >
+              <Text style={styles.editButtonText}>Adicionar</Text>
+            </TouchableOpacity>
+          </View>
         </View>
       )}
     </View>
@@ -37,17 +44,17 @@ const styles = StyleSheet.create({
     width: '100%',
     color: '#fff',
     padding: 20,
-    borderWidth: 1,
-    borderColor: '#FBBF24',
+    // borderWidth: 1,
+    // borderColor: '#FBBF24',
   },
   content: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'flex-start',
   },
-  circleMeta: {
-    borderWidth: 2,
-    borderColor: '#FBBF24',
+  contribBars: {
+    // borderWidth: 2,
+    // borderColor: '#FBBF24',
+    marginTop: 30,
     color: '#fff',
   },
   editButton: {

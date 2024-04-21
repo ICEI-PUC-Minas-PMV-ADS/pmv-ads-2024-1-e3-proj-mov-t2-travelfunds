@@ -45,6 +45,7 @@ const styles = StyleSheet.create({
     borderColor: '#f0ffff',
     backgroundColor: 'transparent',
     zIndex: 1,
+    color: '#f0ffff',
   },
   labelline: {
     backgroundColor: '#012B53',
