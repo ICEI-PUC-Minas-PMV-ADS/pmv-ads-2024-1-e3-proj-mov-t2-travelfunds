@@ -18,7 +18,9 @@ const MetaDashboard = () => {
       ) : (
         <View style={styles.content}>
           <View style={styles.content}>
-            <Text style={styles.contribBars}>Futuras Contribuicoes</Text>
+            <Text style={styles.contribBars}>
+              Futuras Contribuicoes com barras
+            </Text>
           </View>
           <ProgressBar
             theme={{ colors: { primary: '#FBBF24' } }}

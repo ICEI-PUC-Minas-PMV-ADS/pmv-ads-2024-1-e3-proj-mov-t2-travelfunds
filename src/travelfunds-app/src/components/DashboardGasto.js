@@ -18,7 +18,7 @@ function DashboardGasto() {
       ) : (
         <View style={styles.content}>
           <View style={styles.content}>
-            <Text style={styles.contriBars}>Futuros Gastos</Text>
+            <Text style={styles.contriBars}>Futuros Gastos com barras</Text>
           </View>
           <ProgressBar
             theme={{ colors: { primary: '#EF4444' } }}

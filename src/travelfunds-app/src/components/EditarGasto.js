@@ -9,13 +9,29 @@ const EditarGasto = ({ label }) => {
   return (
     <View style={styles.container}>
       <CustomTextInput
-        label="Meta"
+        label="Nome do Gasto"
+        value={text}
+        onChangeText={(text) => setText(text)}
+        style={styles.input}
+      />
+      <CustomTextInput
+        label="Valor"
+        value={text}
+        onChangeText={(text) => setText(text)}
+        style={styles.input}
+      />
+      <CustomTextInput
+        label="Adicionar valor"
         value={text}
         onChangeText={(text) => setText(text)}
         style={styles.input}
       />
       <View style={styles.inputButtonContainer}>
-        <InputButton text={'Alterar'} />
+        <InputButton text={'Excluir Gasto'} />
+      </View>
+
+      <View style={styles.inputButtonContainer}>
+        <InputButton text={'Adicionar'} />
       </View>
     </View>
   );
@@ -33,6 +49,7 @@ const styles = StyleSheet.create({
     marginBottom: 16,
   },
   inputButtonContainer: {
+    margin: 20,
     alignItems: 'center',
     justifyContent: 'flex-end',
   },
