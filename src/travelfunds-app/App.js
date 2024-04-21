@@ -1,15 +1,15 @@
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import Home from "./src/screens/Home";
-import Login from "./src/screens/Login";
-import ViagemMain from "./src/screens/ViagemMain";
-import Cadastro from "./src/screens/Cadastro";
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Home from './src/screens/Home';
+import Login from './src/screens/Login';
+import ViagemMain from './src/screens/ViagemMain';
+import Cadastro from './src/screens/Cadastro';
 
 const Stack = createNativeStackNavigator();
 
 const TravelFundsTheme = {
   colors: {
-    background: "#012B53",
+    background: '#012B53',
   },
 };
 

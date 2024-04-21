@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import BottonButtonsMenu from '../components/BottonButtonsMenu.js';
-import MetaDashboard from '../components/MetaDashboard.js';
-import ContribuicaoDashboard from '../components/ContribuicaoDashboard.js';
-import GastosDashboard from '../components/GastosDashboard.js';
+import DashboardMeta from '../components/DashboardMeta.js';
+import DashboardContribuicao from '../components/DashboardContribuicao.js';
+import DashboardGasto from '../components/DashboardGasto.js';
 
 const ViagemMain = () => {
   const [dashboardState, setDashboardState] = useState({
@@ -50,9 +50,9 @@ const ViagemMain = () => {
             backgroundColor={dashboardState.gastos ? '#EF4444' : '#8196AA'}
           />
         </View>
-        {dashboardState.meta && <MetaDashboard />}
-        {dashboardState.contribuicao && <ContribuicaoDashboard />}
-        {dashboardState.gastos && <GastosDashboard />}
+        {dashboardState.meta && <DashboardMeta />}
+        {dashboardState.contribuicao && <DashboardContribuicao />}
+        {dashboardState.gastos && <DashboardGasto />}
       </View>
     </View>
   );

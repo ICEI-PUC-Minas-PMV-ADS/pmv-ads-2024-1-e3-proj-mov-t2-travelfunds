@@ -13,7 +13,7 @@ const Login = ({ navigation }) => {
       <InputButton
         text="Cadastre-se"
         mode="text"
-        onPress={() => navigation.navigate("Cadastro")}
+        onPress={() => navigation.navigate('Cadastro')}
       />
     </View>
   );
