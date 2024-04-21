@@ -67,6 +67,8 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     padding: 10,
+    backgroundColor: '#8196AA',
+    borderRadius: 20,
   },
   editButtonText: {
     color: '#fff',
