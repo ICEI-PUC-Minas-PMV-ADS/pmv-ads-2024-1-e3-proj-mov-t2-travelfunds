@@ -11,7 +11,7 @@ const Stack = createNativeStackNavigator();
 
 const TravelFundsTheme = {
   colors: {
-    background: "#012B53",
+    background: '#012B53',
   },
 };
 
