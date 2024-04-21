@@ -11,7 +11,7 @@ O diagrama de classes ilustra graficamente como será a estrutura do software, e
 
 <div align="center">
 <img src="img/diagrama-classes.png"> <br>
-<b>Figura 9 </b>- Diagrama de classes
+<b>Figura 9 </b>- Diagrama de Classes
 </div>
 
 ## Modelo ER
@@ -20,7 +20,7 @@ O Modelo ER representa através de um diagrama como as entidades (coisas, objeto
 
 
   <div align="center">
-<img src="img/diagrama_er2.png"> <br>
+<img src="img/diagrama_er3.png"> <br>
 <b>Figura 10 </b>- Modelo ER
 </div>
 
@@ -29,7 +29,7 @@ O Modelo ER representa através de um diagrama como as entidades (coisas, objeto
 O Esquema Relacional corresponde à representação dos dados em tabelas juntamente com as restrições de integridade e chave primária.
 
 <div align="center">
-<img src="img/base-dados.png"> <br>
+<img src="img/base-dados2.png"> <br>
 <b>Figura 11 </b>- Esquema relacional
 </div>
 

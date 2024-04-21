@@ -3,19 +3,17 @@ import React from 'react';
 import Input from '../components/Input';
 import InputSenha from '../components/InputSenha';
 import InputButton from '../components/InputButton';
-import { useNavigation } from '@react-navigation/native'; // Add this import
 
-const Login = ({}) => {
-  const navigation = useNavigation(); // Add this line
-
+const Login = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Input label="Email" />
       <InputSenha />
+      <InputButton text="Log In" mode="contained" />
       <InputButton
-        text="Log In"
-        mode="contained"
-        onPress={() => navigation.navigate('ViagemMain')} // Update this line
+        text="Cadastre-se"
+        mode="text"
+        onPress={() => navigation.navigate("Cadastro")}
       />
     </View>
   );
