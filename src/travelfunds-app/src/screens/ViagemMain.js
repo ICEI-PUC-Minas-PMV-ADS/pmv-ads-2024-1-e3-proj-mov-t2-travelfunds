@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import BottonButtonsMenu from '../components/BottonButtonsMenu.js';
+import BottonSectionButtonMenu from '../components/BottonSectionButtonMenu.js';
 import DashboardMeta from '../components/DashboardMeta.js';
 import DashboardContribuicao from '../components/DashboardContribuicao.js';
 import DashboardGasto from '../components/DashboardGasto.js';
@@ -29,13 +29,13 @@ const ViagemMain = () => {
       </View>
       <View style={styles.bottomSection}>
         <View style={styles.bottomSectionButtons}>
-          <BottonButtonsMenu
+          <BottonSectionButtonMenu
             text={'Meta'}
             mode="contained"
             onPress={() => handlePress('Meta')}
             backgroundColor={dashboardState.meta ? '#22C55E' : '#8196AA'}
           />
-          <BottonButtonsMenu
+          <BottonSectionButtonMenu
             text={'Contribuicao'}
             mode="contained"
             onPress={() => handlePress('Contribuicao')}
@@ -43,7 +43,7 @@ const ViagemMain = () => {
               dashboardState.contribuicao ? '#FBBF24' : '#8196AA'
             }
           />
-          <BottonButtonsMenu
+          <BottonSectionButtonMenu
             text={'Gastos'}
             mode="contained"
             onPress={() => handlePress('Gastos')}

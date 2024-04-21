@@ -1,16 +1,32 @@
+import { useState } from 'react';
 import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
-import InputButton from './InputButton';
+import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
+import EditarContribuicao from './EditarContribuicao';
 
 const MetaDashboard = () => {
+  const [showEditarContribuicao, setShowEditarContribuicao] = useState(false);
+
+  function toggleEditarContribuicao() {
+    setShowEditarContribuicao(!showEditarContribuicao);
+  }
+
   return (
     <View style={styles.container}>
-      <View style={styles.content}>
-        <Text style={styles.circleMeta}>Futuras Contribuicoes</Text>
-      </View>
-      <View style={styles.inputButtonContainer}>
-        <InputButton text={'+'} />
-      </View>
+      {showEditarContribuicao ? (
+        <EditarContribuicao />
+      ) : (
+        <View style={styles.content}>
+          <View style={styles.content}>
+            <Text style={styles.circleMeta}>Futuras Contribuicoes</Text>
+          </View>
+          <TouchableOpacity
+            onPress={toggleEditarContribuicao}
+            style={styles.editButton}
+          >
+            <Text style={styles.editButtonText}>+</Text>
+          </TouchableOpacity>
+        </View>
+      )}
     </View>
   );
 };
@@ -34,8 +50,16 @@ const styles = StyleSheet.create({
     borderColor: '#FBBF24',
     color: '#fff',
   },
-  inputButtonContainer: {
-    alignItems: 'center',
+  editButton: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    padding: 10,
+    backgroundColor: '#8196AA',
+    borderRadius: 20,
+  },
+  editButtonText: {
+    color: '#fff',
   },
 });
 

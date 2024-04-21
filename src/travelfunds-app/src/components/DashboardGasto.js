@@ -1,19 +1,35 @@
 import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
-import InputButton from './InputButton';
+import { useState } from 'react';
+import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
+import EditarGasto from './EditarGasto';
 
-const MetaDashboard = () => {
+function DashboardGasto() {
+  const [showEditarGasto, setShowEditarGasto] = useState(false);
+
+  function toggleEditarGasto() {
+    setShowEditarGasto(!showEditarGasto);
+  }
+
   return (
     <View style={styles.container}>
-      <View style={styles.content}>
-        <Text style={styles.circleMeta}>Futuros Gastos</Text>
-      </View>
-      <View style={styles.inputButtonContainer}>
-        <InputButton text={'+'} />
-      </View>
+      {showEditarGasto ? (
+        <EditarGasto />
+      ) : (
+        <View style={styles.content}>
+          <View style={styles.content}>
+            <Text style={styles.circleMeta}>Futuros Gastos</Text>
+          </View>
+          <TouchableOpacity
+            onPress={toggleEditarGasto}
+            style={styles.editButton}
+          >
+            <Text style={styles.editButtonText}>+</Text>
+          </TouchableOpacity>
+        </View>
+      )}
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -34,9 +50,17 @@ const styles = StyleSheet.create({
     borderColor: '#EF4444',
     color: '#fff',
   },
-  inputButtonContainer: {
-    alignItems: 'center',
+  editButton: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    padding: 10,
+    backgroundColor: '#8196AA',
+    borderRadius: 20,
+  },
+  editButtonText: {
+    color: '#fff',
   },
 });
 
-export default MetaDashboard;
+export default DashboardGasto;

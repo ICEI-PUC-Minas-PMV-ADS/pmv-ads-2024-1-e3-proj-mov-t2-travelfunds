@@ -3,7 +3,7 @@ import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 import CustomTextInput from './CustomTextInput';
 import InputButton from './InputButton';
 
-const EditarMeta = ({ label }) => {
+const EditarGasto = ({ label }) => {
   const [text, setText] = useState('');
 
   return (
@@ -38,4 +38,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default EditarMeta;
+export default EditarGasto;
