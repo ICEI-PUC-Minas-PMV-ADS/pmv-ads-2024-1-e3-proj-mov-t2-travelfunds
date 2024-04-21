@@ -11,7 +11,7 @@ O diagrama de classes ilustra graficamente como será a estrutura do software, e
 
 <div align="center">
 <img src="img/diagrama-classes.png"> <br>
-<b>Figura 9 </b>- Diagrama de classes
+<b>Figura 9 </b>- Diagrama de Classes
 </div>
 
 ## Modelo ER
