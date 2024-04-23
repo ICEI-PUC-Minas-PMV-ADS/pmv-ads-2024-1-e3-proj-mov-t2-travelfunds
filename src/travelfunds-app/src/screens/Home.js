@@ -13,9 +13,11 @@ const Home = ({ navigation }) => {
           text="Log In"
           mode="contained"
           onPress={() => navigation.navigate('Login')}
+          //onPress={() => navigation.navigate('EditarViagem')}
           
         />
       </View>
+
       <InputButton
         text="Cadastre-se"
         mode="text"

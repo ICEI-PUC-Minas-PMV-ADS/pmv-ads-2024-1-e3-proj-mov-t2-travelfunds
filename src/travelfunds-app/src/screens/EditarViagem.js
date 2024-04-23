@@ -1,18 +1,26 @@
 import React from "react";
-import { View, Text } from "react-native";
-import { StyleSheet } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import InputSetPerfil from "../components/InputSetPerfil";
 import BotaoMenor from "../components/BotaoMenor";
-import TextTop from "../components/TextTop";
-import { Icon } from "react-native-paper";
+import Header from "../components/Header";
+import { Icon, Appbar } from "react-native-paper";
+import { useNavigation } from '@react-navigation/native';
+
 
 const EditarViagem = () => {
+    const navigation = useNavigation();
+
     return (
+        <>
+        <Header 
+        title={'Editar Viagem'} goBack={() => navigation.goBack()}>
+        <Appbar.Action icon="dots-vertical" onPress={() => {}} />
+        </Header>
+
 
         <View style={styles.container}>
 
             <View style={styles.topSection}>
-                <TextTop text="Viagem" />
                 <View style={styles.roundComponent}>
                     <Text
                         style={styles.overlayText}>
@@ -29,6 +37,7 @@ const EditarViagem = () => {
             </View>
 
         </View>
+        </>
 
     );
 };

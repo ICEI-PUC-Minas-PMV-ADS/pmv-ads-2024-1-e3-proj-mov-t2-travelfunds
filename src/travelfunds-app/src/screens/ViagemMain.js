@@ -40,7 +40,7 @@ const ViagemMain = () => {
             backgroundColor={dashboardState.meta ? '#22C55E' : '#8196AA'}
           />
           <BottonSectionButtonMenu
-            text={'Contribuicao'}
+            text={'Contribuição'}
             mode="contained"
             onPress={() => handlePress('Contribuicao')}
             backgroundColor={
