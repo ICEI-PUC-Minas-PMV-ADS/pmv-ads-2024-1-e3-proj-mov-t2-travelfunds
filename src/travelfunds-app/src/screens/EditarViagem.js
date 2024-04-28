@@ -14,7 +14,7 @@ const EditarViagem = () => {
         <>
         <Header 
         title={'Editar Viagem'} goBack={() => navigation.goBack()}>
-        <Appbar.Action icon="dots-vertical" onPress={() => {}} />
+        <Appbar.Action icon="dots-vertical" color="white" onPress={() => {}} />
         </Header>
 
 

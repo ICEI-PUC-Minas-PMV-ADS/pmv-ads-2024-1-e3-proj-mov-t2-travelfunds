@@ -12,7 +12,7 @@ import InputButton from '../components/InputButton';
 
 const ViagemMain = () => {
   const navigation = useNavigation();
-  
+
   const [dashboardState, setDashboardState] = useState({
     meta: false,
     contribuicao: false,
@@ -31,7 +31,7 @@ const ViagemMain = () => {
     <>
       <Header
         title={'Viagem'} goBack={() => navigation.goBack()}>
-        <Appbar.Action icon="dots-vertical" onPress={() => { }} />
+        <Appbar.Action icon="dots-vertical" color="white" onPress={() => { }} />
       </Header>
 
       <View style={styles.container}>

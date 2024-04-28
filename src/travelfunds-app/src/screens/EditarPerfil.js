@@ -16,7 +16,7 @@ const EditarPerfil = () => {
         <>
         <Header 
         title={'Editar Perfil'} goBack={() => navigation.goBack()}>
-        <Appbar.Action icon="dots-vertical" onPress={() => {}} />
+        <Appbar.Action icon="dots-vertical" color="white" onPress={() => {}} />
         </Header>
 
         <View style={styles.container}>

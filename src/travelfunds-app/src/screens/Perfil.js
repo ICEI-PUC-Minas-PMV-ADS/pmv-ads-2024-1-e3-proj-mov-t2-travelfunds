@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import BottonSectionButtonMenu from '../components/BottonSectionButtonMenu.js';
 import Header from "../components/Header";
 import { Icon, Appbar } from "react-native-paper";
@@ -28,9 +28,9 @@ const Perfil = () => {
 
     return (
         <>
-            <Header
+            <Header color="white"
                 title={'Perfil'}>
-                <Appbar.Action icon="dots-vertical" onPress={() => { }} />
+                <Appbar.Action icon="dots-vertical" color="white" onPress={() => { }} />
             </Header>
 
             <View style={styles.container}>
@@ -53,7 +53,10 @@ const Perfil = () => {
                 <View style={styles.middleSection}>
                     <Text style={styles.nameText}>Nome</Text>
                     <Text>Minhas Viagens</Text>
-                    <View style={styles.middleSectionButtons}>
+                </View>
+
+                <View style={styles.bottomSection}>
+                <View style={styles.bottomSectionButtons}>
                         <BottonSectionButtonMenu
                             text={'Planejadas'}
                             mode="contained"
@@ -71,9 +74,6 @@ const Perfil = () => {
                     </View>
                     {PerfilState.planejadas && <DashboardViagensPlanejadas />}
                     {PerfilState.concluidas && <DashboardViagensConcluidas />}
-                </View>
-
-                <View style={styles.bottomSection}>
                 </View>
 
             </View>
@@ -118,11 +118,6 @@ const styles = StyleSheet.create({
         fontSize: 30,
         marginBottom: '2%',
     },
-    middleSectionButtons: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        marginTop: '4%',
-    },
     bottomSection: {
         flex: 2,
         width: '90%',
@@ -135,6 +130,10 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         alignItems: 'center',
         justifyContent: 'flex-start',
+    },
+    bottomSectionButtons: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
     },
 
 });
