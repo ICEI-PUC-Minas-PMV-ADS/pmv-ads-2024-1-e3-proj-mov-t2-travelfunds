@@ -1,0 +1,17 @@
+{
+  "users": [
+    {
+      "id": "1559",
+      "name": "nome",
+      "email": "email@email.com",
+      "password": "senha"
+    },
+    {
+      "id": "bbac",
+      "name": "nome",
+      "email": "teste@email.com",
+      "password": "senha"
+    }
+  ],
+  "viagens": []
+}

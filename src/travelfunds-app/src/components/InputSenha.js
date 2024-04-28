@@ -2,17 +2,16 @@ import { StyleSheet } from "react-native";
 import { TextInput } from "react-native-paper";
 import React, { useState } from "react";
 
-const InputSenha = () => {
-  const [text, setText] = useState("");
+const InputSenha = ({ value, onChangeText }) => {
   const [secureTextEntry, setSecureTextEntry] = useState(true);
 
   return (
     <TextInput
       style={styles.input}
       label="Senha"
-      value={text}
+      value={value}
       secureTextEntry={secureTextEntry}
-      onChangeText={(text) => setText(text)}
+      onChangeText={onChangeText}
       right={
         <TextInput.Icon
           icon="eye"
