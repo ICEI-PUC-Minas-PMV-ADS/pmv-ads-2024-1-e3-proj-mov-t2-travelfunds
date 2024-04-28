@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
+import { Icon } from 'react-native-paper';
 import EditarMeta from './EditarMeta';
 
 const Dashboard = () => {
@@ -22,7 +23,9 @@ const Dashboard = () => {
             onPress={toggleEditarMeta}
             style={styles.editButton}
           >
-            <Text style={styles.editButtonText}>Editar</Text>
+            <Text style={styles.editButtonText}>Editar {' '}
+            <Icon source="pencil" size={20} color={'white'}/>
+            </Text>
           </TouchableOpacity>
         </View>
       )}

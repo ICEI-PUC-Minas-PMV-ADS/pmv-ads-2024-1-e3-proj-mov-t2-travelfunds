@@ -2,7 +2,7 @@ import { useState } from 'react';
 import React from 'react';
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 import EditarContribuicao from './EditarContribuicao';
-import { ProgressBar } from 'react-native-paper';
+import { ProgressBar, FAB } from 'react-native-paper';
 
 const MetaDashboard = () => {
   const [showEditarContribuicao, setShowEditarContribuicao] = useState(false);
@@ -27,12 +27,14 @@ const MetaDashboard = () => {
             progress={0.9}
           />
           <View>
-            <TouchableOpacity
-              onPress={toggleEditarContribuicao}
-              style={styles.editButton}
-            >
-              <Text style={styles.editButtonText}>Adicionar</Text>
-            </TouchableOpacity>
+          <TouchableOpacity
+            onPress={toggleEditarContribuicao}
+          >
+          <FAB
+          style={styles.fab}
+          icon="plus"
+        />
+          </TouchableOpacity>
           </View>
         </View>
       )}
@@ -59,16 +61,14 @@ const styles = StyleSheet.create({
     marginTop: 30,
     color: '#fff',
   },
-  editButton: {
-    position: 'absolute',
-    bottom: 0,
-    left: 0,
-    padding: 10,
+  fab: {
     backgroundColor: '#8196AA',
-    borderRadius: 20,
-  },
-  editButtonText: {
-    color: '#fff',
+    borderRadius: 50,
+    position: 'absolute',
+    margin: 16,
+    alignItems: 'center',
+    bottom: 0,
+    left: 98,
   },
 });
 

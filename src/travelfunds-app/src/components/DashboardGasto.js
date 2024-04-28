@@ -1,8 +1,9 @@
 import React from 'react';
 import { useState } from 'react';
-import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, TouchableOpacity } from 'react-native';
 import EditarGasto from './EditarGasto';
-import { ProgressBar } from 'react-native-paper';
+import { ProgressBar, List, Text, Icon, FAB } from 'react-native-paper';
+
 
 function DashboardGasto() {
   const [showEditarGasto, setShowEditarGasto] = useState(false);
@@ -11,6 +12,7 @@ function DashboardGasto() {
     setShowEditarGasto(!showEditarGasto);
   }
 
+
   return (
     <View style={styles.container}>
       {showEditarGasto ? (
@@ -18,7 +20,7 @@ function DashboardGasto() {
       ) : (
         <View style={styles.content}>
           <View style={styles.content}>
-            <Text style={styles.contriBars}>Futuros Gastos com barras</Text>
+          <Text style={styles.contriBars}>Futuros Gastos com barras</Text>
           </View>
           <ProgressBar
             theme={{ colors: { primary: '#EF4444' } }}
@@ -26,9 +28,11 @@ function DashboardGasto() {
           />
           <TouchableOpacity
             onPress={toggleEditarGasto}
-            style={styles.editButton}
           >
-            <Text style={styles.editButtonText}>Adicionar</Text>
+          <FAB
+          style={styles.fab}
+          icon="plus"
+        />
           </TouchableOpacity>
         </View>
       )}
@@ -55,16 +59,14 @@ const styles = StyleSheet.create({
     marginTop: 30,
     color: '#fff',
   },
-  editButton: {
-    position: 'absolute',
-    bottom: 0,
-    left: 0,
-    padding: 10,
+  fab: {
     backgroundColor: '#8196AA',
-    borderRadius: 20,
-  },
-  editButtonText: {
-    color: '#fff',
+    borderRadius: 50,
+    position: 'absolute',
+    margin: 16,
+    alignItems: 'center',
+    bottom: 0,
+    left: 98,
   },
 });
 
