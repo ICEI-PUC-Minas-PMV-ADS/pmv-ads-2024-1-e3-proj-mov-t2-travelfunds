@@ -7,15 +7,10 @@ import { cadastro } from "../services/Firebase.Auth";
 
 const Cadastro = ({ navigation }) => {
   const [email, setEmail] = useState("");
-  const [nome, setNome] = useState("");
   const [senha, setSenha] = useState("");
 
   const handleEmail = (email) => {
     setEmail(email);
-  };
-
-  const handleNome = (nome) => {
-    setNome(nome);
   };
 
   const handleSenha = (senha) => {
@@ -23,7 +18,7 @@ const Cadastro = ({ navigation }) => {
   };
 
   const handleCadastro = async () => {
-    if (!email || !senha || !nome) {
+    if (!email || !senha) {
       Alert.alert("Erro", "Por favor, preencha todos os campos");
       return;
     }
