@@ -1,12 +1,19 @@
-import React from "react";
-import { useUser } from "../contexts/UserContext";
+import React, { useEffect, useState } from "react";
 import Auth from "./Auth";
 import Main from "./Main";
+import { onAuthStateChanged } from "firebase/auth";
+import { FIREBASE_AUTH } from "../../FirebaseConfig";
 
 const Route = () => {
-  const { signed } = useUser();
+  const [user, setUser] = useState(null);
 
-  return <>{signed ? <Main /> : <Auth />}</>;
+  useEffect(() => {
+    onAuthStateChanged(FIREBASE_AUTH, (user) => {
+      setUser(user);
+    });
+  }, []);
+
+  return <>{user ? <Main /> : <Auth />}</>;
 };
 
 export default Route;

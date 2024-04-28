@@ -6,7 +6,7 @@ const Stack = createNativeStackNavigator();
 
 const Main = () => {
   return (
-    <Stack.Navigator initialRouteName="ViagemMain">
+    <Stack.Navigator initialRouteName="ViagemMain" screenOptions={{ headerShown: false }}>
       <Stack.Screen name="ViagemMain" component={ViagemMain} />
     </Stack.Navigator>
   );

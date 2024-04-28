@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Input from "../components/Input";
 import InputSenha from "../components/InputSenha";
 import InputButton from "../components/InputButton";
-import { register } from "../services/urls";
+import { cadastro } from "../services/Firebase.Auth";
 
 const Cadastro = ({ navigation }) => {
   const [email, setEmail] = useState("");
@@ -22,31 +22,18 @@ const Cadastro = ({ navigation }) => {
     setSenha(senha);
   };
 
-  const handleCadastro = () => {
+  const handleCadastro = async () => {
     if (!email || !senha || !nome) {
       Alert.alert("Erro", "Por favor, preencha todos os campos");
       return;
     }
-
-    register({ name: nome, email: email.toLowerCase(), password: senha }).then((response) => {
-      if (response) {
-        Alert.alert("Atenção", "Usuário cadastrado com sucesso!", [
-          { text: "OK", onPress: () => navigation.navigate("Login") },
-        ]);
-        navigation.navigate("Login");
-      } else {
-        Alert.alert(
-          "Atenção",
-          "Usuário não cadastrado! Tente novamente mais tarde!"
-        );
-      }
-    });
+    
+    cadastro(email, senha)
   };
 
   return (
     <View style={style.container}>
       <Input label="Email" value={email} onChangeText={handleEmail} />
-      <Input label="Nome" value={nome} onChangeText={handleNome} />
       <InputSenha value={senha} onChangeText={handleSenha} />
       <InputButton text="Cadastrar" mode="contained" onPress={handleCadastro} />
       <InputButton

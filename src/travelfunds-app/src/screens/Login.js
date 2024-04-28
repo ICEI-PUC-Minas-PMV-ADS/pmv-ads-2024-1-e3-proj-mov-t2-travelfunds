@@ -3,14 +3,11 @@ import React, { useState } from "react";
 import Input from "../components/Input";
 import InputSenha from "../components/InputSenha";
 import InputButton from "../components/InputButton";
-import { login } from "../services/urls";
-import { useUser } from "../contexts/UserContext";
+import { login } from "../services/Firebase.Auth";
 
 const Login = ({ navigation }) => {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
-
-  const { setSigned, setName } = useUser();
 
   const handleEmail = (email) => {
     setEmail(email);
@@ -26,16 +23,7 @@ const Login = ({ navigation }) => {
       return;
     }
 
-    login({ email: email.toLowerCase(), password: senha }).then((response) => {
-      console.log(response);
-
-      if (response && response.user) {
-        setSigned(true);
-        setName(response.user.name);
-      } else {
-        Alert.alert("Erro", "Usuário ou senha invalidos!");
-      }
-    });
+    login(email, senha);
   };
 
   return (

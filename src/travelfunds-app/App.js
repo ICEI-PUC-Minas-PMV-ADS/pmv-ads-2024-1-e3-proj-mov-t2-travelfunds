@@ -1,5 +1,4 @@
 import { NavigationContainer } from "@react-navigation/native";
-import UserProvider from "./src/contexts/UserContext";
 import Route from "./src/navigation/Route";
 
 const TravelFundsTheme = {
@@ -10,10 +9,8 @@ const TravelFundsTheme = {
 
 export default function App() {
   return (
-    <UserProvider>
-      <NavigationContainer theme={TravelFundsTheme}>
-        <Route />
-      </NavigationContainer>
-    </UserProvider>
+    <NavigationContainer theme={TravelFundsTheme}>
+      <Route />
+    </NavigationContainer>
   );
 }

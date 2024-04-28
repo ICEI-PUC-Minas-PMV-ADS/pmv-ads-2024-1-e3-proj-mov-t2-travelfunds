@@ -4,6 +4,8 @@ import BottonButtonsMenu from '../components/BottonButtonsMenu.js';
 import MetaDashboard from '../components/MetaDashboard.js';
 import ContribuicaoDashboard from '../components/ContribuicaoDashboard.js';
 import GastosDashboard from '../components/GastosDashboard.js';
+import InputButton from '../components/InputButton.js';
+import { logout } from '../services/Firebase.Auth.js';
 
 const ViagemMain = () => {
   const [dashboardState, setDashboardState] = useState({
@@ -23,6 +25,7 @@ const ViagemMain = () => {
   return (
     <View style={styles.container}>
       <View style={styles.topSection}>
+        <InputButton text="Logout" mode="text" onPress={logout}/>
         <View style={styles.roundComponent}>
           <Text style={styles.overlayText}>foto</Text>
         </View>
