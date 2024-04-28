@@ -13,7 +13,7 @@ const Home = ({ navigation }) => {
           text="Log In"
           mode="contained"
           //onPress={() => navigation.navigate('Login')}
-          onPress={() => navigation.navigate('Perfil')}
+          onPress={() => navigation.navigate('ViagemMain')}
           
         />
       </View>
