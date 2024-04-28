@@ -12,8 +12,8 @@ const Home = ({ navigation }) => {
         <InputButton
           text="Log In"
           mode="contained"
-          onPress={() => navigation.navigate('Login')}
-          //onPress={() => navigation.navigate('EditarViagem')}
+          //onPress={() => navigation.navigate('Login')}
+          onPress={() => navigation.navigate('Perfil')}
           
         />
       </View>
