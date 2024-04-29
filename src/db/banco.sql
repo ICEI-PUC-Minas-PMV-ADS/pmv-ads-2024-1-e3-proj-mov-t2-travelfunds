@@ -1,0 +1,33 @@
+CREATE TABLE Usuario (
+    id INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    email VARCHAR(100) NOT NULL,
+    senha VARCHAR(20) NOT NULL,
+    nome TEXT NOT NULL
+);
+
+CREATE TABLE Viagem (
+    id INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    destino VARCHAR(100) NOT NULL,
+    dataPartida VARCHAR(20) NOT NULL,
+    dataRetorno TEXT NOT NULL
+);
+
+CREATE TABLE Contribuicao (
+    id INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    dataContribuicao DATE,
+    frequenciaContribuicao INTEGER,
+    valorContribuicao DOUBLE NOT NULL
+);
+
+CREATE TABLE Gasto (
+    id INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    nome VARCHAR(100) NOT NULL,
+    valor DOUBLE NOT NULL,
+    formaDePagamento VARCHAR(100) NOT NULL,
+);
+
+CREATE TABLE Meta (
+    id INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENTs,
+    nome VARCHAR(100) NOT NULL,
+    valor DOUBLE NOT NULL,
+);
