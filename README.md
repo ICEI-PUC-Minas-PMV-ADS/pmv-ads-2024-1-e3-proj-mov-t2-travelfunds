@@ -1,24 +1,23 @@
 # <img align="center" height="60px" width="60px" src="./docs/img/Logo Travel Alpha3.png"> TravelFunds
 
-`Análise e Desenvolvimento de Sistemas`
+`Análise e Desenvolvimento de Sistemas` test
 
 `Projeto - EIXO 3`
 
 O projeto TravelFunds consiste em uma aplicação que busca auxiliar os usuários a planejar financeiramente suas viagens, incluindo estimativas de gastos, economia prévia e controle de despesas durante a viagem. Dessa forma, o aplicativo poderá garantir uma experiência de viagem financeiramente responsável e tranquila.
 
-
 ## Integrantes
 
-* Ana Carolina Nogueira
-* Felipe de Araújo
-* Gabriela Penaforte
-* Naianna Duarte
-* Nikita Ceccon
-* Victor Bastos
+- Ana Carolina Nogueira
+- Felipe de Araújo
+- Gabriela Penaforte
+- Naianna Duarte
+- Nikita Ceccon
+- Victor Bastos
 
 ## Orientador
 
-* Udo Fritzke Junior
+- Udo Fritzke Junior
 
 ## Instruções de utilização
 
