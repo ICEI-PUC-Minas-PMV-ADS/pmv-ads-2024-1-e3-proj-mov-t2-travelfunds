@@ -1,6 +1,6 @@
 # <img align="center" height="60px" width="60px" src="./docs/img/Logo Travel Alpha3.png"> TravelFunds
 
-`Análise e Desenvolvimento de Sistemas` test
+`Análise e Desenvolvimento de Sistemas`
 
 `Projeto - EIXO 3`
 
