@@ -1,114 +1,80 @@
-// import React from 'react';
-// import { useState } from 'react';
-// import { StyleSheet, View, TouchableOpacity } from 'react-native';
-// import EditarGasto from './EditarGasto';
-// import { ProgressBar, List, Text, Icon, FAB } from 'react-native-paper';
-
-// function DashboardGasto() {
-//   const [showEditarGasto, setShowEditarGasto] = useState(false);
-
-//   function toggleEditarGasto() {
-//     setShowEditarGasto(!showEditarGasto);
-//   }
-
-//   return (
-//     <View style={styles.container}>
-//       {showEditarGasto ? (
-//         <EditarGasto />
-//       ) : (
-//         <View style={styles.content}>
-//           <View style={styles.content}>
-//           <Text style={styles.contriBars}>Futuros Gastos com barras</Text>
-//           </View>
-//           <ProgressBar
-//             theme={{ colors: { primary: '#EF4444' } }}
-//             progress={0.9}
-//           />
-//           <TouchableOpacity
-//             onPress={toggleEditarGasto}
-//           >
-//           <FAB
-//           style={styles.fab}
-//           icon="plus"
-//         />
-//           </TouchableOpacity>
-//         </View>
-//       )}
-//     </View>
-//   );
-// }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     width: '100%',
-//     color: '#fff',
-//     padding: 20,
-//     // borderWidth: 1,
-//     // borderColor: '#EF4444',
-//   },
-//   content: {
-//     flex: 1,
-//     alignItems: 'flex-start',
-//   },
-//   contriBars: {
-//     // borderWidth: 2,
-//     // borderColor: '#EF4444',
-//     marginTop: 30,
-//     color: '#fff',
-//   },
-//   fab: {
-//     backgroundColor: '#8196AA',
-//     borderRadius: 50,
-//     position: 'absolute',
-//     margin: 16,
-//     alignItems: 'center',
-//     bottom: 0,
-//     left: 98,
-//   },
-// });
-
-// export default DashboardGasto;
-
 import React, { useState } from 'react';
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
-import EditableItem from './EditableItem';
+import EditarGasto from './EditarGasto';
 
 const DashboardGasto = () => {
   const [editMode, setEditMode] = useState(false);
-  const [gasto, setGasto] = useState('');
   const [expenses, setExpenses] = useState([]);
+  const [editIndex, setEditIndex] = useState(null);
 
-  const handleToggleEdit = () => {
+  const handleToggleEdit = (index) => {
+    setEditIndex(index);
     setEditMode(!editMode);
   };
 
-  const handleSave = () => {
-    // Save expense value
-    // setEditMode(false);
-    setExpenses([...expenses, gasto]);
+  const handleSave = (newExpense) => {
+    if (editIndex !== null) {
+      const newExpenses = [...expenses];
+      newExpenses[editIndex] = newExpense;
+      setExpenses(newExpenses);
+    } else {
+      setExpenses([...expenses, newExpense]);
+    }
+    setEditIndex(null);
     setEditMode(false);
+  };
+
+  const handleDelete = (index) => {
+    const newExpenses = [...expenses];
+    newExpenses.splice(index, 1);
+    setExpenses(newExpenses);
+  };
+
+  const calculateTotalExpense = () => {
+    return expenses
+      .reduce((total, expense) => total + expense.value, 0)
+      .toFixed(2);
   };
 
   return (
     <View style={styles.container}>
       {editMode ? (
-        <EditableItem
-          label="Gasto"
-          value={gasto}
-          onChangeText={setGasto}
+        <EditarGasto
+          expense={editIndex !== null ? expenses[editIndex] : null}
           onSave={handleSave}
-          onCancel={handleToggleEdit}
+          onCancel={() => setEditMode(false)}
         />
       ) : (
         <View style={styles.content}>
           {expenses.map((expense, index) => (
-            <Text key={index} style={styles.gastoText}>
-              {expense}
-            </Text>
+            <View key={index} style={styles.expenseItem}>
+              <Text style={styles.gastoText}>
+                {expense.name} ${expense.value}
+              </Text>
+              <View style={styles.buttonContainer}>
+                <TouchableOpacity
+                  onPress={() => handleToggleEdit(index)}
+                  style={styles.editButton}
+                >
+                  <Text style={styles.buttonText}>Editar</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  onPress={() => handleDelete(index)}
+                  style={styles.deleteButton}
+                >
+                  <Text style={styles.buttonText}>Deletar</Text>
+                </TouchableOpacity>
+              </View>
+            </View>
           ))}
-          <TouchableOpacity onPress={handleToggleEdit} style={styles.addButton}>
-            <Text style={styles.addButtonText}>Add</Text>
+          <Text style={styles.totalExpense}>
+            Total ${calculateTotalExpense()}
+          </Text>
+          <TouchableOpacity
+            onPress={() => handleToggleEdit(null)}
+            style={styles.addButton}
+          >
+            <Text style={styles.addButtonText}>Adicionar</Text>
           </TouchableOpacity>
         </View>
       )}
@@ -127,8 +93,36 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'flex-start',
   },
+  expenseItem: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 10,
+  },
   gastoText: {
-    marginTop: 30,
+    color: '#fff',
+  },
+  buttonContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  editButton: {
+    backgroundColor: '#8196AA',
+    padding: 5,
+    borderRadius: 5,
+    marginRight: 5,
+  },
+  deleteButton: {
+    backgroundColor: '#FF6347',
+    padding: 5,
+    borderRadius: 5,
+  },
+  buttonText: {
+    color: '#fff',
+  },
+  totalExpense: {
+    marginTop: 10,
+    fontWeight: 'bold',
     color: '#fff',
   },
   addButton: {

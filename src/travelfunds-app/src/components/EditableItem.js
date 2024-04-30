@@ -1,15 +1,34 @@
 import React from 'react';
-import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
-import CustomTextInput from './CustomTextInput';
+import {
+  StyleSheet,
+  View,
+  Text,
+  TouchableOpacity,
+  TextInput,
+} from 'react-native';
 import InputButton from './InputButton';
 
-const EditableItem = ({ label, value, onChangeText, onSave, onCancel }) => {
+const EditableItem = ({
+  name,
+  value,
+  onChangeName,
+  onChangeValue,
+  onSave,
+  onCancel,
+}) => {
   return (
     <View style={styles.container}>
-      <CustomTextInput
-        label={label}
+      <TextInput
+        placeholder="Name"
+        value={name}
+        onChangeText={onChangeName}
+        style={styles.input}
+      />
+      <TextInput
+        placeholder="Value"
         value={value}
-        onChangeText={onChangeText}
+        onChangeText={onChangeValue}
+        keyboardType="numeric"
         style={styles.input}
       />
       <View style={styles.inputButtonContainer}>
@@ -32,11 +51,15 @@ const styles = StyleSheet.create({
   },
   input: {
     marginBottom: 16,
+    borderWidth: 1,
+    borderColor: '#ccc',
+    borderRadius: 5,
+    padding: 10,
   },
   inputButtonContainer: {
-    margin: 20,
-    alignItems: 'center',
-    justifyContent: 'flex-end',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 10,
   },
   cancelButton: {
     padding: 10,
