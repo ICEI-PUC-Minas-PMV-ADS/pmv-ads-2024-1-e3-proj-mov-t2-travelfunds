@@ -1,85 +1,139 @@
+// import React, { useState } from 'react';
+// import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
+// import CustomTextInput from './CustomTextInput';
+// import InputButton from './InputButton';
+// import DashboardGasto from './DashboardGasto';
+
+// const EditarGasto = ({ label }) => {
+//   const [text, setText] = useState('');
+
+//   const [hideEditarGasto, setHideEditarGasto] = useState(false);
+
+//   const toggleHideEditarGasto = () => {
+//     setHideEditarGasto(!hideEditarGasto);
+//   };
+
+//   return (
+//     <View style={styles.container}>
+//       {hideEditarGasto ? (
+//         <DashboardGasto />
+//       ) : (
+//           <>
+//           <CustomTextInput
+//             label="Nome do Gasto"
+//             value={text}
+//             onChangeText={(text) => setText(text)}
+//             style={styles.input}
+//           />
+//           <CustomTextInput
+//             label="Valor"
+//             value={text}
+//             onChangeText={(text) => setText(text)}
+//             style={styles.input}
+//           />
+//           <CustomTextInput
+//             label="Adicionar valor"
+//             value={text}
+//             onChangeText={(text) => setText(text)}
+//             style={styles.input}
+//           />
+//           <TouchableOpacity
+//             onPress={toggleHideEditarGasto}
+//             style={styles.editButton}
+//           >
+//             <Text style={styles.editButtonText}>Voltar</Text>
+//           </TouchableOpacity>
+
+//           <View style={styles.inputButtonContainer}>
+//             <InputButton text={'Adicionar'} />
+//           </View>
+//           </>
+//         )}
+//   </View>
+//   );
+// };
+
+//       const styles = StyleSheet.create({
+//         container: {
+//         flex: 1,
+//       width: '100%',
+//       color: '#fff',
+//       padding: 20,
+//       position: 'relative',
+//   },
+//       input: {
+//         marginBottom: 16,
+//   },
+//       inputButtonContainer: {
+//         margin: 20,
+//       alignItems: 'center',
+//       justifyContent: 'flex-end',
+//   },
+//       editButton: {
+//         position: 'absolute',
+//       bottom: 0,
+//       left: 0,
+//       padding: 10,
+//       backgroundColor: '#8196AA',
+//       borderRadius: 20,
+//   },
+//       editButtonText: {
+//         color: '#fff',
+//   },
+// });
+
+//       export default EditarGasto;
+
 import React, { useState } from 'react';
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
-import CustomTextInput from './CustomTextInput';
-import InputButton from './InputButton';
-import DashboardGasto from './DashboardGasto';
+import EditableItem from './EditableItem';
 
-const EditarGasto = ({ label }) => {
-  const [text, setText] = useState('');
+const EditarGasto = () => {
+  const [editMode, setEditMode] = useState(false);
+  const [gasto, setGasto] = useState('');
 
-  const [hideEditarGasto, setHideEditarGasto] = useState(false);
+  const handleToggleEdit = () => {
+    setEditMode(!editMode);
+  };
 
-  const toggleHideEditarGasto = () => {
-    setHideEditarGasto(!hideEditarGasto);
+  const handleSave = () => {
+    setEditMode(false);
   };
 
   return (
     <View style={styles.container}>
-      {hideEditarGasto ? (
-        <DashboardGasto />
+      {editMode ? (
+        <EditableItem
+          label="Gasto"
+          value={gasto}
+          onChangeText={setGasto}
+          onSave={handleSave}
+          onCancel={handleToggleEdit}
+        />
       ) : (
-          <>
-          <CustomTextInput
-            label="Nome do Gasto"
-            value={text}
-            onChangeText={(text) => setText(text)}
-            style={styles.input}
-          />
-          <CustomTextInput
-            label="Valor"
-            value={text}
-            onChangeText={(text) => setText(text)}
-            style={styles.input}
-          />
-          <CustomTextInput
-            label="Adicionar valor"
-            value={text}
-            onChangeText={(text) => setText(text)}
-            style={styles.input}
-          />
-          <TouchableOpacity
-            onPress={toggleHideEditarGasto}
-            style={styles.editButton}
-          >
-            <Text style={styles.editButtonText}>Voltar</Text>
-          </TouchableOpacity>
-
-          <View style={styles.inputButtonContainer}>
-            <InputButton text={'Adicionar'} />
-          </View>
-          </>
-        )}
-  </View>
+        <TouchableOpacity onPress={handleToggleEdit} style={styles.editButton}>
+          <Text style={styles.editButtonText}>Edit Expense</Text>
+        </TouchableOpacity>
+      )}
+    </View>
   );
 };
 
-      const styles = StyleSheet.create({
-        container: {
-        flex: 1,
-      width: '100%',
-      color: '#fff',
-      padding: 20,
-      position: 'relative',
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    width: '100%',
+    color: '#fff',
+    padding: 20,
   },
-      input: {
-        marginBottom: 16,
+  editButton: {
+    padding: 10,
+    backgroundColor: '#8196AA',
+    borderRadius: 20,
   },
-      inputButtonContainer: {
-        margin: 20,
-      alignItems: 'center',
-      justifyContent: 'flex-end',
-  },
-      editButton: {
-        position: 'absolute',
-      bottom: 0,
-      left: 0,
-      padding: 10,
-      backgroundColor: '#8196AA',
-      borderRadius: 20,
-  },
-      editButtonText: {
-        color: '#fff',
+  editButtonText: {
+    color: '#fff',
   },
 });
 
-      export default EditarGasto;
+export default EditarGasto;
