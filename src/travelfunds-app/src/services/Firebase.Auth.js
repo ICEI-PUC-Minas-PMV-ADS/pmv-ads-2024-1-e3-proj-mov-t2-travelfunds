@@ -4,7 +4,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from "firebase/auth";
-import { criarUsuario } from "./Firebase.DB.Usuario";
+import { criarUsuario } from "./Firebase.DB.Usuarios";
 
 const auth = FIREBASE_AUTH;
 
