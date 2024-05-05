@@ -144,6 +144,7 @@ import DashboardGasto from '../components/DashboardGasto.js';
 import { Icon, Appbar } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
 import InputButton from '../components/InputButton';
+import { logout } from '../services/Firebase.Auth.js';
 
 const ViagemMain = () => {
   const navigation = useNavigation();
@@ -180,6 +181,10 @@ const ViagemMain = () => {
               onPress={() => navigation.navigate('EditarViagem')}
               text="Editar"
             />
+            {/* <InputButton
+              onPress={() => logout()}
+              text="Logout"
+            /> */}
           </View>
         </View>
         <View style={styles.bottomSection}>

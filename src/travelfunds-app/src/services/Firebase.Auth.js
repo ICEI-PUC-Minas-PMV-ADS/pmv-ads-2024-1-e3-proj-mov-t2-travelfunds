@@ -4,17 +4,20 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from "firebase/auth";
+import { criarUsuario } from "./Firebase.DB.Usuario";
 
 const auth = FIREBASE_AUTH;
 
-const cadastro = async (email, senha) => {
+const cadastro = async (nome, email, senha) => {
+  const emailFormatado = email.toLowerCase();
+
   try {
     const response = await createUserWithEmailAndPassword(
       auth,
-      email.toLowerCase(),
+      emailFormatado,
       senha
     );
-    console.log(response);
+    criarUsuario(response.user.uid, emailFormatado, nome);
   } catch (error) {
     console.log(error);
     Alert.alert("Erro", `Erro ao cadastrar usuário! (${error.message})`);
@@ -22,13 +25,14 @@ const cadastro = async (email, senha) => {
 };
 
 const login = async (email, senha) => {
+  const emailFormatado = email.toLowerCase();
+
   try {
-    const response = await signInWithEmailAndPassword(
+    await signInWithEmailAndPassword(
       auth,
-      email.toLowerCase(),
+      emailFormatado,
       senha
     );
-    console.log(response);
   } catch (error) {
     console.log(error);
     Alert.alert("Erro", `Erro ao logar usuário! (${error.message})`);

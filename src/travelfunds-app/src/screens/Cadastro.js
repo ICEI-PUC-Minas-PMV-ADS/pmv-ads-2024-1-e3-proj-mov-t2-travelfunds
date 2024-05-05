@@ -8,6 +8,7 @@ import { cadastro } from "../services/Firebase.Auth";
 const Cadastro = ({ navigation }) => {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
+  const [nome, setNome] = useState("");
 
   const handleEmail = (email) => {
     setEmail(email);
@@ -17,17 +18,22 @@ const Cadastro = ({ navigation }) => {
     setSenha(senha);
   };
 
+  const handleNome = (nome) => {
+    setNome(nome);
+  };
+
   const handleCadastro = async () => {
-    if (!email || !senha) {
+    if (!nome || !email || !senha) {
       Alert.alert("Erro", "Por favor, preencha todos os campos");
       return;
     }
-    
-    cadastro(email, senha)
+
+    cadastro(nome, email, senha);
   };
 
   return (
     <View style={style.container}>
+      <Input label="Nome" value={nome} onChangeText={handleNome} />
       <Input label="Email" value={email} onChangeText={handleEmail} />
       <InputSenha value={senha} onChangeText={handleSenha} />
       <InputButton text="Cadastrar" mode="contained" onPress={handleCadastro} />
