@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 import EditarGasto from './EditarGasto';
+import Ionicons from '@expo/vector-icons/Ionicons';
 
 const DashboardGasto = () => {
   const [editMode, setEditMode] = useState(false);
@@ -68,13 +69,19 @@ const DashboardGasto = () => {
             </View>
           ))}
           <Text style={styles.totalExpense}>
-            Total ${calculateTotalExpense()}
+            ${calculateTotalExpense()} Total
           </Text>
           <TouchableOpacity
             onPress={() => handleToggleEdit(null)}
             style={styles.addButton}
           >
-            <Text style={styles.addButtonText}>Adicionar</Text>
+            {/* <Text style={styles.addButtonText}>+</Text> */}
+            <Ionicons
+              name="add-circle-outline"
+              size={40}
+              color="#fff"
+              style={styles.icon}
+            />
           </TouchableOpacity>
         </View>
       )}
@@ -91,7 +98,9 @@ const styles = StyleSheet.create({
   },
   content: {
     flex: 1,
-    alignItems: 'flex-start',
+    width: '100%',
+    color: '#fff',
+    padding: 20,
   },
   expenseItem: {
     flexDirection: 'row',
@@ -126,12 +135,15 @@ const styles = StyleSheet.create({
     color: '#fff',
   },
   addButton: {
-    position: 'absolute',
-    bottom: 0,
-    left: 0,
-    padding: 10,
-    backgroundColor: '#8196AA',
-    borderRadius: 20,
+    // position: 'absolute',
+    // bottom: 0,
+    // left: '50%',
+    // padding: 10,
+    // // backgroundColor: '#8196AA',
+    // borderRadius: 20,
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    marginTop: 30,
   },
   addButtonText: {
     color: '#fff',
