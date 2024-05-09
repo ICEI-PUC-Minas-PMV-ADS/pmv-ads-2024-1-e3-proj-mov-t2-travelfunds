@@ -31,12 +31,19 @@ const ViagemMain = () => {
   };
 
   const handleGoBack = () => {
-    setDashboardState({
-      // ...dashboardState,
-      meta: false,
-      contribuicao: false,
-      gastos: false,
-    });
+    if (
+      !dashboardState.meta &&
+      !dashboardState.contribuicao &&
+      !dashboardState.gastos
+    ) {
+      navigation.navigate('Perfil');
+    } else {
+      setDashboardState({
+        meta: false,
+        contribuicao: false,
+        gastos: false,
+      });
+    }
   };
 
   return (

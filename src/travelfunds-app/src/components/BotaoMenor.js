@@ -1,28 +1,19 @@
 import React from 'react';
 import { Button, Text } from 'react-native-paper';
-import { StyleSheet } from "react-native";
+import { StyleSheet } from 'react-native';
 
-const BotaoMenor = ( {text} ) => (
-    
-    <Button style={styles.button}  
-        mode="contained" 
-        onPress={() => console.log('Pressed')}>
-       
-    {text}  
-    </Button>
-     
-  );
+const BotaoMenor = ({ text, onPress }) => (
+  <Button style={styles.button} mode="contained" onPress={onPress}>
+    {text}
+  </Button>
+);
 
+export default BotaoMenor;
 
-  export default BotaoMenor;
-
-  const styles = StyleSheet.create({
-    button: {
-        backgroundColor: "#8196AA",
-        marginTop: 12,
-        
-
-    }
-    
-    },
-  );
+const styles = StyleSheet.create({
+  button: {
+    backgroundColor: '#8196AA',
+    borderRadius: 20,
+    alignItems: 'center',
+  },
+});

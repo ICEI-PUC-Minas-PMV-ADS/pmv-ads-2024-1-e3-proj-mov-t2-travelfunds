@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import {
-  StyleSheet,
-  View,
-  Text,
-  TouchableOpacity,
-  TextInput,
-} from 'react-native';
 
-const EditarGasto = ({ expense, onSave, onCancel }) => {
+import { StyleSheet, View, KeyboardAvoidingView, Platform } from 'react-native';
+
+import CustomTextInput from './CustomTextInput';
+import BotaoMenor from './BotaoMenor';
+
+const EditarGasto = ({ expense, onSave }) => {
   const [name, setName] = useState('');
   const [value, setValue] = useState('');
 
@@ -26,68 +24,60 @@ const EditarGasto = ({ expense, onSave, onCancel }) => {
   };
 
   return (
-    <View style={styles.container}>
-      <TextInput
-        placeholder="Nome gasto"
-        value={name}
-        onChangeText={setName}
-        style={styles.input}
-      />
-      <TextInput
-        placeholder="Valor Gasto"
-        value={value}
-        onChangeText={setValue}
-        keyboardType="numeric"
-        style={styles.input}
-      />
-      <View style={styles.inputButtonContainer}>
-        <TouchableOpacity onPress={handleSave} style={styles.saveButton}>
-          <Text style={styles.saveButtonText}>Salvar</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={onCancel} style={styles.cancelButton}>
-          <Text style={styles.cancelButtonText}>Cancelar</Text>
-        </TouchableOpacity>
+    <KeyboardAvoidingView
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      style={styles.container}
+    >
+      <View style={styles.innerContainer}>
+        <CustomTextInput
+          label="Nome"
+          value={name}
+          onChangeText={setName}
+          style={styles.customTextInput}
+        />
+        <CustomTextInput
+          label="Valor"
+          value={value}
+          onChangeText={setValue}
+          keyboardType="numeric"
+          style={styles.customTextInput}
+        />
       </View>
-    </View>
+
+      <View style={styles.inputButtonContainer}>
+        <BotaoMenor
+          text="Salvar"
+          onPress={handleSave}
+          style={styles.saveButton}
+        />
+
+        <BotaoMenor
+          text="Cancelar"
+          onPress={handleSave}
+          style={styles.saveButton}
+        />
+      </View>
+    </KeyboardAvoidingView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    width: '100%',
-    color: '#fff',
-    padding: 20,
-    position: 'relative',
   },
-  input: {
+  innerContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    paddingHorizontal: 20,
+  },
+  customTextInput: {
     marginBottom: 16,
-    borderWidth: 1,
-    borderColor: '#ccc',
-    borderRadius: 5,
-    padding: 10,
   },
   inputButtonContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-  },
-  saveButton: {
-    backgroundColor: '#8196AA',
-    padding: 10,
-    borderRadius: 5,
-    alignItems: 'center',
-  },
-  saveButtonText: {
-    color: '#fff',
-  },
-  cancelButton: {
-    backgroundColor: '#FF6347',
-    padding: 10,
-    borderRadius: 5,
-    alignItems: 'center',
-  },
-  cancelButtonText: {
-    color: '#fff',
+    paddingHorizontal: 20,
+    paddingBottom: 20,
   },
 });
 

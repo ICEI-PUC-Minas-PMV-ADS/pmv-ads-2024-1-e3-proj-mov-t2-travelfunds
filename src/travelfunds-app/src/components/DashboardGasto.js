@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
+
+import { StyleSheet, View, Text } from 'react-native';
+
 import EditarGasto from './EditarGasto';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
@@ -53,36 +55,35 @@ const DashboardGasto = () => {
                 {expense.name} ${expense.value}
               </Text>
               <View style={styles.buttonContainer}>
-                <TouchableOpacity
+                <Ionicons
+                  name="brush-outline"
+                  size={24}
+                  color="white"
                   onPress={() => handleToggleEdit(index)}
-                  style={styles.editButton}
-                >
-                  <Text style={styles.buttonText}>Editar</Text>
-                </TouchableOpacity>
-                <TouchableOpacity
+                />
+                <Ionicons
+                  name="trash-outline"
+                  size={24}
+                  color="white"
                   onPress={() => handleDelete(index)}
-                  style={styles.deleteButton}
-                >
-                  <Text style={styles.buttonText}>Deletar</Text>
-                </TouchableOpacity>
+                  style={{ marginLeft: 30 }}
+                />
               </View>
             </View>
           ))}
+
           <Text style={styles.totalExpense}>
-            ${calculateTotalExpense()} Total
+            Total ${calculateTotalExpense()}
           </Text>
-          <TouchableOpacity
-            onPress={() => handleToggleEdit(null)}
-            style={styles.addButton}
-          >
-            {/* <Text style={styles.addButtonText}>+</Text> */}
+
+          <View style={styles.addButton}>
             <Ionicons
+              onPress={() => handleToggleEdit(null)}
               name="add-circle-outline"
               size={40}
               color="#fff"
-              style={styles.icon}
             />
-          </TouchableOpacity>
+          </View>
         </View>
       )}
     </View>
@@ -100,7 +101,6 @@ const styles = StyleSheet.create({
     flex: 1,
     width: '100%',
     color: '#fff',
-    padding: 20,
   },
   expenseItem: {
     flexDirection: 'row',
@@ -110,10 +110,10 @@ const styles = StyleSheet.create({
   },
   gastoText: {
     color: '#fff',
+    fontSize: 18,
   },
   buttonContainer: {
     flexDirection: 'row',
-    alignItems: 'center',
   },
   editButton: {
     backgroundColor: '#8196AA',
@@ -131,17 +131,12 @@ const styles = StyleSheet.create({
   },
   totalExpense: {
     marginTop: 10,
+    fontSize: 18,
     fontWeight: 'bold',
-    color: '#fff',
+    color: '#EF4444',
   },
   addButton: {
-    // position: 'absolute',
-    // bottom: 0,
-    // left: '50%',
-    // padding: 10,
-    // // backgroundColor: '#8196AA',
-    // borderRadius: 20,
-    justifyContent: 'flex-end',
+    justifyContent: 'center',
     alignItems: 'center',
     marginTop: 30,
   },
