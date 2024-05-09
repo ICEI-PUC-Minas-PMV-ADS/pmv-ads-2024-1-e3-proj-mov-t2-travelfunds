@@ -6,6 +6,7 @@ import { useNavigation } from '@react-navigation/native';
 import { logout } from '../services/Firebase.Auth.js';
 
 import Ionicons from '@expo/vector-icons/Ionicons';
+import AntDesign from '@expo/vector-icons/AntDesign';
 import BottonSectionButtonMenu from '../components/BottonSectionButtonMenu.js';
 
 import DashboardMeta from '../components/DashboardMeta.js';
@@ -56,8 +57,8 @@ const ViagemMain = () => {
             </Text>
           </View>
 
-          <Ionicons
-            name="settings-outline"
+          <AntDesign
+            name="bars"
             size={35}
             color="#fff"
             style={styles.settingsIcon}
