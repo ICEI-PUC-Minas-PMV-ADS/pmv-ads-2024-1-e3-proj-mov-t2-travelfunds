@@ -6,10 +6,12 @@ import Header from "../components/Header";
 import { Icon, Appbar } from "react-native-paper";
 import { useNavigation } from '@react-navigation/native';
 import DateTimePicker from '@react-native-community/datetimepicker';
+import * as ImagePicker from 'expo-image-picker';
+import { Button } from 'react-native-paper';
 
 const CriarViagem = () => {
     const navigation = useNavigation();
-
+    const [image, setImage] = useState(null);
     const initialState = { desc: '', date: new Date(), showDatePicker: false }
 
     state = {
@@ -17,17 +19,17 @@ const CriarViagem = () => {
     }
 
     save = () => {
-        const newTask = {
+        const novaViagem = {
             desc: this.state.desc,
             date: this.state.date
         }
 
-        this.props.onSave && this.props.onSave(newTask)
+        this.props.onSave && this.props.onSave(novaViagem)
         this.setState({ ...initialState })
     }
 
     getDatePicker = () => {
-        let datePicker = <DateTimePicker value={this.state.date}
+        const datePicker = <DateTimePicker value={this.state.date}
             onChange={(_, date) => this.setState({ date, showDatePicker: false })}
             mode='date' />
         
@@ -47,7 +49,21 @@ const CriarViagem = () => {
         }
         
         return datePicker
-    }    
+    }  
+        
+      
+        const pickImage = async () => {
+          const result = await ImagePicker.launchImageLibraryAsync({
+            mediaTypes: ImagePicker.MediaTypeOptions.All,
+            allowsEditing: true,
+            aspect: [4, 3],
+            quality: 1,
+          });
+       
+          if (!result.canceled) {
+            setImage(result.assets[0].uri);
+          }
+        };
 
 
     return (
@@ -61,12 +77,12 @@ const CriarViagem = () => {
         <View style={styles.container}>
 
             <View style={styles.topSection}>
+
                 <View style={styles.roundComponent}>
-                    <Text
-                        style={styles.overlayText}>
-                        <Icon source="camera" size={40} />
-                    </Text>
+                    <Button icon="camera" mode="contained" onPress={pickImage}> Foto </Button>
+                    {image && <Image source={{ uri: image }} style={styles.image} />}
                 </View>
+
             </View>
 
             <View style={styles.bottomSection}>
@@ -123,4 +139,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default CriarViagem; 
+export default CriarViagem;
