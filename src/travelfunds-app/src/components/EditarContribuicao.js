@@ -1,139 +1,83 @@
-// import React, { useState } from 'react';
-// import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
-// import CustomTextInput from './CustomTextInput';
-// import InputButton from './InputButton';
-// import MetaDashboard from './DashboardContribuicao';
+import React, { useState, useEffect } from 'react';
 
-// const EditarContribuicao = ({ label }) => {
-//   const [text, setText] = useState('');
+import { StyleSheet, View, KeyboardAvoidingView, Platform } from 'react-native';
 
-//   const [hideEditarContribuicao, setHideEditarContribuicao] = useState(false);
+import CustomTextInput from './CustomTextInput';
+import BotaoMenor from './BotaoMenor';
 
-//   const toggleHideEditarContribuicao = () => {
-//     setHideEditarContribuicao(!hideEditarContribuicao);
-//   };
+const EditarContribuicao = ({ contribuicao, onSave }) => {
+  const [name, setName] = useState('');
+  const [value, setValue] = useState('');
 
-//   return (
-//     <View style={styles.container}>
-//       {hideEditarContribuicao ? (
-//         <MetaDashboard />
-//       ) : (
-//       <>
-//       <CustomTextInput
-//         label="Nome da Contribuição"
-//         value={text}
-//         onChangeText={(text) => setText(text)}
-//         style={styles.input}
-//       />
-//       <CustomTextInput
-//         label="Valor"
-//         value={text}
-//         onChangeText={(text) => setText(text)}
-//         style={styles.input}
-//       />
-//       <CustomTextInput
-//         label="Adicionar valor"
-//         value={text}
-//         onChangeText={(text) => setText(text)}
-//         style={styles.input}
-//       />
-//       <TouchableOpacity
-//             onPress={toggleHideEditarContribuicao}
-//             style={styles.editButton}
-//           >
-//             <Text style={styles.editButtonText}>Voltar</Text>
-//           </TouchableOpacity>
-//       <View style={styles.inputButtonContainer}>
-//         <InputButton text={'Adicionar'} />
-//       </View>
-//       </>
-//   )
-// }
-//     </View >
-//   );
-// };
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     width: '100%',
-//     color: '#fff',
-//     padding: 20,
-//     position: 'relative',
-//   },
-//   input: {
-//     marginBottom: 16,
-//   },
-//   inputButtonContainer: {
-//     margin: 20,
-//     alignItems: 'center',
-//     justifyContent: 'flex-end',
-//   },
-//   editButton: {
-//     position: 'absolute',
-//     bottom: 0,
-//     left: 0,
-//     padding: 10,
-//     backgroundColor: '#8196AA',
-//     borderRadius: 20,
-//   },
-//   editButtonText: {
-//     color: '#fff',
-//   },
-// });
-
-// export default EditarContribuicao;
-
-import React, { useState } from 'react';
-import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
-import EditableItem from './EditableItem';
-
-const EditarContribuicao = () => {
-  const [editMode, setEditMode] = useState(false);
-  const [contribuicao, setContribuicao] = useState('');
-
-  const handleToggleEdit = () => {
-    setEditMode(!editMode);
-  };
+  useEffect(() => {
+    if (contribuicao) {
+      setName(contribuicao.name);
+      setValue(contribuicao.value.toString());
+    }
+  }, [contribuicao]);
 
   const handleSave = () => {
-    // Save contribution value
-    setEditMode(false);
+    const newContribuicao = { name, value: parseFloat(value) };
+    onSave(newContribuicao);
+    setName('');
+    setValue('');
   };
 
   return (
-    <View style={styles.container}>
-      {editMode ? (
-        <EditableItem
-          label="Contribuicao"
-          value={contribuicao}
-          onChangeText={setContribuicao}
-          onSave={handleSave}
-          onCancel={handleToggleEdit}
+    <KeyboardAvoidingView
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      style={styles.container}
+    >
+      <View style={styles.innerContainer}>
+        <CustomTextInput
+          label="Nome"
+          value={name}
+          onChangeText={setName}
+          style={styles.customTextInput}
         />
-      ) : (
-        <TouchableOpacity onPress={handleToggleEdit} style={styles.editButton}>
-          <Text style={styles.editButtonText}>Edit Contribution</Text>
-        </TouchableOpacity>
-      )}
-    </View>
+        <CustomTextInput
+          label="Valor"
+          value={value}
+          onChangeText={setValue}
+          keyboardType="numeric"
+          style={styles.customTextInput}
+        />
+      </View>
+
+      <View style={styles.inputButtonContainer}>
+        <BotaoMenor
+          text="Salvar"
+          onPress={handleSave}
+          style={styles.saveButton}
+        />
+
+        <BotaoMenor
+          text="Cancelar"
+          onPress={handleSave}
+          style={styles.saveButton}
+        />
+      </View>
+    </KeyboardAvoidingView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    width: '100%',
-    color: '#fff',
-    padding: 20,
   },
-  editButton: {
-    padding: 10,
-    backgroundColor: '#8196AA',
-    borderRadius: 20,
+  innerContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    paddingHorizontal: 20,
   },
-  editButtonText: {
-    color: '#fff',
+  customTextInput: {
+    marginBottom: 16,
+  },
+  inputButtonContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingHorizontal: 20,
+    paddingBottom: 20,
   },
 });
 

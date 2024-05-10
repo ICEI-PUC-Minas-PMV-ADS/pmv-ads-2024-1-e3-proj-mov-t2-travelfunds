@@ -1,5 +1,6 @@
-import { NavigationContainer } from "@react-navigation/native";
-import Route from "./src/navigation/Route";
+import { NavigationContainer } from '@react-navigation/native';
+import { StatusBar } from 'expo-status-bar';
+import Route from './src/navigation/Route';
 
 const TravelFundsTheme = {
   colors: {
@@ -9,8 +10,11 @@ const TravelFundsTheme = {
 
 export default function App() {
   return (
-    <NavigationContainer theme={TravelFundsTheme}>
-      <Route />
-    </NavigationContainer>
+    <>
+      <StatusBar style="light" />
+      <NavigationContainer theme={TravelFundsTheme}>
+        <Route />
+      </NavigationContainer>
+    </>
   );
 }

@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
   },
   editarPerfil: {
     position: 'absolute',
-    left: 20,
+    left: 300,
     top: -60,
   },
   middleSection: {
