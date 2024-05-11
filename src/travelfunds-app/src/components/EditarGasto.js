@@ -45,17 +45,9 @@ const EditarGasto = ({ expense, onSave }) => {
       </View>
 
       <View style={styles.inputButtonContainer}>
-        <BotaoMenor
-          text="Salvar"
-          onPress={handleSave}
-          style={styles.saveButton}
-        />
+        <BotaoMenor text="Salvar" onPress={handleSave} />
 
-        <BotaoMenor
-          text="Cancelar"
-          onPress={handleSave}
-          style={styles.saveButton}
-        />
+        <BotaoMenor text="Cancelar" onPress={handleSave} />
       </View>
     </KeyboardAvoidingView>
   );
