@@ -3,7 +3,7 @@ import { View, StyleSheet, KeyboardAvoidingView, Platform } from 'react-native';
 import CustomTextInput from './CustomTextInput';
 import BotaoMenor from './BotaoMenor';
 
-export default function EditarMeta() {
+export default function EditarMeta({ onSave, onCancel }) {
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
@@ -15,7 +15,11 @@ export default function EditarMeta() {
         <View style={styles.inputButtonContainer}>
           <BotaoMenor text="Salvar" additionalStyles={styles.saveButton} />
 
-          <BotaoMenor text="Cancelar" additionalStyles={styles.cancelButton} />
+          <BotaoMenor
+            text="Cancelar"
+            additionalStyles={styles.cancelButton}
+            onPress={onCancel}
+          />
         </View>
       </View>
     </KeyboardAvoidingView>

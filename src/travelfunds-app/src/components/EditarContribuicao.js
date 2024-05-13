@@ -5,7 +5,7 @@ import { StyleSheet, View, KeyboardAvoidingView, Platform } from 'react-native';
 import CustomTextInput from './CustomTextInput';
 import BotaoMenor from './BotaoMenor';
 
-const EditarContribuicao = ({ contribuicao, onSave }) => {
+const EditarContribuicao = ({ contribuicao, onSave, onCancel }) => {
   const [name, setName] = useState('');
   const [value, setValue] = useState('');
 
@@ -53,7 +53,7 @@ const EditarContribuicao = ({ contribuicao, onSave }) => {
 
         <BotaoMenor
           text="Cancelar"
-          onPress={handleSave}
+          onPress={onCancel}
           style={styles.saveButton}
         />
       </View>

@@ -12,10 +12,12 @@ export default function DashboardMeta() {
     setEditMode(!editMode);
   }
 
+  function handleSave() {}
+
   return (
     <View style={styles.container}>
       {editMode ? (
-        <EditarMeta />
+        <EditarMeta onSave={handleSave} onCancel={() => setEditMode(false)} />
       ) : (
         <View style={styles.metaContainer}>
           <Text style={styles.metaValue}>$valormeta</Text>
