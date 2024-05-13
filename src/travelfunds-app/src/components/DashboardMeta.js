@@ -7,12 +7,17 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 
 export default function DashboardMeta() {
   const [editMode, setEditMode] = useState(false);
+  const [meta, setMeta] = useState('');
 
   function handleToggleEdit() {
     setEditMode(!editMode);
   }
 
-  function handleSave() {}
+  function handleSave(newMeta) {
+    const metaValue = parseFloat(newMeta);
+    setMeta(metaValue);
+    setEditMode(false);
+  }
 
   return (
     <View style={styles.container}>
@@ -20,7 +25,8 @@ export default function DashboardMeta() {
         <EditarMeta onSave={handleSave} onCancel={() => setEditMode(false)} />
       ) : (
         <View style={styles.metaContainer}>
-          <Text style={styles.metaValue}>$valormeta</Text>
+          <Text style={styles.metaValue}>${meta}</Text>
+
           <Ionicons
             name="brush-outline"
             size={24}

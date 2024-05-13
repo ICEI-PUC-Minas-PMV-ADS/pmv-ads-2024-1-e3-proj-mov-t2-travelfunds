@@ -17,7 +17,18 @@ const EditarContribuicao = ({ contribuicao, onSave, onCancel }) => {
   }, [contribuicao]);
 
   const handleSave = () => {
-    const newContribuicao = { name, value: parseFloat(value) };
+    if (typeof name !== 'string' || name.trim() === '' || /^\d+$/.test(name)) {
+      alert('Por favor inserir uma contribuição válida.');
+      return;
+    }
+
+    const numericValue = parseFloat(value);
+    if (isNaN(numericValue) || numericValue <= 0) {
+      alert('Por favor inserir uma contribuição válida');
+      return;
+    }
+
+    const newContribuicao = { name, value: numericValue };
     onSave(newContribuicao);
     setName('');
     setValue('');

@@ -17,7 +17,18 @@ const EditarGasto = ({ expense, onSave, onCancel }) => {
   }, [expense]);
 
   const handleSave = () => {
-    const newExpense = { name, value: parseFloat(value) };
+    if (typeof name !== 'string' || name.trim() === '' || /^\d+$/.test(name)) {
+      alert('Por favor inserir um gasto válido.');
+      return;
+    }
+
+    const numericValue = parseFloat(value);
+    if (isNaN(numericValue) || numericValue <= 0) {
+      alert('Por favor inserir um gasto válido.');
+      return;
+    }
+
+    const newExpense = { name, value: numericValue };
     onSave(newExpense);
     setName('');
     setValue('');
