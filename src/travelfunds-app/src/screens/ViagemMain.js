@@ -16,6 +16,12 @@ import DashboardGasto from '../components/DashboardGasto.js';
 const ViagemMain = () => {
   const navigation = useNavigation();
 
+  const [meta, setMeta] = useState(0);
+
+  const handleMetaChange = (newMeta) => {
+    setMeta(newMeta);
+  };
+
   const [dashboardState, setDashboardState] = useState({
     meta: false,
     contribuicao: false,
@@ -106,8 +112,8 @@ const ViagemMain = () => {
           {!dashboardState.meta &&
             !dashboardState.contribuicao &&
             !dashboardState.gastos && (
-              <View>
-                <Text style={styles.viagemMain}>Viagem Main</Text>
+              <View style={styles.mainDashContainer}>
+                <Text style={styles.viagemMain}>${meta}</Text>
               </View>
             )}
           {/* Viagem main text placeholder, criar maindashboard.js?  */}

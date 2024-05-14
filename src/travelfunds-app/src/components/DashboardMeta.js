@@ -19,6 +19,11 @@ export default function DashboardMeta() {
     setEditMode(false);
   }
 
+  function handleMetaChange(newMeta) {
+    setMeta(newMeta);
+    onMetaChange(newMeta);
+  }
+
   return (
     <View style={styles.container}>
       {editMode ? (

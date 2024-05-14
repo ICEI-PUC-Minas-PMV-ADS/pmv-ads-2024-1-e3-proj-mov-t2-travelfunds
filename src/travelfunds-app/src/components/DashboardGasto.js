@@ -5,6 +5,9 @@ import { StyleSheet, View, Text } from 'react-native';
 import EditarGasto from './EditarGasto';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
+import { doc, setDoc } from 'firebase/firestore';
+import { FIRESTORE_DB } from '../../FirebaseConfig';
+
 const DashboardGasto = () => {
   const [editMode, setEditMode] = useState(false);
   const [expenses, setExpenses] = useState([]);
