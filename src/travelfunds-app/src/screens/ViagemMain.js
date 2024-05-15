@@ -8,6 +8,7 @@ import { logout } from '../services/Firebase.Auth.js';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import BottonSectionButtonMenu from '../components/BottonSectionButtonMenu.js';
+import TotalGasto from '../components/TotalGasto.js';
 
 import DashboardMeta from '../components/DashboardMeta.js';
 import DashboardContribuicao from '../components/DashboardContribuicao.js';
@@ -16,11 +17,11 @@ import DashboardGasto from '../components/DashboardGasto.js';
 const ViagemMain = () => {
   const navigation = useNavigation();
 
-  const [meta, setMeta] = useState(0);
+  // const [meta, setMeta] = useState(0);
 
-  const handleMetaChange = (newMeta) => {
-    setMeta(newMeta);
-  };
+  // const handleMetaChange = (newMeta) => {
+  //   setMeta(newMeta);
+  // };
 
   const [dashboardState, setDashboardState] = useState({
     meta: false,
@@ -113,10 +114,11 @@ const ViagemMain = () => {
             !dashboardState.contribuicao &&
             !dashboardState.gastos && (
               <View style={styles.mainDashContainer}>
-                <Text style={styles.viagemMain}>${meta}</Text>
+                {/* <Text style={styles.viagemMain}>${meta}</Text> */}
+                <Text style={styles.viagemMain}>Viagem Main</Text>
+                <TotalGasto style={styles.viagemMain} />
               </View>
             )}
-          {/* Viagem main text placeholder, criar maindashboard.js?  */}
         </View>
       </View>
     </>
