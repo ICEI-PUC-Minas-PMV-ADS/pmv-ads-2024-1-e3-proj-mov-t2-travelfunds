@@ -1,10 +1,19 @@
-import React, { useState } from 'react';
-import { View, Text, StyleSheet, Pressable } from 'react-native';
-import BottonSectionButtonMenu from '../components/BottonSectionButtonMenu.js';
-import Header from '../components/Header';
-import { Icon, Appbar } from 'react-native-paper';
+import React, { useState } from "react";
+
+import { View, Text, StyleSheet } from "react-native";
+import { Icon, Appbar } from "react-native-paper";
 import { useNavigation } from '@react-navigation/native';
-import InputButton from '../components/InputButton';
+import { logout } from '../services/Firebase.Auth.js';
+
+import Ionicons from '@expo/vector-icons/Ionicons';
+import AntDesign from '@expo/vector-icons/AntDesign';
+import BottonSectionButtonMenu from '../components/BottonSectionButtonMenu.js';
+
+import DashboardPlanejadas from '../components/DashboardPlanejadas.js';
+import DashboardConcluidas from '../components/DashboardConcluidas.js';
+
+
+
 
 const Perfil = () => {
   const navigation = useNavigation();
@@ -21,24 +30,46 @@ const Perfil = () => {
     });
   };
 
+  const handleGoBack = () => {
+      setPerfilState({
+        planejadas: false,
+        concluidas: false,
+      });
+  };
+
+
+
   return (
     <>
-      <Header color="white" title={'Perfil'}>
-        <Appbar.Action icon="dots-vertical" color="white" onPress={() => {}} />
-      </Header>
 
       <View style={styles.container}>
+
         <View style={styles.topSection}>
+        <Ionicons
+            name="return-up-back-outline"
+            size={35}
+            color="#fff"
+            style={styles.returnIcon}
+            onPress={handleGoBack}
+          />
+
           <View style={styles.roundComponent}>
-            <Text style={styles.overlayText}>
+            <Text
+              style={styles.overlayText}>
               <Icon source="camera" size={40} />
             </Text>
           </View>
-          <View style={styles.editarPerfil}>
-            <InputButton
-              onPress={() => navigation.navigate('EditarPerfil')}
-              text="Editar"
-            />
+
+          <AntDesign
+            name="bars"
+            size={35}
+            color="#fff"
+            style={styles.settingsIcon}
+            onPress={() => navigation.navigate('EditarPerfil')}
+          />
+
+          <View style={styles.logout}>
+            <Text style={styles.logoutText}>Logout</Text>
           </View>
         </View>
 
@@ -53,28 +84,32 @@ const Perfil = () => {
               text={'Planejadas'}
               mode="contained"
               onPress={() => handlePress('Planejadas')}
-              backgroundColor={PerfilState.planejadas ? '#22C55E' : '#8196AA'}
+              backgroundColor={PerfilState.planejadas ? '#FBBF24' : '#8196AA'}
             />
             <BottonSectionButtonMenu
               text={'Concluídas'}
               mode="contained"
               onPress={() => handlePress('Concluidas')}
-              backgroundColor={PerfilState.concluidas ? '#FBBF24' : '#8196AA'}
+              backgroundColor={
+                PerfilState.concluidas ? '#22C55E' : '#8196AA'
+              }
             />
           </View>
-          {PerfilState.planejadas && <DashboardViagensPlanejadas />}
-          {PerfilState.concluidas && <DashboardViagensConcluidas />}
-
-          {/* place holder Paris ate new instance logica de viagem ser criada */}
-          <View>
-            <Text
-              style={{ color: '#fff', fontSize: 18, padding: 22 }}
-              onPress={() => navigation.navigate('ViagemMain')}
-            >
-              Paris
-            </Text>
-          </View>
+          {PerfilState.planejadas && <DashboardPlanejadas />}
+          {PerfilState.concluidas && <DashboardConcluidas />}
+          {!PerfilState.planejadas &&
+            !PerfilState.concluidas && (
+              <View>
+                <Text
+                  style={{ color: '#fff', fontSize: 18, padding: 22 }}
+                  onPress={() => navigation.navigate('ViagemMain')}
+                >
+                  Paris
+                </Text>
+              </View>
+            )}
         </View>
+
       </View>
     </>
   );
@@ -103,10 +138,24 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginBottom: -40,
   },
-  editarPerfil: {
+  returnIcon: {
     position: 'absolute',
-    left: 300,
-    top: -60,
+    bottom: 20,
+    left: 45,
+  },
+  settingsIcon: {
+    position: 'absolute',
+    top: 75,
+    left: 45,
+  },
+  logout: {
+    position: 'absolute',
+    top: 75,
+    right: 45,
+  },
+  logoutText: {
+    color: '#fff',
+    fontSize: 22,
   },
   middleSection: {
     marginTop: '13%',
@@ -133,6 +182,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
+
 });
+
+
 
 export default Perfil;
