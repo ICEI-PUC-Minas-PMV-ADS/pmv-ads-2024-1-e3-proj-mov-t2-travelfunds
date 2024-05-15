@@ -1,10 +1,15 @@
-import React, { useState } from 'react';
-import { View, Text, StyleSheet, Pressable } from 'react-native';
+import React, { useState } from "react";
+import { View, Text, StyleSheet } from "react-native";
 import BottonSectionButtonMenu from '../components/BottonSectionButtonMenu.js';
-import Header from '../components/Header';
-import { Icon, Appbar } from 'react-native-paper';
+import Header from "../components/Header";
+import { Icon, Appbar } from "react-native-paper";
 import { useNavigation } from '@react-navigation/native';
 import InputButton from '../components/InputButton';
+import DashboardPlanejadas from '../components/DashboardPlanejadas.js';
+import DashboardConcluidas from '../components/DashboardConcluidas.js';
+
+
+
 
 const Perfil = () => {
   const navigation = useNavigation();
@@ -21,16 +26,21 @@ const Perfil = () => {
     });
   };
 
+
+
   return (
     <>
-      <Header color="white" title={'Perfil'}>
-        <Appbar.Action icon="dots-vertical" color="white" onPress={() => {}} />
+      <Header color="white"
+        title={'Perfil'}>
+        <Appbar.Action icon="dots-vertical" color="white" onPress={() => { }} />
       </Header>
 
       <View style={styles.container}>
+
         <View style={styles.topSection}>
           <View style={styles.roundComponent}>
-            <Text style={styles.overlayText}>
+            <Text
+              style={styles.overlayText}>
               <Icon source="camera" size={40} />
             </Text>
           </View>
@@ -53,19 +63,20 @@ const Perfil = () => {
               text={'Planejadas'}
               mode="contained"
               onPress={() => handlePress('Planejadas')}
-              backgroundColor={PerfilState.planejadas ? '#22C55E' : '#8196AA'}
+              backgroundColor={PerfilState.planejadas ? '#FBBF24' : '#8196AA'}
             />
             <BottonSectionButtonMenu
               text={'Concluídas'}
               mode="contained"
               onPress={() => handlePress('Concluidas')}
-              backgroundColor={PerfilState.concluidas ? '#FBBF24' : '#8196AA'}
+              backgroundColor={
+                PerfilState.concluidas ? '#22C55E' : '#8196AA'
+              }
             />
           </View>
-          {PerfilState.planejadas && <DashboardViagensPlanejadas />}
-          {PerfilState.concluidas && <DashboardViagensConcluidas />}
+          {PerfilState.planejadas && <DashboardPlanejadas />}
+          {PerfilState.concluidas && <DashboardConcluidas />}
 
-          {/* place holder Paris ate new instance logica de viagem ser criada */}
           <View>
             <Text
               style={{ color: '#fff', fontSize: 18, padding: 22 }}
@@ -75,6 +86,7 @@ const Perfil = () => {
             </Text>
           </View>
         </View>
+
       </View>
     </>
   );
@@ -105,7 +117,7 @@ const styles = StyleSheet.create({
   },
   editarPerfil: {
     position: 'absolute',
-    left: 300,
+    left: 20,
     top: -60,
   },
   middleSection: {
@@ -133,6 +145,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
+
 });
+
+
 
 export default Perfil;
