@@ -1,17 +1,34 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { StyleSheet, View, Text } from 'react-native';
 
-import EditarGasto from './EditarGasto';
-import Ionicons from '@expo/vector-icons/Ionicons';
-
 import { doc, getDoc, updateDoc } from 'firebase/firestore';
 import { FIRESTORE_DB } from '../../FirebaseConfig';
+
+import EditarGasto from './EditarGasto';
+import Ionicons from '@expo/vector-icons/Ionicons';
 
 const DashboardGasto = () => {
   const [editMode, setEditMode] = useState(false);
   const [expenses, setExpenses] = useState([]);
   const [editIndex, setEditIndex] = useState(null);
+
+  useEffect(() => {
+    const fetchExpenses = async () => {
+      try {
+        const docRef = doc(FIRESTORE_DB, 'gastos', 'SguHhNyRXWRKlXke8jfP');
+        const docSnapshot = await getDoc(docRef);
+        if (docSnapshot.exists()) {
+          const expensesData = docSnapshot.data().expenses || [];
+          setExpenses(expensesData);
+        }
+      } catch (error) {
+        console.error('Error fetching expenses: ', error);
+      }
+    };
+
+    fetchExpenses();
+  }, []);
 
   const handleToggleEdit = (index) => {
     setEditIndex(index);
@@ -48,7 +65,7 @@ const DashboardGasto = () => {
 
   const calculateTotalExpense = () => {
     return expenses
-      .reduce((total, expense) => total + expense.value, 0)
+      .reduce((total, expense) => total + expense.valor, 0)
       .toFixed(2);
   };
 
@@ -65,7 +82,7 @@ const DashboardGasto = () => {
           {expenses.map((expense, index) => (
             <View key={index} style={styles.expenseItem}>
               <Text style={styles.gastoText}>
-                {expense.name} ${expense.value}
+                {expense.nome} ${expense.valor}
               </Text>
               <View style={styles.buttonContainer}>
                 <Ionicons
