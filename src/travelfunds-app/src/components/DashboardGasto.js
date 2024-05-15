@@ -5,7 +5,7 @@ import { StyleSheet, View, Text } from 'react-native';
 import EditarGasto from './EditarGasto';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
-import { doc, setDoc } from 'firebase/firestore';
+import { doc, getDoc, updateDoc } from 'firebase/firestore';
 import { FIRESTORE_DB } from '../../FirebaseConfig';
 
 const DashboardGasto = () => {
@@ -30,10 +30,20 @@ const DashboardGasto = () => {
     setEditMode(false);
   };
 
-  const handleDelete = (index) => {
-    const newExpenses = [...expenses];
-    newExpenses.splice(index, 1);
-    setExpenses(newExpenses);
+  const handleDelete = async (index) => {
+    try {
+      const docRef = doc(FIRESTORE_DB, 'gastos', 'SguHhNyRXWRKlXke8jfP');
+      const snapshot = await getDoc(docRef);
+      if (snapshot.exists()) {
+        const expenses = snapshot.data().expenses || [];
+        const newExpenses = [...expenses];
+        newExpenses.splice(index, 1);
+        await updateDoc(docRef, { expenses: newExpenses });
+        setExpenses(newExpenses);
+      }
+    } catch (error) {
+      console.error('Error deleting expense: ', error);
+    }
   };
 
   const calculateTotalExpense = () => {
