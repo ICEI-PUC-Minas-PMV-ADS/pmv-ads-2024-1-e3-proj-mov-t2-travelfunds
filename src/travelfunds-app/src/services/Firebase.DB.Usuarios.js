@@ -1,4 +1,4 @@
-import { doc, getDoc, setDoc } from "firebase/firestore";
+import { doc, getDoc, setDoc} from "firebase/firestore";
 import { FIRESTORE_DB } from "../../FirebaseConfig";
 
 const db = FIRESTORE_DB;
@@ -22,8 +22,7 @@ const recuperarUsuario = async (id) => {
   if (!docSnap.exists()) {
     return null;
   }
-
   return docSnap.data();
 };
 
-export { criarUsuario, recuperarUsuario };
+export { criarUsuario, recuperarUsuario};

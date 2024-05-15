@@ -1,17 +1,58 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { useState, useEffect} from "react";
+import { View, Text, StyleSheet, Alert } from "react-native";
 import InputSetPerfil from "../components/InputSetPerfil";
 import BotaoMenor from "../components/BotaoMenor";
 import Header from "../components/Header";
 import { Icon, Appbar } from "react-native-paper";
 import { useNavigation } from '@react-navigation/native';
-
-
+import { getAuth, currentUser } from 'firebase/auth';
+import { atualizarDadosUsuario } from "../services/UsuarioService";
 
 
 const EditarPerfil = () => {
     const navigation = useNavigation();
-
+    const [novoNome, setNovoNome] = useState('');
+    const [auth, setAuth] = useState(null);
+  
+    useEffect(() => {
+      const auth = getAuth();
+      setAuth(auth);
+    }, []);
+  
+    const handleUpdateProfile = async () => {
+        try {
+          if (!auth) {
+            Alert.alert('Erro', 'Instância de autenticação não encontrada');
+            return;
+          }
+    
+          const user = auth.currentUser;
+    
+          if (!user) {
+            Alert.alert('Erro', 'Usuário não autenticado');
+            return;
+          }
+    
+          const idDoUsuario = user.uid;
+    
+          const novosDados = {
+            nome: novoNome, // novoNome é o novo nome que foi alterado no estado do componente
+          };
+    
+          const resultado = await atualizarDadosUsuario(idDoUsuario, novosDados);
+    
+          if (resultado) {
+            Alert.alert('Sucesso', 'Perfil atualizado com sucesso!');
+          } else {
+            Alert.alert('Erro', 'Erro ao atualizar perfil');
+          }
+        } catch (error) {
+          console.error('Erro ao atualizar perfil:', error);
+          Alert.alert('Erro', 'Erro ao atualizar perfil');
+        }
+      };
+    
     return (
         <>
         <Header 
@@ -32,11 +73,20 @@ const EditarPerfil = () => {
 
             <View style={styles.bottomSection}>
                 <InputSetPerfil label="foto do perfil" />
-                <InputSetPerfil label="nome do perfil" />
-                <InputSetPerfil label="email" />
+                <InputSetPerfil 
+                label="Nome do Perfil" 
+                value={novoNome} 
+                onChangeText={setNovoNome} 
+                />
+                <InputSetPerfil 
+                label="email"
+                 />
                 <InputSetPerfil label="senha" />
-
-                <BotaoMenor text="Confirmar" />
+                <BotaoMenor 
+                text="Confirmar"
+                onPress={handleUpdateProfile} 
+                
+                 />
             </View>
 
         </View>

@@ -61,7 +61,7 @@ const ViagemMain = () => {
             size={35}
             color="#fff"
             style={styles.settingsIcon}
-            onPress={() => navigation.navigate('EditarViagem')}
+            onPress={() => navigation.navigate('Perfil')}
           />
 
           {/* linkar com funcionalidade de logout */}
@@ -99,7 +99,9 @@ const ViagemMain = () => {
             !dashboardState.contribuicao &&
             !dashboardState.gastos && (
               <View>
-                <Text style={styles.viagemMain}>Viagem Main</Text>
+                <Text 
+                style={styles.viagemMain}>Viagem Main
+                </Text>
               </View>
             )}
           {/* Viagem main text placeholder, criar maindashboard.js?  */}

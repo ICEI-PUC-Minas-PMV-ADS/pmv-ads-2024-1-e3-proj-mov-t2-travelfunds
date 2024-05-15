@@ -33,6 +33,8 @@ const login = async (email, senha) => {
       emailFormatado,
       senha
     );
+
+
   } catch (error) {
     console.log(error);
     Alert.alert("Erro", `Erro ao logar usuário! (${error.message})`);

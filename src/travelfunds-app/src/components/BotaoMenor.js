@@ -2,18 +2,17 @@ import React from 'react';
 import { Button, Text } from 'react-native-paper';
 import { StyleSheet } from "react-native";
 
-const BotaoMenor = ( {text} ) => (
+const BotaoMenor = ( {text, onPress} ) => (
     
-    <Button style={styles.button}  
+    <Button 
+        style={styles.button}  
         mode="contained" 
-        onPress={() => console.log('Pressed')}>
-       
+        onPress={onPress}
+        >     
     {text}  
     </Button>
      
   );
-
-
   export default BotaoMenor;
 
   const styles = StyleSheet.create({
