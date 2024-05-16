@@ -160,10 +160,11 @@ const styles = StyleSheet.create({
     color: '#fff',
   },
   totalExpense: {
-    marginTop: 10,
+    marginTop: 24,
     fontSize: 18,
     fontWeight: 'bold',
     color: '#EF4444',
+    alignSelf: 'center',
   },
   addButton: {
     justifyContent: 'center',

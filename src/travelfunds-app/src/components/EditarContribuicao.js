@@ -1,35 +1,71 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 import { StyleSheet, View, KeyboardAvoidingView, Platform } from 'react-native';
 
 import CustomTextInput from './CustomTextInput';
 import BotaoMenor from './BotaoMenor';
 
+import { doc, updateDoc, arrayUnion, arrayRemove } from 'firebase/firestore';
+import { FIRESTORE_DB } from '../../FirebaseConfig';
+
 const EditarContribuicao = ({ contribuicao, onSave, onCancel }) => {
-  const [name, setName] = useState('');
-  const [value, setValue] = useState('');
+  const [name, setName] = useState(contribuicao ? contribuicao.nome : '');
+  const [value, setValue] = useState(
+    contribuicao ? contribuicao.valor.toString() : ''
+  );
 
-  useEffect(() => {
-    if (contribuicao) {
-      setName(contribuicao.name);
-      setValue(contribuicao.value.toString());
-    }
-  }, [contribuicao]);
-
-  const handleSave = () => {
-    if (typeof name !== 'string' || name.trim() === '' || /^\d+$/.test(name)) {
-      alert('Por favor inserir uma contribuição válida.');
+  const handleSave = async () => {
+    if (
+      !name.trim() ||
+      name.length > 20 ||
+      !/^[A-Za-z]+$/.test(name) ||
+      isNaN(parseFloat(value))
+    ) {
+      alert('Por favor, insira uma contribuição válida');
       return;
     }
 
-    const numericValue = parseFloat(value);
-    if (isNaN(numericValue) || numericValue <= 0) {
-      alert('Por favor inserir uma contribuição válida');
+    const newContribuicao = { nome: name, valor: parseFloat(value) };
+
+    try {
+      const docRef = doc(FIRESTORE_DB, 'contribuicoes', '1fvzTRRxoWC6asC5Y322');
+      await updateDoc(docRef, {
+        contribuicoes: arrayUnion(newContribuicao),
+      });
+      onSave(newContribuicao);
+    } catch (error) {
+      console.log('error adding contribuicao: ', error);
+    }
+
+    setName('');
+    setValue('');
+  };
+
+  const handleUpdate = async () => {
+    if (
+      !name.trim() ||
+      name.length > 20 ||
+      !/^[A-Za-z]+$/.test(name) ||
+      isNaN(parseFloat(value))
+    ) {
+      alert('Por favor, insira uma contribuição válida');
       return;
     }
 
-    const newContribuicao = { name, value: numericValue };
-    onSave(newContribuicao);
+    const updateContribuicao = { nome: name, valor: parseFloat(value) };
+
+    try {
+      const docRef = doc(FIRESTORE_DB, 'contribuicoes', '1fvzTRRxoWC6asC5Y322');
+
+      await updateDoc(docRef, { contribuicoes: arrayRemove(contribuicao) });
+      await updateDoc(docRef, {
+        contribuicoes: arrayUnion(updateContribuicao),
+      });
+      onSave(updateContribuicao);
+    } catch (error) {
+      console.error('error updating contribuicao: ', error);
+    }
+
     setName('');
     setValue('');
   };
@@ -56,17 +92,17 @@ const EditarContribuicao = ({ contribuicao, onSave, onCancel }) => {
       </View>
 
       <View style={styles.inputButtonContainer}>
-        <BotaoMenor
-          text="Salvar"
-          onPress={handleSave}
-          style={styles.saveButton}
-        />
-
-        <BotaoMenor
-          text="Cancelar"
-          onPress={onCancel}
-          style={styles.saveButton}
-        />
+        {contribuicao ? (
+          <>
+            <BotaoMenor text="Atualizar" onPress={handleUpdate} />
+            <BotaoMenor text="Cancelar" onPress={onCancel} />
+          </>
+        ) : (
+          <>
+            <BotaoMenor text="Salvar" onPress={handleSave} />
+            <BotaoMenor text="Cancelar" onPress={onCancel} />
+          </>
+        )}
       </View>
     </KeyboardAvoidingView>
   );

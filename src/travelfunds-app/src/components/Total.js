@@ -5,6 +5,7 @@ import { FIRESTORE_DB } from '../../FirebaseConfig';
 
 const TotalGasto = () => {
   const [totalExpense, setTotalExpense] = useState(0);
+  const [totalContribuicao, setTotalContribuicao] = useState(0);
 
   useEffect(() => {
     const fetchExpensesData = async () => {
@@ -30,9 +31,37 @@ const TotalGasto = () => {
     fetchExpensesData();
   }, []);
 
+  useEffect(() => {
+    const fetchContribuicoesData = async () => {
+      try {
+        const docRef = doc(
+          FIRESTORE_DB,
+          'contribuicoes',
+          '1fvzTRRxoWC6asC5Y322'
+        );
+        const docSnapshot = await getDoc(docRef);
+        if (docSnapshot.exists()) {
+          const contribuicoesData = docSnapshot.data().contribuicoes || [];
+          const total = contribuicoesData.reduce((acc, contribuicao) => {
+            const contribuicaoValue = parseFloat(contribuicao.valor);
+            if (!isNaN(contribuicaoValue)) {
+              return acc + contribuicaoValue;
+            }
+            return acc;
+          }, 0);
+          setTotalContribuicao(total.toFixed(2));
+        }
+      } catch (error) {
+        console.error('error fetching contribuicoes: ', error);
+      }
+    };
+    fetchContribuicoesData();
+  }, []);
+
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>${totalExpense}</Text>
+      <Text style={styles.textGasto}>${totalExpense}</Text>
+      <Text style={styles.textContribuicao}>${totalContribuicao}</Text>
     </View>
   );
 };
@@ -42,10 +71,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: 20,
   },
-  text: {
+  textGasto: {
     fontSize: 20,
     fontWeight: 'bold',
     color: '#EF4444',
+  },
+  textContribuicao: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#FBBF24',
   },
 });
 

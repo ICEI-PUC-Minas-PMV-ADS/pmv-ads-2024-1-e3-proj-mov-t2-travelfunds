@@ -1,6 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { StyleSheet, View, Text } from 'react-native';
+
+import { doc, getDoc, updateDoc } from 'firebase/firestore';
+import { FIRESTORE_DB } from '../../FirebaseConfig';
 
 import EditarContribuicao from './EditarContribuicao';
 import Ionicons from '@expo/vector-icons/Ionicons';
@@ -9,6 +12,27 @@ function DashboardContribuicao() {
   const [editMode, setEditMode] = useState(false);
   const [contribuicoes, setContribuicoes] = useState([]);
   const [editIndex, setEditIndex] = useState(null);
+
+  useEffect(() => {
+    const fetchContribuicoes = async () => {
+      try {
+        const docRef = doc(
+          FIRESTORE_DB,
+          'contribuicoes',
+          '1fvzTRRxoWC6asC5Y322'
+        );
+        const docSnapshot = await getDoc(docRef);
+        if (docSnapshot.exists()) {
+          const contribuicoesData = docSnapshot.data().contribuicoes || [];
+          setContribuicoes(contribuicoesData);
+        }
+      } catch (error) {
+        console.error('error fetching contribuicoes: ', error);
+      }
+    };
+
+    fetchContribuicoes();
+  }, []);
 
   function handleToggleEdit(index) {
     setEditIndex(index);
@@ -27,15 +51,25 @@ function DashboardContribuicao() {
     setEditMode(false);
   }
 
-  function handleDelete(index) {
-    const newContribuicoes = [...contribuicoes];
-    newContribuicoes.splice(index, 1);
-    setContribuicoes(newContribuicoes);
-  }
+  const handleDelete = async (index) => {
+    try {
+      const docRef = doc(FIRESTORE_DB, 'contribuicoes', '1fvzTRRxoWC6asC5Y322');
+      const snapshot = await getDoc(docRef);
+      if (snapshot.exists()) {
+        const contribuicoes = snapshot.data().contribuicoes || [];
+        const newContribuicoes = [...contribuicoes]; //copia
+        newContribuicoes.splice(index, 1); // deleta o item
+        await updateDoc(docRef, { contribuicoes: newContribuicoes }); // update firebase
+        setContribuicoes(newContribuicoes); // update local state
+      }
+    } catch (error) {
+      console.error('error deleting contribuicao: ', error);
+    }
+  };
 
   function calculateTotalContribuicao() {
     return contribuicoes
-      .reduce((total, contribuicao) => total + contribuicao.value, 0)
+      .reduce((total, contribuicao) => total + contribuicao.valor, 0)
       .toFixed(2);
   }
 
@@ -52,7 +86,7 @@ function DashboardContribuicao() {
           {contribuicoes.map((contribuicao, index) => (
             <View key={index} style={styles.contribuicaoItem}>
               <Text style={styles.contribuicaoText}>
-                {contribuicao.name} ${contribuicao.value}
+                {contribuicao.nome} ${contribuicao.valor}
               </Text>
               <View style={styles.buttonContainer}>
                 <Ionicons
@@ -130,10 +164,11 @@ const styles = StyleSheet.create({
     color: '#fff',
   },
   totalContribuicao: {
-    marginTop: 10,
+    marginTop: 24,
     fontSize: 18,
     fontWeight: 'bold',
     color: '#FBBF24',
+    alignSelf: 'center',
   },
   addButton: {
     justifyContent: 'center',

@@ -8,7 +8,7 @@ import { logout } from '../services/Firebase.Auth.js';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import BottonSectionButtonMenu from '../components/BottonSectionButtonMenu.js';
-import TotalGasto from '../components/TotalGasto.js';
+import TotalGasto from '../components/Total.js';
 
 import DashboardMeta from '../components/DashboardMeta.js';
 import DashboardContribuicao from '../components/DashboardContribuicao.js';

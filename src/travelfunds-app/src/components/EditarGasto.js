@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 import { StyleSheet, View, KeyboardAvoidingView, Platform } from 'react-native';
 
@@ -13,8 +13,13 @@ const EditarGasto = ({ expense, onSave, onCancel }) => {
   const [value, setValue] = useState(expense ? expense.valor.toString() : '');
 
   const handleSave = async () => {
-    if (!name.trim() || isNaN(parseFloat(value))) {
-      alert('Por favor, insira um gasto válido.');
+    if (
+      !name.trim() ||
+      name.length > 20 ||
+      !/^[A-Za-z]+$/.test(name) ||
+      isNaN(parseFloat(value))
+    ) {
+      alert('Por favor, insira um gasto valido');
       return;
     }
 
@@ -35,8 +40,13 @@ const EditarGasto = ({ expense, onSave, onCancel }) => {
   };
 
   const handleUpdate = async () => {
-    if (!name.trim() || isNaN(parseFloat(value))) {
-      alert('Por favor, insira um gasto válido.');
+    if (
+      !name.trim() ||
+      name.length > 20 ||
+      !/^[A-Za-z]+$/.test(name) ||
+      isNaN(parseFloat(value))
+    ) {
+      alert('Por favor, insira um gasto valido');
       return;
     }
 
