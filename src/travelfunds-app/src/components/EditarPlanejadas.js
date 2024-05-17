@@ -25,13 +25,19 @@ const EditarViagensPlanejadas = ({ viagem, onSave, onCancel }) => {
             return;
         }
 
-        const numericValue = parseFloat(initialDate, finalDate);
-        if (isNaN(numericValue) || numericValue <= 0) {
+        const initialValue = parseFloat(initialDate);
+        if (isNaN(initialValue) || initialValue <= 0) {
             alert('Por favor, insira uma viagem válida.');
             return;
         }
 
-        const newViagem = { name, initialDate: numericValue, finalDate: numericValue };
+        const finalValue = parseFloat(finalDate);
+        if (isNaN(finalValue) || finalValue <= 0) {
+            alert('Por favor, insira uma viagem válida.');
+            return;
+        }
+
+        const newViagem = { name, initialDate: initialValue, finalDate: finalValue };
         onSave(newViagem);
         setName('');
         setinitialDate('');
