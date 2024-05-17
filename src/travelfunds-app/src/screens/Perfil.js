@@ -6,7 +6,6 @@ import { useNavigation } from '@react-navigation/native';
 import { logout } from '../services/Firebase.Auth.js';
 
 import Ionicons from '@expo/vector-icons/Ionicons';
-import AntDesign from '@expo/vector-icons/AntDesign';
 import BottonSectionButtonMenu from '../components/BottonSectionButtonMenu.js';
 
 import DashboardPlanejadas from '../components/DashboardPlanejadas.js';
