@@ -64,9 +64,9 @@ const ViagemMain = () => {
             </Text>
           </View>
 
-          <AntDesign
-            name="bars"
-            size={35}
+          <Ionicons
+            name="brush-outline"
+            size={25}
             color="#fff"
             style={styles.settingsIcon}
             onPress={() => navigation.navigate('EditarViagem')}
@@ -77,6 +77,12 @@ const ViagemMain = () => {
             <Text style={styles.logoutText}>Logout</Text>
           </View>
         </View>
+
+        <View style={styles.middleSection}>
+          <Text style={styles.nameText}>Viagem</Text>
+        </View>
+
+
         <View style={styles.bottomSection}>
           <View style={styles.bottomSectionButtons}>
             <BottonSectionButtonMenu
@@ -145,12 +151,19 @@ const styles = StyleSheet.create({
     position: 'absolute',
     color: '#012B53',
   },
+  middleSection: {
+    marginTop: '13%',
+    alignItems: 'center',
+  },
+  nameText: {
+    fontSize: 30,
+  },
   bottomSection: {
     flex: 2,
     width: '90%',
     backgroundColor: '#012B53',
     padding: 10,
-    marginTop: '15%',
+    marginTop: '5%',
     marginBottom: '10%',
     marginLeft: '5%',
     marginRight: '5%',
