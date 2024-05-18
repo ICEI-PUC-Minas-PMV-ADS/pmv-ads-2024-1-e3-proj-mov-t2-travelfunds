@@ -27,7 +27,7 @@ import React from 'react';
 import { Button } from 'react-native-paper';
 import { StyleSheet } from 'react-native';
 
-const BotaoMenor = ({ text, onPress, additionalStyles }) => (
+const BotaoMenor = ( { text, onPress, additionalStyles } ) => (
   <Button
     style={[styles.button, additionalStyles]}
     mode="contained"

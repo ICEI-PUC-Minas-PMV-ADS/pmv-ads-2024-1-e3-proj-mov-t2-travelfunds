@@ -2,7 +2,7 @@ import React from 'react';
 import { TextInput } from 'react-native-paper';
 import { StyleSheet } from "react-native";
 
-const InputSetPerfil = ({ label, placeholder }) => {
+const InputSetPerfil = ({ label, placeholder, onChangeText, value}) => {
   const [text, setText] = React.useState('');
 
   return (
@@ -14,6 +14,8 @@ const InputSetPerfil = ({ label, placeholder }) => {
       right={<TextInput.Affix text="/100" />}
       outlineColor="#FFF"
       color="#FFF"
+      onChangeText={onChangeText}
+      value={value}
     />
   );
 };
