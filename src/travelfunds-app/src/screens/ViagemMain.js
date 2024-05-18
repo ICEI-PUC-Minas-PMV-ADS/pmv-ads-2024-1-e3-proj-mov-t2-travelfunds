@@ -114,8 +114,7 @@ const ViagemMain = () => {
             !dashboardState.contribuicao &&
             !dashboardState.gastos && (
               <View style={styles.mainDashContainer}>
-                {/* <Text style={styles.viagemMain}>${meta}</Text> */}
-                <Text style={styles.viagemMain}>Viagem Main</Text>
+                {/* <Text style={styles.viagemMain}>Viagem Main</Text> */}
                 <TotalGasto style={styles.viagemMain} />
               </View>
             )}

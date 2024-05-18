@@ -1,6 +1,9 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { View, Text, StyleSheet } from 'react-native';
+
+import { doc, getDoc } from 'firebase/firestore';
+import { FIRESTORE_DB } from '../../FirebaseConfig';
 
 import EditarMeta from './EditarMeta';
 import Ionicons from '@expo/vector-icons/Ionicons';
@@ -9,19 +12,29 @@ export default function DashboardMeta() {
   const [editMode, setEditMode] = useState(false);
   const [meta, setMeta] = useState('');
 
+  useEffect(() => {
+    async function fetchMeta() {
+      try {
+        const docRef = doc(FIRESTORE_DB, 'metas', '8KucKMXcozknzgsFsZw8');
+        const docSnapshot = await getDoc(docRef);
+        if (docSnapshot.exists()) {
+          const metaData = docSnapshot.data();
+          setMeta(metaData);
+        }
+      } catch (error) {
+        console.error('error fetching meta: ', error);
+      }
+    }
+    fetchMeta();
+  }, []);
+
   function handleToggleEdit() {
     setEditMode(!editMode);
   }
 
   function handleSave(newMeta) {
-    const metaValue = parseFloat(newMeta);
-    setMeta(metaValue);
-    setEditMode(false);
-  }
-
-  function handleMetaChange(newMeta) {
     setMeta(newMeta);
-    onMetaChange(newMeta);
+    setEditMode(false);
   }
 
   return (
@@ -30,7 +43,7 @@ export default function DashboardMeta() {
         <EditarMeta onSave={handleSave} onCancel={() => setEditMode(false)} />
       ) : (
         <View style={styles.metaContainer}>
-          <Text style={styles.metaValue}>${meta}</Text>
+          <Text style={styles.metaValue}>$ {meta.valor}</Text>
 
           <Ionicons
             name="brush-outline"

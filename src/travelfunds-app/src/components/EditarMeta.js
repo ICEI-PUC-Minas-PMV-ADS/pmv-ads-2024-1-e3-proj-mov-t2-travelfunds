@@ -1,21 +1,30 @@
 import { useState } from 'react';
+
 import { View, StyleSheet, KeyboardAvoidingView, Platform } from 'react-native';
 
 import CustomTextInput from './CustomTextInput';
 import BotaoMenor from './BotaoMenor';
 
+import { doc, updateDoc } from 'firebase/firestore';
+import { FIRESTORE_DB } from '../../FirebaseConfig';
+
 export default function EditarMeta({ onSave, onCancel }) {
   const [value, setValue] = useState('');
 
-  function handleSave() {
-    const metaValue = parseFloat(value);
+  async function handleSave() {
+    //guard clause
 
-    if (!isNaN(metaValue) && metaValue >= 0) {
-      onSave(metaValue);
-      setValue('');
-    } else {
-      alert('Por favor inserir uma meta válida.');
+    // fire base logic
+    const newMeta = { valor: parseFloat(value) };
+
+    try {
+      const docRef = doc(FIRESTORE_DB, 'metas', '8KucKMXcozknzgsFsZw8');
+      await updateDoc(docRef, newMeta);
+      onSave(newMeta);
+    } catch (error) {
+      console.error('error adding meta: ', error);
     }
+    setValue('');
   }
 
   return (
