@@ -1,42 +1,55 @@
 import React from "react";
+
 import { View, Text, StyleSheet } from "react-native";
 import InputSetPerfil from "../components/InputSetPerfil";
 import BotaoMenor from "../components/BotaoMenor";
-import Header from "../components/Header";
-import { Icon, Appbar } from "react-native-paper";
+import Ionicons from '@expo/vector-icons/Ionicons';
+import { Icon } from "react-native-paper";
 import { useNavigation } from '@react-navigation/native';
 
 
 const EditarViagem = () => {
     const navigation = useNavigation();
 
+    const handleGoBack = () => {
+        navigation.navigate('ViagemMain');
+    };
+
     return (
         <>
-        <Header 
-        title={'Editar Viagem'} goBack={() => navigation.goBack()}>
-        <Appbar.Action icon="dots-vertical" color="white" onPress={() => {}} />
-        </Header>
 
 
-        <View style={styles.container}>
+            <View style={styles.container}>
 
-            <View style={styles.topSection}>
-                <View style={styles.roundComponent}>
-                    <Text
-                        style={styles.overlayText}>
-                        <Icon source="camera" size={40} />
-                    </Text>
+                <View style={styles.topSection}>
+                    <Ionicons
+                        name="return-up-back-outline"
+                        size={35}
+                        color="#fff"
+                        style={styles.returnIcon}
+                        onPress={handleGoBack}
+                    />
+
+                    <View style={styles.roundComponent}>
+                        <Text
+                            style={styles.overlayText}>
+                            <Icon source="camera" size={40} />
+                        </Text>
+                    </View>
+
+                    <View style={styles.logout}>
+                        <Text style={styles.logoutText}>Logout</Text>
+                    </View>
                 </View>
-            </View>
 
-            <View style={styles.bottomSection}>
-                <InputSetPerfil label="Qual seu destino?" /> 
-                <InputSetPerfil label="Data de Ida" /> 
-                <InputSetPerfil label="Data de Volta?" />
-                <BotaoMenor text="Alterar" />
-            </View>
+                <View style={styles.bottomSection}>
+                    <InputSetPerfil label="Qual seu destino?" />
+                    <InputSetPerfil label="Data de Ida" />
+                    <InputSetPerfil label="Data de Volta?" />
+                    <BotaoMenor text="Alterar" />
+                </View>
 
-        </View>
+            </View>
         </>
 
     );
@@ -64,6 +77,20 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         marginBottom: -40,
+    },
+    returnIcon: {
+        position: 'absolute',
+        bottom: 20,
+        left: 45,
+    },
+    logout: {
+        position: 'absolute',
+        top: 75,
+        right: 40,
+    },
+    logoutText: {
+        color: '#fff',
+        fontSize: 17,
     },
     bottomSection: {
         flex: 2,

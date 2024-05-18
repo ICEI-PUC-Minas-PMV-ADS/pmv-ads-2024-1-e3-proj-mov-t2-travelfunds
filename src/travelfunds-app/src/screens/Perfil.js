@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 
 import { View, Text, StyleSheet } from "react-native";
-import { Icon, Appbar } from "react-native-paper";
+import { Icon } from "react-native-paper";
 import { useNavigation } from '@react-navigation/native';
 import { logout } from '../services/Firebase.Auth.js';
 
 import Ionicons from '@expo/vector-icons/Ionicons';
-import AntDesign from '@expo/vector-icons/AntDesign';
 import BottonSectionButtonMenu from '../components/BottonSectionButtonMenu.js';
 
 import DashboardPlanejadas from '../components/DashboardPlanejadas.js';
@@ -60,9 +59,9 @@ const Perfil = () => {
             </Text>
           </View>
 
-          <AntDesign
-            name="bars"
-            size={35}
+          <Ionicons
+            name="brush-outline"
+            size={25}
             color="#fff"
             style={styles.settingsIcon}
             onPress={() => navigation.navigate('EditarPerfil')}
@@ -151,11 +150,11 @@ const styles = StyleSheet.create({
   logout: {
     position: 'absolute',
     top: 75,
-    right: 45,
+    right: 40,
   },
   logoutText: {
     color: '#fff',
-    fontSize: 22,
+    fontSize: 17,
   },
   middleSection: {
     marginTop: '13%',
