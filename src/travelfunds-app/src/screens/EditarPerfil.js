@@ -23,12 +23,8 @@ const EditarPerfil = () => {
       const auth = getAuth();
       setAuth(auth);
     }, []);
-  
-    useEffect(() => {
-      const auth = getAuth();
-      setAuth(auth);
-    }, []);
-  
+
+
     const handleUpdateProfile = async () => {
         try {
           if (!auth) {
@@ -43,7 +39,12 @@ const EditarPerfil = () => {
           }
     
           const idDoUsuario = user.uid;
-    
+
+          if (!novoNome) {
+            Alert.alert('Erro', 'O campo de nome não pode estar vazio');
+            return;
+          }
+
           const novosDados = {
             nome: novoNome, 
           };
@@ -62,14 +63,14 @@ const EditarPerfil = () => {
 
       return (
         <>
-        <Header 
+        <Header
         title={'Editar Perfil'} goBack={() => navigation.goBack()}>
         <Appbar.Action icon="dots-vertical" color="white" onPress={() => {}} />
         </Header>
 
             <View style={styles.container}>
 
-                <View style={styles.topSection}>
+                <View style={styles.cabecalho}>
                     <Ionicons
                         name="return-up-back-outline"
                         size={35}
@@ -78,7 +79,7 @@ const EditarPerfil = () => {
                         onPress={handleGoBack}
                     />
 
-                    <View style={styles.roundComponent}>
+                    <View style={styles.fotoUsuario}>
                         <Text
                             style={styles.overlayText}>
                             <Icon source="camera" size={40} />
@@ -92,14 +93,15 @@ const EditarPerfil = () => {
                 </View>
 
 
-                <View style={styles.bottomSection}>
-                    <InputSetPerfil label="foto do perfil" />
+                <View style={styles.zonaInput}>
+                    <InputSetPerfil placeholder="foto do perfil" />
                     <InputSetPerfil 
-                    label="Nome do Perfil" 
+                    placeholder="Nome do Perfil" 
                     value={novoNome} 
-                    onChangeText={setNovoNome} />
-                    <InputSetPerfil label="email" />
-                    <InputSetPerfil label="senha" />
+                    onChangeText={setNovoNome}
+                     />
+                    <InputSetPerfil placeholder="email" />
+                    <InputSetPerfil placeholder="senha" />
                     <BotaoMenor 
                     text="Confirmar"
                     onPress={handleUpdateProfile} />
@@ -117,14 +119,13 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'flex-start',
     },
-    topSection: {
-        flex: 1,
+    cabecalho: {
         width: '100%',
         backgroundColor: '#012B53',
         alignItems: 'center',
         justifyContent: 'flex-end',
     },
-    roundComponent: {
+    fotoUsuario: {
         width: 150,
         height: 150,
         backgroundColor: '#fff',
@@ -140,14 +141,14 @@ const styles = StyleSheet.create({
     },
     logout: {
         position: 'absolute',
-        top: 75,
+        top: -20,
         right: 40,
     },
     logoutText: {
         color: '#fff',
         fontSize: 17,
     },
-    bottomSection: {
+    zonaInput: {
         flex: 2,
         width: '90%',
         backgroundColor: '#012B53',

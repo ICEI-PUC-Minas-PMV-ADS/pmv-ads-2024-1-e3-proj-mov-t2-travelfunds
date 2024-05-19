@@ -1,32 +1,35 @@
 import React from 'react';
 import { TextInput } from 'react-native-paper';
-import { StyleSheet } from "react-native";
+import { StyleSheet, KeyboardAvoidingView, Platform } from "react-native";
 
-const InputSetPerfil = ({ label, placeholder, onChangeText, value}) => {
+const InputSetPerfil = ({ label, placeholder, onChangeText, value }) => {
   const [text, setText] = React.useState('');
 
   return (
-    <TextInput
-      style={styles.input}
-      mode="outlined"
-      placeholder= {placeholder}
-      label= {label} 
-      right={<TextInput.Affix text="/100" />}
-      outlineColor="#FFF"
-      color="#FFF"
-      onChangeText={onChangeText}
-      value={value}
-    />
+   
+      <TextInput
+        style={styles.input}
+        mode="outlined"
+        placeholder={placeholder}
+        label={label}
+        right={<TextInput.Affix text="/100" />}
+        outlineColor="#FFF"
+        color="#FFF"
+        onChangeText={onChangeText}
+        value={value}
+        textColor='#FFFFFF'
+      />
+   
   );
 };
 
 
 const styles = StyleSheet.create({
-    input: {
-        margin: 10, 
-        backgroundColor: 'transparent',
-        width: "100%",
-    },
-  });
+  input: {
+    margin: 10,
+    backgroundColor: 'transparent',
+    width: "100%",
+  },
+});
 
 export default InputSetPerfil;
