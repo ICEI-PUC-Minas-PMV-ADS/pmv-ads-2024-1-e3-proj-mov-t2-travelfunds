@@ -51,6 +51,22 @@ Implementação do sistema descritas por meio dos requisitos funcionais e/ou nã
     </tr>
 </table>
 
+## Tela Perfil
+<table>
+        <tr>
+        <th>Perfil</th>
+        <th>Código Fonte</th>       
+    </tr>
+    <tr>
+    <td width="300" >
+        <img width="200"  src="./img/Tela04Perfil.png">
+    </td>
+        <td width="300" >
+            <a href="../src/travelfunds-app/src/screens/Perfil.js">Link do Código Fonte</a>
+        </td>
+    </tr>
+</table>
+
 ## Tela Configurar Perfil
 <table>
         <tr>
