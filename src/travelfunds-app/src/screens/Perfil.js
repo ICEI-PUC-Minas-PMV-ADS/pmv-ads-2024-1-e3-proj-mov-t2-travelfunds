@@ -1,21 +1,30 @@
-import React, { useState } from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import React, { useState, useEffect } from "react";
+import { View, Text, StyleSheet, FlatList, TouchableOpacity } from "react-native";
 import BottonSectionButtonMenu from '../components/BottonSectionButtonMenu.js';
 import Header from "../components/Header";
 import { Icon, Appbar } from "react-native-paper";
+import { collection, getDocs } from "firebase/firestore";
+import { FIRESTORE_DB } from '../../FirebaseConfig';
 import { useNavigation } from '@react-navigation/native';
 import InputButton from '../components/InputButton';
 
-
-
-
 const Perfil = () => {
     const navigation = useNavigation();
-
+    const [viagens, setViagens] = useState([]);
     const [PerfilState, setPerfilState] = useState({
         planejadas: false,
         concluidas: false,
     });
+
+    useEffect(() => {
+        const fetchViagens = async () => {
+            const viagensCollection = collection(FIRESTORE_DB, 'viagens');
+            const viagemSnapshot = await getDocs(viagensCollection);
+            const viagemList = viagemSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+            setViagens(viagemList);
+        };
+        fetchViagens();
+    }, []);
 
     const handlePress = (text) => {
         setPerfilState({
@@ -24,7 +33,13 @@ const Perfil = () => {
         });
     };
 
-
+    const renderItem = ({ item }) => (
+        <TouchableOpacity onPress={() => navigation.navigate('DetalhesViagem', { viagemId: item.id })}>
+            <View style={styles.viagemItem}>
+                <Text style={styles.viagemText}>{item.destino}</Text>
+            </View>
+        </TouchableOpacity>
+    );
 
     return (
         <>
@@ -75,6 +90,12 @@ const Perfil = () => {
                     {PerfilState.planejadas && <DashboardViagensPlanejadas />}
                     {PerfilState.concluidas && <DashboardViagensConcluidas />}
 
+                    <FlatList
+                        data={viagens}
+                        renderItem={renderItem}
+                        keyExtractor={item => item.id}
+                    />
+                    
                     <TouchableOpacity 
                     style={styles.addButton} 
                     onPress={() => navigation.navigate('CadastroViagem')}
