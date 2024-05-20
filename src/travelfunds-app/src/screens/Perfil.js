@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import BottonSectionButtonMenu from '../components/BottonSectionButtonMenu.js';
 import Header from "../components/Header";
 import { Icon, Appbar } from "react-native-paper";
@@ -74,7 +74,17 @@ const Perfil = () => {
                     </View>
                     {PerfilState.planejadas && <DashboardViagensPlanejadas />}
                     {PerfilState.concluidas && <DashboardViagensConcluidas />}
+
+                    <TouchableOpacity 
+                    style={styles.addButton} 
+                    onPress={() => navigation.navigate('CadastroViagem')}
+                    >
+                    <Text style={styles.addButtonText}>Adicionar +</Text>
+                    </TouchableOpacity>
+
                 </View>
+
+                
 
             </View>
         </>
@@ -136,6 +146,12 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
     },
 
+    addButton: {
+        alignSelf: 'flex-start',
+        backgroundColor: 'transparent',
+        padding: 15,
+    },
+    addButtonText: { color: '#fff', fontSize: 16 }
 });
 
 
