@@ -95,8 +95,6 @@ Implementação do sistema descritas por meio dos requisitos funcionais e/ou nã
     </td>
         <td width="300" >
             <a href="../src/travelfunds-app/src/components/DashboardPlanejadas.js">Link do Código Fonte de Criar Viagem</a>
-        </td>
-        <td width="300" >
             <a href="../src/travelfunds-app/src/screens/EditarViagem.js">Link do Código Fonte de Configurar Viagem</a>
         </td>
     </tr>
