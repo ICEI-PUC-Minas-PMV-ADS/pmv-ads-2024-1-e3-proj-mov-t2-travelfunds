@@ -1,11 +1,16 @@
 import React from "react";
 
 import { View, Text, StyleSheet } from "react-native";
+
 import InputSetPerfil from "../components/InputSetPerfil";
+import InputButton from "../components/InputButton";
 import BotaoMenor from "../components/BotaoMenor";
 import Ionicons from '@expo/vector-icons/Ionicons';
+
 import { Icon } from "react-native-paper";
 import { useNavigation } from '@react-navigation/native';
+import { logout } from '../services/Firebase.Auth.js';
+
 
 
 const EditarViagem = () => {
@@ -14,6 +19,11 @@ const EditarViagem = () => {
     const handleGoBack = () => {
         navigation.navigate('ViagemMain');
     };
+
+    const handleLogout = async () => {
+        logout();
+    }
+
 
     return (
         <>
@@ -38,7 +48,10 @@ const EditarViagem = () => {
                     </View>
 
                     <View style={styles.logout}>
-                        <Text style={styles.logoutText}>Logout</Text>
+                        <InputButton
+                            text="Logout"
+                            mode="text"
+                            onPress={handleLogout} />
                     </View>
                 </View>
 
@@ -85,12 +98,8 @@ const styles = StyleSheet.create({
     },
     logout: {
         position: 'absolute',
-        top: 75,
-        right: 40,
-    },
-    logoutText: {
-        color: '#fff',
-        fontSize: 17,
+        top: 65,
+        right: 20,
     },
     bottomSection: {
         flex: 2,

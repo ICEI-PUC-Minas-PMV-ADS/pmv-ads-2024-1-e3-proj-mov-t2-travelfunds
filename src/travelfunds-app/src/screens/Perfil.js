@@ -6,6 +6,7 @@ import { useNavigation } from '@react-navigation/native';
 import { logout } from '../services/Firebase.Auth.js';
 
 import Ionicons from '@expo/vector-icons/Ionicons';
+import InputButton from "../components/InputButton";
 import BottonSectionButtonMenu from '../components/BottonSectionButtonMenu.js';
 
 import DashboardPlanejadas from '../components/DashboardPlanejadas.js';
@@ -30,12 +31,15 @@ const Perfil = () => {
   };
 
   const handleGoBack = () => {
-      setPerfilState({
-        planejadas: false,
-        concluidas: false,
-      });
+    setPerfilState({
+      planejadas: false,
+      concluidas: false,
+    });
   };
 
+  const handleLogout = async () => {
+    logout();
+  }
 
 
   return (
@@ -44,7 +48,7 @@ const Perfil = () => {
       <View style={styles.container}>
 
         <View style={styles.topSection}>
-        <Ionicons
+          <Ionicons
             name="return-up-back-outline"
             size={35}
             color="#fff"
@@ -68,7 +72,10 @@ const Perfil = () => {
           />
 
           <View style={styles.logout}>
-            <Text style={styles.logoutText}>Logout</Text>
+            <InputButton
+              text="Logout"
+              mode="text"
+              onPress={handleLogout} />
           </View>
         </View>
 
@@ -149,12 +156,8 @@ const styles = StyleSheet.create({
   },
   logout: {
     position: 'absolute',
-    top: 75,
-    right: 40,
-  },
-  logoutText: {
-    color: '#fff',
-    fontSize: 17,
+    top: 65,
+    right: 20,
   },
   middleSection: {
     marginTop: '13%',
