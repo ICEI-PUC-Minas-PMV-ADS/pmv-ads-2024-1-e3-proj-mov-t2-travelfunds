@@ -5,7 +5,7 @@ import BotaoSalvar from "../components/BotaoSalvar";
 import { Icon } from "react-native-paper";
 import { useNavigation } from '@react-navigation/native';
 import { FIRESTORE_DB, FIREBASE_AUTH } from '../../FirebaseConfig';
-import { doc, setDoc } from "firebase/firestore";
+import { collection, addDoc } from "firebase/firestore";
 import { logout } from '../services/Firebase.Auth';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import InputButton from "../components/InputButton";
@@ -21,8 +21,7 @@ const CadastroViagem = () => {
             const user = FIREBASE_AUTH.currentUser;
 
             if (user) {
-                const viagemDoc = doc(FIRESTORE_DB, 'viagens', '9RnHz6QuKFMLCLCqxyMX');
-                await setDoc(viagemDoc, {
+                await addDoc(collection(FIRESTORE_DB, 'viagens'), {
                     usuarioID: user.uid,
                     destino,
                     dataPartida,

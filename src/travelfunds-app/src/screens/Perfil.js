@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { View, Text, StyleSheet, FlatList, TouchableOpacity } from "react-native";
-import { Icon, Appbar } from "react-native-paper";
+import { Icon } from "react-native-paper";
 import { collection, getDocs } from "firebase/firestore";
 import { FIRESTORE_DB } from '../../FirebaseConfig';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useFocusEffect } from '@react-navigation/native';
 import { logout } from '../services/Firebase.Auth';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import InputButton from "../components/InputButton";
@@ -12,15 +12,20 @@ const Perfil = () => {
   const navigation = useNavigation();
   const [viagens, setViagens] = useState([]);
 
+  const fetchViagens = async () => {
+    const viagensCollection = collection(FIRESTORE_DB, 'viagens');
+    const viagemSnapshot = await getDocs(viagensCollection);
+    const viagemList = viagemSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+    setViagens(viagemList);
+  };
+
   useEffect(() => {
-    const fetchViagens = async () => {
-      const viagensCollection = collection(FIRESTORE_DB, 'viagens');
-      const viagemSnapshot = await getDocs(viagensCollection);
-      const viagemList = viagemSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-      setViagens(viagemList);
-    };
     fetchViagens();
   }, []);
+
+  useFocusEffect(() => {
+    fetchViagens();
+  });
 
   const renderItem = ({ item }) => (
     <TouchableOpacity onPress={() => navigation.navigate('DetalhesViagem', { viagemId: item.id })}>
