@@ -7,8 +7,8 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import { Icon } from 'react-native-paper';
-import { collection, getDocs } from 'firebase/firestore';
-import { FIRESTORE_DB } from '../../FirebaseConfig';
+import { collection, getDocs, doc } from 'firebase/firestore';
+import { FIRESTORE_DB, FIREBASE_AUTH } from '../../FirebaseConfig';
 import { useNavigation, useFocusEffect } from '@react-navigation/native';
 import { logout } from '../services/Firebase.Auth';
 import Ionicons from '@expo/vector-icons/Ionicons';
@@ -19,13 +19,19 @@ const Perfil = () => {
   const [viagens, setViagens] = useState([]);
 
   const fetchViagens = async () => {
-    const viagensCollection = collection(FIRESTORE_DB, 'viagens');
-    const viagemSnapshot = await getDocs(viagensCollection);
-    const viagemList = viagemSnapshot.docs.map((doc) => ({
-      id: doc.id,
-      ...doc.data(),
-    }));
-    setViagens(viagemList);
+    const user = FIREBASE_AUTH.currentUser;
+    if (user) {
+      const viagensCollection = collection(
+        doc(FIRESTORE_DB, 'usuarios', user.uid),
+        'viagens'
+      );
+      const viagemSnapshot = await getDocs(viagensCollection);
+      const viagemList = viagemSnapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      setViagens(viagemList);
+    }
   };
 
   useEffect(() => {
@@ -44,6 +50,8 @@ const Perfil = () => {
     >
       <View style={styles.viagemItem}>
         <Text style={styles.viagemText}>{item.destino}</Text>
+        <Text style={styles.viagemText}>{item.dataPartida}</Text>
+        <Text style={styles.viagemText}>{item.dataRetorno}</Text>
       </View>
     </TouchableOpacity>
   );
@@ -89,6 +97,7 @@ const Perfil = () => {
           data={viagens}
           renderItem={renderItem}
           keyExtractor={(item) => item.id}
+          contentContainerStyle={styles.flatListContent}
         />
         <TouchableOpacity
           style={styles.addButton}
@@ -160,11 +169,28 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'flex-start',
   },
-  bottomSectionButtons: {
+  flatListContent: {
+    paddingBottom: 20,
+  },
+  viagemItem: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    backgroundColor: '#fff',
+    padding: 15,
+    marginVertical: 8,
+    borderRadius: 10,
+    width: '100%',
+    alignItems: 'flex-start',
   },
-
+  viagemText: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#012B53',
+  },
+  viagemDate: {
+    fontSize: 14,
+    color: '#666',
+  },
   addButton: {
     alignSelf: 'flex-start',
     backgroundColor: 'transparent',

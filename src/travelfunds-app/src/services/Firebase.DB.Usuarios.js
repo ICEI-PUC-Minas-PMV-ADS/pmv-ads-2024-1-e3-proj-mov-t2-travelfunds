@@ -27,9 +27,3 @@ const recuperarUsuario = async (id) => {
 };
 
 export { criarUsuario, recuperarUsuario };
-
-// const gastosCollection = collection(db, `${nomeColecao}/${id}/gastos`);
-//     await setDoc(doc(gastosCollection), {
-//       nome: '',
-//       valor: '',
-//     });
