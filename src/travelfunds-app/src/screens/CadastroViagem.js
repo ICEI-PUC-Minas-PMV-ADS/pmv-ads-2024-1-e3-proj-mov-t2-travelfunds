@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { View, Text, StyleSheet, Alert } from "react-native";
 import InputDados from "../components/InputDados";
 import BotaoSalvar from "../components/BotaoSalvar";
-import { Icon, Appbar } from "react-native-paper";
+import { Icon } from "react-native-paper";
 import { useNavigation } from '@react-navigation/native';
 import { FIRESTORE_DB, FIREBASE_AUTH } from '../../FirebaseConfig';
 import { doc, setDoc } from "firebase/firestore";
