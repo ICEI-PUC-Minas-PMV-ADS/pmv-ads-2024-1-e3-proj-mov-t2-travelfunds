@@ -4,6 +4,7 @@ import ViagemMain from "../screens/ViagemMain";
 import EditarViagem from "../screens/EditarViagem";
 import Perfil from "../screens/Perfil";
 import EditarPerfil from "../screens/EditarPerfil";
+import CadastroViagem from "../screens/CadastroViagem";
 
 const Stack = createNativeStackNavigator();
 
@@ -17,6 +18,7 @@ const Main = () => {
       <Stack.Screen name="EditarViagem" component={EditarViagem} />
       <Stack.Screen name="Perfil" component={Perfil} />
       <Stack.Screen name="EditarPerfil" component={EditarPerfil} />
+      <Stack.Screen name="CadastroViagem" component={CadastroViagem} />
     </Stack.Navigator>
   );
 };

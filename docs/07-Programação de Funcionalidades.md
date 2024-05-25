@@ -51,6 +51,22 @@ Implementação do sistema descritas por meio dos requisitos funcionais e/ou nã
     </tr>
 </table>
 
+## Tela Perfil
+<table>
+        <tr>
+        <th>Perfil</th>
+        <th>Código Fonte</th>       
+    </tr>
+    <tr>
+    <td width="300" >
+        <img width="200"  src="./img/Tela04Perfil.png">
+    </td>
+        <td width="300" >
+            <a href="../src/travelfunds-app/src/screens/Perfil.js">Link do Código Fonte</a>
+        </td>
+    </tr>
+</table>
+
 ## Tela Configurar Perfil
 <table>
         <tr>
@@ -67,10 +83,10 @@ Implementação do sistema descritas por meio dos requisitos funcionais e/ou nã
     </tr>
 </table>
 
-## Tela Criar Viagem
+## Tela Criar e Configurar Viagem
 <table>
         <tr>
-        <th>Criar Viagem</th>
+        <th>Criar e Configurar Viagem</th>
         <th>Código Fonte</th>       
     </tr>
     <tr>
@@ -78,7 +94,8 @@ Implementação do sistema descritas por meio dos requisitos funcionais e/ou nã
         <img width="200"  src="./img/Criar viagem.png">
     </td>
         <td width="300" >
-            <a href="../src/travelfunds-app/src/screens/EditarViagem.js">Link do Código Fonte</a>
+            <a href="../src/travelfunds-app/src/components/DashboardPlanejadas.js">Link do Código Fonte de Criar Viagem</a>
+            <a href="../src/travelfunds-app/src/screens/EditarViagem.js">Link do Código Fonte de Configurar Viagem</a>
         </td>
     </tr>
 </table>

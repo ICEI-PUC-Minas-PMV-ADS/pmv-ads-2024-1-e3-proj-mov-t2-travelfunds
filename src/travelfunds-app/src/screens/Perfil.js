@@ -1,104 +1,103 @@
-import React, { useState } from 'react';
-
-import { View, Text, StyleSheet } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import {
+  View,
+  Text,
+  StyleSheet,
+  FlatList,
+  TouchableOpacity,
+} from 'react-native';
 import { Icon } from 'react-native-paper';
-import { useNavigation } from '@react-navigation/native';
-import { logout } from '../services/Firebase.Auth.js';
-
+import { collection, getDocs } from 'firebase/firestore';
+import { FIRESTORE_DB } from '../../FirebaseConfig';
+import { useNavigation, useFocusEffect } from '@react-navigation/native';
+import { logout } from '../services/Firebase.Auth';
 import Ionicons from '@expo/vector-icons/Ionicons';
-import BottonSectionButtonMenu from '../components/BottonSectionButtonMenu.js';
-
-import DashboardPlanejadas from '../components/DashboardPlanejadas.js';
-import DashboardConcluidas from '../components/DashboardConcluidas.js';
+import InputButton from '../components/InputButton';
 
 const Perfil = () => {
   const navigation = useNavigation();
+  const [viagens, setViagens] = useState([]);
 
-  const [PerfilState, setPerfilState] = useState({
-    planejadas: false,
-    concluidas: false,
-  });
-
-  const handlePress = (text) => {
-    setPerfilState({
-      planejadas: text === 'Planejadas',
-      concluidas: text === 'Concluidas',
-    });
+  const fetchViagens = async () => {
+    const viagensCollection = collection(FIRESTORE_DB, 'viagens');
+    const viagemSnapshot = await getDocs(viagensCollection);
+    const viagemList = viagemSnapshot.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data(),
+    }));
+    setViagens(viagemList);
   };
 
-  const handleGoBack = () => {
-    setPerfilState({
-      planejadas: false,
-      concluidas: false,
-    });
+  useEffect(() => {
+    fetchViagens();
+  }, []);
+
+  useFocusEffect(() => {
+    fetchViagens();
+  });
+
+  const renderItem = ({ item }) => (
+    <TouchableOpacity
+      onPress={() =>
+        navigation.navigate('DetalhesViagem', { viagemId: item.id })
+      }
+    >
+      <View style={styles.viagemItem}>
+        <Text style={styles.viagemText}>{item.destino}</Text>
+      </View>
+    </TouchableOpacity>
+  );
+
+  const handleGoBack = () => {};
+
+  const handleLogout = async () => {
+    logout();
   };
 
   return (
-    <>
-      <View style={styles.container}>
-        <View style={styles.topSection}>
-          <Ionicons
-            name="return-up-back-outline"
-            size={35}
-            color="#fff"
-            style={styles.returnIcon}
-            onPress={handleGoBack}
-          />
-
-          <View style={styles.roundComponent}>
-            <Text style={styles.overlayText}>
-              <Icon source="camera" size={40} />
-            </Text>
-          </View>
-
-          <Ionicons
-            name="brush-outline"
-            size={25}
-            color="#fff"
-            style={styles.settingsIcon}
-            onPress={() => navigation.navigate('EditarPerfil')}
-          />
-
-          <View style={styles.logout}>
-            <Text style={styles.logoutText}>Logout</Text>
-          </View>
+    <View style={styles.container}>
+      <View style={styles.topSection}>
+        <Ionicons
+          name="return-up-back-outline"
+          size={35}
+          color="#fff"
+          style={styles.returnIcon}
+          onPress={handleGoBack}
+        />
+        <View style={styles.roundComponent}>
+          <Text style={styles.overlayText}>
+            <Icon source="camera" size={40} />
+          </Text>
         </View>
-
-        <View style={styles.middleSection}>
-          <Text style={styles.nameText}>Nome</Text>
-          <Text>Minhas Viagens</Text>
-        </View>
-
-        <View style={styles.bottomSection}>
-          <View style={styles.bottomSectionButtons}>
-            <BottonSectionButtonMenu
-              text={'Planejadas'}
-              mode="contained"
-              onPress={() => handlePress('Planejadas')}
-              backgroundColor={PerfilState.planejadas ? '#FBBF24' : '#8196AA'}
-            />
-            <BottonSectionButtonMenu
-              text={'Concluídas'}
-              mode="contained"
-              onPress={() => handlePress('Concluidas')}
-              backgroundColor={PerfilState.concluidas ? '#22C55E' : '#8196AA'}
-            />
-          </View>
-          {PerfilState.planejadas && <DashboardPlanejadas />}
-          {PerfilState.concluidas && <DashboardConcluidas />}
-          {!PerfilState.planejadas && !PerfilState.concluidas && (
-            <View>
-              <Text
-                style={{ color: '#fff', fontSize: 18, padding: 22 }}
-                onPress={() => navigation.navigate('ViagemMain')}
-              >
-                Paris
-              </Text>
-            </View>
-          )}
+        <Ionicons
+          name="brush-outline"
+          size={25}
+          color="#fff"
+          style={styles.settingsIcon}
+          onPress={() => navigation.navigate('EditarPerfil')}
+        />
+        <View style={styles.logout}>
+          <InputButton text="Logout" mode="text" onPress={handleLogout} />
         </View>
       </View>
-    </>
+      <View style={styles.middleSection}>
+        <Text style={styles.nameText}>Nome</Text>
+        <Text>Minhas Viagens</Text>
+      </View>
+      <View style={styles.bottomSection}>
+        <FlatList
+          data={viagens}
+          renderItem={renderItem}
+          keyExtractor={(item) => item.id}
+        />
+        <TouchableOpacity
+          style={styles.addButton}
+          onPress={() => navigation.navigate('CadastroViagem')}
+        >
+          <Text style={styles.addButtonText}>Adicionar +</Text>
+        </TouchableOpacity>
+      </View>
+    </View>
   );
 };
 
@@ -137,12 +136,8 @@ const styles = StyleSheet.create({
   },
   logout: {
     position: 'absolute',
-    top: 75,
-    right: 40,
-  },
-  logoutText: {
-    color: '#fff',
-    fontSize: 17,
+    top: 65,
+    right: 20,
   },
   middleSection: {
     marginTop: '13%',
@@ -169,6 +164,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
+
+  addButton: {
+    alignSelf: 'flex-start',
+    backgroundColor: 'transparent',
+    padding: 15,
+  },
+  addButtonText: { color: '#fff', fontSize: 16 },
 });
 
 export default Perfil;
