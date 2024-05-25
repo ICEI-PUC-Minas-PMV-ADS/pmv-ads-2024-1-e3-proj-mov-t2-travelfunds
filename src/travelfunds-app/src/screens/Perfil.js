@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import { View, Text, StyleSheet } from "react-native";
-import { Icon } from "react-native-paper";
+import { View, Text, StyleSheet } from 'react-native';
+import { Icon } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
 import { logout } from '../services/Firebase.Auth.js';
 
@@ -10,9 +10,6 @@ import BottonSectionButtonMenu from '../components/BottonSectionButtonMenu.js';
 
 import DashboardPlanejadas from '../components/DashboardPlanejadas.js';
 import DashboardConcluidas from '../components/DashboardConcluidas.js';
-
-
-
 
 const Perfil = () => {
   const navigation = useNavigation();
@@ -30,21 +27,17 @@ const Perfil = () => {
   };
 
   const handleGoBack = () => {
-      setPerfilState({
-        planejadas: false,
-        concluidas: false,
-      });
+    setPerfilState({
+      planejadas: false,
+      concluidas: false,
+    });
   };
-
-
 
   return (
     <>
-
       <View style={styles.container}>
-
         <View style={styles.topSection}>
-        <Ionicons
+          <Ionicons
             name="return-up-back-outline"
             size={35}
             color="#fff"
@@ -53,8 +46,7 @@ const Perfil = () => {
           />
 
           <View style={styles.roundComponent}>
-            <Text
-              style={styles.overlayText}>
+            <Text style={styles.overlayText}>
               <Icon source="camera" size={40} />
             </Text>
           </View>
@@ -89,26 +81,22 @@ const Perfil = () => {
               text={'Concluídas'}
               mode="contained"
               onPress={() => handlePress('Concluidas')}
-              backgroundColor={
-                PerfilState.concluidas ? '#22C55E' : '#8196AA'
-              }
+              backgroundColor={PerfilState.concluidas ? '#22C55E' : '#8196AA'}
             />
           </View>
           {PerfilState.planejadas && <DashboardPlanejadas />}
           {PerfilState.concluidas && <DashboardConcluidas />}
-          {!PerfilState.planejadas &&
-            !PerfilState.concluidas && (
-              <View>
-                <Text
-                  style={{ color: '#fff', fontSize: 18, padding: 22 }}
-                  onPress={() => navigation.navigate('ViagemMain')}
-                >
-                  Paris
-                </Text>
-              </View>
-            )}
+          {!PerfilState.planejadas && !PerfilState.concluidas && (
+            <View>
+              <Text
+                style={{ color: '#fff', fontSize: 18, padding: 22 }}
+                onPress={() => navigation.navigate('ViagemMain')}
+              >
+                Paris
+              </Text>
+            </View>
+          )}
         </View>
-
       </View>
     </>
   );
@@ -181,9 +169,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
-
 });
-
-
 
 export default Perfil;

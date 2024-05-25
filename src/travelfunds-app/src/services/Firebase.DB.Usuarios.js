@@ -1,8 +1,8 @@
-import { doc, getDoc, setDoc } from "firebase/firestore";
-import { FIRESTORE_DB } from "../../FirebaseConfig";
+import { doc, getDoc, setDoc } from 'firebase/firestore';
+import { FIRESTORE_DB } from '../../FirebaseConfig';
 
 const db = FIRESTORE_DB;
-const nomeColecao = "usuarios";
+const nomeColecao = 'usuarios';
 
 const criarUsuario = async (id, email, nome) => {
   try {
@@ -27,3 +27,9 @@ const recuperarUsuario = async (id) => {
 };
 
 export { criarUsuario, recuperarUsuario };
+
+// const gastosCollection = collection(db, `${nomeColecao}/${id}/gastos`);
+//     await setDoc(doc(gastosCollection), {
+//       nome: '',
+//       valor: '',
+//     });
