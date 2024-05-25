@@ -1,5 +1,10 @@
-import React, { useState } from 'react';
-import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
+import React, { useState, useEffect } from 'react';
+
+import { StyleSheet, View, Text } from 'react-native';
+
+import { doc, getDoc, updateDoc } from 'firebase/firestore';
+import { FIRESTORE_DB } from '../../FirebaseConfig';
+
 import EditarGasto from './EditarGasto';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
@@ -7,6 +12,23 @@ const DashboardGasto = () => {
   const [editMode, setEditMode] = useState(false);
   const [expenses, setExpenses] = useState([]);
   const [editIndex, setEditIndex] = useState(null);
+
+  useEffect(() => {
+    const fetchExpenses = async () => {
+      try {
+        const docRef = doc(FIRESTORE_DB, 'gastos', 'SguHhNyRXWRKlXke8jfP');
+        const docSnapshot = await getDoc(docRef);
+        if (docSnapshot.exists()) {
+          const expensesData = docSnapshot.data().expenses || [];
+          setExpenses(expensesData);
+        }
+      } catch (error) {
+        console.error('Error fetching expenses: ', error);
+      }
+    };
+
+    fetchExpenses();
+  }, []);
 
   const handleToggleEdit = (index) => {
     setEditIndex(index);
@@ -25,15 +47,25 @@ const DashboardGasto = () => {
     setEditMode(false);
   };
 
-  const handleDelete = (index) => {
-    const newExpenses = [...expenses];
-    newExpenses.splice(index, 1);
-    setExpenses(newExpenses);
+  const handleDelete = async (index) => {
+    try {
+      const docRef = doc(FIRESTORE_DB, 'gastos', 'SguHhNyRXWRKlXke8jfP');
+      const snapshot = await getDoc(docRef);
+      if (snapshot.exists()) {
+        const expenses = snapshot.data().expenses || [];
+        const newExpenses = [...expenses];
+        newExpenses.splice(index, 1);
+        await updateDoc(docRef, { expenses: newExpenses });
+        setExpenses(newExpenses);
+      }
+    } catch (error) {
+      console.error('Error deleting expense: ', error);
+    }
   };
 
   const calculateTotalExpense = () => {
     return expenses
-      .reduce((total, expense) => total + expense.value, 0)
+      .reduce((total, expense) => total + expense.valor, 0)
       .toFixed(2);
   };
 
@@ -50,39 +82,38 @@ const DashboardGasto = () => {
           {expenses.map((expense, index) => (
             <View key={index} style={styles.expenseItem}>
               <Text style={styles.gastoText}>
-                {expense.name} ${expense.value}
+                {expense.nome} ${expense.valor}
               </Text>
               <View style={styles.buttonContainer}>
-                <TouchableOpacity
+                <Ionicons
+                  name="brush-outline"
+                  size={24}
+                  color="white"
                   onPress={() => handleToggleEdit(index)}
-                  style={styles.editButton}
-                >
-                  <Text style={styles.buttonText}>Editar</Text>
-                </TouchableOpacity>
-                <TouchableOpacity
+                />
+                <Ionicons
+                  name="trash-outline"
+                  size={24}
+                  color="white"
                   onPress={() => handleDelete(index)}
-                  style={styles.deleteButton}
-                >
-                  <Text style={styles.buttonText}>Deletar</Text>
-                </TouchableOpacity>
+                  style={{ marginLeft: 30 }}
+                />
               </View>
             </View>
           ))}
+
           <Text style={styles.totalExpense}>
-            ${calculateTotalExpense()} Total
+            Total ${calculateTotalExpense()}
           </Text>
-          <TouchableOpacity
-            onPress={() => handleToggleEdit(null)}
-            style={styles.addButton}
-          >
-            {/* <Text style={styles.addButtonText}>+</Text> */}
+
+          <View style={styles.addButton}>
             <Ionicons
+              onPress={() => handleToggleEdit(null)}
               name="add-circle-outline"
               size={40}
               color="#fff"
-              style={styles.icon}
             />
-          </TouchableOpacity>
+          </View>
         </View>
       )}
     </View>
@@ -100,7 +131,6 @@ const styles = StyleSheet.create({
     flex: 1,
     width: '100%',
     color: '#fff',
-    padding: 20,
   },
   expenseItem: {
     flexDirection: 'row',
@@ -110,10 +140,10 @@ const styles = StyleSheet.create({
   },
   gastoText: {
     color: '#fff',
+    fontSize: 18,
   },
   buttonContainer: {
     flexDirection: 'row',
-    alignItems: 'center',
   },
   editButton: {
     backgroundColor: '#8196AA',
@@ -130,18 +160,14 @@ const styles = StyleSheet.create({
     color: '#fff',
   },
   totalExpense: {
-    marginTop: 10,
+    marginTop: 24,
+    fontSize: 18,
     fontWeight: 'bold',
-    color: '#fff',
+    color: '#EF4444',
+    alignSelf: 'center',
   },
   addButton: {
-    // position: 'absolute',
-    // bottom: 0,
-    // left: '50%',
-    // padding: 10,
-    // // backgroundColor: '#8196AA',
-    // borderRadius: 20,
-    justifyContent: 'flex-end',
+    justifyContent: 'center',
     alignItems: 'center',
     marginTop: 30,
   },

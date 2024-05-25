@@ -1,174 +1,87 @@
-// import React, { useState } from 'react';
-// import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
-// import { Icon } from 'react-native-paper';
-// import EditarMeta from './EditarMeta';
+import { useEffect, useState } from 'react';
 
-// const Dashboard = () => {
-//   const [showEditarMeta, setShowEditarMeta] = useState(false);
+import { View, Text, StyleSheet } from 'react-native';
 
-//   const toggleEditarMeta = () => {
-//     setShowEditarMeta(!showEditarMeta);
-//   };
+import { doc, getDoc } from 'firebase/firestore';
+import { FIRESTORE_DB } from '../../FirebaseConfig';
 
-//   return (
-//     <View style={styles.container}>
-//       {showEditarMeta ? (
-//         <EditarMeta />
-//       ) : (
-//         <View style={styles.content}>
-//           <Text style={styles.circleMeta}>
-//             <Text style={styles.circleMetaText}>Meta</Text>
-//           </Text>
-//           <TouchableOpacity
-//             onPress={toggleEditarMeta}
-//             style={styles.editButton}
-//           >
-//             <Text style={styles.editButtonText}>Editar {' '}
-//             <Icon source="pencil" size={20} color={'white'}/>
-//             </Text>
-//           </TouchableOpacity>
-//         </View>
-//       )}
-//     </View>
-//   );
-// };
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     width: '100%',
-//     color: '#fff',
-//     padding: 20,
-//     position: 'relative',
-//   },
-//   content: {
-//     flex: 1,
-//     justifyContent: 'center',
-//     alignItems: 'center',
-//   },
-//   circleMeta: {
-//     width: 200,
-//     height: 200,
-//     borderWidth: 2,
-//     borderColor: '#22C55E',
-//     color: '#fff',
-//     marginBottom: 20,
-//     borderRadius: 100,
-//     justifyContent: 'center',
-//     alignItems: 'center',
-//     position: 'relative',
-//   },
-//   circleMetaText: {
-//     color: '#fff',
-//     fontSize: 24,
-//     fontWeight: 'bold',
-//     position: 'absolute',
-//     transform: [{ translateY: 80 }, { translateX: 65 }],
-//   },
-//   editButton: {
-//     position: 'absolute',
-//     bottom: 0,
-//     left: 0,
-//     padding: 10,
-//     backgroundColor: '#8196AA',
-//     borderRadius: 20,
-//   },
-//   editButtonText: {
-//     color: '#fff',
-//   },
-// });
-
-// export default Dashboard;
-
-import React, { useState } from 'react';
-import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
-import EditableItem from './EditableItem';
-import { Icon } from 'react-native-paper';
 import EditarMeta from './EditarMeta';
+import Ionicons from '@expo/vector-icons/Ionicons';
 
-const DashboardMeta = () => {
+export default function DashboardMeta() {
   const [editMode, setEditMode] = useState(false);
   const [meta, setMeta] = useState('');
 
-  const handleToggleEdit = () => {
-    setEditMode(!editMode);
-  };
+  useEffect(() => {
+    async function fetchMeta() {
+      try {
+        const docRef = doc(FIRESTORE_DB, 'metas', '8KucKMXcozknzgsFsZw8');
+        const docSnapshot = await getDoc(docRef);
+        if (docSnapshot.exists()) {
+          const metaData = docSnapshot.data();
+          setMeta(metaData);
+        }
+      } catch (error) {
+        console.error('error fetching meta: ', error);
+      }
+    }
+    fetchMeta();
+  }, []);
 
-  const handleSave = () => {
-    // Save meta value
+  function handleToggleEdit() {
+    setEditMode(!editMode);
+  }
+
+  function handleSave(newMeta) {
+    setMeta(newMeta);
     setEditMode(false);
-  };
+  }
 
   return (
     <View style={styles.container}>
       {editMode ? (
-        <EditableItem
-          label="Meta"
-          value={meta}
-          onChangeText={setMeta}
-          onSave={handleSave}
-          onCancel={handleToggleEdit}
-        />
+        <EditarMeta onSave={handleSave} onCancel={() => setEditMode(false)} />
       ) : (
-        <View style={styles.content}>
-          <Text style={styles.circleMeta}>
-            <Text style={styles.circleMetaText}>Meta</Text>
-          </Text>
-          <TouchableOpacity
+        <View style={styles.metaContainer}>
+          <Text style={styles.metaValue}>$ {meta.valor}</Text>
+
+          <Ionicons
+            name="brush-outline"
+            size={24}
+            color="white"
             onPress={handleToggleEdit}
-            style={styles.editButton}
-          >
-            <Text style={styles.editButtonText}>Edit</Text>
-          </TouchableOpacity>
+            style={styles.metaEdit}
+          />
         </View>
       )}
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: '100%',
+    height: '100%',
     color: '#fff',
     padding: 20,
-    position: 'relative',
-  },
-  content: {
-    flex: 1,
-    justifyContent: 'center',
     alignItems: 'center',
+    justifyContent: 'center',
   },
-  circleMeta: {
-    width: 200,
+  metaContainer: {
+    // backgroundColor: '#EF4444',
     height: 200,
-    borderWidth: 2,
-    borderColor: '#22C55E',
-    color: '#fff',
-    marginBottom: 20,
-    borderRadius: 100,
-    justifyContent: 'center',
-    alignItems: 'center',
-    position: 'relative',
+    width: 200,
   },
-  circleMetaText: {
-    color: '#fff',
-    fontSize: 24,
+  metaValue: {
+    color: '#22C55E',
     fontWeight: 'bold',
-    position: 'absolute',
-    transform: [{ translateY: 80 }, { translateX: 65 }],
+    fontSize: 30,
+    alignSelf: 'center',
+    padding: 20,
   },
-  editButton: {
-    position: 'absolute',
-    bottom: 0,
-    left: 0,
-    padding: 10,
-    backgroundColor: '#8196AA',
-    borderRadius: 20,
-  },
-  editButtonText: {
-    color: '#fff',
+  metaEdit: {
+    alignSelf: 'center',
+    padding: 20,
   },
 });
-
-export default DashboardMeta;

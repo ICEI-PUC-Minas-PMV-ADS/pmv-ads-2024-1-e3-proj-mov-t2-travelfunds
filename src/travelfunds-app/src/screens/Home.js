@@ -13,8 +13,6 @@ const Home = ({ navigation }) => {
           text="Log In"
           mode="contained"
           onPress={() => navigation.navigate('Login')}
-          //onPress={() => navigation.navigate('Perfil')}
-          
         />
       </View>
 
@@ -24,8 +22,6 @@ const Home = ({ navigation }) => {
         onPress={() => navigation.navigate('Cadastro')}
       />
     </View>
-    
-    
   );
 };
 

@@ -161,6 +161,4 @@ const styles = StyleSheet.create({
     addButtonText: { color: '#fff', fontSize: 16 }
 });
 
-
-
 export default Perfil;

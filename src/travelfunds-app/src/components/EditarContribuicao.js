@@ -1,139 +1,130 @@
-// import React, { useState } from 'react';
-// import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
-// import CustomTextInput from './CustomTextInput';
-// import InputButton from './InputButton';
-// import MetaDashboard from './DashboardContribuicao';
-
-// const EditarContribuicao = ({ label }) => {
-//   const [text, setText] = useState('');
-
-//   const [hideEditarContribuicao, setHideEditarContribuicao] = useState(false);
-
-//   const toggleHideEditarContribuicao = () => {
-//     setHideEditarContribuicao(!hideEditarContribuicao);
-//   };
-
-//   return (
-//     <View style={styles.container}>
-//       {hideEditarContribuicao ? (
-//         <MetaDashboard />
-//       ) : (
-//       <>
-//       <CustomTextInput
-//         label="Nome da Contribuição"
-//         value={text}
-//         onChangeText={(text) => setText(text)}
-//         style={styles.input}
-//       />
-//       <CustomTextInput
-//         label="Valor"
-//         value={text}
-//         onChangeText={(text) => setText(text)}
-//         style={styles.input}
-//       />
-//       <CustomTextInput
-//         label="Adicionar valor"
-//         value={text}
-//         onChangeText={(text) => setText(text)}
-//         style={styles.input}
-//       />
-//       <TouchableOpacity
-//             onPress={toggleHideEditarContribuicao}
-//             style={styles.editButton}
-//           >
-//             <Text style={styles.editButtonText}>Voltar</Text>
-//           </TouchableOpacity>
-//       <View style={styles.inputButtonContainer}>
-//         <InputButton text={'Adicionar'} />
-//       </View>
-//       </>
-//   )
-// }
-//     </View >
-//   );
-// };
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     width: '100%',
-//     color: '#fff',
-//     padding: 20,
-//     position: 'relative',
-//   },
-//   input: {
-//     marginBottom: 16,
-//   },
-//   inputButtonContainer: {
-//     margin: 20,
-//     alignItems: 'center',
-//     justifyContent: 'flex-end',
-//   },
-//   editButton: {
-//     position: 'absolute',
-//     bottom: 0,
-//     left: 0,
-//     padding: 10,
-//     backgroundColor: '#8196AA',
-//     borderRadius: 20,
-//   },
-//   editButtonText: {
-//     color: '#fff',
-//   },
-// });
-
-// export default EditarContribuicao;
-
 import React, { useState } from 'react';
-import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
-import EditableItem from './EditableItem';
 
-const EditarContribuicao = () => {
-  const [editMode, setEditMode] = useState(false);
-  const [contribuicao, setContribuicao] = useState('');
+import { StyleSheet, View, KeyboardAvoidingView, Platform } from 'react-native';
 
-  const handleToggleEdit = () => {
-    setEditMode(!editMode);
+import CustomTextInput from './CustomTextInput';
+import BotaoMenor from './BotaoMenor';
+
+import { doc, updateDoc, arrayUnion, arrayRemove } from 'firebase/firestore';
+import { FIRESTORE_DB } from '../../FirebaseConfig';
+
+const EditarContribuicao = ({ contribuicao, onSave, onCancel }) => {
+  const [name, setName] = useState(contribuicao ? contribuicao.nome : '');
+  const [value, setValue] = useState(
+    contribuicao ? contribuicao.valor.toString() : ''
+  );
+
+  const handleSave = async () => {
+    if (
+      !name.trim() ||
+      name.length > 20 ||
+      !/^[A-Za-z]+$/.test(name) ||
+      isNaN(parseFloat(value))
+    ) {
+      alert('Por favor, insira uma contribuição válida');
+      return;
+    }
+
+    const newContribuicao = { nome: name, valor: parseFloat(value) };
+
+    try {
+      const docRef = doc(FIRESTORE_DB, 'contribuicoes', '1fvzTRRxoWC6asC5Y322');
+      await updateDoc(docRef, {
+        contribuicoes: arrayUnion(newContribuicao),
+      });
+      onSave(newContribuicao);
+    } catch (error) {
+      console.log('error adding contribuicao: ', error);
+    }
+
+    setName('');
+    setValue('');
   };
 
-  const handleSave = () => {
-    // Save contribution value
-    setEditMode(false);
+  const handleUpdate = async () => {
+    if (
+      !name.trim() ||
+      name.length > 20 ||
+      !/^[A-Za-z]+$/.test(name) ||
+      isNaN(parseFloat(value))
+    ) {
+      alert('Por favor, insira uma contribuição válida');
+      return;
+    }
+
+    const updateContribuicao = { nome: name, valor: parseFloat(value) };
+
+    try {
+      const docRef = doc(FIRESTORE_DB, 'contribuicoes', '1fvzTRRxoWC6asC5Y322');
+
+      await updateDoc(docRef, { contribuicoes: arrayRemove(contribuicao) });
+      await updateDoc(docRef, {
+        contribuicoes: arrayUnion(updateContribuicao),
+      });
+      onSave(updateContribuicao);
+    } catch (error) {
+      console.error('error updating contribuicao: ', error);
+    }
+
+    setName('');
+    setValue('');
   };
 
   return (
-    <View style={styles.container}>
-      {editMode ? (
-        <EditableItem
-          label="Contribuicao"
-          value={contribuicao}
-          onChangeText={setContribuicao}
-          onSave={handleSave}
-          onCancel={handleToggleEdit}
+    <KeyboardAvoidingView
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      style={styles.container}
+    >
+      <View style={styles.innerContainer}>
+        <CustomTextInput
+          label="Nome"
+          value={name}
+          onChangeText={setName}
+          style={styles.customTextInput}
         />
-      ) : (
-        <TouchableOpacity onPress={handleToggleEdit} style={styles.editButton}>
-          <Text style={styles.editButtonText}>Edit Contribution</Text>
-        </TouchableOpacity>
-      )}
-    </View>
+        <CustomTextInput
+          label="Valor"
+          value={value}
+          onChangeText={setValue}
+          keyboardType="numeric"
+          style={styles.customTextInput}
+        />
+      </View>
+
+      <View style={styles.inputButtonContainer}>
+        {contribuicao ? (
+          <>
+            <BotaoMenor text="Atualizar" onPress={handleUpdate} />
+            <BotaoMenor text="Cancelar" onPress={onCancel} />
+          </>
+        ) : (
+          <>
+            <BotaoMenor text="Salvar" onPress={handleSave} />
+            <BotaoMenor text="Cancelar" onPress={onCancel} />
+          </>
+        )}
+      </View>
+    </KeyboardAvoidingView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    width: '100%',
-    color: '#fff',
-    padding: 20,
   },
-  editButton: {
-    padding: 10,
-    backgroundColor: '#8196AA',
-    borderRadius: 20,
+  innerContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    paddingHorizontal: 20,
   },
-  editButtonText: {
-    color: '#fff',
+  customTextInput: {
+    marginBottom: 16,
+  },
+  inputButtonContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingHorizontal: 20,
+    paddingBottom: 20,
   },
 });
 

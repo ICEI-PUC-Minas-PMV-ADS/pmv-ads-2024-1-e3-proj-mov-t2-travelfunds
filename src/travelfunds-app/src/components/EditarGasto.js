@@ -1,93 +1,129 @@
-import React, { useState, useEffect } from 'react';
-import {
-  StyleSheet,
-  View,
-  Text,
-  TouchableOpacity,
-  TextInput,
-} from 'react-native';
+import React, { useState } from 'react';
+
+import { StyleSheet, View, KeyboardAvoidingView, Platform } from 'react-native';
+
+import CustomTextInput from './CustomTextInput';
+import BotaoMenor from './BotaoMenor';
+
+import { doc, updateDoc, arrayUnion, arrayRemove } from 'firebase/firestore';
+import { FIRESTORE_DB } from '../../FirebaseConfig';
 
 const EditarGasto = ({ expense, onSave, onCancel }) => {
-  const [name, setName] = useState('');
-  const [value, setValue] = useState('');
+  const [name, setName] = useState(expense ? expense.nome : '');
+  const [value, setValue] = useState(expense ? expense.valor.toString() : '');
 
-  useEffect(() => {
-    if (expense) {
-      setName(expense.name);
-      setValue(expense.value.toString());
+  const handleSave = async () => {
+    if (
+      !name.trim() ||
+      name.length > 20 ||
+      !/^[A-Za-z]+$/.test(name) ||
+      isNaN(parseFloat(value))
+    ) {
+      alert('Por favor, insira um gasto valido');
+      return;
     }
-  }, [expense]);
 
-  const handleSave = () => {
-    const newExpense = { name, value: parseFloat(value) };
-    onSave(newExpense);
+    const newExpense = { nome: name, valor: parseFloat(value) };
+
+    try {
+      const docRef = doc(FIRESTORE_DB, 'gastos', 'SguHhNyRXWRKlXke8jfP');
+      await updateDoc(docRef, {
+        expenses: arrayUnion(newExpense),
+      });
+      onSave(newExpense);
+    } catch (error) {
+      console.error('Error adding expense: ', error);
+    }
+
+    setName('');
+    setValue('');
+  };
+
+  const handleUpdate = async () => {
+    if (
+      !name.trim() ||
+      name.length > 20 ||
+      !/^[A-Za-z]+$/.test(name) ||
+      isNaN(parseFloat(value))
+    ) {
+      alert('Por favor, insira um gasto valido');
+      return;
+    }
+
+    const updatedExpense = { nome: name, valor: parseFloat(value) };
+
+    try {
+      const docRef = doc(FIRESTORE_DB, 'gastos', 'SguHhNyRXWRKlXke8jfP');
+      await updateDoc(docRef, {
+        expenses: arrayRemove(expense),
+      });
+      await updateDoc(docRef, {
+        expenses: arrayUnion(updatedExpense),
+      });
+      onSave(updatedExpense);
+    } catch (error) {
+      console.error('Error updating expense: ', error);
+    }
+
     setName('');
     setValue('');
   };
 
   return (
-    <View style={styles.container}>
-      <TextInput
-        placeholder="Nome gasto"
-        value={name}
-        onChangeText={setName}
-        style={styles.input}
-      />
-      <TextInput
-        placeholder="Valor Gasto"
-        value={value}
-        onChangeText={setValue}
-        keyboardType="numeric"
-        style={styles.input}
-      />
-      <View style={styles.inputButtonContainer}>
-        <TouchableOpacity onPress={handleSave} style={styles.saveButton}>
-          <Text style={styles.saveButtonText}>Salvar</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={onCancel} style={styles.cancelButton}>
-          <Text style={styles.cancelButtonText}>Cancelar</Text>
-        </TouchableOpacity>
+    <KeyboardAvoidingView
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      style={styles.container}
+    >
+      <View style={styles.innerContainer}>
+        <CustomTextInput
+          label="Nome"
+          value={name}
+          onChangeText={setName}
+          style={styles.customTextInput}
+        />
+        <CustomTextInput
+          label="Valor"
+          value={value}
+          onChangeText={setValue}
+          keyboardType="numeric"
+          style={styles.customTextInput}
+        />
       </View>
-    </View>
+
+      <View style={styles.inputButtonContainer}>
+        {expense ? (
+          <>
+            <BotaoMenor text="Atualizar" onPress={handleUpdate} />
+            <BotaoMenor text="Cancelar" onPress={onCancel} />
+          </>
+        ) : (
+          <>
+            <BotaoMenor text="Salvar" onPress={handleSave} />
+            <BotaoMenor text="Cancelar" onPress={onCancel} />
+          </>
+        )}
+      </View>
+    </KeyboardAvoidingView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    width: '100%',
-    color: '#fff',
-    padding: 20,
-    position: 'relative',
   },
-  input: {
+  innerContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    paddingHorizontal: 20,
+  },
+  customTextInput: {
     marginBottom: 16,
-    borderWidth: 1,
-    borderColor: '#ccc',
-    borderRadius: 5,
-    padding: 10,
   },
   inputButtonContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-  },
-  saveButton: {
-    backgroundColor: '#8196AA',
-    padding: 10,
-    borderRadius: 5,
-    alignItems: 'center',
-  },
-  saveButtonText: {
-    color: '#fff',
-  },
-  cancelButton: {
-    backgroundColor: '#FF6347',
-    padding: 10,
-    borderRadius: 5,
-    alignItems: 'center',
-  },
-  cancelButtonText: {
-    color: '#fff',
+    paddingHorizontal: 20,
+    paddingBottom: 20,
   },
 });
 

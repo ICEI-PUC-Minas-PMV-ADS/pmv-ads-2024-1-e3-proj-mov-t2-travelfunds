@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 
 import { View, Text, StyleSheet } from 'react-native';
-import { Icon, Appbar } from 'react-native-paper';
+import { Icon } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
 import { logout } from '../services/Firebase.Auth.js';
 
 import Ionicons from '@expo/vector-icons/Ionicons';
+import InputButton from "../components/InputButton";
 import BottonSectionButtonMenu from '../components/BottonSectionButtonMenu.js';
+import TotalGasto from '../components/Total.js';
 
 import DashboardMeta from '../components/DashboardMeta.js';
 import DashboardContribuicao from '../components/DashboardContribuicao.js';
@@ -14,6 +16,12 @@ import DashboardGasto from '../components/DashboardGasto.js';
 
 const ViagemMain = () => {
   const navigation = useNavigation();
+
+  // const [meta, setMeta] = useState(0);
+
+  // const handleMetaChange = (newMeta) => {
+  //   setMeta(newMeta);
+  // };
 
   const [dashboardState, setDashboardState] = useState({
     meta: false,
@@ -30,13 +38,24 @@ const ViagemMain = () => {
   };
 
   const handleGoBack = () => {
-    setDashboardState({
-      // ...dashboardState,
-      meta: false,
-      contribuicao: false,
-      gastos: false,
-    });
+    if (
+      !dashboardState.meta &&
+      !dashboardState.contribuicao &&
+      !dashboardState.gastos
+    ) {
+      navigation.navigate('Perfil');
+    } else {
+      setDashboardState({
+        meta: false,
+        contribuicao: false,
+        gastos: false,
+      });
+    }
   };
+
+  const handleLogout = async () => {
+    logout();
+  }
 
   return (
     <>
@@ -57,18 +76,26 @@ const ViagemMain = () => {
           </View>
 
           <Ionicons
-            name="settings-outline"
-            size={35}
+            name="brush-outline"
+            size={25}
             color="#fff"
             style={styles.settingsIcon}
             onPress={() => navigation.navigate('EditarViagem')}
           />
 
-          {/* linkar com funcionalidade de logout */}
           <View style={styles.logout}>
-            <Text style={styles.logoutText}>Logout</Text>
+            <InputButton
+              text="Logout"
+              mode="text"
+              onPress={handleLogout} />
           </View>
         </View>
+
+        <View style={styles.middleSection}>
+          <Text style={styles.nameText}>Viagem</Text>
+        </View>
+
+
         <View style={styles.bottomSection}>
           <View style={styles.bottomSectionButtons}>
             <BottonSectionButtonMenu
@@ -98,11 +125,11 @@ const ViagemMain = () => {
           {!dashboardState.meta &&
             !dashboardState.contribuicao &&
             !dashboardState.gastos && (
-              <View>
-                <Text style={styles.viagemMain}>Viagem Main</Text>
+              <View style={styles.mainDashContainer}>
+                {/* <Text style={styles.viagemMain}>Viagem Main</Text> */}
+                <TotalGasto style={styles.viagemMain} />
               </View>
             )}
-          {/* Viagem main text placeholder, criar maindashboard.js?  */}
         </View>
       </View>
     </>
@@ -137,12 +164,19 @@ const styles = StyleSheet.create({
     position: 'absolute',
     color: '#012B53',
   },
+  middleSection: {
+    marginTop: '13%',
+    alignItems: 'center',
+  },
+  nameText: {
+    fontSize: 30,
+  },
   bottomSection: {
     flex: 2,
     width: '90%',
     backgroundColor: '#012B53',
     padding: 10,
-    marginTop: '15%',
+    marginTop: '5%',
     marginBottom: '10%',
     marginLeft: '5%',
     marginRight: '5%',
@@ -171,12 +205,8 @@ const styles = StyleSheet.create({
   },
   logout: {
     position: 'absolute',
-    top: 75,
-    right: 45,
-  },
-  logoutText: {
-    color: '#fff',
-    fontSize: 22,
+    top: 65,
+    right: 20,
   },
 });
 

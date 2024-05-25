@@ -1,126 +1,86 @@
-// import React, { useState } from 'react';
-// import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
-// import CustomTextInput from './CustomTextInput';
-// import InputButton from './InputButton';
-// import Dashboard from './DashboardMeta';
+import { useState } from 'react';
 
-// const EditarMeta = ({ }) => {
-//   const [text, setText] = useState('');
+import { View, StyleSheet, KeyboardAvoidingView, Platform } from 'react-native';
 
-//   const [hideEditarMeta, setHideEditarMeta] = useState(false);
+import CustomTextInput from './CustomTextInput';
+import BotaoMenor from './BotaoMenor';
 
-//   const toggleHideEditarMeta = () => {
-//     setHideEditarMeta(!hideEditarMeta);
-//   };
+import { doc, updateDoc } from 'firebase/firestore';
+import { FIRESTORE_DB } from '../../FirebaseConfig';
 
-//   return (
-//     <View style={styles.container}>
-//        {hideEditarMeta ? (
-//       <Dashboard />
-//     ) : (
-//       <>
-//       <CustomTextInput
-//         label="Meta"
-//         value={text}
-//         onChangeText={(text) => setText(text)}
-//         style={styles.input}
-//       />
-//       <View style={styles.inputButtonContainer}>
-//         <InputButton text={'Alterar'} />
-//       </View>
-//       <TouchableOpacity
-//             onPress={toggleHideEditarMeta}
-//             style={styles.editButton}
-//           >
-//             <Text style={styles.editButtonText}>Voltar</Text>
-//           </TouchableOpacity>
-//           </>
-//           )}
-//     </View>
-//   );
-// };
+export default function EditarMeta({ onSave, onCancel }) {
+  const [value, setValue] = useState('');
 
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     width: '100%',
-//     color: '#fff',
-//     padding: 20,
-//     position: 'relative',
-//   },
-//   input: {
-//     marginBottom: 16,
-//   },
-//   inputButtonContainer: {
-//     alignItems: 'center',
-//     justifyContent: 'flex-end',
-//   },
-//   editButton: {
-//     position: 'absolute',
-//     bottom: 0,
-//     left: 0,
-//     padding: 10,
-//     backgroundColor: '#8196AA',
-//     borderRadius: 20,
-//   },
-//   editButtonText: {
-//     color: '#fff',
-//   },
-// });
+  async function handleSave() {
+    //guard clause
 
-// export default EditarMeta;
+    // fire base logic
+    const newMeta = { valor: parseFloat(value) };
 
-import React, { useState } from 'react';
-import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
-import EditableItem from './EditableItem';
-
-const EditarMeta = () => {
-  const [editMode, setEditMode] = useState(false);
-  const [meta, setMeta] = useState('');
-
-  const handleToggleEdit = () => {
-    setEditMode(!editMode);
-  };
-
-  const handleSave = () => {
-    // Save meta value
-    setEditMode(false);
-  };
+    try {
+      const docRef = doc(FIRESTORE_DB, 'metas', '8KucKMXcozknzgsFsZw8');
+      await updateDoc(docRef, newMeta);
+      onSave(newMeta);
+    } catch (error) {
+      console.error('error adding meta: ', error);
+    }
+    setValue('');
+  }
 
   return (
-    <View style={styles.container}>
-      {editMode ? (
-        <EditableItem
+    <KeyboardAvoidingView
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      style={styles.container}
+    >
+      <View style={styles.innerContainer}>
+        <CustomTextInput
           label="Meta"
-          value={meta}
-          onChangeText={setMeta}
-          onSave={handleSave}
-          onCancel={handleToggleEdit}
+          value={value}
+          onChangeText={setValue}
+          keyboardType="numeric"
+          style={styles.customTextInput}
         />
-      ) : (
-        <TouchableOpacity onPress={handleToggleEdit} style={styles.editButton}>
-          <Text style={styles.editButtonText}>Edit Meta</Text>
-        </TouchableOpacity>
-      )}
-    </View>
+
+        <View style={styles.inputButtonContainer}>
+          <BotaoMenor
+            text="Salvar"
+            additionalStyles={styles.saveButton}
+            onPress={handleSave}
+          />
+
+          <BotaoMenor
+            text="Cancelar"
+            additionalStyles={styles.cancelButton}
+            onPress={onCancel}
+          />
+        </View>
+      </View>
+    </KeyboardAvoidingView>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    width: '100%',
-    color: '#fff',
-    padding: 20,
   },
-  editButton: {
-    padding: 10,
-    backgroundColor: '#8196AA',
-    borderRadius: 20,
+  innerContainer: {
+    flex: 1,
+    justifyContent: 'center',
   },
-  editButtonText: {
-    color: '#fff',
+  customTextInput: {
+    marginBottom: 16,
+  },
+  inputButtonContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingHorizontal: 20,
+    paddingBottom: 20,
+    marginHorizontal: 40,
+  },
+  saveButton: {
+    marginHorizontal: 5,
+  },
+  cancelButton: {
+    marginHorizontal: 5,
   },
 });
-
-export default EditarMeta;
