@@ -9,7 +9,8 @@ import { useNavigation } from '@react-navigation/native';
 import Header from "../components/Header";
 import { getAuth} from 'firebase/auth';
 import { atualizarDadosUsuario } from "../services/Firebase.DB.Usuarios";
-import { logout } from '../services/Firebase.Auth.js';
+//import { logout } from '../services/Firebase.Auth.js';
+import InputButton from "../components/InputButton.js";
 
 
 
@@ -93,7 +94,8 @@ const EditarPerfil = () => {
                         <InputButton
                             text="Logout"
                             mode="text"
-                            onPress={handleLogout} />
+                            //onPress={handleLogout} 
+                            />
                     </View>
                 </View>
 
