@@ -8,7 +8,7 @@ const BotaoSalvar = ({ text, onPress }) => (
 );
 
 const styles = StyleSheet.create({
-    button: { backgroundColor: "#8196AA", marginTop: 12, padding: 10, borderRadius: 10, alignItems: 'center' },
+    button: { backgroundColor: "#8196AA", marginTop: 12, padding: 11, borderRadius: 20, alignItems: 'center' },
     buttonText: { color: '#fff', fontSize: 16 }
 });
 

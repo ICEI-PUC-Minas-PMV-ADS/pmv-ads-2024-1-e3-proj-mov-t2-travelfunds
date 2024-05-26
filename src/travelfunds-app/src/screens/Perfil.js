@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { View, Text, StyleSheet, FlatList, TouchableOpacity } from "react-native";
+
 import { Icon } from "react-native-paper";
 import { collection, getDocs } from "firebase/firestore";
 import { FIRESTORE_DB } from '../../FirebaseConfig';
 import { useNavigation, useFocusEffect } from '@react-navigation/native';
 import { logout } from '../services/Firebase.Auth';
+
 import Ionicons from '@expo/vector-icons/Ionicons';
 import InputButton from "../components/InputButton";
 
@@ -35,9 +37,6 @@ const Perfil = () => {
     </TouchableOpacity>
   );
 
-  const handleGoBack = () => {
-  };
-
   const handleLogout = async () => {
     logout();
   };
@@ -45,18 +44,7 @@ const Perfil = () => {
   return (
     <View style={styles.container}>
       <View style={styles.topSection}>
-        <Ionicons
-          name="return-up-back-outline"
-          size={35}
-          color="#fff"
-          style={styles.returnIcon}
-          onPress={handleGoBack}
-        />
-        <View style={styles.roundComponent}>
-          <Text style={styles.overlayText}>
-            <Icon source="camera" size={40} />
-          </Text>
-        </View>
+
         <Ionicons
           name="brush-outline"
           size={25}
@@ -64,6 +52,7 @@ const Perfil = () => {
           style={styles.settingsIcon}
           onPress={() => navigation.navigate('EditarPerfil')}
         />
+
         <View style={styles.logout}>
           <InputButton
             text="Logout"
@@ -71,23 +60,33 @@ const Perfil = () => {
             onPress={handleLogout}
           />
         </View>
+
+        <View style={styles.roundComponent}>
+          <Text style={styles.overlayText}>
+            <Icon source="camera" size={40} />
+          </Text>
+        </View>
       </View>
       <View style={styles.middleSection}>
         <Text style={styles.nameText}>Nome</Text>
         <Text>Minhas Viagens</Text>
       </View>
       <View style={styles.bottomSection}>
-        <FlatList
+        <FlatList style={styles.viagem}
           data={viagens}
           renderItem={renderItem}
           keyExtractor={item => item.id}
         />
-        <TouchableOpacity 
-          style={styles.addButton} 
-          onPress={() => navigation.navigate('CadastroViagem')}
-        >
-          <Text style={styles.addButtonText}>Adicionar +</Text>
-        </TouchableOpacity>
+
+
+         <View style={styles.addButton}>
+         <Ionicons
+              onPress={() => navigation.navigate('CadastroViagem')}
+              name="add-circle-outline"
+              size={40}
+              color="#fff"
+            />
+          </View>
       </View>
     </View>
   );
@@ -153,16 +152,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'flex-start',
   },
-  bottomSectionButtons: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+  viagem:{
+    color: '#FFF',
   },
-
-    addButton: {
-        alignSelf: 'flex-start',
-        backgroundColor: 'transparent',
-        padding: 15,
-    },
+  addButton: {
+    justifyContent: 'center',
+    position: 'relative',
+    left: 125,
+    marginTop: 30,
+  },
     addButtonText: { color: '#fff', fontSize: 16 }
 });
 

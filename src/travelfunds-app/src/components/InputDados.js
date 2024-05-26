@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     inputContainer: { 
         marginBottom: 10, 
         backgroundColor: 'transparent', 
-        width: "100%" 
+        width: "100%",
     },
     input: {
         backgroundColor: 'transparent', 
