@@ -59,7 +59,8 @@ const EditarViagem = () => {
                     <InputSetPerfil label="Qual seu destino?" />
                     <InputSetPerfil label="Data de Ida" />
                     <InputSetPerfil label="Data de Volta?" />
-                    <BotaoMenor text="Alterar" />
+                    <BotaoMenor 
+                    text="Alterar" />
                 </View>
 
             </View>
