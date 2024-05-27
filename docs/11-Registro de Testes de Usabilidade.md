@@ -11,6 +11,7 @@
 | Objetivo do Teste 	| Avaliar a usabilidade da tela de Login |
 | Ações Necessárias 	| 1. Acessar o aplicativo; <br> 2. Clicar na opção “Login”; <br> 3. Preencher as informações de email e senha; <br> 4. Clicar em “Log In". |
 | Resultado	| Teste realizado pelo Usuário 001, mesmo usuário do Caso de Teste 01, que também não reportou nenhuma dificuldade. |
+| Evidência	| https://youtube.com/shorts/jy-An7wtFP0?si=ixvO8QnQpXRnFbab |
 
 | **Caso de Teste** 	| **CTU-03 – Gerenciar viagens** 	|
 |:---:	|:---:	|
