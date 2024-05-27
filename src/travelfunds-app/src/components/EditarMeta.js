@@ -1,31 +1,16 @@
 import { useState } from 'react';
-
 import { View, StyleSheet, KeyboardAvoidingView, Platform } from 'react-native';
-
 import CustomTextInput from './CustomTextInput';
 import BotaoMenor from './BotaoMenor';
-
-import { doc, updateDoc } from 'firebase/firestore';
-import { FIRESTORE_DB } from '../../FirebaseConfig';
+import { salvarViagemPlus } from '../services/firebase.db.viagens';
 
 export default function EditarMeta({ onSave, onCancel }) {
-  const [value, setValue] = useState('');
+  const [meta, setMeta] = useState('');
 
-  async function handleSave() {
-    //guard clause
-
-    // fire base logic
-    const newMeta = { valor: parseFloat(value) };
-
-    try {
-      const docRef = doc(FIRESTORE_DB, 'metas', '8KucKMXcozknzgsFsZw8');
-      await updateDoc(docRef, newMeta);
-      onSave(newMeta);
-    } catch (error) {
-      console.error('error adding meta: ', error);
-    }
-    setValue('');
-  }
+  const handleSave = async () => {
+    await salvarViagemPlus(parseFloat(meta));
+    navigation.goBack();
+  };
 
   return (
     <KeyboardAvoidingView
@@ -35,8 +20,8 @@ export default function EditarMeta({ onSave, onCancel }) {
       <View style={styles.innerContainer}>
         <CustomTextInput
           label="Meta"
-          value={value}
-          onChangeText={setValue}
+          value={meta}
+          onChangeText={setMeta}
           keyboardType="numeric"
           style={styles.customTextInput}
         />

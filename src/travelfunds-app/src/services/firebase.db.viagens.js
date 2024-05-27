@@ -1,8 +1,14 @@
 import { doc, collection, addDoc } from 'firebase/firestore';
 import { FIRESTORE_DB, FIREBASE_AUTH } from '../../FirebaseConfig';
-import { Alert } from 'react-native';
 
-const salvarViagem = async (destino, dataPartida, dataRetorno) => {
+const salvarViagem = async (
+  destino,
+  dataPartida,
+  dataRetorno
+  // meta,
+  // gastos,
+  // contribuicoes
+) => {
   try {
     const user = FIREBASE_AUTH.currentUser;
 
@@ -11,18 +17,20 @@ const salvarViagem = async (destino, dataPartida, dataRetorno) => {
         doc(FIRESTORE_DB, 'usuarios', user.uid),
         'viagens'
       );
-      await addDoc(viagensCollectionRef, {
+      const viagemDocRef = await addDoc(viagensCollectionRef, {
         destino,
         dataPartida,
         dataRetorno,
+        // meta,
+        // gastos: [],
+        // contribuicoes: [],
       });
 
-      Alert.alert('Sucesso', 'Viagem salva com sucesso!');
-    } else {
-      Alert.alert('Erro', 'Usuário não autenticado!');
+      return viagemDocRef.id; // documento ID
     }
   } catch (error) {
-    Alert.alert('Erro', error.message);
+    console.error('Error: ', error);
+    return null;
   }
 };
 

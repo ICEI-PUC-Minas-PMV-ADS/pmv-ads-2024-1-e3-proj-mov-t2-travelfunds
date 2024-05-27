@@ -7,9 +7,9 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import { Icon } from 'react-native-paper';
-import { collection, getDocs, doc } from 'firebase/firestore';
+import { collection, onSnapshot, doc } from 'firebase/firestore';
 import { FIRESTORE_DB, FIREBASE_AUTH } from '../../FirebaseConfig';
-import { useNavigation, useFocusEffect } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 import { logout } from '../services/Firebase.Auth';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import InputButton from '../components/InputButton';
@@ -18,29 +18,24 @@ const Perfil = () => {
   const navigation = useNavigation();
   const [viagens, setViagens] = useState([]);
 
-  const fetchViagens = async () => {
+  useEffect(() => {
     const user = FIREBASE_AUTH.currentUser;
     if (user) {
       const viagensCollection = collection(
         doc(FIRESTORE_DB, 'usuarios', user.uid),
         'viagens'
       );
-      const viagemSnapshot = await getDocs(viagensCollection);
-      const viagemList = viagemSnapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      }));
-      setViagens(viagemList);
+      const unsubscribe = onSnapshot(viagensCollection, (viagemSnapshot) => {
+        const viagemList = viagemSnapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        setViagens(viagemList);
+      });
+
+      return () => unsubscribe();
     }
-  };
-
-  useEffect(() => {
-    fetchViagens();
   }, []);
-
-  useFocusEffect(() => {
-    fetchViagens();
-  });
 
   const renderItem = ({ item }) => (
     <TouchableOpacity
@@ -56,7 +51,9 @@ const Perfil = () => {
     </TouchableOpacity>
   );
 
-  const handleGoBack = () => {};
+  const handleGoBack = () => {
+    navigation.goBack();
+  };
 
   const handleLogout = async () => {
     logout();

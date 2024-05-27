@@ -4,7 +4,7 @@ import InputDados from '../components/InputDados';
 import BotaoSalvar from '../components/BotaoSalvar';
 import { Icon } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
-import { salvarViagem } from '../services/firebase.db.viagens'; // Adjust the path accordingly
+import { salvarViagem } from '../services/firebase.db.viagens';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import InputButton from '../components/InputButton';
 
