@@ -24,6 +24,7 @@ Foram realizados os testes descritos abaixo:
 | Passos 	| - O usuário acessa a aplicação do dispositivo móvel; <br> - O usuário acessa a página de login da aplicação; <br> - O usuário insere os dados solicitados no login; <br> - O usuário clica no botão de realizar o login.|
 |Critério de Êxito | - O usuário é redirecionado para a tela principal da aplicação com permissões restritas apenas a usuários autenticados  |
 |Resultado | O login está funcionando para as contas já cadastradas e o logout também.|
+| Evidência	| https://youtube.com/shorts/jy-An7wtFP0?si=ixvO8QnQpXRnFbab |
 
 | **Caso de Teste** 	| CT-03 – Gerenciamento de perfil do usuário |
 |:---:	|:---:	|
