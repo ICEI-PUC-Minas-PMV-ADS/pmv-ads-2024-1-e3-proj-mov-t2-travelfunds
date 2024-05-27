@@ -33,7 +33,7 @@ Foram realizados os testes descritos abaixo:
 | Objetivo do Teste 	| Verificar se os usuários conseguem visualizar, atualizar e deletar seus dados pessoais |
 | Passos 	| - O usuário acessa a aplicação do dispositivo móvel; <br> - O usuário acessa a página do seu perfil na aplicação; <br> - O usuário é capaz de visualizar, atualizar ou deletar seus dados; <br> - O usuário salva as alterações.|
 |Critério de Êxito | - Os dados do usuário são atualizados corretamente no banco de dados; <br> - O usuário consegue visualizar as alterações feitas na aplicação|
-|Resultado | Essa funcionalidade ainda não pode ser testada pois ainda não está implementada no aplicativo.|
+|Resultado | Essa funcionalidade já foi implementada, porém, não pode ser testada pois a cota do plano do firebase acabou, sendo assim, não houve tempo hábil para fazer a prova do teste .|
 
 | **Caso de Teste** 	| CT-04 – Criação e gerenciamento de viagem |
 |:---:	|:---:	|
