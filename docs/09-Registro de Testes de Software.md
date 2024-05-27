@@ -14,7 +14,7 @@ Foram realizados os testes descritos abaixo:
 | Objetivo do Teste 	| Verificar se o usuário consegue cadastrar-se na plataforma fornecendo as informações necessárias (nome, email e senha) |
 | Passos 	| - O usuário acessa a aplicação do dispositivo móvel; <br> - O usuário preenche os campos necessários; <br> - O usuário clica no botão Cadastrar. |
 |Critério de Êxito | - Os dados do usuário são armazenados corretamente no banco de dados; <br> - O usuário consegue se cadastrar na plataforma.|
-|Resultado | Houve uma desconfiguração do firebase, dessa forma, não está salvando novos cadastros, porém, os cadastros antigos estão conseguindo acessar normalmente, como é o caso do email de teste teste@teste.com.|
+|Resultado | Houve uma desconfiguração do firebase, dessa forma, não está salvando na base de dados, porém, a funcionalidade está ativa, como será possível ver nas evidências relacionada nos demais casos de teste abaixo. |
 
 | **Caso de Teste** 	| CT-02 – Login na conta	|
 |:---:	|:---:	|
@@ -72,7 +72,7 @@ Foram realizados os testes descritos abaixo:
 | Passos 	| - O usuário acessa a aplicação do dispositivo móvel; <br> - O usuário acessa a página do seu perfil na aplicação; <br> - O usuário seleciona a viagem que deseja na lista de viagens; <br> - O usuário acessa a página de inserção de gastos; <br> - O usuário preenche os dados necessários para inserir um gasto; <br> - O usuário salva o gasto.|
 |Critério de Êxito |- O usuário consegue inserir o gasto e visualizá-lo corretamente na interface da aplicação; <br> - Após a inserção, o saldo da viagem é atualizado com o novo gasto contabilizado.|
 |Resultado | A tela de inserção de gastos já está desenvolvida, e funcionando. Apenas a tela de meta que ainda não foi possível vincular com as demais funções, contribuição e gastos. |
-| Evidência	|https://youtube.com/shorts/-LHIbdyIngw?si=zVrhPWKeM6PT0AJA |
+| Evidências	|https://youtube.com/shorts/-LHIbdyIngw?si=zVrhPWKeM6PT0AJA <br> https://youtube.com/shorts/oO01seCUyRQ?si=2q2ohJfIEdp8EZDp|
 
 | **Caso de Teste** 	| CT-08 – Geração de relatório |
 |:---:	|:---:	|
