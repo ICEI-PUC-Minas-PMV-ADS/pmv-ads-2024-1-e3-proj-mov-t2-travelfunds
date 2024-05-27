@@ -26,7 +26,7 @@
 | Objetivo do Teste 	| Avaliar a usabilidade de gerenciamento de gastos, criar, editar e excluir |
 | Ações Necessárias 	| 1. Acessar a tela inicial do aplicativo; <br> 2. Clicar na viagem cadastrada que deseja inserir o gasto; <br> 3. Clicar em "Gastos"; <br> 4. Clicar na opção "Adicionar gasto" ; <br> 5. Preencher as informações solicitadas; <br> 6. Clicar em "Adicionar"; <br> 7. Clicar no ícone de edição (lápis); <br> 8. Na página de edição, inserir o novo valor; <br> 9. Clicar em "Alterar"; <br> 10. Na página de edição, clicar em "Excluir gasto" para deletar o valor. |
 | Resultado	| Este teste foi realizado com um segundo usuário, Usuário 002, que não apresentou dificuldades para utilizar a funcionalidade. |
-| Evidência	|https://youtube.com/shorts/-LHIbdyIngw?si=zVrhPWKeM6PT0AJA |
+| Evidência	|https://youtube.com/shorts/-LHIbdyIngw?si=zVrhPWKeM6PT0AJA  <br> https://youtube.com/shorts/oO01seCUyRQ?si=2q2ohJfIEdp8EZDp|
 
 | **Caso de Teste** 	| **CTU-05 – Gerenciar contribuições** 	|
 |:---:	|:---:	|
@@ -39,18 +39,20 @@
 |:---:	|:---:	|
 | Objetivo do Teste 	| Avaliar a usabilidade de gerenciamento de alertas, criar, editar e excluir |
 | Ações Necessárias 	| 1. Acessar a tela inicial do aplicativo; <br> 2. Clicar no ícone de configurações (roldana); <br> 3. Clicar em "Alertas"; <br> 4. Ativar ou desativar as opções de alertas. |
-| Resultado	|
+| Resultado	| Não foi possível testar a funcionalidade pois ainda está em desenvolvimento. |
 
 
 | **Caso de Teste** 	| **CTU-07 – Compartilhar uma viagem** 	|
 |:---:	|:---:	|
 | Objetivo do Teste 	| Avaliar a usabilidade do compartilhamento de viagem |
 | Ações Necessárias 	| 1. Acessar a tela inicial do aplicativo; <br> 2. Clicar no ícone de edição (lápis) da viagem cadastrada que deseja compartilhar; <br> 3. Clicar na opção "Compartilhar viagem" ; <br> 4. Preencher o email da pessoa com quem quer compartilhar a viagem; <br> 5. Clicar em "Compartilhar". |
-| Resultado	|
+| Resultado	| Não foi possível testar a funcionalidade pois ainda está em desenvolvimento. |
+
 
 | **Caso de Teste** 	| **CTU-08 – Gerar relatório** 	|
 |:---:	|:---:	|
 | Objetivo do Teste 	| Avaliar a usabilidade de gerar relatório de viagem |
 | Ações Necessárias 	| 1. Acessar a tela inicial do aplicativo; <br> 2. Clicar na viagem planejada; <br> 3. Clicar no ícone salvar. <br> |
-| Resultado	|
+| Resultado	| Não foi possível testar a funcionalidade pois ainda não foi desenvolvida. |
+
 
