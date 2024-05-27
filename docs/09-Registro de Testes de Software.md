@@ -61,7 +61,8 @@ Foram realizados os testes descritos abaixo:
 | Objetivo do Teste 	| Verificar se a aplicação permite que o usuário registre sua contribuição periódica para atingir a meta de orçamento da viagem e exiba o progresso em direção à meta |
 | Passos 	| - O usuário acessa a aplicação do dispositivo móvel; <br> - O usuário acessa a página do seu perfil na aplicação; <br> - O usuário acessa a sessão de contribuições na aplicação; <br> - O usuário insere o valor da contribuição e a data; <br> - O usuário salva a contribuição; <br> - O usuário visualiza o progresso em direção a meta  de economia final atualizado após inserir contribuição.|
 |Critério de Êxito | - A contribuição mensal é registrada com sucesso e exibida corretamente na interface; <br>  - O progresso em direção a meta de economia final é atualizado corretamente.|
-|Resultado | Funcionalidade ainda não implementada |
+|Resultado | O gerenciamento de contribuições está em funcionamento, apenas ainda não está vinculado com a tela de metas. |
+| Evidência	|https://youtube.com/shorts/-LHIbdyIngw?si=zVrhPWKeM6PT0AJA |
 
 | **Caso de Teste** 	| CT-07 – Inserção de gastos durante a viagem|
 |:---:	|:---:	|
@@ -70,7 +71,8 @@ Foram realizados os testes descritos abaixo:
 | Objetivo do Teste 	| Verificar se é possível inserir gastos durante a viagem e se após a inserção o saldo da viagem é atualizado corretamente |
 | Passos 	| - O usuário acessa a aplicação do dispositivo móvel; <br> - O usuário acessa a página do seu perfil na aplicação; <br> - O usuário seleciona a viagem que deseja na lista de viagens; <br> - O usuário acessa a página de inserção de gastos; <br> - O usuário preenche os dados necessários para inserir um gasto; <br> - O usuário salva o gasto.|
 |Critério de Êxito |- O usuário consegue inserir o gasto e visualizá-lo corretamente na interface da aplicação; <br> - Após a inserção, o saldo da viagem é atualizado com o novo gasto contabilizado.|
-|Resultado | A tela de inserção de gastos já está desenvolvida, porém ainda falta a conexão com o banco de dados. |
+|Resultado | A tela de inserção de gastos já está desenvolvida, e funcionando. Apenas a tela de meta que ainda não foi possível vincular com as demais funções, contribuição e gastos. |
+| Evidência	|https://youtube.com/shorts/-LHIbdyIngw?si=zVrhPWKeM6PT0AJA |
 
 | **Caso de Teste** 	| CT-08 – Geração de relatório |
 |:---:	|:---:	|
