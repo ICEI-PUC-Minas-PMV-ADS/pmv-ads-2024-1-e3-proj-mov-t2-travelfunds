@@ -42,7 +42,8 @@ Foram realizados os testes descritos abaixo:
 | Objetivo do Teste 	| Verificar se os usuários conseguem criar viagens e gerenciar viagens previamente criadas |
 | Passos 	| - O usuário acessa a aplicação do dispositivo móvel; <br> - O usuário acessa a página do seu perfil na aplicação; <br> - O usuário acesso a página de criação de viagem; <br> - O usuário informa os dados necessários para a criação da viagem; <br> - O usuário clica no botão correspondente para a criação da viagem; <br> - O usuário seleciona a viagem criada na lista de viagens; <br> - O usuário é capaz de visualizar, atualizar ou deletar seus dados de viagem; <br> - O usuário é capaz de salvar as alterações feitas na viagem.|
 |Critério de Êxito | - Os dados da viagem são armazenados corretamente no banco de dados; <br> - Os dados da viagem são atualizados corretamente no banco de dados; <br> - Após a criação, a nova viagem é exibida na página do usuário; <br> - As alterações feitas na viagem são salvas e exibidas corretamente para o usuário.|
-|Resultado | Devido ao problema no firebase essa funcionalidade não pode ser testada, mas o layout já foi implementado.|
+|Resultado | É possívvel criar e gerenciar as viagens dentro do aplicativo. |
+| Evidência	| https://youtube.com/shorts/zTih5iYm76E?si=beUrm2HNLpjROKZi |
 
 | **Caso de Teste** 	| CT-05 – Exibição do painel de controle 	|
 |:---:	|:---:	|
