@@ -18,6 +18,8 @@
 | Objetivo do Teste 	| Avaliar a usabilidade de gerenciamento de viagens, criar, editar e excluir  |
 | Ações Necessárias 	| 1. Acessar a tela inicial do aplicativo; <br> 2. Clicar na opção “Adicionar” no canto inferior esquerdo; <br> 3. Preencher as informações solicitadas; <br> 4. Clicar em "Criar"; <br> 5. Clicar no ícone de edição (lápis) da viagem planejada; <br> 6. Na página de edição, alterar informações; <br> 7. Clicar em "Alterar"; <br> 9. Na página de edição, clicar em "Excluir" para deletar a viagem. |
 | Resultado	| O Usuário 001 utilizou a funcionalidade sem nenhum problema, só apresentou duvida na hora de inserir o nome do gasto, se confundiu com o nome da viagem, os demais itens foram tranquilos. |
+| Evidência	| https://youtube.com/shorts/zTih5iYm76E?si=beUrm2HNLpjROKZi |
+
 
 | **Caso de Teste** 	| **CTU-04 – Gerenciar gastos** 	|
 |:---:	|:---:	|
