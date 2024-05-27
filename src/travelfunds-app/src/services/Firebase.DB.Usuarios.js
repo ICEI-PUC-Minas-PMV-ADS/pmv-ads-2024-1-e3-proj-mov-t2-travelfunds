@@ -26,4 +26,16 @@ const recuperarUsuario = async (id) => {
   return docSnap.data();
 };
 
-export { criarUsuario, recuperarUsuario };
+const atualizarDadosUsuario = async (id, novosDados) => {
+  try {
+    const usuarioRef = doc(db, nomeColecao, id);
+    await updateDoc(usuarioRef, novosDados);
+    console.log('Dados do usuário atualizados com sucesso!');
+    return true;
+  } catch (error) {
+    console.error('Erro ao atualizar dados do usuário:', error);
+    return false;
+  }
+};
+
+export { criarUsuario, recuperarUsuario, atualizarDadosUsuario };
