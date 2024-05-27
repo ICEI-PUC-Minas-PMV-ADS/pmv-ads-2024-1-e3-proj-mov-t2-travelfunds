@@ -14,7 +14,7 @@ Foram realizados os testes descritos abaixo:
 | Objetivo do Teste 	| Verificar se o usuário consegue cadastrar-se na plataforma fornecendo as informações necessárias (nome, email e senha) |
 | Passos 	| - O usuário acessa a aplicação do dispositivo móvel; <br> - O usuário preenche os campos necessários; <br> - O usuário clica no botão Cadastrar. |
 |Critério de Êxito | - Os dados do usuário são armazenados corretamente no banco de dados; <br> - O usuário consegue se cadastrar na plataforma.|
-|Resultado | Houve uma desconfiguração do firebase, dessa forma, não está salvando novos cadastros, porém, os cadastros antigos estão conseguindo acessar normalmente, como é o caso do email de teste teste@teste.com.
+|Resultado | Houve uma desconfiguração do firebase, dessa forma, não está salvando novos cadastros, porém, os cadastros antigos estão conseguindo acessar normalmente, como é o caso do email de teste teste@teste.com.|
 
 | **Caso de Teste** 	| CT-02 – Login na conta	|
 |:---:	|:---:	|
@@ -23,6 +23,7 @@ Foram realizados os testes descritos abaixo:
 | Objetivo do Teste 	| Verificar se após o cadastro na aplicação o usuário consegue realizar login |
 | Passos 	| - O usuário acessa a aplicação do dispositivo móvel; <br> - O usuário acessa a página de login da aplicação; <br> - O usuário insere os dados solicitados no login; <br> - O usuário clica no botão de realizar o login.|
 |Critério de Êxito | - O usuário é redirecionado para a tela principal da aplicação com permissões restritas apenas a usuários autenticados  |
+|Resultado | O login está funcionando para as contas já cadastradas e o logout também.|
 
 | **Caso de Teste** 	| CT-03 – Gerenciamento de perfil do usuário |
 |:---:	|:---:	|
@@ -31,6 +32,7 @@ Foram realizados os testes descritos abaixo:
 | Objetivo do Teste 	| Verificar se os usuários conseguem visualizar, atualizar e deletar seus dados pessoais |
 | Passos 	| - O usuário acessa a aplicação do dispositivo móvel; <br> - O usuário acessa a página do seu perfil na aplicação; <br> - O usuário é capaz de visualizar, atualizar ou deletar seus dados; <br> - O usuário salva as alterações.|
 |Critério de Êxito | - Os dados do usuário são atualizados corretamente no banco de dados; <br> - O usuário consegue visualizar as alterações feitas na aplicação|
+|Resultado | Essa funcionalidade ainda não pode ser testada pois ainda não está implementada no aplicativo.|
 
 | **Caso de Teste** 	| CT-04 – Criação e gerenciamento de viagem |
 |:---:	|:---:	|
@@ -39,6 +41,7 @@ Foram realizados os testes descritos abaixo:
 | Objetivo do Teste 	| Verificar se os usuários conseguem criar viagens e gerenciar viagens previamente criadas |
 | Passos 	| - O usuário acessa a aplicação do dispositivo móvel; <br> - O usuário acessa a página do seu perfil na aplicação; <br> - O usuário acesso a página de criação de viagem; <br> - O usuário informa os dados necessários para a criação da viagem; <br> - O usuário clica no botão correspondente para a criação da viagem; <br> - O usuário seleciona a viagem criada na lista de viagens; <br> - O usuário é capaz de visualizar, atualizar ou deletar seus dados de viagem; <br> - O usuário é capaz de salvar as alterações feitas na viagem.|
 |Critério de Êxito | - Os dados da viagem são armazenados corretamente no banco de dados; <br> - Os dados da viagem são atualizados corretamente no banco de dados; <br> - Após a criação, a nova viagem é exibida na página do usuário; <br> - As alterações feitas na viagem são salvas e exibidas corretamente para o usuário.|
+|Resultado | Devido ao problema no firebase essa funcionalidade não pode ser testada, mas o layout já foi implementado.|
 
 | **Caso de Teste** 	| CT-05 – Exibição do painel de controle 	|
 |:---:	|:---:	|
@@ -46,7 +49,8 @@ Foram realizados os testes descritos abaixo:
 |	Grupos de Usuários 	| Usuários previamente cadastrados |
 | Objetivo do Teste 	| Garantir que o painel de controle, ao ser acessado pelo usuário, exiba as informações corretas sobre determinada viagem, como: valor total guardado para a viagem, saldo atualizado e lista de gastos por categoria inseridas durante a viagem |
 | Passos 	| - O usuário acessa a aplicação do dispositivo móvel; <br> - O usuário acessa a página do seu perfil na aplicação; <br> - O usuário seleciona a viagem que deseja na lista de viagens; <br> - O usuário acessa o painel de controle da viagem selecionada; <br> - O usuário visualiza no painel de controle o valor total guardado para a viagem, saldo atualizado e lista de gastos registrados divididos por categorias.|
-|Critério de Êxito | - Os valores são exibidos corretamente no painel de controle da viagem |
+|Critério de Êxito | - Os valores são exibidos corretamente no painel de controle da viagem. |
+|Resultado | Funcionalidade ainda não implementada |
 
 | **Caso de Teste** 	| CT-06 – Gerenciamento de contribuições 	|
 |:---:	|:---:	|
@@ -55,6 +59,7 @@ Foram realizados os testes descritos abaixo:
 | Objetivo do Teste 	| Verificar se a aplicação permite que o usuário registre sua contribuição periódica para atingir a meta de orçamento da viagem e exiba o progresso em direção à meta |
 | Passos 	| - O usuário acessa a aplicação do dispositivo móvel; <br> - O usuário acessa a página do seu perfil na aplicação; <br> - O usuário acessa a sessão de contribuições na aplicação; <br> - O usuário insere o valor da contribuição e a data; <br> - O usuário salva a contribuição; <br> - O usuário visualiza o progresso em direção a meta  de economia final atualizado após inserir contribuição.|
 |Critério de Êxito | - A contribuição mensal é registrada com sucesso e exibida corretamente na interface; <br>  - O progresso em direção a meta de economia final é atualizado corretamente.|
+|Resultado | Funcionalidade ainda não implementada |
 
 | **Caso de Teste** 	| CT-07 – Inserção de gastos durante a viagem|
 |:---:	|:---:	|
@@ -63,6 +68,7 @@ Foram realizados os testes descritos abaixo:
 | Objetivo do Teste 	| Verificar se é possível inserir gastos durante a viagem e se após a inserção o saldo da viagem é atualizado corretamente |
 | Passos 	| - O usuário acessa a aplicação do dispositivo móvel; <br> - O usuário acessa a página do seu perfil na aplicação; <br> - O usuário seleciona a viagem que deseja na lista de viagens; <br> - O usuário acessa a página de inserção de gastos; <br> - O usuário preenche os dados necessários para inserir um gasto; <br> - O usuário salva o gasto.|
 |Critério de Êxito |- O usuário consegue inserir o gasto e visualizá-lo corretamente na interface da aplicação; <br> - Após a inserção, o saldo da viagem é atualizado com o novo gasto contabilizado.|
+|Resultado | A tela de inserção de gastos já está desenvolvida, porém ainda falta a conexão com o banco de dados. |
 
 | **Caso de Teste** 	| CT-08 – Geração de relatório |
 |:---:	|:---:	|
@@ -71,6 +77,7 @@ Foram realizados os testes descritos abaixo:
 | Objetivo do Teste 	| Verificar se os usuário conseguem gerar relatório de gastos detalhado por categoria ao final da viagem |
 | Passos 	| - O usuário acessa a aplicação do dispositivo móvel; <br> - O usuário acessa a página do seu perfil na aplicação; <br> - O usuário seleciona a viagem que deseja na lista de viagens; <br> - O usuário acessa a seção de relatórios; <br> - Usuário confirma a geração do relatório.|
 |Critério de Êxito | - O relatório é gerado com sucesso e exibe gastos separados por categorias; <br> - Os gastos apresentados no relatório correspondem aos gastos registrados pelo usuário.|
+|Resultado | Funcionalidade ainda não implementada |
 
 | **Caso de Teste** 	| CT-09 – Compartilhamento de viagem	|
 |:---:	|:---:	|
@@ -79,6 +86,7 @@ Foram realizados os testes descritos abaixo:
 | Objetivo do Teste 	|Verificar se a aplicação permite que o usuário compartilhe viagens com outros usuários|
 | Passos 	| - O usuário acessa a aplicação do dispositivo móvel; <br> - O usuário acessa a página do seu perfil na aplicação; <br> - O usuário seleciona a viagem que deseja na lista de viagens; <br> - Usuário localiza a opção para compartilhar a viagem; <br> - Usuário insere o email do usuário com quem quer compartilhar a viagem; <br> - Usuário compartilha a viagem.|
 |Critério de Êxito |- Após compartilhamento o usuário convidado tem acesso aos dados da viagem compartilhada; <br> O usuário convidado consegue interagir com a viagem compartilhada.|
+|Resultado | Funcionalidade ainda não implementada |
 
 | **Caso de Teste** 	| CT-010 – Programação de Alertas	|
 |:---:	|:---:	|
@@ -87,3 +95,4 @@ Foram realizados os testes descritos abaixo:
 | Objetivo do Teste 	| Verificar se o usuário consegue programar alertas relacionados a uma viagem |
 | Passos 	| - O usuário acessa a página do seu perfil na aplicação; <br> - O usuário seleciona a viagem que deseja na lista de viagens; <br> - Usuário localiza a opção para configurar os alertas; <br> - O usuário define o tipo de alerta que deseja receber; <br> -O usuário confirma a programação dos alertas. |
 |Critério de Êxito | - Os alertas são programados com sucesso; <br> - O usuário recebe os alertas com informação corretas a respeito da viagem.|
+|Resultado | Funcionalidade ainda não implementada |
