@@ -25,13 +25,15 @@
 |:---:	|:---:	|
 | Objetivo do Teste 	| Avaliar a usabilidade de gerenciamento de gastos, criar, editar e excluir |
 | Ações Necessárias 	| 1. Acessar a tela inicial do aplicativo; <br> 2. Clicar na viagem cadastrada que deseja inserir o gasto; <br> 3. Clicar em "Gastos"; <br> 4. Clicar na opção "Adicionar gasto" ; <br> 5. Preencher as informações solicitadas; <br> 6. Clicar em "Adicionar"; <br> 7. Clicar no ícone de edição (lápis); <br> 8. Na página de edição, inserir o novo valor; <br> 9. Clicar em "Alterar"; <br> 10. Na página de edição, clicar em "Excluir gasto" para deletar o valor. |
-| Resultado	| 
+| Resultado	| Este teste foi realizado com um segundo usuário, Usuário 002, que não apresentou dificuldades para utilizar a funcionalidade. |
+| Evidência	|https://youtube.com/shorts/-LHIbdyIngw?si=zVrhPWKeM6PT0AJA |
 
 | **Caso de Teste** 	| **CTU-05 – Gerenciar contribuições** 	|
 |:---:	|:---:	|
 | Objetivo do Teste 	| Avaliar a usabilidade de gerenciamento de contribuições, criar, editar e excluir |
 | Ações Necessárias 	| 1. Acessar a tela inicial do aplicativo; <br> 2. Clicar na viagem cadastrada que deseja inserir a contribuição; <br> 3. Clicar em "Contribuição"; <br> 4. Clicar na opção "Adicionar contribuição"; <br> 5. Preencher as informações solicitadas; <br> 6. Clicar em "Adicionar"; <br> 7. Clicar no ícone de edição (lápis); <br> 8. Na página de edição, inserir o novo valor; <br> 9. Clicar em "Alterar"; <br> 10. Na página de edição, clicar em "Excluir contribuição" para deletar o valor. |
-| Resultado	|
+| Resultado	| O Usuário 002 ficou confuso para entender do que se tratava as contribuições, após explicação de quem aplicava o teste, conseguiu compreender e conduzir o teste normalmente, sem dificuldades. |
+| Evidência	|https://youtube.com/shorts/-LHIbdyIngw?si=zVrhPWKeM6PT0AJA |
 
 | **Caso de Teste** 	| **CTU-06 – Gerenciar alertas** 	|
 |:---:	|:---:	|
