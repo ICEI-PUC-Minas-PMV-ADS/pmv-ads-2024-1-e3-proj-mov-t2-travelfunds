@@ -15,6 +15,7 @@ Foram realizados os testes descritos abaixo:
 | Passos 	| - O usuário acessa a aplicação do dispositivo móvel; <br> - O usuário preenche os campos necessários; <br> - O usuário clica no botão Cadastrar. |
 |Critério de Êxito | - Os dados do usuário são armazenados corretamente no banco de dados; <br> - O usuário consegue se cadastrar na plataforma.|
 |Resultado | Houve uma desconfiguração do firebase, dessa forma, não está salvando na base de dados, porém, a funcionalidade está ativa, como será possível ver nas evidências relacionada nos demais casos de teste abaixo. |
+| Evidência	| https://youtube.com/shorts/L5YnYP2qqrY?si=mXaWcJfirBrfo2dW |
 
 | **Caso de Teste** 	| CT-02 – Login na conta	|
 |:---:	|:---:	|
