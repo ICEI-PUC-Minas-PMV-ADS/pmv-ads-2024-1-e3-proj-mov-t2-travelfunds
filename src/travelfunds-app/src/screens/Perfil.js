@@ -45,8 +45,34 @@ const Perfil = () => {
     >
       <View style={styles.viagemItem}>
         <Text style={styles.viagemText}>{item.destino}</Text>
-        <Text style={styles.viagemText}>{item.dataPartida}</Text>
-        <Text style={styles.viagemText}>{item.dataRetorno}</Text>
+        <View>
+          <Text style={styles.viagemTextDetail}>
+            partida {item.dataPartida}
+          </Text>
+          <Text style={styles.viagemTextDetail}>
+            retorno {item.dataRetorno}
+          </Text>
+        </View>
+        <View style={styles.viagemCard}>
+          <Ionicons
+            name="bar-chart-outline"
+            size={24}
+            color="#012B53"
+            onPress={() => {}}
+          />
+          <Ionicons
+            name="brush-outline"
+            size={24}
+            color="#012B53"
+            onPress={() => navigation.navigate('')}
+          />
+          <Ionicons
+            name="trash-outline"
+            size={24}
+            color="#012B53"
+            onPress={() => {}}
+          />
+        </View>
       </View>
     </TouchableOpacity>
   );
@@ -173,15 +199,20 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     backgroundColor: '#fff',
-    padding: 15,
+    padding: 12,
     marginVertical: 8,
     borderRadius: 10,
     width: '100%',
-    alignItems: 'flex-start',
+    alignItems: 'center',
   },
   viagemText: {
     fontSize: 18,
     fontWeight: 'bold',
+    color: '#012B53',
+    textTransform: 'capitalize',
+  },
+  viagemTextDetail: {
+    fontStyle: 'italic',
     color: '#012B53',
   },
   viagemDate: {
@@ -194,6 +225,11 @@ const styles = StyleSheet.create({
     padding: 15,
   },
   addButtonText: { color: '#fff', fontSize: 16 },
+  viagemCard: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    width: 100,
+  },
 });
 
 export default Perfil;

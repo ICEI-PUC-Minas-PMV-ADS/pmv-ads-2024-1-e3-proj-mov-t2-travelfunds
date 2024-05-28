@@ -34,4 +34,10 @@ const salvarViagem = async (
   }
 };
 
+const deletarViagem = async () => {};
+
+const editarViagem = async () => {};
+
 export { salvarViagem };
+export { deletarViagem };
+export { editarViagem };
