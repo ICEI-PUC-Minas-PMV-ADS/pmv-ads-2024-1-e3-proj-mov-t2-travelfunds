@@ -63,7 +63,8 @@ const Perfil = () => {
             name="bar-chart-outline"
             size={24}
             color="#012B53"
-            onPress={() => {}}
+            onPress={() => navigation.navigate('ViagemMain')}
+            // por enquanto esta navegando para viagem main antigo geral , nao existe o viagem main especifico da viagem ainda
           />
           <TouchableOpacity>
             <Ionicons
@@ -134,14 +135,7 @@ const Perfil = () => {
           keyExtractor={(item) => item.id}
           contentContainerStyle={styles.flatListContent}
         />
-        <View>
-          {/* <Text
-            style={{ color: 'yellow' }}
-            onPress={() => navigation.navigate('ViagemMain')}
-          >
-            nav Viagem Main
-          </Text> */}
-        </View>
+        <View></View>
         <TouchableOpacity
           style={styles.addButton}
           onPress={() => navigation.navigate('CadastroViagem', { mode: 'add' })}
