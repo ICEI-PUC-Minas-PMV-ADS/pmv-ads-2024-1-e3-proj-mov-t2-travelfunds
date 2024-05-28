@@ -13,10 +13,15 @@ import { useNavigation } from '@react-navigation/native';
 import { logout } from '../services/Firebase.Auth';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import InputButton from '../components/InputButton';
+import { deletarViagem } from '../services/firebase.db.viagens';
 
 const Perfil = () => {
   const navigation = useNavigation();
   const [viagens, setViagens] = useState([]);
+
+  const handleDeletarViagem = async (viagemId) => {
+    await deletarViagem(viagemId);
+  };
 
   useEffect(() => {
     const user = FIREBASE_AUTH.currentUser;
@@ -70,7 +75,7 @@ const Perfil = () => {
             name="trash-outline"
             size={24}
             color="#012B53"
-            onPress={() => {}}
+            onPress={() => handleDeletarViagem(item.id)}
           />
         </View>
       </View>

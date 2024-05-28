@@ -1,14 +1,7 @@
-import { doc, collection, addDoc } from 'firebase/firestore';
+import { doc, collection, addDoc, deleteDoc } from 'firebase/firestore';
 import { FIRESTORE_DB, FIREBASE_AUTH } from '../../FirebaseConfig';
 
-const salvarViagem = async (
-  destino,
-  dataPartida,
-  dataRetorno
-  // meta,
-  // gastos,
-  // contribuicoes
-) => {
+const salvarViagem = async (destino, dataPartida, dataRetorno) => {
   try {
     const user = FIREBASE_AUTH.currentUser;
 
@@ -21,9 +14,6 @@ const salvarViagem = async (
         destino,
         dataPartida,
         dataRetorno,
-        // meta,
-        // gastos: [],
-        // contribuicoes: [],
       });
 
       return viagemDocRef.id; // documento ID
@@ -34,7 +24,24 @@ const salvarViagem = async (
   }
 };
 
-const deletarViagem = async () => {};
+const deletarViagem = async (viagemId) => {
+  try {
+    const user = FIREBASE_AUTH.currentUser;
+
+    if (user) {
+      const viagemDocRef = doc(
+        FIRESTORE_DB,
+        'usuarios',
+        user.uid,
+        'viagens',
+        viagemId
+      );
+      await deleteDoc(viagemDocRef);
+    }
+  } catch (error) {
+    console.error('erro deletando viagem: ', error);
+  }
+};
 
 const editarViagem = async () => {};
 
