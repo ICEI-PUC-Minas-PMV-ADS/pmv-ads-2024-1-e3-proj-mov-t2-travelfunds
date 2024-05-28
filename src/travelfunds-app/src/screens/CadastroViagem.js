@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
-import { View, Text, StyleSheet, Alert } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { View, Text, StyleSheet } from 'react-native';
 import InputDados from '../components/InputDados';
+import CustomTextInput from '../components/CustomTextInput';
 import BotaoSalvar from '../components/BotaoSalvar';
 import { Icon } from 'react-native-paper';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useRoute } from '@react-navigation/native';
 import { salvarViagem } from '../services/firebase.db.viagens';
+import { editarViagem } from '../services/firebase.db.viagens';
+import { getViagemById } from '../services/firebase.db.viagens';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import InputButton from '../components/InputButton';
 
@@ -13,9 +16,27 @@ const CadastroViagem = () => {
   const [dataPartida, setDataPartida] = useState('');
   const [dataRetorno, setDataRetorno] = useState('');
   const navigation = useNavigation();
+  const route = useRoute();
+  const { mode, viagemId } = route.params;
+
+  useEffect(() => {
+    if (mode === 'edit') {
+      const loadViagemData = async () => {
+        const viagemData = await getViagemById(viagemId);
+        setDestino(viagemData.destino);
+        setDataPartida(viagemData.dataPartida);
+        setDataRetorno(viagemData.dataRetorno);
+      };
+      loadViagemData();
+    }
+  }, [mode, viagemId]);
 
   const handleSalvarViagem = async () => {
-    await salvarViagem(destino, dataPartida, dataRetorno);
+    if (mode === 'add') {
+      await salvarViagem(destino, dataPartida, dataRetorno);
+    } else if (mode === 'edit') {
+      await editarViagem(viagemId, destino, dataPartida, dataRetorno);
+    }
     navigation.goBack();
   };
 
@@ -48,18 +69,25 @@ const CadastroViagem = () => {
       </View>
 
       <View style={styles.bottomSection}>
-        <InputDados label="Destino" value={destino} onChangeText={setDestino} />
-        <InputDados
+        <CustomTextInput
+          label="Destino"
+          value={destino}
+          onChangeText={setDestino}
+        />
+        <CustomTextInput
           label="Data de Partida"
           value={dataPartida}
           onChangeText={setDataPartida}
         />
-        <InputDados
+        <CustomTextInput
           label="Data de Retorno"
           value={dataRetorno}
           onChangeText={setDataRetorno}
         />
-        <BotaoSalvar text="Salvar" onPress={handleSalvarViagem} />
+        <BotaoSalvar
+          text={mode === 'add' ? 'Salvar' : 'Alterar'}
+          onPress={handleSalvarViagem}
+        />
       </View>
     </View>
   );

@@ -65,12 +65,19 @@ const Perfil = () => {
             color="#012B53"
             onPress={() => {}}
           />
-          <Ionicons
-            name="brush-outline"
-            size={24}
-            color="#012B53"
-            onPress={() => navigation.navigate('')}
-          />
+          <TouchableOpacity>
+            <Ionicons
+              name="brush-outline"
+              size={24}
+              color="#012B53"
+              onPress={() =>
+                navigation.navigate('CadastroViagem', {
+                  mode: 'edit',
+                  viagemId: item.id,
+                })
+              }
+            />
+          </TouchableOpacity>
           <Ionicons
             name="trash-outline"
             size={24}
@@ -127,9 +134,17 @@ const Perfil = () => {
           keyExtractor={(item) => item.id}
           contentContainerStyle={styles.flatListContent}
         />
+        <View>
+          {/* <Text
+            style={{ color: 'yellow' }}
+            onPress={() => navigation.navigate('ViagemMain')}
+          >
+            nav Viagem Main
+          </Text> */}
+        </View>
         <TouchableOpacity
           style={styles.addButton}
-          onPress={() => navigation.navigate('CadastroViagem')}
+          onPress={() => navigation.navigate('CadastroViagem', { mode: 'add' })}
         >
           <Text style={styles.addButtonText}>Adicionar +</Text>
         </TouchableOpacity>
@@ -211,10 +226,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   viagemText: {
+    textAlign: 'left',
+    maxWidth: 80,
     fontSize: 18,
     fontWeight: 'bold',
     color: '#012B53',
-    textTransform: 'capitalize',
   },
   viagemTextDetail: {
     fontStyle: 'italic',
