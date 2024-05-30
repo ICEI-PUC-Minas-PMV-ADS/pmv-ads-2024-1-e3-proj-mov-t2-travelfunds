@@ -1,71 +1,130 @@
-import { useState } from 'react';
-import { View, StyleSheet, KeyboardAvoidingView, Platform } from 'react-native';
-import CustomTextInput from './CustomTextInput';
+import React, { useState } from 'react';
+import { View, Text, StyleSheet } from 'react-native';
+import { salvarMeta } from '../services/Firebase.DB.Meta';
+import Ionicons from '@expo/vector-icons/Ionicons';
+import { Icon } from 'react-native-paper';
+import InputButton from '../components/InputButton';
+import CustomTextInput from '../components/CustomTextInput';
 import BotaoMenor from './BotaoMenor';
-import { salvarViagemPlus } from '../services/firebase.db.viagens';
+import { logout } from '../services/Firebase.Auth';
 
-export default function EditarMeta({ onSave, onCancel }) {
+const EditarMeta = ({ route, navigation }) => {
+  const { viagemId } = route.params;
   const [meta, setMeta] = useState('');
 
-  const handleSave = async () => {
-    await salvarViagemPlus(parseFloat(meta));
-    navigation.goBack();
+  const handleSaveMeta = async () => {
+    if (meta.trim() !== '') {
+      const metaValue = parseFloat(meta.trim());
+      const success = await salvarMeta(viagemId, metaValue);
+      if (success) {
+        navigation.goBack();
+      } else {
+        // Handle error salvar meta
+      }
+    } else {
+      // Handle value vazio
+    }
+  };
+
+  const handleGoBack = () => {
+    navigation.navigate('Meta', { viagemId });
+  };
+
+  const handleLogout = async () => {
+    logout();
   };
 
   return (
-    <KeyboardAvoidingView
-      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-      style={styles.container}
-    >
-      <View style={styles.innerContainer}>
-        <CustomTextInput
-          label="Meta"
-          value={meta}
-          onChangeText={setMeta}
-          keyboardType="numeric"
-          style={styles.customTextInput}
+    <View style={styles.container}>
+      <View style={styles.topSection}>
+        <Ionicons
+          name="return-up-back-outline"
+          size={35}
+          color="#fff"
+          style={styles.returnIcon}
+          onPress={handleGoBack}
         />
-
-        <View style={styles.inputButtonContainer}>
-          <BotaoMenor
-            text="Salvar"
-            additionalStyles={styles.saveButton}
-            onPress={handleSave}
-          />
-
-          <BotaoMenor
-            text="Cancelar"
-            additionalStyles={styles.cancelButton}
-            onPress={onCancel}
-          />
+        <View style={styles.roundComponent}>
+          <Text style={styles.overlayText}>
+            <Icon source="camera" size={40} />
+          </Text>
+        </View>
+        <View style={styles.logout}>
+          <InputButton text="Logout" mode="text" onPress={handleLogout} />
         </View>
       </View>
-    </KeyboardAvoidingView>
+
+      <View style={styles.bottomSection}>
+        <CustomTextInput
+          style={styles.input}
+          placeholder="meta"
+          onChangeText={(text) => setMeta(text)}
+          value={meta}
+        />
+        <BotaoMenor
+          style={styles.button}
+          onPress={handleSaveMeta}
+          text="Salvar"
+        />
+      </View>
+    </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#C0CBD4',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
   },
-  innerContainer: {
+  topSection: {
     flex: 1,
+    width: '100%',
+    backgroundColor: '#012B53',
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+  },
+  roundComponent: {
+    width: 150,
+    height: 150,
+    backgroundColor: '#fff',
+    borderRadius: 100,
     justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: -40,
   },
-  customTextInput: {
-    marginBottom: 16,
+  returnIcon: {
+    position: 'absolute',
+    bottom: 20,
+    left: 45,
   },
-  inputButtonContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    paddingHorizontal: 20,
-    paddingBottom: 20,
-    marginHorizontal: 40,
+  settingsIcon: {
+    position: 'absolute',
+    top: 75,
+    left: 45,
   },
-  saveButton: {
-    marginHorizontal: 5,
+  logout: {
+    position: 'absolute',
+    top: 65,
+    right: 20,
   },
-  cancelButton: {
-    marginHorizontal: 5,
+  bottomSection: {
+    flex: 2,
+    width: '90%',
+    backgroundColor: '#012B53',
+    padding: 10,
+    marginTop: '15%',
+    marginBottom: '10%',
+    marginLeft: '5%',
+    marginRight: '5%',
+    borderRadius: 10,
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+  },
+  overlayText: {
+    color: '#999',
   },
 });
+
+export default EditarMeta;

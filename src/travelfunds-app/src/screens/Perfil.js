@@ -13,7 +13,7 @@ import { useNavigation } from '@react-navigation/native';
 import { logout } from '../services/Firebase.Auth';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import InputButton from '../components/InputButton';
-import { deletarViagem } from '../services/firebase.db.viagens';
+import { deletarViagem } from '../services/Firebase.DB.Viagens';
 
 const Perfil = () => {
   const navigation = useNavigation();
@@ -57,14 +57,20 @@ const Perfil = () => {
           <Text style={styles.viagemTextDetail}>
             retorno {item.dataRetorno}
           </Text>
+          <Text style={styles.viagemTextDetail}>
+            meta{' '}
+            <Text style={{ color: '#15803d', fontWeight: '900' }}>
+              {item.meta ? item.meta : 'definir meta'}
+            </Text>
+          </Text>
         </View>
         <View style={styles.viagemCard}>
           <Ionicons
             name="bar-chart-outline"
             size={24}
             color="#012B53"
-            onPress={() => navigation.navigate('ViagemMain')}
-            // por enquanto esta navegando para viagem main antigo geral , nao existe o viagem main especifico da viagem ainda
+            onPress={() => navigation.navigate('Meta', { viagemId: item.id })}
+            // por enquanto esta navegando para viagem Meta, mais depois vai ser Viagem Main do usuario OU nao precisa viagem main mais ja que mostra meta no perfil e depois vai mostar contribuicao e gasto tb
           />
           <TouchableOpacity>
             <Ionicons
@@ -212,7 +218,7 @@ const styles = StyleSheet.create({
   viagemItem: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    backgroundColor: '#fff',
+    backgroundColor: '#C0CBD4',
     padding: 12,
     marginVertical: 8,
     borderRadius: 10,

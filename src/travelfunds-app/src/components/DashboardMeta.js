@@ -1,87 +1,89 @@
-import { useEffect, useState } from 'react';
+// DELETAR ARQUIVO ? METADASHBOARD NO LONGER AGORA USANDO META.JS EM SCREENS
 
-import { View, Text, StyleSheet } from 'react-native';
+// import { useEffect, useState } from 'react';
 
-import { doc, getDoc } from 'firebase/firestore';
-import { FIRESTORE_DB } from '../../FirebaseConfig';
+// import { View, Text, StyleSheet } from 'react-native';
 
-import EditarMeta from './EditarMeta';
-import Ionicons from '@expo/vector-icons/Ionicons';
+// import { doc, getDoc } from 'firebase/firestore';
+// import { FIRESTORE_DB } from '../../FirebaseConfig';
 
-export default function DashboardMeta() {
-  const [editMode, setEditMode] = useState(false);
-  const [meta, setMeta] = useState('');
+// import EditarMeta from './EditarMeta';
+// import Ionicons from '@expo/vector-icons/Ionicons';
 
-  useEffect(() => {
-    async function fetchMeta() {
-      try {
-        const docRef = doc(FIRESTORE_DB, 'metas', '8KucKMXcozknzgsFsZw8');
-        const docSnapshot = await getDoc(docRef);
-        if (docSnapshot.exists()) {
-          const metaData = docSnapshot.data();
-          setMeta(metaData);
-        }
-      } catch (error) {
-        console.error('error fetching meta: ', error);
-      }
-    }
-    fetchMeta();
-  }, []);
+// export default function DashboardMeta() {
+//   const [editMode, setEditMode] = useState(false);
+//   const [meta, setMeta] = useState('');
 
-  function handleToggleEdit() {
-    setEditMode(!editMode);
-  }
+//   useEffect(() => {
+//     async function fetchMeta() {
+//       try {
+//         const docRef = doc(FIRESTORE_DB, 'metas', '8KucKMXcozknzgsFsZw8');
+//         const docSnapshot = await getDoc(docRef);
+//         if (docSnapshot.exists()) {
+//           const metaData = docSnapshot.data();
+//           setMeta(metaData);
+//         }
+//       } catch (error) {
+//         console.error('error fetching meta: ', error);
+//       }
+//     }
+//     fetchMeta();
+//   }, []);
 
-  function handleSave(newMeta) {
-    setMeta(newMeta);
-    setEditMode(false);
-  }
+//   function handleToggleEdit() {
+//     setEditMode(!editMode);
+//   }
 
-  return (
-    <View style={styles.container}>
-      {editMode ? (
-        <EditarMeta onSave={handleSave} onCancel={() => setEditMode(false)} />
-      ) : (
-        <View style={styles.metaContainer}>
-          <Text style={styles.metaValue}>$ {meta.valor}</Text>
+//   function handleSave(newMeta) {
+//     setMeta(newMeta);
+//     setEditMode(false);
+//   }
 
-          <Ionicons
-            name="brush-outline"
-            size={24}
-            color="white"
-            onPress={handleToggleEdit}
-            style={styles.metaEdit}
-          />
-        </View>
-      )}
-    </View>
-  );
-}
+//   return (
+//     <View style={styles.container}>
+//       {editMode ? (
+//         <EditarMeta onSave={handleSave} onCancel={() => setEditMode(false)} />
+//       ) : (
+//         <View style={styles.metaContainer}>
+//           <Text style={styles.metaValue}>$ {meta.valor}</Text>
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    width: '100%',
-    height: '100%',
-    color: '#fff',
-    padding: 20,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  metaContainer: {
-    // backgroundColor: '#EF4444',
-    height: 200,
-    width: 200,
-  },
-  metaValue: {
-    color: '#22C55E',
-    fontWeight: 'bold',
-    fontSize: 30,
-    alignSelf: 'center',
-    padding: 20,
-  },
-  metaEdit: {
-    alignSelf: 'center',
-    padding: 20,
-  },
-});
+//           <Ionicons
+//             name="brush-outline"
+//             size={24}
+//             color="white"
+//             onPress={handleToggleEdit}
+//             style={styles.metaEdit}
+//           />
+//         </View>
+//       )}
+//     </View>
+//   );
+// }
+
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     width: '100%',
+//     height: '100%',
+//     color: '#fff',
+//     padding: 20,
+//     alignItems: 'center',
+//     justifyContent: 'center',
+//   },
+//   metaContainer: {
+//     // backgroundColor: '#EF4444',
+//     height: 200,
+//     width: 200,
+//   },
+//   metaValue: {
+//     color: '#22C55E',
+//     fontWeight: 'bold',
+//     fontSize: 30,
+//     alignSelf: 'center',
+//     padding: 20,
+//   },
+//   metaEdit: {
+//     alignSelf: 'center',
+//     padding: 20,
+//   },
+// });
