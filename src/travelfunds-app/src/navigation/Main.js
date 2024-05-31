@@ -1,12 +1,11 @@
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import ViagemMain from '../screens/ViagemMain';
 import EditarViagem from '../screens/EditarViagem';
 import Perfil from '../screens/Perfil';
 import EditarPerfil from '../screens/EditarPerfil';
 import CadastroViagem from '../screens/CadastroViagem';
 import Meta from '../screens/Meta';
-import EditarMeta from '../components/EditarMeta';
+import EditarMeta from '../screens/EditarMeta';
 
 const Stack = createNativeStackNavigator();
 
@@ -16,7 +15,6 @@ const Main = () => {
       initialRouteName="Perfil"
       screenOptions={{ headerShown: false }}
     >
-      <Stack.Screen name="ViagemMain" component={ViagemMain} />
       <Stack.Screen name="EditarViagem" component={EditarViagem} />
       <Stack.Screen name="Perfil" component={Perfil} />
       <Stack.Screen name="EditarPerfil" component={EditarPerfil} />

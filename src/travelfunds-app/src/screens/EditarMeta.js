@@ -5,7 +5,7 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import { Icon } from 'react-native-paper';
 import InputButton from '../components/InputButton';
 import CustomTextInput from '../components/CustomTextInput';
-import BotaoMenor from './BotaoMenor';
+import BotaoMenor from '../components/BotaoMenor';
 import { logout } from '../services/Firebase.Auth';
 
 const EditarMeta = ({ route, navigation }) => {
@@ -57,7 +57,7 @@ const EditarMeta = ({ route, navigation }) => {
       <View style={styles.bottomSection}>
         <CustomTextInput
           style={styles.input}
-          placeholder="meta"
+          placeholder="inserir meta"
           onChangeText={(text) => setMeta(text)}
           value={meta}
         />

@@ -70,17 +70,17 @@ const CadastroViagem = () => {
 
       <View style={styles.bottomSection}>
         <CustomTextInput
-          label="Destino"
+          placeholder="Destino"
           value={destino}
           onChangeText={setDestino}
         />
         <CustomTextInput
-          label="Data de Partida"
+          placeholder="Data de Partida"
           value={dataPartida}
           onChangeText={setDataPartida}
         />
         <CustomTextInput
-          label="Data de Retorno"
+          placeholder="Data de Retorno"
           value={dataRetorno}
           onChangeText={setDataRetorno}
         />

@@ -55,13 +55,6 @@ const Meta = ({ route }) => {
             <Icon source="camera" size={40} />
           </Text>
         </View>
-        <Ionicons
-          name="brush-outline"
-          size={25}
-          color="#fff"
-          style={styles.settingsIcon}
-          onPress={() => navigation.navigate('EditarPerfil')}
-        />
         <View style={styles.logout}>
           <InputButton text="Logout" mode="text" onPress={handleLogout} />
         </View>
@@ -130,15 +123,10 @@ const styles = StyleSheet.create({
     bottom: 20,
     left: 45,
   },
-  settingsIcon: {
-    position: 'absolute',
-    top: 75,
-    left: 45,
-  },
   logout: {
     position: 'absolute',
-    top: 65,
-    right: 20,
+    top: 75,
+    right: 30,
   },
   middleSection: {
     marginTop: '13%',

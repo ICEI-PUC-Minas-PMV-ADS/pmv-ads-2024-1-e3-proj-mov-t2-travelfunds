@@ -43,57 +43,47 @@ const Perfil = () => {
   }, []);
 
   const renderItem = ({ item }) => (
-    <TouchableOpacity
-      onPress={() =>
-        navigation.navigate('DetalhesViagem', { viagemId: item.id })
-      }
-    >
-      <View style={styles.viagemItem}>
-        <Text style={styles.viagemText}>{item.destino}</Text>
-        <View>
-          <Text style={styles.viagemTextDetail}>
-            partida {item.dataPartida}
+    <View style={styles.viagemItem}>
+      <Text style={styles.viagemText}>{item.destino}</Text>
+      <View>
+        <Text style={styles.viagemTextDetail}>partida {item.dataPartida}</Text>
+        <Text style={styles.viagemTextDetail}>retorno {item.dataRetorno}</Text>
+        <Text style={styles.viagemTextDetail}>
+          meta{' '}
+          <Text style={{ color: '#15803d', fontWeight: '900' }}>
+            {item.meta ? item.meta : 'definir meta'}
           </Text>
-          <Text style={styles.viagemTextDetail}>
-            retorno {item.dataRetorno}
-          </Text>
-          <Text style={styles.viagemTextDetail}>
-            meta{' '}
-            <Text style={{ color: '#15803d', fontWeight: '900' }}>
-              {item.meta ? item.meta : 'definir meta'}
-            </Text>
-          </Text>
-        </View>
-        <View style={styles.viagemCard}>
-          <Ionicons
-            name="bar-chart-outline"
-            size={24}
-            color="#012B53"
-            onPress={() => navigation.navigate('Meta', { viagemId: item.id })}
-            // por enquanto esta navegando para viagem Meta, mais depois vai ser Viagem Main do usuario OU nao precisa viagem main mais ja que mostra meta no perfil e depois vai mostar contribuicao e gasto tb
-          />
-          <TouchableOpacity>
-            <Ionicons
-              name="brush-outline"
-              size={24}
-              color="#012B53"
-              onPress={() =>
-                navigation.navigate('CadastroViagem', {
-                  mode: 'edit',
-                  viagemId: item.id,
-                })
-              }
-            />
-          </TouchableOpacity>
-          <Ionicons
-            name="trash-outline"
-            size={24}
-            color="#012B53"
-            onPress={() => handleDeletarViagem(item.id)}
-          />
-        </View>
+        </Text>
       </View>
-    </TouchableOpacity>
+      <View style={styles.viagemCard}>
+        <Ionicons
+          name="bar-chart-outline"
+          size={24}
+          color="#012B53"
+          onPress={() => navigation.navigate('Meta', { viagemId: item.id })}
+          // por enquanto esta navegando para viagem Meta, mais depois vai ser Viagem Main do usuario OU nao precisa viagem main mais ja que mostra meta no perfil e depois vai mostar contribuicao e gasto tb
+        />
+        <TouchableOpacity>
+          <Ionicons
+            name="brush-outline"
+            size={24}
+            color="#012B53"
+            onPress={() =>
+              navigation.navigate('CadastroViagem', {
+                mode: 'edit',
+                viagemId: item.id,
+              })
+            }
+          />
+        </TouchableOpacity>
+        <Ionicons
+          name="trash-outline"
+          size={24}
+          color="#012B53"
+          onPress={() => handleDeletarViagem(item.id)}
+        />
+      </View>
+    </View>
   );
 
   const handleGoBack = () => {
