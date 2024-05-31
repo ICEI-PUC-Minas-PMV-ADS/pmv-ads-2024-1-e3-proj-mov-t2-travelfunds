@@ -7,7 +7,7 @@ import CadastroViagem from '../screens/CadastroViagem';
 import Meta from '../screens/Meta/Meta';
 import EditarMeta from '../screens/Meta/EditarMeta';
 import Contribuicao from '../screens/Contribuicao/Contribuicao';
-import EditarContribuicao from '../screens/Contribuicao/EditarContribuicao';
+import CadastroContribuicao from '../screens/Contribuicao/CadastroContribuicao';
 
 const Stack = createNativeStackNavigator();
 
@@ -24,7 +24,10 @@ const Main = () => {
       <Stack.Screen name="Meta" component={Meta} />
       <Stack.Screen name="EditarMeta" component={EditarMeta} />
       <Stack.Screen name="Contribuicao" component={Contribuicao} />
-      <Stack.Screen name="EditarContribuicao" component={EditarContribuicao} />
+      <Stack.Screen
+        name="CadastroContribuicao"
+        component={CadastroContribuicao}
+      />
     </Stack.Navigator>
   );
 };

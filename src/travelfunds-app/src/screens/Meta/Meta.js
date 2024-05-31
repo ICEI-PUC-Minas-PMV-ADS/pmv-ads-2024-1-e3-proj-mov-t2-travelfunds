@@ -10,8 +10,8 @@ import BottonSectionButtonMenu from '../../components/BottonSectionButtonMenu.js
 
 const Meta = ({ route }) => {
   const { viagemId } = route.params;
-  const [meta, setMeta] = useState('');
   const navigation = useNavigation();
+  const [meta, setMeta] = useState('');
   const isFocused = useIsFocused();
 
   useEffect(() => {
@@ -34,10 +34,6 @@ const Meta = ({ route }) => {
 
   const handleGoBack = () => {
     navigation.goBack();
-  };
-
-  const handleGoContribuicao = () => {
-    navigation.navigate('Contribuicao', { viagemId });
   };
 
   const handleLogout = async () => {
@@ -64,7 +60,7 @@ const Meta = ({ route }) => {
         </View>
       </View>
       <View style={styles.middleSection}>
-        <Text style={styles.nameText}>Nome da Viagem</Text>
+        <Text style={styles.nameText}>Nome da Viagem - Meta</Text>
       </View>
       <View style={styles.bottomSection}>
         <View style={styles.bottomSectionButtons}>
@@ -77,7 +73,7 @@ const Meta = ({ route }) => {
             text="Contribuição"
             mode="contained"
             backgroundColor="#8196AA"
-            onPress={handleGoContribuicao}
+            onPress={() => navigation.navigate('Contribuicao', { viagemId })}
           />
           <BottonSectionButtonMenu
             text="Gasto"

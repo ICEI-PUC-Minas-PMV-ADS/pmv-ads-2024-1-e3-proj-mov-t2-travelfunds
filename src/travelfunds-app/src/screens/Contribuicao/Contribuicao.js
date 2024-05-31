@@ -1,24 +1,60 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, FlatList } from 'react-native';
 import { useNavigation, useIsFocused } from '@react-navigation/native';
-import { getViagemById } from '../../services/Firebase.DB.Viagens';
 import { logout } from '../../services/Firebase.Auth';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import InputButton from '../../components/InputButton';
+import BottonSectionButtonMenu from '../../components/BottonSectionButtonMenu';
+import { onSnapshot, doc } from 'firebase/firestore';
+import { FIREBASE_AUTH, FIRESTORE_DB } from '../../../FirebaseConfig';
+import { deletarContribuicao } from '../../services/Firebase.DB.Contribuicao';
 
 const Contribuicao = ({ route }) => {
   const { viagemId } = route.params;
   const navigation = useNavigation();
+  const [contribuicoes, setContribuicoes] = useState([]);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    const user = FIREBASE_AUTH.currentUser;
+    if (user) {
+      const viagemDocRef = doc(
+        FIRESTORE_DB,
+        'usuarios',
+        user.uid,
+        'viagens',
+        viagemId
+      );
+      const unsubscribe = onSnapshot(viagemDocRef, (docSnapshot) => {
+        if (docSnapshot.exists()) {
+          const data = docSnapshot.data();
+          setContribuicoes(data.contribuicoes || []);
+        }
+      });
 
-  const handleGoBack = () => {
-    navigation.navigate('Perfil', { viagemId });
-  };
+      return () => unsubscribe();
+    }
+  }, [viagemId]);
 
-  const handleLogout = async () => {
-    logout();
-  };
+  const renderItem = ({ item }) => (
+    <View style={styles.contribuicaoItem}>
+      <Text style={styles.contribuicaoDesc}>{item.description}</Text>
+      <Text style={styles.contribuicaoVal}>{item.quantia}</Text>
+      <View style={styles.contribuicaoIconContainer}>
+        <Ionicons
+          name="brush-outline"
+          size={24}
+          color="#012B53"
+          onPress={() => {}}
+        />
+        <Ionicons
+          name="trash-outline"
+          size={24}
+          color="#012B53"
+          onPress={() => deletarContribuicao(viagemId, item)}
+        />
+      </View>
+    </View>
+  );
 
   return (
     <View style={styles.container}>
@@ -28,7 +64,7 @@ const Contribuicao = ({ route }) => {
           size={35}
           color="white"
           style={styles.returnIcon}
-          onPress={handleGoBack}
+          onPress={() => navigation.navigate('Perfil', { viagemId })}
         />
         <View style={styles.roundComponent}>
           <Text style={styles.overlayText}>
@@ -36,30 +72,82 @@ const Contribuicao = ({ route }) => {
           </Text>
         </View>
         <View style={styles.logout}>
-          <InputButton text="Logout" mode="text" onPress={handleLogout} />
+          <InputButton text="Logout" mode="text" onPress={() => logout()} />
         </View>
       </View>
       <View style={styles.middleSection}>
         <Text style={styles.nameText}>Nome da Viagem - Contribuição</Text>
       </View>
       <View style={styles.bottomSection}>
-        <View style={styles.bottomSectionButtons}></View>
-        <View style={styles.contribuicaoContainer}>
-          <FlatList />
-          <Ionicons
-            // style={styles.addIcon}
-            name="add-circle-outline"
-            size={40}
-            color="white"
-            onPress={() => {}}
+        <View style={styles.bottomSectionButtons}>
+          <BottonSectionButtonMenu
+            text="Meta"
+            mode="contained"
+            backgroundColor="#8196AA"
+            onPress={() => navigation.navigate('Meta', { viagemId })}
+          />
+          <BottonSectionButtonMenu
+            text="Contribuição"
+            mode="contained"
+            backgroundColor="#8196AA"
+          />
+          <BottonSectionButtonMenu
+            text="Gasto"
+            mode="contained"
+            backgroundColor="#8196AA"
+            // onPress={() => navigation.navigate('Gasto', { viagemId })}
           />
         </View>
+        <FlatList
+          data={contribuicoes}
+          renderItem={renderItem}
+          // keyExtractor={(item) => item.description}
+          keyExtractor={(item, index) => item.id || index.toString()}
+          contentContainerStyle={styles.flatListContent}
+        />
+        <Ionicons
+          style={styles.addIcon}
+          name="add-circle-outline"
+          size={40}
+          color="white"
+          onPress={() =>
+            navigation.navigate('CadastroContribuicao', { viagemId })
+          }
+        />
       </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
+  contribuicaoItem: {
+    backgroundColor: '#8196AA',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    width: '95%',
+    borderRadius: 50,
+    marginTop: 16,
+    paddingVertical: 8,
+    paddingHorizontal: 2,
+    borderColor: '#FBBF24',
+    borderWidth: 2,
+  },
+  contribuicaoDesc: {
+    color: '#FBBF24',
+    fontWeight: 'bold',
+    fontSize: 16,
+  },
+  contribuicaoVal: {
+    color: '#FBBF24',
+    fontWeight: 'bold',
+    fontSize: 16,
+  },
+  contribuicaoIconContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    width: 72,
+  },
   container: {
     flex: 1,
     backgroundColor: '#C0CBD4',
@@ -96,14 +184,19 @@ const styles = StyleSheet.create({
     marginTop: '13%',
     alignItems: 'center',
   },
-  nameText: {},
+  nameText: {
+    fontSize: 16,
+    marginBottom: '2%',
+  },
   bottomSection: {
     flex: 2,
-    width: '98%',
+    width: '90%',
     backgroundColor: '#012B53',
     padding: 10,
     marginTop: '5%',
     marginBottom: '10%',
+    marginLeft: '5%',
+    marginRight: '5%',
     borderRadius: 10,
     alignItems: 'center',
     justifyContent: 'flex-start',
@@ -113,11 +206,15 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     width: '100%',
   },
-  contribuicaoContainer: {},
-  // addIcon: {
-  //   justifyContent: 'center',
-  //   alignItems: 'center',
-  //   marginTop: 30,
-  // },
+  flatListContent: {
+    paddingBottom: 20,
+  },
+  contribuicaoContainer: {
+    backgroundColor: 'yellow',
+  },
+  addIcon: {
+    // backgroundColor: 'red',
+    // marginBottom: 100,
+  },
 });
 export default Contribuicao;

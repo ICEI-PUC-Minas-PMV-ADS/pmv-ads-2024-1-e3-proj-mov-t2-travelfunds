@@ -14,6 +14,7 @@ import { logout } from '../services/Firebase.Auth';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import InputButton from '../components/InputButton';
 import { deletarViagem } from '../services/Firebase.DB.Viagens';
+import TotalContribuicaoComponent from './Contribuicao/TotalContribuicao';
 
 const Perfil = () => {
   const navigation = useNavigation();
@@ -54,6 +55,7 @@ const Perfil = () => {
             {item.meta ? item.meta : 'definir meta'}
           </Text>
         </Text>
+        <TotalContribuicaoComponent viagemId={item.id} />
       </View>
       <View style={styles.viagemCard}>
         <Ionicons
@@ -61,7 +63,6 @@ const Perfil = () => {
           size={24}
           color="#012B53"
           onPress={() => navigation.navigate('Meta', { viagemId: item.id })}
-          // por enquanto esta navegando para viagem Meta, mais depois vai ser Viagem Main do usuario OU nao precisa viagem main mais ja que mostra meta no perfil e depois vai mostar contribuicao e gasto tb
         />
         <TouchableOpacity>
           <Ionicons
@@ -131,7 +132,6 @@ const Perfil = () => {
           keyExtractor={(item) => item.id}
           contentContainerStyle={styles.flatListContent}
         />
-        <View></View>
         <TouchableOpacity
           style={styles.addButton}
           onPress={() => navigation.navigate('CadastroViagem', { mode: 'add' })}
@@ -225,10 +225,6 @@ const styles = StyleSheet.create({
   viagemTextDetail: {
     fontStyle: 'italic',
     color: '#012B53',
-  },
-  viagemDate: {
-    fontSize: 14,
-    color: '#666',
   },
   addButton: {
     alignSelf: 'flex-start',
