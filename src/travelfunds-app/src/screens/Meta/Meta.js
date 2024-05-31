@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { useNavigation, useIsFocused } from '@react-navigation/native';
-import { getViagemById } from '../services/Firebase.DB.Viagens';
-import { logout } from '../services/Firebase.Auth';
+import { getViagemById } from '../../services/Firebase.DB.Viagens.js';
+import { logout } from '../../services/Firebase.Auth.js';
 import { Icon } from 'react-native-paper';
 import Ionicons from '@expo/vector-icons/Ionicons';
-import InputButton from '../components/InputButton';
-import BottonSectionButtonMenu from '../components/BottonSectionButtonMenu.js';
+import InputButton from '../../components/InputButton.js';
+import BottonSectionButtonMenu from '../../components/BottonSectionButtonMenu.js';
 
 const Meta = ({ route }) => {
   const { viagemId } = route.params;
@@ -34,6 +34,10 @@ const Meta = ({ route }) => {
 
   const handleGoBack = () => {
     navigation.goBack();
+  };
+
+  const handleGoContribuicao = () => {
+    navigation.navigate('Contribuicao', { viagemId });
   };
 
   const handleLogout = async () => {
@@ -73,6 +77,7 @@ const Meta = ({ route }) => {
             text="Contribuição"
             mode="contained"
             backgroundColor="#8196AA"
+            onPress={handleGoContribuicao}
           />
           <BottonSectionButtonMenu
             text="Gasto"

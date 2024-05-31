@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { salvarMeta } from '../services/Firebase.DB.Meta';
-import Ionicons from '@expo/vector-icons/Ionicons';
+import { salvarMeta } from '../../services/Firebase.DB.Meta';
 import { Icon } from 'react-native-paper';
-import InputButton from '../components/InputButton';
-import CustomTextInput from '../components/CustomTextInput';
-import BotaoMenor from '../components/BotaoMenor';
-import { logout } from '../services/Firebase.Auth';
+import { logout } from '../../services/Firebase.Auth';
+import Ionicons from '@expo/vector-icons/Ionicons';
+import InputButton from '../../components/InputButton';
+import CustomTextInput from '../../components/CustomTextInput';
+import BotaoMenor from '../../components/BotaoMenor';
 
 const EditarMeta = ({ route, navigation }) => {
   const { viagemId } = route.params;
