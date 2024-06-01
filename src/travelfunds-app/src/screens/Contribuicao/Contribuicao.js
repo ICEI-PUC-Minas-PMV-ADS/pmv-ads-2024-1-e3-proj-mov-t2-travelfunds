@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, FlatList } from 'react-native';
-import { useNavigation, useIsFocused } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 import { logout } from '../../services/Firebase.Auth';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import InputButton from '../../components/InputButton';
@@ -95,7 +95,7 @@ const Contribuicao = ({ route }) => {
             text="Gasto"
             mode="contained"
             backgroundColor="#8196AA"
-            // onPress={() => navigation.navigate('Gasto', { viagemId })}
+            onPress={() => navigation.navigate('Gasto', { viagemId })}
           />
         </View>
         <FlatList

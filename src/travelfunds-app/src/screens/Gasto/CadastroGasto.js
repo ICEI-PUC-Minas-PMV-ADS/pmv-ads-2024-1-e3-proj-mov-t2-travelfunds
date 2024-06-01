@@ -1,26 +1,26 @@
 import React, { useState } from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { logout } from '../../services/Firebase.Auth';
-import { salvarContribuicao } from '../../services/Firebase.DB.Contribuicao';
+import { salvarGasto } from '../../services/Firebase.DB.Gasto';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import InputButton from '../../components/InputButton';
 import CustomTextInput from '../../components/CustomTextInput';
 import BotaoSalvar from '../../components/BotaoSalvar';
 
-function EditarContribuicao({ route }) {
+function CadastroGasto({ route }) {
   const [nome, setNome] = useState();
   const [valor, setValor] = useState();
   const { viagemId } = route.params;
   const navigation = useNavigation();
 
-  handleSaveContribuicao = async () => {
-    const newContribuicao = { description: nome, quantia: parseFloat(valor) };
-    const success = await salvarContribuicao(viagemId, newContribuicao);
+  handleSaveGasto = async () => {
+    const newGasto = { description: nome, quantia: parseFloat(valor) };
+    const success = await salvarGasto(viagemId, newGasto);
     if (success) {
       navigation.goBack();
     } else {
-      // handle error salvar contribuicao
+      console.log('erro salvando novo gasto');
     }
   };
 
@@ -32,7 +32,7 @@ function EditarContribuicao({ route }) {
           size={35}
           color="white"
           style={styles.returnIcon}
-          onPress={() => navigation.goBack()}
+          onPress={() => navigation.navigate('Gasto', { viagemId })}
         />
         <View style={styles.roundComponent}>
           <Text style={styles.overlayText}>
@@ -44,11 +44,11 @@ function EditarContribuicao({ route }) {
         </View>
       </View>
       <View style={styles.middleSection}>
-        <Text style={styles.nameText}>Nome da Viagem - Contribuição</Text>
+        <Text style={styles.nameText}>nome da viagem - cadastrar gasto</Text>
       </View>
       <View style={styles.bottomSection}>
         <CustomTextInput
-          placeholder="contribuição"
+          placeholder="gasto"
           value={nome}
           onChangeText={setNome}
         />
@@ -57,12 +57,12 @@ function EditarContribuicao({ route }) {
           value={valor}
           onChangeText={setValor}
         />
-        <BotaoSalvar text="Salvar" onPress={handleSaveContribuicao} />
+        <BotaoSalvar text="Salvar" onPress={handleSaveGasto} />
       </View>
     </View>
   );
 }
-export default EditarContribuicao;
+export default CadastroGasto;
 
 const styles = StyleSheet.create({
   container: {

@@ -15,6 +15,7 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import InputButton from '../components/InputButton';
 import { deletarViagem } from '../services/Firebase.DB.Viagens';
 import TotalContribuicaoComponent from './Contribuicao/TotalContribuicao';
+import TotalGastoComponenent from './Gasto/TotalGasto';
 
 const Perfil = () => {
   const navigation = useNavigation();
@@ -50,12 +51,13 @@ const Perfil = () => {
         <Text style={styles.viagemTextDetail}>partida {item.dataPartida}</Text>
         <Text style={styles.viagemTextDetail}>retorno {item.dataRetorno}</Text>
         <Text style={styles.viagemTextDetail}>
-          meta{' '}
+          meta{'                '}
           <Text style={{ color: '#15803d', fontWeight: '900' }}>
             {item.meta ? item.meta : 'definir meta'}
           </Text>
         </Text>
         <TotalContribuicaoComponent viagemId={item.id} />
+        <TotalGastoComponenent viagemId={item.id} />
       </View>
       <View style={styles.viagemCard}>
         <Ionicons

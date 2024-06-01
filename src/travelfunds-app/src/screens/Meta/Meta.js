@@ -79,6 +79,7 @@ const Meta = ({ route }) => {
             text="Gasto"
             mode="contained"
             backgroundColor="#8196AA"
+            onPress={() => navigation.navigate('Gasto', { viagemId })}
           />
         </View>
         <View style={styles.metaContainer}>
