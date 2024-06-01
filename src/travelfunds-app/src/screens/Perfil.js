@@ -53,7 +53,7 @@ const Perfil = () => {
         <Text style={styles.viagemTextDetail}>
           meta{'                '}
           <Text style={{ color: '#15803d', fontWeight: '900' }}>
-            {item.meta ? item.meta : 'definir meta'}
+            {item.meta ? item.meta : '0'}
           </Text>
         </Text>
         <TotalContribuicaoComponent viagemId={item.id} />
