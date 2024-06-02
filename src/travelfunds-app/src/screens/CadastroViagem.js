@@ -5,9 +5,9 @@ import CustomTextInput from '../components/CustomTextInput';
 import BotaoSalvar from '../components/BotaoSalvar';
 import { Icon } from 'react-native-paper';
 import { useNavigation, useRoute } from '@react-navigation/native';
-import { salvarViagem } from '../services/Firebase.DB.Viagens';
-import { editarViagem } from '../services/Firebase.DB.Viagens';
-import { getViagemById } from '../services/Firebase.DB.Viagens';
+import { salvarViagem } from '../services/firebase.db.viagens';
+import { editarViagem } from '../services/firebase.db.viagens';
+import { getViagemById } from '../services/firebase.db.viagens';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import InputButton from '../components/InputButton';
 

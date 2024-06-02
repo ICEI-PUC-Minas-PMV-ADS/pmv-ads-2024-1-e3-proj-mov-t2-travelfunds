@@ -12,6 +12,7 @@ import { deletarGasto } from '../../services/Firebase.DB.Gasto';
 function Gasto({ route }) {
   const { viagemId } = route.params;
   const navigation = useNavigation();
+  const [destino, setDestino] = useState('');
   const [gastos, setGastos] = useState([]);
 
   useEffect(() => {
@@ -27,6 +28,7 @@ function Gasto({ route }) {
       const unsubscribe = onSnapshot(viagemDocRef, (docSnapshot) => {
         if (docSnapshot.exists()) {
           const data = docSnapshot.data();
+          setDestino(data.destino || 'Destino não encontrado');
           setGastos(data.gastos || []);
         }
       });
@@ -78,7 +80,7 @@ function Gasto({ route }) {
         </View>
       </View>
       <View style={styles.middleSection}>
-        <Text style={styles.nameText}>Nome da Viagem - Gasto</Text>
+      <Text style={styles.nameText}>{destino} - Gasto</Text>
       </View>
       <View style={styles.bottomSection}>
         <View style={styles.bottomSectionButtons}>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { useNavigation, useIsFocused } from '@react-navigation/native';
-import { getViagemById } from '../../services/Firebase.DB.Viagens.js';
+import { getViagemById } from '../../services/firebase.db.viagens.js';
 import { logout } from '../../services/Firebase.Auth.js';
 import { Icon } from 'react-native-paper';
 import Ionicons from '@expo/vector-icons/Ionicons';
@@ -12,6 +12,7 @@ const Meta = ({ route }) => {
   const { viagemId } = route.params;
   const navigation = useNavigation();
   const [meta, setMeta] = useState('');
+  const [destino, setDestino] = useState('');
   const isFocused = useIsFocused();
 
   useEffect(() => {
@@ -19,6 +20,7 @@ const Meta = ({ route }) => {
       const viagem = await getViagemById(viagemId);
       if (viagem) {
         setMeta(viagem.meta || 'Sem meta definida');
+        setDestino(viagem.destino || 'Destino não encontrado');
       } else {
         // Handle error fetch meta
       }
@@ -60,7 +62,7 @@ const Meta = ({ route }) => {
         </View>
       </View>
       <View style={styles.middleSection}>
-        <Text style={styles.nameText}>Nome da Viagem - Meta</Text>
+      <Text style={styles.nameText}>{destino} - Meta</Text>
       </View>
       <View style={styles.bottomSection}>
         <View style={styles.bottomSectionButtons}>

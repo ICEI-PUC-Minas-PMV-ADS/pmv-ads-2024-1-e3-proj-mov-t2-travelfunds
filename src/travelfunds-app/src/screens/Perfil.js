@@ -13,7 +13,7 @@ import { useNavigation } from '@react-navigation/native';
 import { logout } from '../services/Firebase.Auth';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import InputButton from '../components/InputButton';
-import { deletarViagem } from '../services/Firebase.DB.Viagens';
+import { deletarViagem } from '../services/firebase.db.viagens';
 import TotalContribuicaoComponent from './Contribuicao/TotalContribuicao';
 import TotalGastoComponenent from './Gasto/TotalGasto';
 
