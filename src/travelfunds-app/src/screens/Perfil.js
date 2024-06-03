@@ -60,31 +60,46 @@ const Perfil = () => {
         <TotalGastoComponenent viagemId={item.id} />
       </View>
       <View style={styles.viagemCard}>
-        <Ionicons
-          name="bar-chart-outline"
-          size={24}
-          color="#012B53"
-          onPress={() => navigation.navigate('Meta', { viagemId: item.id })}
-        />
-        <TouchableOpacity>
+        <View
+          style={{
+            flexDirection: 'row',
+            justifyContent: 'space-around',
+          }}
+        >
           <Ionicons
-            name="brush-outline"
+            name="bar-chart-outline"
             size={24}
             color="#012B53"
-            onPress={() =>
-              navigation.navigate('CadastroViagem', {
-                mode: 'edit',
-                viagemId: item.id,
-              })
-            }
+            onPress={() => navigation.navigate('Meta', { viagemId: item.id })}
           />
-        </TouchableOpacity>
-        <Ionicons
-          name="trash-outline"
-          size={24}
-          color="#012B53"
-          onPress={() => handleDeletarViagem(item.id)}
-        />
+          <Ionicons
+            name="save-outline"
+            size={24}
+            color="#012B53"
+            onPress={() => {}}
+          />
+        </View>
+        <View style={{ flexDirection: 'row', justifyContent: 'space-around' }}>
+          <TouchableOpacity>
+            <Ionicons
+              name="brush-outline"
+              size={24}
+              color="#012B53"
+              onPress={() =>
+                navigation.navigate('CadastroViagem', {
+                  mode: 'edit',
+                  viagemId: item.id,
+                })
+              }
+            />
+          </TouchableOpacity>
+          <Ionicons
+            name="trash-outline"
+            size={24}
+            color="#012B53"
+            onPress={() => handleDeletarViagem(item.id)}
+          />
+        </View>
       </View>
     </View>
   );
@@ -235,8 +250,8 @@ const styles = StyleSheet.create({
   },
   addButtonText: { color: '#fff', fontSize: 16 },
   viagemCard: {
-    flexDirection: 'row',
     justifyContent: 'space-between',
+    height: 75,
     width: 100,
   },
 });
