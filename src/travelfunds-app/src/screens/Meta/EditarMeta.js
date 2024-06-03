@@ -15,6 +15,12 @@ const EditarMeta = ({ route, navigation }) => {
   const handleSaveMeta = async () => {
     if (meta.trim() !== '') {
       const metaValue = parseFloat(meta.trim());
+
+      if (isNaN(metaValue) || metaValue <= 0) {
+        alert('A meta deve ser um número e maior que zero.');
+        return;
+      }
+
       const success = await salvarMeta(viagemId, metaValue);
       if (success) {
         navigation.goBack();

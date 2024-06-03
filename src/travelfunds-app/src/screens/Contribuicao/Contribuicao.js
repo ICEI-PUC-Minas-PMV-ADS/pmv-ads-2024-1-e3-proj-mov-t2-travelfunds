@@ -40,14 +40,14 @@ const Contribuicao = ({ route }) => {
   const renderItem = ({ item }) => (
     <View style={styles.contribuicaoItem}>
       <Text style={styles.contribuicaoDesc}>{item.description}</Text>
-      <Text style={styles.contribuicaoVal}>{item.quantia}</Text>
+      <Text style={styles.contribuicaoVal}>${item.quantia}</Text>
       <View style={styles.contribuicaoIconContainer}>
-        <Ionicons
+        {/* <Ionicons
           name="brush-outline"
           size={24}
           color="#012B53"
           onPress={() => {}}
-        />
+        /> */}
         <Ionicons
           name="trash-outline"
           size={24}
@@ -78,7 +78,7 @@ const Contribuicao = ({ route }) => {
         </View>
       </View>
       <View style={styles.middleSection}>
-      <Text style={styles.nameText}>{destino} - Contribuição</Text>
+        <Text style={styles.nameText}>{destino} - Contribuição</Text>
       </View>
       <View style={styles.bottomSection}>
         <View style={styles.bottomSectionButtons}>

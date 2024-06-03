@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import InputDados from '../components/InputDados';
 import CustomTextInput from '../components/CustomTextInput';
 import BotaoSalvar from '../components/BotaoSalvar';
 import { Icon } from 'react-native-paper';
@@ -32,6 +31,22 @@ const CadastroViagem = () => {
   }, [mode, viagemId]);
 
   const handleSalvarViagem = async () => {
+    if (!destino.trim()) {
+      alert('destino vazio');
+      return;
+    }
+
+    const dataPartidaPattern = /^\d{2}-\d{2}-\d{2}$/;
+    if (!dataPartidaPattern.test(dataPartida)) {
+      alert('A data de partida deve estar no formato DD-MM-AA.');
+      return;
+    }
+
+    if (!dataPartidaPattern.test(dataRetorno)) {
+      alert('A data de retorno deve estar no formato DD-MM-AA.');
+      return;
+    }
+
     if (mode === 'add') {
       await salvarViagem(destino, dataPartida, dataRetorno);
     } else if (mode === 'edit') {
@@ -75,12 +90,12 @@ const CadastroViagem = () => {
           onChangeText={setDestino}
         />
         <CustomTextInput
-          placeholder="Data de Partida"
+          placeholder="DD-MM-AA partida"
           value={dataPartida}
           onChangeText={setDataPartida}
         />
         <CustomTextInput
-          placeholder="Data de Retorno"
+          placeholder="DD-MM-AA retorno"
           value={dataRetorno}
           onChangeText={setDataRetorno}
         />

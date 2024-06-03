@@ -58,7 +58,7 @@ const TotalContribuicaoComponent = ({ viagemId }) => {
       <Text style={styles.viagemTextDetail}>
         contribuições{' '}
         <Text style={{ color: '#ca8a04', fontWeight: '900' }}>
-          {totalContribuicao ? totalContribuicao : '0'}
+          ${totalContribuicao ? totalContribuicao : '0'}
         </Text>
       </Text>
     </View>

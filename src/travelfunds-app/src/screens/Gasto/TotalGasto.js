@@ -41,7 +41,7 @@ const TotalGastoComponenent = ({ viagemId }) => {
       <Text style={styles.viagemTextDetail}>
         gastos{'             '}
         <Text style={{ color: '#EF4444', fontWeight: '900' }}>
-          {totalGasto ? totalGasto : '0'}
+          ${totalGasto ? totalGasto : '0'}
         </Text>
       </Text>
     </View>

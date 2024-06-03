@@ -9,12 +9,28 @@ import CustomTextInput from '../../components/CustomTextInput';
 import BotaoSalvar from '../../components/BotaoSalvar';
 
 function EditarContribuicao({ route }) {
-  const [nome, setNome] = useState();
-  const [valor, setValor] = useState();
+  const [nome, setNome] = useState('');
+  const [valor, setValor] = useState('');
   const { viagemId } = route.params;
   const navigation = useNavigation();
 
   handleSaveContribuicao = async () => {
+    if (!nome.trim()) {
+      alert('O nome da contribuição não pode estar vazio.');
+      return;
+    }
+
+    if (!/^[A-Za-z\s]+$/.test(nome.trim())) {
+      alert('O nome da contribuição deve conter apenas letras.');
+      return;
+    }
+
+    const valorNumerico = parseFloat(valor.trim());
+    if (isNaN(valorNumerico) || valorNumerico <= 0) {
+      alert('O valor da contribuição deve ser um número e maior que zero.');
+      return;
+    }
+
     const newContribuicao = { description: nome, quantia: parseFloat(valor) };
     const success = await salvarContribuicao(viagemId, newContribuicao);
     if (success) {

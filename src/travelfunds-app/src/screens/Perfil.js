@@ -53,7 +53,7 @@ const Perfil = () => {
         <Text style={styles.viagemTextDetail}>
           meta{'                '}
           <Text style={{ color: '#15803d', fontWeight: '900' }}>
-            {item.meta ? item.meta : '0'}
+            ${item.meta ? item.meta : '0'}
           </Text>
         </Text>
         <TotalContribuicaoComponent viagemId={item.id} />
@@ -101,11 +101,11 @@ const Perfil = () => {
     <View style={styles.container}>
       <View style={styles.topSection}>
         <Ionicons
-          name="return-up-back-outline"
-          size={35}
+          name="notifications-outline"
+          size={30}
           color="#fff"
           style={styles.returnIcon}
-          onPress={handleGoBack}
+          onPress={() => {}}
         />
         <View style={styles.roundComponent}>
           <Text style={styles.overlayText}>
@@ -114,7 +114,7 @@ const Perfil = () => {
         </View>
         <Ionicons
           name="brush-outline"
-          size={25}
+          size={30}
           color="#fff"
           style={styles.settingsIcon}
           onPress={() => navigation.navigate('EditarPerfil')}
@@ -124,7 +124,7 @@ const Perfil = () => {
         </View>
       </View>
       <View style={styles.middleSection}>
-        <Text style={styles.nameText}>Nome</Text>
+        {/* <Text style={styles.nameText}>Nome</Text> */}
         <Text>Minhas Viagens</Text>
       </View>
       <View style={styles.bottomSection}>

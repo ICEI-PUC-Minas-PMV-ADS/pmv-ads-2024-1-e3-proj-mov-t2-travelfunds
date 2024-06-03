@@ -41,14 +41,14 @@ function Gasto({ route }) {
     return (
       <View style={styles.gastoItem}>
         <Text style={styles.gastoDesc}>{item.description}</Text>
-        <Text style={styles.gastoVal}>{item.quantia}</Text>
+        <Text style={styles.gastoVal}>${item.quantia}</Text>
         <View style={styles.gastoIconContainer}>
-          <Ionicons
+          {/* <Ionicons
             name="brush-outline"
             size={24}
             color="#012B53"
             onPress={() => {}}
-          />
+          /> */}
           <Ionicons
             name="trash-outline"
             size={24}
@@ -80,7 +80,7 @@ function Gasto({ route }) {
         </View>
       </View>
       <View style={styles.middleSection}>
-      <Text style={styles.nameText}>{destino} - Gasto</Text>
+        <Text style={styles.nameText}>{destino} - Gasto</Text>
       </View>
       <View style={styles.bottomSection}>
         <View style={styles.bottomSectionButtons}>

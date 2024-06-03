@@ -9,12 +9,27 @@ import CustomTextInput from '../../components/CustomTextInput';
 import BotaoSalvar from '../../components/BotaoSalvar';
 
 function CadastroGasto({ route }) {
-  const [nome, setNome] = useState();
-  const [valor, setValor] = useState();
+  const [nome, setNome] = useState('');
+  const [valor, setValor] = useState('');
   const { viagemId } = route.params;
   const navigation = useNavigation();
 
   handleSaveGasto = async () => {
+    if (!nome.trim()) {
+      alert('O nome do gasto não pode estar vazio.');
+      return;
+    }
+
+    if (!/^[A-Za-z\s]+$/.test(nome.trim())) {
+      alert('O nome do gasto deve conter apenas letras.');
+      return;
+    }
+
+    const valorNumerico = parseFloat(valor.trim());
+    if (isNaN(valorNumerico) || valorNumerico <= 0) {
+      alert('O valor do gasto deve ser um número e maior que zero.');
+      return;
+    }
     const newGasto = { description: nome, quantia: parseFloat(valor) };
     const success = await salvarGasto(viagemId, newGasto);
     if (success) {
