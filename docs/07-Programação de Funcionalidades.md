@@ -94,8 +94,7 @@ Implementação do sistema descritas por meio dos requisitos funcionais e/ou nã
         <img width="200"  src="./img/Criar viagem.png">
     </td>
         <td width="300" >
-            <a href="../src/travelfunds-app/src/components/Perfil.js">Link do Código Fonte de Criar Viagem</a>
-            <a href="../src/travelfunds-app/src/screens/EditarViagem.js">Link do Código Fonte de Configurar Viagem</a>
+            <a href="../src/travelfunds-app/src/screens/EditarViagem.js">Link do Código Fonte</a>
         </td>
     </tr>
 </table>
