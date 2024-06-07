@@ -94,7 +94,7 @@ Implementação do sistema descritas por meio dos requisitos funcionais e/ou nã
         <img width="200"  src="./img/Criar viagem.png">
     </td>
         <td width="300" >
-            <a href="../src/travelfunds-app/src/components/DashboardPlanejadas.js">Link do Código Fonte de Criar Viagem</a>
+            <a href="../src/travelfunds-app/src/components/Perfil.js">Link do Código Fonte de Criar Viagem</a>
             <a href="../src/travelfunds-app/src/screens/EditarViagem.js">Link do Código Fonte de Configurar Viagem</a>
         </td>
     </tr>
@@ -111,7 +111,7 @@ Implementação do sistema descritas por meio dos requisitos funcionais e/ou nã
         <img width="200"  src="./img/Viagem Main.png">
     </td>
         <td width="300" >
-            <a href="../src/travelfunds-app/src/screens/ViagemMain.js">Link do Código Fonte</a>
+            <a href="../src/travelfunds-app/src/screens/Perfil.js">Link do Código Fonte</a>
         </td>
     </tr>
 </table>
@@ -127,7 +127,7 @@ Implementação do sistema descritas por meio dos requisitos funcionais e/ou nã
         <img width="200"  src="./img/Meta Dashboard.png">
     </td>
         <td width="300" >
-            <a href="../src/travelfunds-app/src/components/DashboardMeta.js">Link do Código Fonte</a>
+            <a href="../src/travelfunds-app/src/screens/Meta">Link do Código Fonte</a>
         </td>
     </tr>
 </table>
@@ -143,7 +143,7 @@ Implementação do sistema descritas por meio dos requisitos funcionais e/ou nã
         <img width="200"  src="./img/Editar Meta.png">
     </td>
         <td width="300" >
-            <a href="../src/travelfunds-app/src/components/EditarMeta.js">Link do Código Fonte</a>
+            <a href="../src/travelfunds-app/src/screens/Meta/EditarMeta.js">Link do Código Fonte</a>
         </td>
     </tr>
 </table>
@@ -159,7 +159,7 @@ Implementação do sistema descritas por meio dos requisitos funcionais e/ou nã
         <img width="200"  src="./img/Gastos Dashboard.png">
     </td>
         <td width="300" >
-            <a href="../src/travelfunds-app/src/components/DashboardGasto.js">Link do Código Fonte</a>
+            <a href="../src/travelfunds-app/src/screens/Gasto">Link do Código Fonte</a>
         </td>
     </tr>
 </table>
@@ -175,7 +175,7 @@ Implementação do sistema descritas por meio dos requisitos funcionais e/ou nã
         <img width="200"  src="./img/Adicionar gasto.png">
     </td>
         <td width="300" >
-            <a href="../src/travelfunds-app/src/components/EditarGasto.js">Link do Código Fonte</a>
+            <a href="../src/travelfunds-app/src/screens/Gasto/EditarGasto.js">Link do Código Fonte</a>
         </td>
     </tr>
 </table>
@@ -207,7 +207,7 @@ Implementação do sistema descritas por meio dos requisitos funcionais e/ou nã
         <img width="200"  src="./img/Adicionar contribuição.png">
     </td>
         <td width="300" >
-            <a href="../src/travelfunds-app/src/components/EditarContribuicao.js">Link do Código Fonte</a>
+            <a href="../src/travelfunds-app/src/screens/Contribuicao/EditarContribuicao.js">Link do Código Fonte</a>
         </td>
     </tr>
 </table>
