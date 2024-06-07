@@ -191,7 +191,7 @@ Implementação do sistema descritas por meio dos requisitos funcionais e/ou nã
         <img width="200"  src="./img/Contribuições Dashboard.png">
     </td>
         <td width="300" >
-            <a href="../src/travelfunds-app/src/components/DashboardContribuicao.js">Link do Código Fonte</a>
+            <a href="../src/travelfunds-app/src/screens/Contribuicao">Link do Código Fonte</a>
         </td>
     </tr>
 </table>
