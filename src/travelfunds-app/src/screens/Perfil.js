@@ -120,7 +120,7 @@ const Perfil = () => {
           size={30}
           color="#fff"
           style={styles.returnIcon}
-          onPress={() => {}}
+          onPress={() => navigation.navigate('Notificacoes')}
         />
         <View style={styles.roundComponent}>
           <Text style={styles.overlayText}>
