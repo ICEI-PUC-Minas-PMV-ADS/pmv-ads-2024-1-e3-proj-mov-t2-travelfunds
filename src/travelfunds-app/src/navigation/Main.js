@@ -10,7 +10,6 @@ import Contribuicao from '../screens/Contribuicao/Contribuicao';
 import CadastroContribuicao from '../screens/Contribuicao/CadastroContribuicao';
 import Gasto from '../screens/Gasto/Gasto';
 import CadastroGasto from '../screens/Gasto/CadastroGasto';
-import Notificacoes from '../screens/Notificacoes';
 
 const Stack = createNativeStackNavigator();
 
@@ -33,7 +32,6 @@ const Main = () => {
       />
       <Stack.Screen name="Gasto" component={Gasto} />
       <Stack.Screen name="CadastroGasto" component={CadastroGasto} />
-      <Stack.Screen name="Notificacoes" component={Notificacoes} />
     </Stack.Navigator>
   );
 };

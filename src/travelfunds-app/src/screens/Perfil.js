@@ -5,6 +5,7 @@ import {
   StyleSheet,
   FlatList,
   TouchableOpacity,
+  ToastAndroid,
 } from 'react-native';
 import { Icon } from 'react-native-paper';
 import { collection, onSnapshot, doc } from 'firebase/firestore';
@@ -14,8 +15,7 @@ import { logout } from '../services/Firebase.Auth';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import InputButton from '../components/InputButton';
 import { deletarViagem } from '../services/firebase.db.viagens';
-import TotalContribuicaoComponent from './Contribuicao/TotalContribuicao';
-import TotalGastoComponenent from './Gasto/TotalGasto';
+import Totais from '../components/Totais';
 
 const Perfil = () => {
   const navigation = useNavigation();
@@ -23,6 +23,7 @@ const Perfil = () => {
 
   const handleDeletarViagem = async (viagemId) => {
     await deletarViagem(viagemId);
+    ToastAndroid.show('Viagem deletada com sucesso!', ToastAndroid.SHORT);
   };
 
   useEffect(() => {
@@ -50,14 +51,7 @@ const Perfil = () => {
       <View>
         <Text style={styles.viagemTextDetail}>partida {item.dataPartida}</Text>
         <Text style={styles.viagemTextDetail}>retorno {item.dataRetorno}</Text>
-        <Text style={styles.viagemTextDetail}>
-          meta{'                '}
-          <Text style={{ color: '#15803d', fontWeight: '900' }}>
-            ${item.meta ? item.meta : '0'}
-          </Text>
-        </Text>
-        <TotalContribuicaoComponent viagemId={item.id} />
-        <TotalGastoComponenent viagemId={item.id} />
+        <Totais viagemId={item.id} />
       </View>
       <View style={styles.viagemCard}>
         <View
@@ -115,13 +109,6 @@ const Perfil = () => {
   return (
     <View style={styles.container}>
       <View style={styles.topSection}>
-        <Ionicons
-          name="notifications-outline"
-          size={30}
-          color="#fff"
-          style={styles.returnIcon}
-          onPress={() => navigation.navigate('Notificacoes')}
-        />
         <View style={styles.roundComponent}>
           <Text style={styles.overlayText}>
             <Icon source="camera" size={40} />
