@@ -5,6 +5,8 @@ import {
   StyleSheet,
   FlatList,
   TouchableOpacity,
+  Image,
+  Platform,
 } from 'react-native';
 import { Icon } from 'react-native-paper';
 import { collection, onSnapshot, doc } from 'firebase/firestore';
@@ -16,10 +18,14 @@ import InputButton from '../components/InputButton';
 import { deletarViagem } from '../services/firebase.db.viagens';
 import TotalContribuicaoComponent from './Contribuicao/TotalContribuicao';
 import TotalGastoComponenent from './Gasto/TotalGasto';
+import { launchImageLibrary } from 'react-native-image-picker';
+import { storage, firestore } from '../../FirebaseConfig';
 
 const Perfil = () => {
   const navigation = useNavigation();
   const [viagens, setViagens] = useState([]);
+  const [profileImage, setProfileImage] = useState(null);
+  const [profileImageUrl, setProfileImageUrl] = useState(null);
 
   const handleDeletarViagem = async (viagemId) => {
     await deletarViagem(viagemId);
@@ -43,6 +49,48 @@ const Perfil = () => {
       return () => unsubscribe();
     }
   }, []);
+
+  const selectProfileImage = () => {
+    launchImageLibrary(
+      { mediaType: 'photo', includeBase64: true },
+      async (response) => {
+        if (response.didCancel) {
+          console.log('User cancelled image picker');
+        } else if (response.error) {
+          console.log('ImagePicker Error: ', response.error);
+        } else if (response.assets && response.assets.length > 0) {
+          const source = { uri: response.assets[0].uri };
+          setProfileImage(source);
+
+          const { uri } = response.assets[0];
+          const filename = uri.substring(uri.lastIndexOf('/') + 1);
+          const uploadUri = Platform.OS === 'ios' ? uri.replace('file://', '') : uri;
+
+          const storageRef = storage().ref(`profile_images/${filename}`);
+          const task = storageRef.putFile(uploadUri);
+
+          try {
+            await task;
+
+            const url = await storageRef.getDownloadURL();
+            setProfileImageUrl(url);
+
+            // Salve o URL da imagem no Firestore (assumindo que você tem um documento de perfil para o usuário atual)
+            const user = FIREBASE_AUTH.currentUser;
+            if (user) {
+              const userDocRef = firestore().collection('users').doc(user.uid);
+              await userDocRef.set({
+                profileImageUrl: url,
+              }, { merge: true }); // Use merge: true para mesclar novos dados com dados existentes
+            }
+          } catch (error) {
+            console.error('Error uploading image: ', error);
+            // Trate os erros de upload e de escrita no Firestore conforme necessário
+          }
+        }
+      }
+    );
+  };
 
   const renderItem = ({ item }) => (
     <View style={styles.viagemItem}>
@@ -122,11 +170,19 @@ const Perfil = () => {
           style={styles.returnIcon}
           onPress={() => {}}
         />
-        <View style={styles.roundComponent}>
-          <Text style={styles.overlayText}>
-            <Icon source="camera" size={40} />
-          </Text>
-        </View>
+        
+        <TouchableOpacity style={styles.roundComponent} onPress={selectProfileImage}>
+    {profileImageUrl ? (
+      <Image source={{ uri: profileImageUrl }} style={styles.profileImage} />
+    ) : profileImage ? (
+      <Image source={profileImage} style={styles.profileImage} />
+    ) : (
+      <Text style={styles.overlayText}>
+        <Icon source="camera" size={40} />
+      </Text>
+    )}
+  </TouchableOpacity>
+        
         <Ionicons
           name="brush-outline"
           size={30}
@@ -173,6 +229,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#012B53',
     alignItems: 'center',
     justifyContent: 'flex-end',
+  },
+  profileImage: {
+    width: 100,
+    height: 100,
+    borderRadius: 50,
   },
   roundComponent: {
     width: 150,
