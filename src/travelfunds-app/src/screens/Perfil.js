@@ -6,9 +6,11 @@ import {
   FlatList,
   TouchableOpacity,
   ToastAndroid,
+  Image,
 } from 'react-native';
 import { Icon } from 'react-native-paper';
-import { collection, onSnapshot, doc } from 'firebase/firestore';
+import { collection, onSnapshot, doc, updateDoc, getDoc } from 'firebase/firestore';
+import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { FIRESTORE_DB, FIREBASE_AUTH } from '../../FirebaseConfig';
 import { useNavigation } from '@react-navigation/native';
 import { logout } from '../services/Firebase.Auth';
@@ -21,7 +23,8 @@ import * as ImagePicker from 'expo-image-picker';
 const Perfil = () => {
   const navigation = useNavigation();
   const [viagens, setViagens] = useState([]);
-  const [image, setImage] = useState(null); // Adiciona o estado 'image'
+  const [image, setImage] = useState(null);
+  const user = FIREBASE_AUTH.currentUser;
 
   const handleDeletarViagem = async (viagemId) => {
     await deletarViagem(viagemId);
@@ -29,7 +32,6 @@ const Perfil = () => {
   };
 
   useEffect(() => {
-    const user = FIREBASE_AUTH.currentUser;
     if (user) {
       const viagensCollection = collection(
         doc(FIRESTORE_DB, 'usuarios', user.uid),
@@ -43,6 +45,15 @@ const Perfil = () => {
         setViagens(viagemList);
       });
 
+      const fetchProfileImage = async () => {
+        const userDoc = await getDoc(doc(FIRESTORE_DB, 'usuarios', user.uid));
+        if (userDoc.exists()) {
+          setImage(userDoc.data().profileImage);
+        }
+      };
+
+      fetchProfileImage();
+
       return () => unsubscribe();
     }
   }, []);
@@ -51,10 +62,25 @@ const Perfil = () => {
     let result = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.Images,
       allowsEditing: true,
+      aspect: [1, 1],
+      quality: 1,
     });
 
     if (!result.canceled) {
-      setImage(result.assets[0].uri);
+      const uri = result.assets[0].uri;
+      const response = await fetch(uri);
+      const blob = await response.blob();
+      const storage = getStorage();
+      const storageRef = ref(storage, `profileImages/${user.uid}`);
+
+      await uploadBytes(storageRef, blob);
+      const downloadURL = await getDownloadURL(storageRef);
+
+      setImage(downloadURL);
+
+      await updateDoc(doc(FIRESTORE_DB, 'usuarios', user.uid), {
+        profileImage: downloadURL,
+      });
     }
   };
 
@@ -122,12 +148,13 @@ const Perfil = () => {
   return (
     <View style={styles.container}>
       <View style={styles.topSection}>
-        <View style={styles.roundComponent}>
-          <Text style={styles.overlayText}>
-            <Icon source="camera" size={40} onPress={handleChooseImage} />
-            {image && <Editor image={image} setImage={setImage} />}
-          </Text>
-        </View>
+        <TouchableOpacity style={styles.roundComponent} onPress={handleChooseImage}>
+          {image ? (
+            <Image source={{ uri: image }} style={styles.profileImage} />
+          ) : (
+            <Ionicons name="camera" size={40} color="#000" />
+          )}
+        </TouchableOpacity>
         <Ionicons
           name="brush-outline"
           size={30}
@@ -183,6 +210,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: -40,
+  },
+  profileImage: {
+    width: '100%',
+    height: '100%',
+    borderRadius: 100,
   },
   returnIcon: {
     position: 'absolute',
