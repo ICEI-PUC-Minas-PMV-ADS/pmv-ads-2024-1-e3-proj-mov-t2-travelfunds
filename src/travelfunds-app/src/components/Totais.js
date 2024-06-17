@@ -112,6 +112,7 @@ const styles = StyleSheet.create({
   viagemTextDetail: {
     fontStyle: 'italic',
     color: '#012B53',
+    paddingBottom: 5, 
   },
 });
 

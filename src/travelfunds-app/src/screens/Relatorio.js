@@ -4,8 +4,6 @@ import {
   Text,
   StyleSheet,
   FlatList,
-  TouchableOpacity,
-  ToastAndroid,
 } from 'react-native';
 import { Icon } from 'react-native-paper';
 import { collection, onSnapshot, doc } from 'firebase/firestore';
@@ -14,17 +12,11 @@ import { useNavigation } from '@react-navigation/native';
 import { logout } from '../services/Firebase.Auth';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import InputButton from '../components/InputButton';
-import { deletarViagem } from '../services/firebase.db.viagens';
 import Totais from '../components/Totais';
 
-const Perfil = () => {
+const Relatorio = () => {
   const navigation = useNavigation();
   const [viagens, setViagens] = useState([]);
-
-  const handleDeletarViagem = async (viagemId) => {
-    await deletarViagem(viagemId);
-    ToastAndroid.show('Viagem deletada com sucesso!', ToastAndroid.SHORT);
-  };
 
   useEffect(() => {
     const user = FIREBASE_AUTH.currentUser;
@@ -49,54 +41,19 @@ const Perfil = () => {
     <View style={styles.viagemItem}>
       <Text style={styles.viagemText}>{item.destino}</Text>
       <View>
-        <Text style={styles.viagemTextDetail}>partida {item.dataPartida}</Text>
-        <Text style={styles.viagemTextDetail}>retorno {item.dataRetorno}</Text>
+        <Text style={styles.viagemTextDetail}>Partida: {item.dataPartida}</Text>
+        <Text style={styles.viagemTextDetail}>Retorno: {item.dataRetorno}</Text>
         <Totais viagemId={item.id} />
       </View>
       <View style={styles.viagemCard}>
-        <View
-          style={{
-            flexDirection: 'row',
-            justifyContent: 'space-around',
-          }}
-        >
-          <Ionicons
-            name="bar-chart-outline"
-            size={24}
-            color="#012B53"
-            onPress={() => navigation.navigate('Meta', { viagemId: item.id })}
-          />
-          <Ionicons
-            name="save-outline"
-            size={24}
-            color="#012B53"
-            onPress={() => navigation.navigate('Relatorio')}
-          />
-        </View>
-        <View style={{ flexDirection: 'row', justifyContent: 'space-around' }}>
-          <TouchableOpacity>
-            <Ionicons
-              name="brush-outline"
-              size={24}
-              color="#012B53"
-              onPress={() =>
-                navigation.navigate('CadastroViagem', {
-                  mode: 'edit',
-                  viagemId: item.id,
-                })
-              }
-            />
-          </TouchableOpacity>
-          <Ionicons
-            name="trash-outline"
-            size={24}
-            color="#012B53"
-            onPress={() => handleDeletarViagem(item.id)}
-          />
-        </View>
       </View>
     </View>
   );
+
+
+  const handleGoBack = () => {
+    navigation.goBack();
+  };
 
 
   const handleLogout = async () => {
@@ -106,25 +63,24 @@ const Perfil = () => {
   return (
     <View style={styles.container}>
       <View style={styles.topSection}>
+      <Ionicons
+          name="return-up-back-outline"
+          size={35}
+          color="#fff"
+          style={styles.returnIcon}
+          onPress={handleGoBack}
+        />
         <View style={styles.roundComponent}>
           <Text style={styles.overlayText}>
             <Icon source="camera" size={40} />
           </Text>
         </View>
-        <Ionicons
-          name="brush-outline"
-          size={30}
-          color="#fff"
-          style={styles.settingsIcon}
-          onPress={() => navigation.navigate('EditarPerfil')}
-        />
         <View style={styles.logout}>
           <InputButton text="Logout" mode="text" onPress={handleLogout} />
         </View>
       </View>
       <View style={styles.middleSection}>
-        {/* <Text style={styles.nameText}>Nome</Text> */}
-        <Text>Minhas Viagens</Text>
+        <Text>Relatório de Viagem</Text>
       </View>
       <View style={styles.bottomSection}>
         <FlatList
@@ -133,12 +89,6 @@ const Perfil = () => {
           keyExtractor={(item) => item.id}
           contentContainerStyle={styles.flatListContent}
         />
-        <TouchableOpacity
-          style={styles.addButton}
-          onPress={() => navigation.navigate('CadastroViagem', { mode: 'add' })}
-        >
-          <Text style={styles.addButtonText}>Adicionar +</Text>
-        </TouchableOpacity>
       </View>
     </View>
   );
@@ -167,9 +117,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginBottom: -40,
   },
-  settingsIcon: {
+  returnIcon: {
     position: 'absolute',
-    top: 75,
+    bottom: 20,
     left: 45,
   },
   logout: {
@@ -202,38 +152,29 @@ const styles = StyleSheet.create({
     paddingBottom: 20,
   },
   viagemItem: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    flexDirection: 'column',
     backgroundColor: '#C0CBD4',
-    padding: 12,
+    padding: 20,
+    paddingRight: 70,
+    paddingLeft: 70,
     marginVertical: 8,
     borderRadius: 10,
     width: '100%',
     alignItems: 'center',
   },
   viagemText: {
-    textAlign: 'left',
+    textAlign: 'center',
     maxWidth: 80,
     fontSize: 18,
     fontWeight: 'bold',
     color: '#012B53',
+    paddingBottom: 15, 
   },
   viagemTextDetail: {
     fontStyle: 'italic',
     color: '#012B53',
     paddingBottom: 5, 
   },
-  addButton: {
-    alignSelf: 'flex-start',
-    backgroundColor: 'transparent',
-    padding: 15,
-  },
-  addButtonText: { color: '#fff', fontSize: 16 },
-  viagemCard: {
-    justifyContent: 'space-between',
-    height: 75,
-    width: 100,
-  },
 });
 
-export default Perfil;
+export default Relatorio;
