@@ -45,8 +45,6 @@ const Relatorio = () => {
         <Text style={styles.viagemTextDetail}>Retorno: {item.dataRetorno}</Text>
         <Totais viagemId={item.id} />
       </View>
-      <View style={styles.viagemCard}>
-      </View>
     </View>
   );
 

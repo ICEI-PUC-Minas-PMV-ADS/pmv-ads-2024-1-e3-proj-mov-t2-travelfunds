@@ -49,8 +49,8 @@ const Perfil = () => {
     <View style={styles.viagemItem}>
       <Text style={styles.viagemText}>{item.destino}</Text>
       <View>
-        <Text style={styles.viagemTextDetail}>partida {item.dataPartida}</Text>
-        <Text style={styles.viagemTextDetail}>retorno {item.dataRetorno}</Text>
+        <Text style={styles.viagemTextDetail}>Partida: {item.dataPartida}</Text>
+        <Text style={styles.viagemTextDetail}>Retorno: {item.dataRetorno}</Text>
         <Totais viagemId={item.id} />
       </View>
       <View style={styles.viagemCard}>
@@ -67,7 +67,7 @@ const Perfil = () => {
             onPress={() => navigation.navigate('Meta', { viagemId: item.id })}
           />
           <Ionicons
-            name="save-outline"
+            name="newspaper-outline"
             size={24}
             color="#012B53"
             onPress={() => navigation.navigate('Relatorio')}
