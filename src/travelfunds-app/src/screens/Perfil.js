@@ -5,8 +5,7 @@ import {
   StyleSheet,
   FlatList,
   TouchableOpacity,
-  Image,
-  Platform,
+  ToastAndroid,
 } from 'react-native';
 import { Icon } from 'react-native-paper';
 import { collection, onSnapshot, doc } from 'firebase/firestore';
@@ -16,19 +15,17 @@ import { logout } from '../services/Firebase.Auth';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import InputButton from '../components/InputButton';
 import { deletarViagem } from '../services/firebase.db.viagens';
-import TotalContribuicaoComponent from './Contribuicao/TotalContribuicao';
-import TotalGastoComponenent from './Gasto/TotalGasto';
-import { launchImageLibrary } from 'react-native-image-picker';
-import { storage, firestore } from '../../FirebaseConfig';
+import Totais from '../components/Totais';
+import * as ImagePicker from 'expo-image-picker';
 
 const Perfil = () => {
   const navigation = useNavigation();
   const [viagens, setViagens] = useState([]);
-  const [profileImage, setProfileImage] = useState(null);
-  const [profileImageUrl, setProfileImageUrl] = useState(null);
+  const [image, setImage] = useState(null); // Adiciona o estado 'image'
 
   const handleDeletarViagem = async (viagemId) => {
     await deletarViagem(viagemId);
+    ToastAndroid.show('Viagem deletada com sucesso!', ToastAndroid.SHORT);
   };
 
   useEffect(() => {
@@ -50,46 +47,15 @@ const Perfil = () => {
     }
   }, []);
 
-  const selectProfileImage = () => {
-    launchImageLibrary(
-      { mediaType: 'photo', includeBase64: true },
-      async (response) => {
-        if (response.didCancel) {
-          console.log('User cancelled image picker');
-        } else if (response.error) {
-          console.log('ImagePicker Error: ', response.error);
-        } else if (response.assets && response.assets.length > 0) {
-          const source = { uri: response.assets[0].uri };
-          setProfileImage(source);
+  const handleChooseImage = async () => {
+    let result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.Images,
+      allowsEditing: true,
+    });
 
-          const { uri } = response.assets[0];
-          const filename = uri.substring(uri.lastIndexOf('/') + 1);
-          const uploadUri = Platform.OS === 'ios' ? uri.replace('file://', '') : uri;
-
-          const storageRef = storage().ref(`profile_images/${filename}`);
-          const task = storageRef.putFile(uploadUri);
-
-          try {
-            await task;
-
-            const url = await storageRef.getDownloadURL();
-            setProfileImageUrl(url);
-
-            // Salve o URL da imagem no Firestore (assumindo que você tem um documento de perfil para o usuário atual)
-            const user = FIREBASE_AUTH.currentUser;
-            if (user) {
-              const userDocRef = firestore().collection('users').doc(user.uid);
-              await userDocRef.set({
-                profileImageUrl: url,
-              }, { merge: true }); // Use merge: true para mesclar novos dados com dados existentes
-            }
-          } catch (error) {
-            console.error('Error uploading image: ', error);
-            // Trate os erros de upload e de escrita no Firestore conforme necessário
-          }
-        }
-      }
-    );
+    if (!result.canceled) {
+      setImage(result.assets[0].uri);
+    }
   };
 
   const renderItem = ({ item }) => (
@@ -98,14 +64,7 @@ const Perfil = () => {
       <View>
         <Text style={styles.viagemTextDetail}>partida {item.dataPartida}</Text>
         <Text style={styles.viagemTextDetail}>retorno {item.dataRetorno}</Text>
-        <Text style={styles.viagemTextDetail}>
-          meta{'                '}
-          <Text style={{ color: '#15803d', fontWeight: '900' }}>
-            ${item.meta ? item.meta : '0'}
-          </Text>
-        </Text>
-        <TotalContribuicaoComponent viagemId={item.id} />
-        <TotalGastoComponenent viagemId={item.id} />
+        <Totais viagemId={item.id} />
       </View>
       <View style={styles.viagemCard}>
         <View
@@ -163,26 +122,12 @@ const Perfil = () => {
   return (
     <View style={styles.container}>
       <View style={styles.topSection}>
-        <Ionicons
-          name="notifications-outline"
-          size={30}
-          color="#fff"
-          style={styles.returnIcon}
-          onPress={() => {}}
-        />
-        
-        <TouchableOpacity style={styles.roundComponent} onPress={selectProfileImage}>
-    {profileImageUrl ? (
-      <Image source={{ uri: profileImageUrl }} style={styles.profileImage} />
-    ) : profileImage ? (
-      <Image source={profileImage} style={styles.profileImage} />
-    ) : (
-      <Text style={styles.overlayText}>
-        <Icon source="camera" size={40} />
-      </Text>
-    )}
-  </TouchableOpacity>
-        
+        <View style={styles.roundComponent}>
+          <Text style={styles.overlayText}>
+            <Icon source="camera" size={40} onPress={handleChooseImage} />
+            {image && <Editor image={image} setImage={setImage} />}
+          </Text>
+        </View>
         <Ionicons
           name="brush-outline"
           size={30}
@@ -229,11 +174,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#012B53',
     alignItems: 'center',
     justifyContent: 'flex-end',
-  },
-  profileImage: {
-    width: 100,
-    height: 100,
-    borderRadius: 50,
   },
   roundComponent: {
     width: 150,
