@@ -5,7 +5,6 @@ import {
   StyleSheet,
   FlatList,
 } from 'react-native';
-import { Icon } from 'react-native-paper';
 import { collection, onSnapshot, doc } from 'firebase/firestore';
 import { FIRESTORE_DB, FIREBASE_AUTH } from '../../FirebaseConfig';
 import { useNavigation } from '@react-navigation/native';
@@ -68,17 +67,12 @@ const Relatorio = () => {
           style={styles.returnIcon}
           onPress={handleGoBack}
         />
-        <View style={styles.roundComponent}>
-          <Text style={styles.overlayText}>
-            <Icon source="camera" size={40} />
-          </Text>
-        </View>
         <View style={styles.logout}>
           <InputButton text="Logout" mode="text" onPress={handleLogout} />
         </View>
       </View>
       <View style={styles.middleSection}>
-        <Text>Relatório de Viagem</Text>
+        <Text style={styles.nameText}>Relatório de Viagem</Text>
       </View>
       <View style={styles.bottomSection}>
         <FlatList
@@ -100,20 +94,11 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
   },
   topSection: {
-    flex: 1,
+    flex: 0.5,
     width: '100%',
     backgroundColor: '#012B53',
     alignItems: 'center',
     justifyContent: 'flex-end',
-  },
-  roundComponent: {
-    width: 150,
-    height: 150,
-    backgroundColor: '#fff',
-    borderRadius: 100,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom: -40,
   },
   returnIcon: {
     position: 'absolute',
@@ -122,23 +107,23 @@ const styles = StyleSheet.create({
   },
   logout: {
     position: 'absolute',
-    top: 65,
+    top: 85,
     right: 20,
   },
   middleSection: {
-    marginTop: '13%',
+    marginTop: '7%',
     alignItems: 'center',
   },
   nameText: {
-    fontSize: 30,
-    marginBottom: '2%',
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#012B53',
   },
   bottomSection: {
     flex: 2,
     width: '90%',
-    backgroundColor: '#012B53',
     padding: 10,
-    marginTop: '5%',
+    marginTop: '3%',
     marginBottom: '10%',
     marginLeft: '5%',
     marginRight: '5%',
@@ -151,10 +136,10 @@ const styles = StyleSheet.create({
   },
   viagemItem: {
     flexDirection: 'column',
-    backgroundColor: '#C0CBD4',
+    backgroundColor: '#fff',
     padding: 20,
-    paddingRight: 70,
-    paddingLeft: 70,
+    paddingRight: 90,
+    paddingLeft: 90,
     marginVertical: 8,
     borderRadius: 10,
     width: '100%',
