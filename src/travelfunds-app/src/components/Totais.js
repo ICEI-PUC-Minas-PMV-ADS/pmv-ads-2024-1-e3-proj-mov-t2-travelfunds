@@ -87,19 +87,19 @@ const Totais = ({ viagemId }) => {
   return (
     <View>
       <Text style={styles.viagemTextDetail}>
-        Gastos{'             '}
+        Gastos:{'  '}
         <Text style={{ color: '#EF4444', fontWeight: '900' }}>
           ${totalGasto ? totalGasto : '0'}
         </Text>
       </Text>
       <Text style={styles.viagemTextDetail}>
-        Contribuições{' '}
+        Contribuições:{' '}
         <Text style={{ color: '#ca8a04', fontWeight: '900' }}>
           ${totalContribuicao ? totalContribuicao : '0'}
         </Text>
       </Text>
       <Text style={styles.viagemTextDetail}>
-        Meta{'                 '}
+        Meta:{'  '}
         <Text style={{ color: '#15803d', fontWeight: '900' }}>
           {meta ? `$${meta}` : 'definir'}
         </Text>
@@ -112,6 +112,7 @@ const styles = StyleSheet.create({
   viagemTextDetail: {
     fontStyle: 'italic',
     color: '#012B53',
+    paddingBottom: 5, 
   },
 });
 
