@@ -64,6 +64,21 @@ const EditarPerfil = () => {
     navigation.navigate('Perfil');
   };
 
+  const confirmarExclusaoPerfil = () => {
+    Alert.alert(
+      'Confirmação',
+      'Tem certeza que deseja deletar o perfil?',
+      [
+        {
+          text: 'Cancelar',
+          style: 'cancel',
+        },
+        { text: 'Deletar', onPress: () => handleDeleteProfile() },
+      ],
+      { cancelable: false }
+    );
+  };
+
   const handleDeleteProfile = async () => {
     try {
       const user = auth.currentUser;
@@ -82,7 +97,7 @@ const EditarPerfil = () => {
       }
 
       // Deletar usuário autenticado
-      await user.delete(user);
+      await user.delete();
 
       // Realizar o logout após deletar
       logout();
@@ -92,6 +107,7 @@ const EditarPerfil = () => {
     }
   };
 
+
   return (
     <>
       <Header title={'Editar Perfil'} goBack={() => navigation.goBack()}>
@@ -100,9 +116,9 @@ const EditarPerfil = () => {
 
       <View style={styles.container}>
         <View style={styles.cabecalho}>
-            <Text style={styles.textoBoasVindas}>
-              Olá!
-            </Text>
+          <Text style={styles.textoBoasVindas}>
+            Olá!
+          </Text>
           <View style={styles.logout}>
             <InputButton text="Logout" mode="text" onPress={handleLogout} />
           </View>
@@ -110,7 +126,7 @@ const EditarPerfil = () => {
 
         <View style={styles.zonaInput}>
           <InputSetPerfil
-            placeholder="Nome do Perfil"
+            placeholder="Novo nome do perfil"
             value={novoNome}
             onChangeText={setNovoNome}
           />
@@ -118,7 +134,7 @@ const EditarPerfil = () => {
           <InputSetPerfil placeholder="senha" />
           <View style={styles.botoes}>
             <BotaoMenor text="Confirmar" onPress={handleUpdateProfile} />
-            <BotaoDelete text="Deletar Perfil" onPress={handleDeleteProfile} />
+            <BotaoDelete text="Deletar Perfil" onPress={confirmarExclusaoPerfil} />
           </View>
         </View>
       </View>
