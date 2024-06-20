@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, Alert } from 'react-native';
 import InputSetPerfil from '../components/InputSetPerfil';
 import BotaoMenor from '../components/BotaoMenor';
+import BotaoDelete from '../components/BotaoDelete.js';
 import { Icon, Appbar } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
 import Header from '../components/Header';
@@ -16,6 +17,7 @@ const EditarPerfil = () => {
   const navigation = useNavigation();
   const [novoNome, setNovoNome] = useState('');
   const [auth, setAuth] = useState(null);
+  const [nomeUsuario, setNomeUsuario] = useState('');
 
   const handleGoBack = () => {
     navigation.navigate('Perfil');
@@ -28,6 +30,7 @@ const EditarPerfil = () => {
   useEffect(() => {
     const auth = getAuth();
     setAuth(auth);
+
   }, []);
 
   const handleUpdateProfile = async () => {
@@ -74,27 +77,15 @@ const EditarPerfil = () => {
 
       <View style={styles.container}>
         <View style={styles.cabecalho}>
-          <Ionicons
-            name="return-up-back-outline"
-            size={35}
-            color="#fff"
-            style={styles.returnIcon}
-            onPress={handleGoBack}
-          />
-
-          <View style={styles.fotoUsuario}>
-            <Text style={styles.overlayText}>
-              <Icon source="camera" size={40} />
+            <Text style={styles.textoBoasVindas}>
+              Olá fulano!
             </Text>
-          </View>
-
           <View style={styles.logout}>
             <InputButton text="Logout" mode="text" onPress={handleLogout} />
           </View>
         </View>
 
         <View style={styles.zonaInput}>
-          <InputSetPerfil placeholder="foto do perfil" />
           <InputSetPerfil
             placeholder="Nome do Perfil"
             value={novoNome}
@@ -102,7 +93,10 @@ const EditarPerfil = () => {
           />
           <InputSetPerfil placeholder="email" />
           <InputSetPerfil placeholder="senha" />
-          <BotaoMenor text="Confirmar" onPress={handleUpdateProfile} />
+          <View style={styles.botoes}>
+            <BotaoMenor text="Confirmar" onPress={handleUpdateProfile} />
+            <BotaoDelete text="Deletar Perfil" />
+          </View>
         </View>
       </View>
     </>
@@ -117,29 +111,22 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
   },
   cabecalho: {
+    flex: 0.5,
     width: '100%',
     backgroundColor: '#012B53',
     alignItems: 'center',
     justifyContent: 'flex-end',
   },
-  fotoUsuario: {
-    width: 150,
-    height: 150,
-    backgroundColor: '#fff',
-    borderRadius: 100,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom: -40,
-  },
+  
   returnIcon: {
     position: 'absolute',
-    bottom: 20,
+    bottom: 120,
     left: 45,
   },
   logout: {
     position: 'absolute',
-    top: -20,
-    right: 40,
+    top: -30,
+    right: 30, 
   },
   logoutText: {
     color: '#fff',
@@ -150,13 +137,21 @@ const styles = StyleSheet.create({
     width: '90%',
     backgroundColor: '#012B53',
     padding: 10,
-    marginTop: '15%',
-    marginBottom: '10%',
+    marginTop: '10%',
+    marginBottom: '40%',
     marginLeft: '5%',
     marginRight: '5%',
     borderRadius: 10,
     alignItems: 'center',
     justifyContent: 'flex-start',
   },
+  textoBoasVindas: {
+    fontSize: 30, 
+    color: '#fff',
+    marginBottom: '12%',
+  },
+  botoes: { 
+    flexDirection: 'row',
+  }
 });
 export default EditarPerfil;

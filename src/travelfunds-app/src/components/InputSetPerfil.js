@@ -26,9 +26,9 @@ const InputSetPerfil = ({ label, placeholder, onChangeText, value }) => {
 
 const styles = StyleSheet.create({
   input: {
-    margin: 10,
+    margin: 19,
     backgroundColor: 'transparent',
-    width: "100%",
+    width: "90%",
   },
 });
 
