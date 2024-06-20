@@ -60,6 +60,8 @@ const EditarPerfil = () => {
       console.error('Erro ao atualizar perfil:', error);
       Alert.alert('Erro', 'Erro ao atualizar perfil');
     }
+
+    navigation.navigate('Perfil');
   };
 
   const handleDeleteProfile = async () => {
@@ -99,7 +101,7 @@ const EditarPerfil = () => {
       <View style={styles.container}>
         <View style={styles.cabecalho}>
             <Text style={styles.textoBoasVindas}>
-              Olá fulano!
+              Olá!
             </Text>
           <View style={styles.logout}>
             <InputButton text="Logout" mode="text" onPress={handleLogout} />
