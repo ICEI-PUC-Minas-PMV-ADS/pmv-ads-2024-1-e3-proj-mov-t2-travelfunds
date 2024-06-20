@@ -1,4 +1,4 @@
-import { doc, getDoc, setDoc, updateDoc } from 'firebase/firestore';
+import { doc, getDoc, setDoc, updateDoc, deleteDoc, getFirestore } from 'firebase/firestore';
 import { FIRESTORE_DB } from '../../FirebaseConfig';
 
 const db = FIRESTORE_DB;
@@ -37,5 +37,16 @@ const atualizarDadosUsuario = async (id, novosDados) => {
     return false;
   }
 };
-
-export { criarUsuario, recuperarUsuario, atualizarDadosUsuario };
+const deletarUsuario = async (userId) => {
+  try {
+    const db = getFirestore();
+    const userRef = doc(db, 'usuarios', userId);
+    await deleteDoc(userRef);
+    console.log('Usuário deletado com sucesso do Firestore');
+    return true;
+  } catch (error) {
+    console.error('Erro ao deletar usuário do Firestore:', error);
+    return false;
+  }
+};
+export { criarUsuario, recuperarUsuario, atualizarDadosUsuario, deletarUsuario };

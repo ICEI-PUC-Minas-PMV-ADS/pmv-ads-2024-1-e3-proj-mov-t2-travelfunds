@@ -1,5 +1,4 @@
 import React from 'react';
-import Ionicons from '@expo/vector-icons/Ionicons';
 import { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, Alert } from 'react-native';
 import InputSetPerfil from '../components/InputSetPerfil';
@@ -9,7 +8,7 @@ import { Icon, Appbar } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
 import Header from '../components/Header';
 import { getAuth } from 'firebase/auth';
-import { atualizarDadosUsuario } from '../services/Firebase.DB.Usuarios';
+import { atualizarDadosUsuario, deletarUsuario } from '../services/Firebase.DB.Usuarios';
 import { logout } from '../services/Firebase.Auth.js';
 import InputButton from '../components/InputButton.js';
 
@@ -17,21 +16,15 @@ const EditarPerfil = () => {
   const navigation = useNavigation();
   const [novoNome, setNovoNome] = useState('');
   const [auth, setAuth] = useState(null);
-  const [nomeUsuario, setNomeUsuario] = useState('');
-
-  const handleGoBack = () => {
-    navigation.navigate('Perfil');
-  };
-
-  const handleLogout = async () => {
-    logout();
-  };
 
   useEffect(() => {
     const auth = getAuth();
     setAuth(auth);
-
   }, []);
+
+  const handleLogout = async () => {
+    logout();
+  };
 
   const handleUpdateProfile = async () => {
     try {
@@ -69,6 +62,34 @@ const EditarPerfil = () => {
     }
   };
 
+  const handleDeleteProfile = async () => {
+    try {
+      const user = auth.currentUser;
+      if (!user) {
+        Alert.alert('Erro', 'Usuário não autenticado');
+        return;
+      }
+
+      const idDoUsuario = user.uid;
+
+      // Deletar usuário do Firestore
+      const deletarUsuarioResultado = await deletarUsuario(idDoUsuario);
+      if (!deletarUsuarioResultado) {
+        Alert.alert('Erro', 'Erro ao deletar usuário no Firestore');
+        return;
+      }
+
+      // Deletar usuário autenticado
+      await user.delete(user);
+
+      // Realizar o logout após deletar
+      logout();
+    } catch (error) {
+      console.error('Erro ao deletar perfil:', error);
+      Alert.alert('Erro', 'Erro ao deletar perfil');
+    }
+  };
+
   return (
     <>
       <Header title={'Editar Perfil'} goBack={() => navigation.goBack()}>
@@ -95,7 +116,7 @@ const EditarPerfil = () => {
           <InputSetPerfil placeholder="senha" />
           <View style={styles.botoes}>
             <BotaoMenor text="Confirmar" onPress={handleUpdateProfile} />
-            <BotaoDelete text="Deletar Perfil" />
+            <BotaoDelete text="Deletar Perfil" onPress={handleDeleteProfile} />
           </View>
         </View>
       </View>
