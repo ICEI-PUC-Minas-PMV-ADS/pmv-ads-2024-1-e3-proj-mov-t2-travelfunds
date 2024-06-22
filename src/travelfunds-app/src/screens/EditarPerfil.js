@@ -7,19 +7,23 @@ import BotaoDelete from '../components/BotaoDelete.js';
 import { Icon, Appbar } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
 import Header from '../components/Header';
-import { getAuth } from 'firebase/auth';
+import { getAuth, sendPasswordResetEmail } from 'firebase/auth';
 import { atualizarDadosUsuario, deletarUsuario } from '../services/Firebase.DB.Usuarios';
 import { logout } from '../services/Firebase.Auth.js';
 import InputButton from '../components/InputButton.js';
+import BotaoRedefinir from '../components/BotaoRedefinir.js';
+
 
 const EditarPerfil = () => {
   const navigation = useNavigation();
   const [novoNome, setNovoNome] = useState('');
+  const [emailRedefinicao, setEmailRedefinicao] = useState('');
+  const [mostrarRedefinicaoSenha, setMostrarRedefinicaoSenha] = useState(false); // Estado para controlar a visibilidade da seção de redefinição de senha
   const [auth, setAuth] = useState(null);
 
   useEffect(() => {
-    const auth = getAuth();
-    setAuth(auth);
+    const authInstance = getAuth();
+    setAuth(authInstance);
   }, []);
 
   const handleLogout = async () => {
@@ -41,24 +45,39 @@ const EditarPerfil = () => {
 
       const idDoUsuario = user.uid;
 
-      if (!novoNome) {
-        Alert.alert('Erro', 'O campo de nome não pode estar vazio');
-        return;
+      const novosDados = {};
+      if (novoNome) {
+        novosDados.nome = novoNome;
       }
 
-      const novosDados = {
-        nome: novoNome,
-      };
-
-      const resultado = await atualizarDadosUsuario(idDoUsuario, novosDados);
-      if (resultado) {
-        Alert.alert('Sucesso', 'Perfil atualizado com sucesso!');
-      } else {
-        Alert.alert('Erro', 'Erro ao atualizar perfil');
+      if (Object.keys(novosDados).length > 0) {
+        const resultado = await atualizarDadosUsuario(idDoUsuario, novosDados);
+        if (!resultado) {
+          Alert.alert('Erro', 'Erro ao atualizar dados no Firestore');
+          return;
+        }
       }
+
+      Alert.alert('Sucesso', 'Perfil atualizado com sucesso!');
+      navigation.navigate('Perfil');
     } catch (error) {
       console.error('Erro ao atualizar perfil:', error);
       Alert.alert('Erro', 'Erro ao atualizar perfil');
+    }
+  };
+
+  const handlePasswordReset = async () => {
+    try {
+      if (!emailRedefinicao) {
+        Alert.alert('Erro', 'O campo de email não pode estar vazio');
+        return;
+      }
+
+      await sendPasswordResetEmail(auth, emailRedefinicao);
+      Alert.alert('Sucesso', 'Email para redefinição de senha enviado com sucesso!');
+    } catch (error) {
+      console.error('Erro ao enviar email de redefinição de senha:', error);
+      Alert.alert('Erro', 'Erro ao enviar email de redefinição de senha');
     }
 
     navigation.navigate('Perfil');
@@ -89,24 +108,19 @@ const EditarPerfil = () => {
 
       const idDoUsuario = user.uid;
 
-      // Deletar usuário do Firestore
       const deletarUsuarioResultado = await deletarUsuario(idDoUsuario);
       if (!deletarUsuarioResultado) {
         Alert.alert('Erro', 'Erro ao deletar usuário no Firestore');
         return;
       }
-
-      // Deletar usuário autenticado
       await user.delete();
 
-      // Realizar o logout após deletar
       logout();
     } catch (error) {
       console.error('Erro ao deletar perfil:', error);
       Alert.alert('Erro', 'Erro ao deletar perfil');
     }
   };
-
 
   return (
     <>
@@ -126,16 +140,40 @@ const EditarPerfil = () => {
 
         <View style={styles.zonaInput}>
           <InputSetPerfil
-            placeholder="Novo nome do perfil"
+            placeholder="Novo nome de perfil"
             value={novoNome}
             onChangeText={setNovoNome}
           />
-          <InputSetPerfil placeholder="email" />
-          <InputSetPerfil placeholder="senha" />
-          <View style={styles.botoes}>
-            <BotaoMenor text="Confirmar" onPress={handleUpdateProfile} />
-            <BotaoDelete text="Deletar Perfil" onPress={confirmarExclusaoPerfil} />
-          </View>
+          <BotaoMenor 
+            style={styles.botoes}
+            text="Confirmar" 
+            onPress={handleUpdateProfile} 
+          />
+          {!mostrarRedefinicaoSenha && (
+            <BotaoRedefinir 
+              text="Redefinir Senha" 
+              onPress={() => setMostrarRedefinicaoSenha(true)} 
+            />
+          )}
+          
+          {mostrarRedefinicaoSenha && (
+            <>
+              <InputSetPerfil 
+                placeholder="Email para redefinição de senha"
+                value={emailRedefinicao}
+                onChangeText={setEmailRedefinicao}
+              />
+              <Text style={styles.textoInfo}>*O email para redefinição de senha deverá ser o mesmo email de cadastro.</Text>
+              <View style={styles.botoes}>
+                <BotaoMenor text="Redefinir Senha" onPress={handlePasswordReset} /> 
+              </View>
+            </>
+            
+          )}
+
+        <BotaoDelete text="Deletar Perfil" onPress={confirmarExclusaoPerfil} />
+
+          
         </View>
       </View>
     </>
@@ -156,20 +194,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'flex-end',
   },
-  
-  returnIcon: {
-    position: 'absolute',
-    bottom: 120,
-    left: 45,
-  },
   logout: {
     position: 'absolute',
     top: -30,
     right: 30, 
-  },
-  logoutText: {
-    color: '#fff',
-    fontSize: 17,
   },
   zonaInput: {
     flex: 2,
@@ -180,9 +208,9 @@ const styles = StyleSheet.create({
     marginBottom: '40%',
     marginLeft: '5%',
     marginRight: '5%',
-    borderRadius: 10,
     alignItems: 'center',
     justifyContent: 'flex-start',
+    borderRadius: 10,
   },
   textoBoasVindas: {
     fontSize: 30, 
@@ -191,6 +219,13 @@ const styles = StyleSheet.create({
   },
   botoes: { 
     flexDirection: 'row',
+    marginTop: 10,
+  },
+  textoInfo: {
+    color: '#fff',
+    marginLeft: 5,
+    fontSize:10,
   }
 });
+
 export default EditarPerfil;

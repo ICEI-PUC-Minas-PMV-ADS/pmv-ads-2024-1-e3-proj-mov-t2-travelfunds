@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#8196AA',
     borderRadius: 20,
     alignItems: 'center',
-    marginTop: 40,
-    marginRight:40,
+    marginTop: 8,
+    marginBottom: 20,
   },
 });
