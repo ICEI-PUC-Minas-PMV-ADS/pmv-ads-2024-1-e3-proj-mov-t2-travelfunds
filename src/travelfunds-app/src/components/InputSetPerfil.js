@@ -1,6 +1,6 @@
 import React from 'react';
 import { TextInput } from 'react-native-paper';
-import { StyleSheet, KeyboardAvoidingView, Platform } from "react-native";
+import { StyleSheet } from "react-native";
 
 const InputSetPerfil = ({ label, placeholder, onChangeText, value }) => {
   const [text, setText] = React.useState('');
@@ -9,11 +9,11 @@ const InputSetPerfil = ({ label, placeholder, onChangeText, value }) => {
    
       <TextInput
         style={styles.input}
-        mode="outlined"
+        //mode="outlined"
         placeholder={placeholder}
         label={label}
         right={<TextInput.Affix text="/100" />}
-        outlineColor="#FFF"
+        //outlineColor="#FFF"
         color="#FFF"
         onChangeText={onChangeText}
         value={value}
@@ -22,14 +22,23 @@ const InputSetPerfil = ({ label, placeholder, onChangeText, value }) => {
    
   );
 };
-
-
 const styles = StyleSheet.create({
   input: {
+    fontSize: 16,
+    borderWidth: 2,
+    borderColor: '#f0ffff',
     margin: 19,
     backgroundColor: 'transparent',
     width: "90%",
+    borderRadius: 10,
+    
   },
 });
 
 export default InputSetPerfil;
+
+
+    //paddingHorizontal: 12,
+    //paddingVertical: 10,
+ 
+ 
