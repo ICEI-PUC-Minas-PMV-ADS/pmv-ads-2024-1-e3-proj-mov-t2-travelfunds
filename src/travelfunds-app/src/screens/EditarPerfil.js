@@ -133,8 +133,8 @@ const EditarPerfil = () => {
           <InputSetPerfil placeholder="email" />
           <InputSetPerfil placeholder="senha" />
           <View style={styles.botoes}>
-            <BotaoMenor text="Confirmar" onPress={handleUpdateProfile} />
             <BotaoDelete text="Deletar Perfil" onPress={confirmarExclusaoPerfil} />
+            <BotaoMenor text="Confirmar" onPress={handleUpdateProfile} />
           </View>
         </View>
       </View>
