@@ -52,11 +52,6 @@ const Meta = ({ route }) => {
           style={styles.returnIcon}
           onPress={handleGoBack}
         />
-        <View style={styles.roundComponent}>
-          <Text style={styles.overlayText}>
-            <Icon source="camera" size={40} />
-          </Text>
-        </View>
         <View style={styles.logout}>
           <InputButton text="Logout" mode="text" onPress={handleLogout} />
         </View>

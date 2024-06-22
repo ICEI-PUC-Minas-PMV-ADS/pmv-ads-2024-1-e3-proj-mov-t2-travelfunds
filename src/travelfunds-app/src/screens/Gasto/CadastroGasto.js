@@ -48,12 +48,7 @@ function CadastroGasto({ route }) {
           color="white"
           style={styles.returnIcon}
           onPress={() => navigation.navigate('Gasto', { viagemId })}
-        />
-        <View style={styles.roundComponent}>
-          <Text style={styles.overlayText}>
-            <Ionicons name="camera-outline" size={40} />
-          </Text>
-        </View>
+        />       
         <View style={styles.logout}>
           <InputButton text="logout" mode="text" onPress={() => logout()} />
         </View>

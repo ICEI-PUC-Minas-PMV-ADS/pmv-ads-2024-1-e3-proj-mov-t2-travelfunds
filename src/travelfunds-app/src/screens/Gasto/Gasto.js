@@ -70,11 +70,6 @@ function Gasto({ route }) {
           style={styles.returnIcon}
           onPress={() => navigation.navigate('Perfil', { viagemId })}
         />
-        <View style={styles.roundComponent}>
-          <Text style={styles.overlayText}>
-            <Ionicons name="camera-outline" size={40} />
-          </Text>
-        </View>
         <View style={styles.logout}>
           <InputButton text="Logout" mode="text" onPress={() => logout()} />
         </View>

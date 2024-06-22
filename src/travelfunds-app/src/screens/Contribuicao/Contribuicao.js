@@ -67,12 +67,7 @@ const Contribuicao = ({ route }) => {
           color="white"
           style={styles.returnIcon}
           onPress={() => navigation.navigate('Perfil', { viagemId })}
-        />
-        <View style={styles.roundComponent}>
-          <Text style={styles.overlayText}>
-            <Ionicons name="camera-outline" size={40} />
-          </Text>
-        </View>
+        />        
         <View style={styles.logout}>
           <InputButton text="Logout" mode="text" onPress={() => logout()} />
         </View>
@@ -167,15 +162,6 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: 20,
     left: 45,
-  },
-  roundComponent: {
-    width: 150,
-    height: 150,
-    backgroundColor: 'white',
-    borderRadius: 100,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom: -40,
   },
   logout: {
     position: 'absolute',
