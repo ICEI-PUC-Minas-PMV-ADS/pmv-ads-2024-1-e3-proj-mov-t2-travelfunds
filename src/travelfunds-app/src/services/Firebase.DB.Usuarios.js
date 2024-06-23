@@ -1,4 +1,4 @@
-import { doc, getDoc, setDoc, updateDoc, deleteDoc, collection } from 'firebase/firestore';
+import { doc, getDoc, setDoc, updateDoc, deleteDoc, collection, getDocs } from 'firebase/firestore';
 import { FIRESTORE_DB } from '../../FirebaseConfig';
 
 const db = FIRESTORE_DB;
@@ -40,19 +40,18 @@ const atualizarDadosUsuario = async (id, novosDados) => {
 const deletarDocumentoEAninhados = async (docRef) => {
   try {
     // Obtenha todas as sub-coleções do documento
-    const subcollectionsSnapshot = await getDoc(collection(docRef.parent, docRef.id));
+    const subcollectionsSnapshot = await getDocs(collection(docRef.parent, docRef.id));
 
     // Para cada sub-coleção, delete os documentos nela
     for (const subcollection of subcollectionsSnapshot.docs) {
       const subcollectionRef = collection(docRef, subcollection.id);
-      const subcollectionDocsSnapshot = await getDoc(subcollectionRef);
+      const subcollectionDocsSnapshot = await getDocs(subcollectionRef);
 
       for (const subDoc of subcollectionDocsSnapshot.docs) {
         await deletarDocumentoEAninhados(subDoc.ref);
       }
     }
 
-    // Delete o próprio documento após deletar suas sub-coleções
     await deleteDoc(docRef);
   } catch (error) {
     console.error('Erro ao deletar sub-coleções e documentos:', error);
