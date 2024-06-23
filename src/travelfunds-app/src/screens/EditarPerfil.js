@@ -75,6 +75,7 @@ const EditarPerfil = () => {
 
       await sendPasswordResetEmail(auth, emailRedefinicao);
       Alert.alert('Sucesso', 'Email para redefinição de senha enviado com sucesso!');
+      await handleLogout();
     } catch (error) {
       console.error('Erro ao enviar email de redefinição de senha:', error);
       Alert.alert('Erro', 'Erro ao enviar email de redefinição de senha');
