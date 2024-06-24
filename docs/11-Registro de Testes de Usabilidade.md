@@ -39,14 +39,14 @@
 |:---:	|:---:	|
 | Objetivo do Teste 	| Avaliar a usabilidade de gerenciamento de alertas, criar, editar e excluir |
 | Ações Necessárias 	| 1. Acessar a tela inicial do aplicativo; <br> 2. Clicar no ícone de configurações (roldana); <br> 3. Clicar em "Alertas"; <br> 4. Ativar ou desativar as opções de alertas. |
-| Resultado	| Não foi possível testar a funcionalidade pois ainda está em desenvolvimento. |
+| Resultado	| Não foi possível implementar essa funcionalidade, o aplicativo gera alertas, porém, de forma automática, não há como personalizar esses alertas. Eles são gerados a medida que o usuário cadasrta uma nova despesa ou gasto e é calculado em cima da meta já determinada. |
 
 
 | **Caso de Teste** 	| **CTU-07 – Compartilhar uma viagem** 	|
 |:---:	|:---:	|
 | Objetivo do Teste 	| Avaliar a usabilidade do compartilhamento de viagem |
 | Ações Necessárias 	| 1. Acessar a tela inicial do aplicativo; <br> 2. Clicar no ícone de edição (lápis) da viagem cadastrada que deseja compartilhar; <br> 3. Clicar na opção "Compartilhar viagem" ; <br> 4. Preencher o email da pessoa com quem quer compartilhar a viagem; <br> 5. Clicar em "Compartilhar". |
-| Resultado	| Não foi possível testar a funcionalidade pois ainda está em desenvolvimento. |
+| Resultado	| Funcionalidade não desenvolvida. |
 
 
 | **Caso de Teste** 	| **CTU-08 – Gerar relatório** 	|
