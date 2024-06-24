@@ -34,7 +34,8 @@ Foram realizados os testes descritos abaixo:
 | Objetivo do Teste 	| Verificar se os usuários conseguem visualizar, atualizar e deletar seus dados pessoais |
 | Passos 	| - O usuário acessa a aplicação do dispositivo móvel; <br> - O usuário acessa a página do seu perfil na aplicação; <br> - O usuário é capaz de visualizar, atualizar ou deletar seus dados; <br> - O usuário salva as alterações.|
 |Critério de Êxito | - Os dados do usuário são atualizados corretamente no banco de dados; <br> - O usuário consegue visualizar as alterações feitas na aplicação|
-|Resultado | Essa funcionalidade já foi implementada, porém, não pode ser testada pois a cota do plano do firebase acabou, sendo assim, não houve tempo hábil para fazer a prova do teste .|
+|Resultado | Essa funcionalidade já foi implementada, porém, não pode ser testada pois a cota do plano do firebase acabou, sendo assim, não houve tempo hábil para fazer a prova do teste .| 
+| Evidência	| https://youtube.com/shorts/5ontClYslOE?feature=share |
 
 | **Caso de Teste** 	| CT-04 – Criação e gerenciamento de viagem |
 |:---:	|:---:	|
@@ -73,7 +74,7 @@ Foram realizados os testes descritos abaixo:
 | Passos 	| - O usuário acessa a aplicação do dispositivo móvel; <br> - O usuário acessa a página do seu perfil na aplicação; <br> - O usuário seleciona a viagem que deseja na lista de viagens; <br> - O usuário acessa a página de inserção de gastos; <br> - O usuário preenche os dados necessários para inserir um gasto; <br> - O usuário salva o gasto.|
 |Critério de Êxito |- O usuário consegue inserir o gasto e visualizá-lo corretamente na interface da aplicação; <br> - Após a inserção, o saldo da viagem é atualizado com o novo gasto contabilizado.|
 |Resultado | A tela de inserção de gastos já está desenvolvida, e funcionando. Apenas a tela de meta que ainda não foi possível vincular com as demais funções, contribuição e gastos. |
-| Evidências	|https://youtube.com/shorts/-LHIbdyIngw?si=zVrhPWKeM6PT0AJA <br> https://youtube.com/shorts/oO01seCUyRQ?si=2q2ohJfIEdp8EZDp|
+| Evidências|	https://youtube.com/shorts/-LHIbdyIngw?si=zVrhPWKeM6PT0AJA <br> https://youtube.com/shorts/oO01seCUyRQ?si=2q2ohJfIEdp8EZDp|
 
 | **Caso de Teste** 	| CT-08 – Geração de relatório |
 |:---:	|:---:	|
@@ -83,6 +84,7 @@ Foram realizados os testes descritos abaixo:
 | Passos 	| - O usuário acessa a aplicação do dispositivo móvel; <br> - O usuário acessa a página do seu perfil na aplicação; <br> - O usuário seleciona a viagem que deseja na lista de viagens; <br> - O usuário acessa a seção de relatórios; <br> - Usuário confirma a geração do relatório.|
 |Critério de Êxito | - O relatório é gerado com sucesso e exibe gastos separados por categorias; <br> - Os gastos apresentados no relatório correspondem aos gastos registrados pelo usuário.|
 |Resultado | Funcionalidade ainda não implementada |
+| Evidências |
 
 | **Caso de Teste** 	| CT-09 – Compartilhamento de viagem	|
 |:---:	|:---:	|
