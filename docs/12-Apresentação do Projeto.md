@@ -14,4 +14,6 @@ Para visualizar clique aqui.
 
 ## Vídeo  
 
-Para acessar o vídeo de apresentação da aplicação clique aqui.
+Para acessar o vídeo acesse o link a seguir:
+
+https://youtu.be/H7pCeNga3zY
