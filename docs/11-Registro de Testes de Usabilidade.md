@@ -53,6 +53,7 @@
 |:---:	|:---:	|
 | Objetivo do Teste 	| Avaliar a usabilidade de gerar relatório de viagem |
 | Ações Necessárias 	| 1. Acessar a tela inicial do aplicativo; <br> 2. Clicar na viagem planejada; <br> 3. Clicar no ícone salvar. <br> |
-| Resultado	| Não foi possível testar a funcionalidade pois ainda não foi desenvolvida. |
+| Resultado	| O Usuário 002 conseguiu testar a funcionalidade sem problemas, apenas reportou que gostaria que os relatório fossem individualizados por viagem. Porém, a melhoria não pode ser implementada a tempo.  |
+| Evidência	| https://youtube.com/shorts/r_vydiDMKjQ |
 
 
