@@ -83,8 +83,8 @@ Foram realizados os testes descritos abaixo:
 | Objetivo do Teste 	| Verificar se os usuário conseguem gerar relatório de gastos detalhado por categoria ao final da viagem |
 | Passos 	| - O usuário acessa a aplicação do dispositivo móvel; <br> - O usuário acessa a página do seu perfil na aplicação; <br> - O usuário seleciona a viagem que deseja na lista de viagens; <br> - O usuário acessa a seção de relatórios; <br> - Usuário confirma a geração do relatório.|
 |Critério de Êxito | - O relatório é gerado com sucesso e exibe gastos separados por categorias; <br> - Os gastos apresentados no relatório correspondem aos gastos registrados pelo usuário.|
-|Resultado | Funcionalidade ainda não implementada |
-| Evidências |
+|Resultado | Funcionalidade implementada. Foi possível gerar o relatório, porém não foi possível gerar relatórios em PDF. |
+| Evidências | https://youtube.com/shorts/r_vydiDMKjQ |
 
 | **Caso de Teste** 	| CT-09 – Compartilhamento de viagem	|
 |:---:	|:---:	|
@@ -93,7 +93,7 @@ Foram realizados os testes descritos abaixo:
 | Objetivo do Teste 	|Verificar se a aplicação permite que o usuário compartilhe viagens com outros usuários|
 | Passos 	| - O usuário acessa a aplicação do dispositivo móvel; <br> - O usuário acessa a página do seu perfil na aplicação; <br> - O usuário seleciona a viagem que deseja na lista de viagens; <br> - Usuário localiza a opção para compartilhar a viagem; <br> - Usuário insere o email do usuário com quem quer compartilhar a viagem; <br> - Usuário compartilha a viagem.|
 |Critério de Êxito |- Após compartilhamento o usuário convidado tem acesso aos dados da viagem compartilhada; <br> O usuário convidado consegue interagir com a viagem compartilhada.|
-|Resultado | Funcionalidade ainda não implementada |
+|Resultado | Funcionalidade não implementada |
 
 | **Caso de Teste** 	| CT-010 – Programação de Alertas	|
 |:---:	|:---:	|
@@ -102,4 +102,5 @@ Foram realizados os testes descritos abaixo:
 | Objetivo do Teste 	| Verificar se o usuário consegue programar alertas relacionados a uma viagem |
 | Passos 	| - O usuário acessa a página do seu perfil na aplicação; <br> - O usuário seleciona a viagem que deseja na lista de viagens; <br> - Usuário localiza a opção para configurar os alertas; <br> - O usuário define o tipo de alerta que deseja receber; <br> -O usuário confirma a programação dos alertas. |
 |Critério de Êxito | - Os alertas são programados com sucesso; <br> - O usuário recebe os alertas com informação corretas a respeito da viagem.|
-|Resultado | Funcionalidade ainda não implementada |
+|Resultado | Os alertas são gerados durante a inserção dos gastos e contribuições, a partir das metas estabelecidas. |
+| Evidências | https://youtube.com/shorts/-LHIbdyIngw?si=zVrhPWKeM6PT0AJA  |
